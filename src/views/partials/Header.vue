@@ -3,7 +3,7 @@
     <div class="h-[98px]"></div>
   </div>
   <div
-    class="header-main shadow-md mb-[10px] bg-white text-black dark:bg-black-deep"
+    class="header-main shadow-md bg-white text-black dark:bg-black-deep"
     :class="[
       isSticky
         ? 'fixed top-0 left-0 w-full z-50 transition-all shadow-md animate-fadeInDown'
