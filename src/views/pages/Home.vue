@@ -13,7 +13,7 @@
           </h2>
           <div class="flex mb-10">
             <button
-              class="bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mr-5"
+              class="bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mr-5 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
             >
               Get Started
               <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -105,6 +105,7 @@
   </div>
 </template>
 
+<script setup lang="ts"></script>
 <style scoped>
 #landing-page {
   background-image: url("@/assets/home/bg-pill.svg");
