@@ -23,16 +23,17 @@
         <p class="text-gray-800">(124) 123-1234</p>
         <p class="text-gray-800">support@adomate.tech</p>
       </div>
-      <div v-for="(section, index) in footerlinks" :key="index">
+      <div v-for="(section, index) in footerLinks" :key="index">
         <h1 class="text-2xl font-bold mb-4">{{ section.title }}</h1>
         <div class="flex flex-col space-y-3 text-gray-700">
-          <RouterLink
-            v-for="(sublink, subindex) in section.sublinks"
-            :key="subindex"
-            :to="sublink.to"
-          >
-            {{ sublink.title }}
-          </RouterLink>
+          <span v-for="(sublink, subIndex) in section.sublinks" :key="subIndex">
+            <RouterLink v-if="sublink.to !== undefined" :to="sublink.to">
+              {{ sublink.title }}
+            </RouterLink>
+            <p v-else :href="sublink.href">
+              {{ sublink.title }}
+            </p>
+          </span>
         </div>
       </div>
     </div>
@@ -64,7 +65,7 @@
 </template>
 
 <script setup lang="ts">
-import { FooterLinks as footerlinks } from "@/links";
+import { FooterLinks as footerLinks } from "@/links";
 </script>
 
 <style scoped></style>
