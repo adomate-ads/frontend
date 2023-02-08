@@ -25,11 +25,16 @@
       </div>
       <div class="bg-white p-10">
         <h3 class="text-2xl font-semibold">Create your Adomate account</h3>
+        <div>
+          <Input />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Input from "@/components/forms/Input.vue";
+</script>
 
 <style scoped></style>
