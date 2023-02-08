@@ -47,10 +47,14 @@
           </div>
         </div>
         <div class="col-span-5 p-10">
-          <img
-            src="@/assets/home/banner.png"
-            class="rounded-3xl outline outline-2 outline-dark-purple outline-offset-8"
-          />
+          <div
+            class="outline outline-4 outline-dark-purple outline-offset-8 rounded-3xl"
+          >
+            <img
+              src="@/assets/home/banner.png"
+              class="rounded-3xl relative left-5 bottom-5"
+            />
+          </div>
         </div>
       </div>
     </div>
