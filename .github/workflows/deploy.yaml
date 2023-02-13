@@ -1,0 +1,25 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+    deploy:
+      runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/master' #Useless for now... we add build stage for PRs this will be handy.
+      steps:
+        - name: Deploying to VM
+          uses: appleboy/ssh-action@master
+          with:
+              host: ${{ secrets.HOST }}
+              username: ${{ secrets.USERNAME }}
+              key: ${{ secrets.KEY }}
+              port: ${{ secrets.PORT }}
+              script: |
+              cd ~/frontend
+              git pull
+              yarn
+              yarn build
+              yarn deploy
