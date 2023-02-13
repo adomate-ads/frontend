@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.js,.vue",
     "lint:fix": "eslint src --ext .ts,.js,.vue --fix",
-    "deploy": "rm /var/www/frontend -rf && mv dist /var/www/frontend -r"
+    "deploy": "rm /var/www/frontend -rf && mv dist /var/www/frontend"
   },
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.50.0",
