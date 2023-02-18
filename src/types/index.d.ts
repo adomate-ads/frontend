@@ -16,3 +16,10 @@ export interface Link {
   roles?: string[];
   sameWindow?: boolean;
 }
+
+export interface Plan {
+  name: string;
+  price: number;
+  features: string[];
+  description: string;
+}

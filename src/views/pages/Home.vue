@@ -1,6 +1,6 @@
 <template>
   <div id="landing-page" class="bg-extra-light-purple pt-10">
-    <div class="container mx-auto px-12 mt-20 -pb-10">
+    <div class="container mx-auto px-12 mt-20 pb-10">
       <div class="grid grid-cols-12 gap-x-20 max-h-[600px]">
         <div class="col-span-7">
           <h1
@@ -46,21 +46,13 @@
             </div>
           </div>
         </div>
-        <div class="col-span-5 pt-10">
+        <div class="hidden lg:block col-span-5 pt-10 pb-10">
           <div
             class="outline outline-4 outline-dark-purple outline-offset-8 rounded-3xl z-0"
           >
             <img
               src="@/assets/home/banner.png"
               class="rounded-3xl relative left-5 bottom-5 z-20"
-            />
-          </div>
-          <div
-            class="outline-dashed outline-4 outline-white outline-offset-8 rounded-3xl w-1/2 relative -top-60 lg:-left-32 -right-96 z-10"
-          >
-            <img
-              src="@/assets/home/balance.png"
-              class="rounded-3xl relative right-5 top-5 z-30"
             />
           </div>
         </div>
@@ -112,7 +104,7 @@
     </div>
   </div>
 
-  <div id="build-exclusively-for-you">
+  <div id="built-exclusively-for-you">
     <div class="container mx-auto px-12 my-32">
       <div class="grid grid-cols-8 gap-x-4">
         <div class="col-span-3">
@@ -184,6 +176,24 @@
     </div>
   </div>
 
+  <div id="plans">
+    <div class="container mx-auto px-20 my-32">
+      <h3 class="text-6xl font-bold text-center">
+        Choose The Best Plan For You
+      </h3>
+      <div class="mt-10 grid grid-cols-3 gap-x-12">
+        <div v-for="plan in Plans" :key="plan.price">
+          <LargePlans
+            :name="plan.name"
+            :price="plan.price"
+            :description="plan.description"
+            :features="plan.features"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="why-us">
     <div class="container mx-auto px-12 my-32 text-center">
       <h3 class="text-6xl font-bold">Why Us</h3>
@@ -217,7 +227,10 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script lang="ts" setup>
+import LargePlans from "@/components/plans/LargePlans.vue";
+import Plans from "@/plans";
+</script>
 <style scoped>
 #landing-page {
   background-image: url("@/assets/home/bg-pill.svg");
