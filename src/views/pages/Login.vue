@@ -12,7 +12,6 @@
             label=""
             placeholder="Your email *"
           />
-          {{ email }} 1
           <Input
             id="password"
             v-model="password"
