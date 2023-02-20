@@ -9,7 +9,7 @@ const routes = [
   {
     path: "/about",
     name: "About",
-    component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
+    component: () => import("@/views/pages/About.vue"),
   },
   {
     path: "/google-ads",
@@ -25,6 +25,11 @@ const routes = [
     path: "/pricing",
     name: "Pricing",
     component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("@/views/pages/Login.vue"),
   },
   {
     path: "/signup",
