@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: adomate
-          image: raajpatel229/adomate:latest
+          image: raajpatel229/adomate-frontend:latest
           ports:
             - containerPort: 80
           imagePullPolicy: Always
