@@ -21,7 +21,7 @@ jobs:
 
 
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag $(cat APP_NAME):$(cat TAG)
+        run: docker build . --file Dockerfile --tag $(cat APP_NAME)-$(cat TAG)
 
       - name: Tag the image to latest
         run: docker tag $(cat APP_NAME):$(cat TAG) $(cat APP_NAME):latest
