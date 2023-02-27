@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: adomate
+  name: adomate
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    run: adomate
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adomate
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: adomate
+  template:
+    metadata:
+      labels:
+        run: adomate
+    spec:
+      containers:
+      - image: raajpatel229/adomate:latest
+        imagePullPolicy: Always
+        name: adomate
+        ports:
+        - containerPort: 80
