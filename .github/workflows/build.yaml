@@ -42,7 +42,7 @@ jobs:
           cd $GITHUB_WORKSPACE/gitops
           cd apps
           cd frontend
-          kustomize edit set image $(cat APP_NAME):${{ github.sha }}
+          kustomize edit set image ${{ secrets.DOCKER_USER }}/${{ secrets.REPOSITORY_NAME }}:${{ github.sha }}
           cat kustomization.yaml
           kustomize build ./ > ../../kustomization/manifests.yaml
           cat ../../kustomization/manifests.yaml
