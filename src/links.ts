@@ -4,7 +4,7 @@ import type { Link } from "@/types";
 const ProfileLinks: Link[] = [
   {
     title: "Dashboard",
-    href: `https://dashboard.adomate.tech/`,
+    href: `https://dashboard.adomate.ai/`,
     sameWindow: true,
   },
   {

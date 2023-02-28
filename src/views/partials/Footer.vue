@@ -21,7 +21,7 @@
           17350 State Highway 249 STE 220. Houston, Texas 77064
         </p>
         <p class="text-gray-800">(124) 123-1234</p>
-        <p class="text-gray-800">support@adomate.tech</p>
+        <p class="text-gray-800">support@adomate.ai</p>
       </div>
       <div v-for="(section, index) in footerLinks" :key="index">
         <h1 class="text-2xl font-bold mb-4">{{ section.title }}</h1>

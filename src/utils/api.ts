@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const apiUrl = "https://api.adomate.tech/";
+const apiUrl = "https://api.adomate.ai/";
 
 export const API = axios.create({
   baseURL: apiUrl,
