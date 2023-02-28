@@ -23,4 +23,4 @@ jobs:
       - name: Docker Login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Image push
-        run: docker push $(cat APP_NAME):latest
+        run: docker push $(cat APP_NAME):$(cat TAG)
