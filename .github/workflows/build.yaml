@@ -54,4 +54,5 @@ jobs:
           echo ${{ github.sha }}
           git add ./kustomization/manifests.yaml
           git commit -m "Update manifests to ${{ github.sha }}"
-          git push origin main
+      - run: echo ${{ github }}
+      - run: git push origin main
