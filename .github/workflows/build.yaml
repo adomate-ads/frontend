@@ -35,7 +35,7 @@ jobs:
         with:
           repository: 'adomate-ads/gitops'
           path: gitops
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.G_TOKEN }}
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v2
       - name: Update manifests
