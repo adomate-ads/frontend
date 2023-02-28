@@ -35,6 +35,7 @@ jobs:
         with:
           repository: 'adomate-ads/gitops'
           path: gitops
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Kustomize
         uses: imranismail/setup-kustomize@v2
       - name: Update manifests
@@ -54,5 +55,7 @@ jobs:
           echo ${{ github.sha }}
           git add ./kustomization/manifests.yaml
           git commit -m "Update manifests to ${{ github.sha }}"
-      - run: echo ${{ github }}
-      - run: git push origin main
+      - name: Push to gitops repo
+        run: |
+          cd $GITHUB_WORKSPACE/gitops
+          git push origin main
