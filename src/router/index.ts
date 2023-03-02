@@ -48,7 +48,10 @@ const buildRouter = (): Router => {
 
   return createRouter({
     scrollBehavior() {
-      return { top: 0 };
+      return {
+        top: 0,
+        behavior: "smooth",
+      };
     },
     history: createWebHistory(),
     routes: r,
