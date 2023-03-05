@@ -1,18 +1,22 @@
-# Vue 3 + TypeScript + Vite
+## Contributing
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Prerequisites:
+- Most recent LTS of Node.js (v18), with the corresponding version of yarn.
+- A basic understanding of Git (branches, merge requests).
 
-## Recommended IDE Setup
+If you wish to contribute, please do the following:
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+1. Clone down the repository to your local machine.
+2. Run `yarn`
+3. Run `yarn dev`
 
-## Type Support For `.vue` Imports in TS
+This will compile  and start a hot-reloading live server with Vite. Visit `http://localhost:5173` to view the app.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Contributing Guidelines and Style
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+In order to maintain consistent code, please adhere to the following guidelines:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+- The `master` branch is protected, therefore you should always be working in a branch. Please name the branch `feat/feature_name` where `feature_name` is a brief description of the feature or `bug/bug_name` where `bug_name` is a brief description of the bug (`feat/contact_form` or `bug/missing_image`). 
+- When you have completed your updates, push them to your branch, and then open a merge request to `master` in GitHub.
+- Please follow the style guide for how to format your code.
+- We recommend you use an IDE with at least the ESLint plugin installed and configured to auto-fix on save. ESLint can take care of a lot of little mistakes automatically.
