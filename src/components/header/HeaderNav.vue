@@ -12,7 +12,7 @@
       <HeaderNavItem
         v-if="!userStore.isLoggedIn"
         title="Login"
-        :href="`/login`"
+        :to="{ name: 'Login' }"
       />
       <HeaderNavItem
         v-else
@@ -36,5 +36,4 @@ const getName = (): string => {
 };
 </script>
 
-<script setup></script>
 <style scoped></style>
