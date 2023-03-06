@@ -229,14 +229,16 @@
   <!--  Call to Action  -->
   <div id="try-it-out">
     <div class="container mx-auto px-12 my-32">
-      <div class="bg-extra-light-purple rounded-lg w-2/3 mx-auto py-10 px-14">
-        <div class="flex flex-row">
+      <div
+        class="bg-extra-light-purple rounded-lg w-full md:w-2/3 mx-auto py-10 px-14"
+      >
+        <div class="flex flex-col md:flex-row">
           <div>
-            <h3 class="text-4xl font-bold">Try it out</h3>
+            <h3 class="text-4xl font-bold py-3">Try it out</h3>
             <p class="text-gray-500">
-              By Clicking the button you agree to our TOS.
+              By clicking the button you agree to our TOS.
             </p>
-            <form class="mt-3">
+            <form class="mt-3 py-3">
               <label
                 for="url"
                 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
