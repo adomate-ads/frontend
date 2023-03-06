@@ -19,7 +19,8 @@ export interface Link {
 
 export interface Plan {
   name: string;
-  price: number;
+  monthly_price: number;
+  annual_price: number;
   features: string[];
   description: string;
 }
