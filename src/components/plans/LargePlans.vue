@@ -7,7 +7,7 @@
         }}
       </h4>
       <span class="mt-4 text-gray-600">
-        {{ props.monthly ? "/Month" : "/Year" }}
+        {{ props.monthly ? "/Year" : "/Month" }}
       </span>
     </div>
     <h3 class="text-2xl font-bold mt-4">{{ props.plan.name }}</h3>
