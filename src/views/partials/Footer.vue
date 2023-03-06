@@ -30,9 +30,9 @@
             <RouterLink v-if="sublink.to !== undefined" :to="sublink.to">
               {{ sublink.title }}
             </RouterLink>
-            <p v-else :href="sublink.href">
+            <a v-else :href="sublink.href" target="_blank">
               {{ sublink.title }}
-            </p>
+            </a>
           </span>
         </div>
       </div>

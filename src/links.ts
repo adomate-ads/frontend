@@ -106,8 +106,8 @@ const FooterLinks: Link[] = [
         title: "FAQs",
       },
       {
-        to: { name: "NotFound" },
-        title: "Dashboard Help",
+        href: "https://status.adomate.ai",
+        title: "Status Page",
       },
       {
         to: { name: "NotFound" },
