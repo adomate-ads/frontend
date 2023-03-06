@@ -277,6 +277,50 @@
       </div>
     </div>
   </div>
+
+  <!--  Call to Action  -->
+  <div id="try-it-out">
+    <div class="container mx-auto px-12 my-32">
+      <div class="bg-extra-light-purple rounded-lg w-2/3 mx-auto py-10 px-14">
+        <div class="flex flex-row">
+          <div>
+            <h3 class="text-4xl font-bold">Try it out</h3>
+            <p class="text-gray-500">
+              By Clicking the button you agree to our TOS.
+            </p>
+            <form class="mt-3">
+              <label
+                for="url"
+                class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                >URL</label
+              >
+              <div class="relative">
+                <div
+                  class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+                >
+                  <i class="fa-solid fa-tv"></i>
+                </div>
+                <input
+                  id="url"
+                  type="url"
+                  class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-light-purple focus:outline-2 focus:outline-offset-0 focus:outline-light-purple outline-none"
+                  placeholder="example.com"
+                  required
+                />
+                <button
+                  type="submit"
+                  class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple hover:bg-extra-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div>Image will go here of how a search ad might appear</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
