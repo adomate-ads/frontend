@@ -3,7 +3,8 @@ import type { Plan } from "@/types";
 const Plans: Plan[] = [
   {
     name: "Starter",
-    price: 20,
+    monthly_price: 20,
+    annual_price: 220,
     features: [
       "1 Target Location",
       "$500/mo Ad Spend Limit",
@@ -13,7 +14,8 @@ const Plans: Plan[] = [
   },
   {
     name: "Business",
-    price: 50,
+    monthly_price: 50,
+    annual_price: 550,
     features: [
       "3 Target Locations",
       "$2,500/mo Ad Spend Limit",
@@ -24,7 +26,8 @@ const Plans: Plan[] = [
   },
   {
     name: "Enterprise",
-    price: 250,
+    monthly_price: 250,
+    annual_price: 2750,
     features: [
       "National Ad Targeting",
       "$10,000/mo Ad Spend Limit",

@@ -220,18 +220,27 @@
       <h3 class="text-4xl md:text-6xl font-bold text-center">
         Choose The Best Plan For You
       </h3>
+      <div>
+        <div class="flex justify-center mt-10">
+          <div class="flex items-center">
+            <div class="mr-2 text-gray-700">Billed Monthly</div>
+            <label class="relative inline-flex items-center cursor-pointer">
+              <input v-model="monthly" type="checkbox" class="sr-only peer" />
+              <span
+                class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-light-purple"
+              ></span>
+            </label>
+            <div class="ml-2 text-gray-700">Billed Annually</div>
+          </div>
+        </div>
+      </div>
       <div class="mt-10 flex flex-wrap justify-center">
         <div
           v-for="plan in Plans"
           :key="plan.price"
           class="w-full sm:w-auto py-5 lg:px-5 2xl:px-10 transition ease-in-out delay-100 hover:scale-105 duration-200"
         >
-          <LargePlans
-            :name="plan.name"
-            :price="plan.price"
-            :description="plan.description"
-            :features="plan.features"
-          />
+          <LargePlans :plan="plan" :monthly="monthly" />
         </div>
       </div>
     </div>
@@ -328,6 +337,9 @@
 <script lang="ts" setup>
 import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/plans";
+import { ref } from "vue";
+
+const monthly = ref(true);
 </script>
 <style scoped>
 #landing-page {
