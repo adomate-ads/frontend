@@ -57,7 +57,7 @@
         </div>
         <div class="w-full md:w-5/12 pt-10 pb-10 px-5">
           <div
-            class="outline outline-4 outline-dark-purple outline-offset-8 rounded-3xl z-0"
+            class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
           >
             <img
               src="@/assets/home/banner.png"
