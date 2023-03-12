@@ -4,7 +4,7 @@
       id="cta"
       class="flex justify-between mb-6 pb-4 items-center border-b-2"
     >
-      <img src="@/assets/adomate.png" class="h-[70px]" alt="Footer-Logo" />
+      <img src="@/assets/adomate.svg" class="h-[70px] py-2" alt="Footer-Logo" />
       <div class="flex items-center">
         <h3 class="text-xl font-semibold">Ready to get started?</h3>
         <button
