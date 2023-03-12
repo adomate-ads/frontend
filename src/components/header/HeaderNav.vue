@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation-menu py-7">
+  <nav class="navigation-menu py-5">
     <ul class="flex place-items-center">
       <HeaderNavItem
         v-for="(link, index) in links"
