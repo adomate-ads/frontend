@@ -52,15 +52,15 @@
 
 <script setup lang="ts">
 import links, { ProfileLinks as profilelinks } from "@/links";
-import apiUrl from "@/utils/api";
 import useUserStore from "@/stores/user";
+
 import MobileMenuItem from "./MobileMenuItem.vue";
 
 const userStore = useUserStore();
 const getName = (): string => {
   return `${userStore.user?.first_name} ${userStore.user?.last_name}`;
 };
-// eslint-disable-next-line no-restricted-globals
+// eslint-disable-next-line no-restricted-globals, @typescript-eslint/no-unused-vars
 const loc = location.href;
 defineEmits(["toggle"]);
 </script>
