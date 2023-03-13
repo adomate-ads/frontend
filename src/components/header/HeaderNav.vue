@@ -19,12 +19,12 @@
         Sign in
         <span class="arrow"></span>
       </button>
-      <button
+      <HeaderNavItem
         v-else
         :title="getName()"
         :sublinks="profilelinks"
         to="#"
-      ></button>
+      ></HeaderNavItem>
     </ul>
   </nav>
 </template>
