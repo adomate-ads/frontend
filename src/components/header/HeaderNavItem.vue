@@ -6,7 +6,7 @@
       :auth="props.auth"
       :roles="props.roles"
       :hide-unauthed="props.auth === true"
-      class="block text-[16px] font-semibold group-hover:text-colorado-yellow py-7 text-black group-hover:cursor-pointer"
+      class="block text-[16px] font-semibold group-hover:text-colorado-yellow py-2 text-black group-hover:cursor-pointer"
       @click="checkClick()"
     >
       {{ props.title }}

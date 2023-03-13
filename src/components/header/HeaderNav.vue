@@ -1,25 +1,30 @@
 <template>
-  <nav class="navigation-menu">
-    <ul class="flex">
+  <nav class="navigation-menu py-5">
+    <ul class="flex place-items-center">
       <HeaderNavItem
         v-for="(link, index) in links"
         :key="index"
+        class="hover-underline-animation"
         :title="link.title"
         :to="link.to"
         :sublinks="link.sublinks"
       >
       </HeaderNavItem>
-      <HeaderNavItem
+      <button
         v-if="!userStore.isLoggedIn"
         title="Login"
         :to="{ name: 'Login' }"
-      />
-      <HeaderNavItem
+        class="arrow-button border-2 border-[#637EFE]"
+      >
+        Sign in
+        <span class="arrow"></span>
+      </button>
+      <button
         v-else
         :title="getName()"
         :sublinks="profilelinks"
         to="#"
-      />
+      ></button>
     </ul>
   </nav>
 </template>

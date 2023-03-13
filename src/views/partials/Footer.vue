@@ -1,33 +1,67 @@
 <template>
-  <div class="container mx-auto px-12 mt-10">
+  <div class="container mx-auto px-4 sm:px-12 mt-10">
     <div
       id="cta"
-      class="flex justify-between mb-6 pb-4 items-center border-b-2"
+      class="flex justify-between mb-6 pb-4 place-items-center border-b-2"
     >
-      <img src="@/assets/adomate.svg" class="h-[70px] py-2" alt="Footer-Logo" />
-      <div class="flex items-center">
-        <h3 class="text-xl font-semibold">Ready to get started?</h3>
+      <img
+        src="/src/assets/adomate.png"
+        class="h-[80px] md:h-[70px] py-2"
+        alt="Footer-Logo"
+      />
+      <div class="flex items-baseline flex-col md:flex-row md:items-center">
+        <h3 class="text-l font-semibold pb-3 align-middle md:pb-0">
+          Ready to get started?
+        </h3>
         <button
-          class="bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
+          class="bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
         >
           Create an Account
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-5 space-x-4 mb-6 pb-4 border-b-2">
-      <div>
+    <div class="flex items-start flex-col py-5 md:hidden">
+      <h1 class="text-2xl font-bold mb-4">Contact</h1>
+      <a
+        class="text-gray-800 mb-2 hover:underline underline-offset-2"
+        href="http://maps.google.com/?q=17350 State Highway 249 STE 220. Houston, Texas 77064"
+      >
+        17350 State Highway 249 STE 220. Houston, Texas 77064
+      </a>
+      <p class="text-gray-800 mb-2">(124) 456-7890</p>
+      <a
+        class="text-gray-800 mb-4 hover:underline underline-offset-2"
+        href="mailto:support@adomate.ai"
+        >support@adomate.ai</a
+      >
+    </div>
+    <div
+      class="grid grid-cols-2 justify-evenly md:flex md:flex-row mb-6 pb-4 border-b-2 md:place-items-stretch"
+    >
+      <div class="hidden md:block">
         <h1 class="text-2xl font-bold mb-4">Contact</h1>
-        <p class="text-gray-800 mb-4">
+        <a
+          class="text-gray-800 mb-4 hover:underline underline-offset-2 break-all"
+          href="http://maps.google.com/?q=17350 State Highway 249 STE 220. Houston, Texas 77064"
+        >
           17350 State Highway 249 STE 220. Houston, Texas 77064
-        </p>
+        </a>
         <p class="text-gray-800">(124) 456-7890</p>
-        <p class="text-gray-800">support@adomate.ai</p>
+        <a
+          class="text-gray-800 hover:underline underline-offset-2"
+          href="mailto:support@adomate.ai"
+          >support@adomate.ai</a
+        >
       </div>
       <div v-for="(section, index) in footerLinks" :key="index">
         <h1 class="text-2xl font-bold mb-4">{{ section.title }}</h1>
-        <div class="flex flex-col space-y-3 text-gray-700">
+        <div class="flex flex-col space-y-3 text-gray-700 my-5">
           <span v-for="(sublink, subIndex) in section.sublinks" :key="subIndex">
-            <RouterLink v-if="sublink.to !== undefined" :to="sublink.to">
+            <RouterLink
+              v-if="sublink.to !== undefined"
+              class="hover-underline-animation pb-1"
+              :to="sublink.to"
+            >
               {{ sublink.title }}
             </RouterLink>
             <a v-else :href="sublink.href" target="_blank">
@@ -37,18 +71,26 @@
         </div>
       </div>
     </div>
-    <div class="mt-2 text-gray-500 flex justify-between mb-10">
-      <div class="flex flex-row space-x-8">
-        <p class="font-semibold">
-          © Adomate LLC - {{ new Date().getFullYear() }}
+    <div class="mt-2 text-gray-500 flex items-center justify-between mb-10">
+      <div class="flex flex-row space-x-4">
+        <p class="font-semibold inline-block align-middle px-2">
+          ©
+          <a
+            class="hover:underline underline-offset-2"
+            href="https://adomate.ai/"
+            >Adomate LLC</a
+          >
+          - {{ new Date().getFullYear() }}
         </p>
-        <p>Privacy Policy</p>
-        <p>Cookies</p>
-        <p>Terms of Service</p>
+        <p class="text-sm inline-block align-middle">Privacy Policy</p>
+        <p class="text-sm inline-block align-middle">Cookies</p>
+        <p class="text-sm inline-block align-middle">Terms of Service</p>
       </div>
-      <div class="flex flex-row space-x-2">
+      <div class="flex items-center flex-row gap-x-4 py-4">
         <div class="bg-dark-purple rounded-full px-2 py-1">
-          <i class="fa-brands fa-instagram text-white"></i>
+          <a href="https://instagram.com/adomate.ai">
+            <i class="fa-brands fa-instagram text-white"></i>
+          </a>
         </div>
         <div class="bg-dark-purple rounded-full px-2 py-1">
           <i class="fa-brands fa-facebook text-white"></i>
