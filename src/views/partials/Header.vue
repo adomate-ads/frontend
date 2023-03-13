@@ -15,7 +15,11 @@
         <div class="grid grid-cols-4 items-center justify-between">
           <div class="col-span-3 lg:col-span-1 logo">
             <router-link to="/">
-              <img src="/src/assets/adomate.png" class="h-[60px]" alt="logo" />
+              <img
+                src="/src/assets/adomate.svg"
+                class="h-[60px] py-4"
+                alt="logo"
+              />
             </router-link>
           </div>
           <div class="col-span-2 lg:col-span-3 hidden lg:block ml-auto">

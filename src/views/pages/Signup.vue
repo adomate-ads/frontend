@@ -2,7 +2,7 @@
   <div class="container mx-auto lg:w-1/2 my-32 bg-slate-50">
     <div class="grid grid-cols-2">
       <div>
-        <img src="@/assets/adomate.png" alt="Adomate Logo" class="h-10" />
+        <img src="@/assets/adomate.svg" alt="Adomate Logo" class="h-10" />
         <ul class="list-disc list-inside">
           <li>
             <span class="font-semibold text-lg">Get Started Quickly</span>
