@@ -38,13 +38,14 @@
     <div
       class="grid grid-cols-2 justify-evenly md:flex md:flex-row mb-6 pb-4 border-b-2 md:place-items-stretch"
     >
-      <div class="hidden md:block">
+      <div class="hidden md:block max-w-[300px]">
         <h1 class="text-2xl font-bold mb-4">Contact</h1>
         <a
           class="text-gray-800 mb-4 hover:underline underline-offset-2 break-all"
           href="http://maps.google.com/?q=17350 State Highway 249 STE 220. Houston, Texas 77064"
         >
-          17350 State Highway 249 STE 220. Houston, Texas 77064
+          17350 State Highway 249 STE 220.<br />
+          Houston, Texas 77064
         </a>
         <p class="text-gray-800">(124) 456-7890</p>
         <a
