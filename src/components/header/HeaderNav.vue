@@ -14,7 +14,7 @@
         v-if="!userStore.isLoggedIn"
         title="Login"
         :to="{ name: 'Login' }"
-        class="arrow-button border-2 border-[#637EFE]"
+        class="arrow-button border-2 border-[#637EFE] shadow"
       >
         Sign in
         <span class="arrow"></span>
