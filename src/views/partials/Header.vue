@@ -37,17 +37,17 @@
       </div>
     </div>
 
-    <!--    <OffcanvasMenu-->
-    <!--      :class="{ 'show-mobile-menu': navOpen }"-->
-    <!--      @toggle="toggleNav()"-->
-    <!--    />-->
+    <MobileMenu
+      :class="{ 'show-mobile-menu': navOpen }"
+      @toggle="toggleNav()"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import HeaderNav from "@/components/header/HeaderNav.vue";
-// import OffcanvasMenu from "@/components/header/OffcanvasMenu.vue";
+import MobileMenu from "@/components/header/MobileMenu.vue";
 
 const isSticky = ref(false);
 const navOpen = ref(false);
