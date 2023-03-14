@@ -11,12 +11,30 @@
           >
             Automated Ad Campaigns
           </h1>
-          <h2 class="text-lg md:text-2xl text-gray-700 mb-4 md:mb-10">
-            Built on fundamentals, fueled by data and driven by machines.
+          <div class="md:flex flex-row space-x-2 justify-start hidden">
+            <!-- desktop animated header -->
+            <h2 class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in">
+              Built on fundamentals,
+            </h2>
+            <h2
+              class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed"
+            >
+              fueled by data,
+            </h2>
+            <h2
+              class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed2"
+            >
+              and driven by machines.
+            </h2>
+          </div>
+          <h2
+            class="text-lg flex justify-center text-center md:hidden text-gray-700 mb-4 md:mb-10"
+          >
+            Built on fundamentals, fueled by data, and driven by machines
           </h2>
           <div class="flex flex-col md:flex-row mb-4 md:mb-10">
             <button
-              class="bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+              class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
             >
               Get Started
               <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -29,7 +47,7 @@
           <div class="hidden md:flex flex-col md:flex-row">
             <div class="flex items-center mr-10">
               <i
-                class="fa-solid fa-money-bill text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
+                class="shadow fa-solid fa-money-bill text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
               ></i>
               <div>
                 <h4
@@ -42,7 +60,7 @@
             </div>
             <div class="flex items-center">
               <i
-                class="fa-solid fa-building text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
+                class="shadow fa-solid fa-building text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
               ></i>
               <div>
                 <h4
@@ -61,7 +79,7 @@
           >
             <img
               src="@/assets/home/banner.png"
-              class="rounded-3xl relative left-5 bottom-5 z-20"
+              class="rounded-3xl relative left-5 bottom-5 z-20 drop-shadow-xl"
             />
           </div>
         </div>

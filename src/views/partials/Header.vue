@@ -17,7 +17,7 @@
             <router-link to="/">
               <img
                 src="/src/assets/adomate.svg"
-                class="h-[60px] py-4"
+                class="h-[60px] py-4 px-4"
                 alt="logo"
               />
             </router-link>

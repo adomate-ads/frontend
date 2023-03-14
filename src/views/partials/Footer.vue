@@ -5,8 +5,8 @@
       class="flex justify-between mb-6 pb-4 place-items-center border-b-2"
     >
       <img
-        src="/src/assets/adomate.png"
-        class="h-[80px] md:h-[70px] py-2"
+        src="src/assets/adomate.svg"
+        class="h-[40px] md:h-[50px] py-2"
         alt="Footer-Logo"
       />
       <div class="flex items-baseline flex-col md:flex-row md:items-center">
@@ -59,7 +59,7 @@
           <span v-for="(sublink, subIndex) in section.sublinks" :key="subIndex">
             <RouterLink
               v-if="sublink.to !== undefined"
-              class="hover-underline-animation pb-1"
+              class="pb-1"
               :to="sublink.to"
             >
               {{ sublink.title }}
@@ -71,9 +71,9 @@
         </div>
       </div>
     </div>
-    <div class="mt-2 text-gray-500 flex items-center justify-between mb-10">
-      <div class="flex flex-row space-x-4">
-        <p class="font-semibold inline-block align-middle px-2">
+    <div class="mt-2 text-gray-500 md:flex items-center justify-between mb-10">
+      <div class="flex flex-row items-center space-x-4">
+        <p class="font-semibold text-sm md:text-l px-2">
           ©
           <a
             class="hover:underline underline-offset-2"
@@ -82,11 +82,11 @@
           >
           - {{ new Date().getFullYear() }}
         </p>
-        <p class="text-sm inline-block align-middle">Privacy Policy</p>
-        <p class="text-sm inline-block align-middle">Cookies</p>
-        <p class="text-sm inline-block align-middle">Terms of Service</p>
+        <p class="text-sm">Privacy Policy</p>
+        <p class="text-sm">Cookies</p>
+        <p class="text-sm">Terms of Service</p>
       </div>
-      <div class="flex items-center flex-row gap-x-4 py-4">
+      <div class="flex items-center place-content-start flex-row gap-x-4 py-4">
         <div class="bg-dark-purple rounded-full px-2 py-1">
           <a href="https://instagram.com/adomate.ai">
             <i class="fa-brands fa-instagram text-white"></i>
