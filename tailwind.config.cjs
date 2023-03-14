@@ -11,6 +11,7 @@ module.exports = {
         'dark-purple': '#657FFF',
         'light-purple': '#a3b2ff',
         'extra-light-purple': '#d8dfff',
+        'adomate-purple': '#637EFE',
       },
     },
     fontFamily: {

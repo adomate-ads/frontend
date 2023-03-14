@@ -14,7 +14,7 @@
           Ready to get started?
         </h3>
         <button
-          class="bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
         >
           Create an Account
         </button>
@@ -88,18 +88,22 @@
         <p class="text-sm">Terms of Service</p>
       </div>
       <div class="flex items-center place-content-start flex-row gap-x-4 py-4">
-        <div class="bg-dark-purple rounded-full px-2 py-1">
+        <div class="shadow bg-dark-purple rounded-full px-2 py-1">
           <a href="https://instagram.com/adomate.ai">
             <i class="fa-brands fa-instagram text-white"></i>
           </a>
         </div>
-        <div class="bg-dark-purple rounded-full px-2 py-1">
-          <i class="fa-brands fa-facebook text-white"></i>
+        <div class="shadow bg-dark-purple rounded-full px-2 py-1">
+          <a href="#">
+            <i class="fa-brands fa-youtube text-white"></i>
+          </a>
         </div>
-        <div class="bg-dark-purple rounded-full px-2 py-1">
-          <i class="fa-brands fa-twitter text-white"></i>
+        <div class="shadow bg-dark-purple rounded-full px-2 py-1">
+          <a href="#">
+            <i class="fa-brands fa-twitter text-white"></i>
+          </a>
         </div>
-        <div class="bg-dark-purple rounded-full px-2 py-1">
+        <div class="shadow bg-dark-purple rounded-full px-2 py-1">
           <i class="fa-brands fa-linkedin text-white"></i>
         </div>
       </div>
