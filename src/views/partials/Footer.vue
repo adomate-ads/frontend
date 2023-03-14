@@ -5,7 +5,7 @@
       class="flex justify-between mb-6 pb-4 place-items-center border-b-2"
     >
       <img
-        src="src/assets/adomate.svg"
+        src="@/assets/adomate.svg"
         class="h-[40px] md:h-[50px] py-2"
         alt="Footer-Logo"
       />
