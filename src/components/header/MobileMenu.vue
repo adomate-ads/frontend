@@ -7,16 +7,16 @@
       @click="$emit('toggle')"
     ></div>
     <div
-      class="mobile-menu-inner relative w-[400px] max-w-[80%] h-full text-left bg-white dark:bg-black-deep dark:text-white -translate-x-full transition-all"
+      class="mobile-menu-inner relative w-[400px] max-w-[80%] h-full text-left bg-white dark:bg-black-deep dark:text-white -translate-x-full transition-all shadow-lg"
     >
       <button
         aria-label="Settings"
-        class="absolute top-0 left-full w-16 h-16 text-4xl text-light-purple hover:text-dark-purple bg-white group"
+        class="absolute top-0 right-0 w-16 h-16 text-2xl text-black"
         @click="$emit('toggle')"
       >
-        <i class="fa-solid fa-x"></i>
+        <i class="fa-sharp fa-solid fa-xmark"></i>
       </button>
-      <div class="h-full overflow-y-auto">
+      <div class="h-full overflow-y-auto py-10">
         <div class="px-5 py-8">
           <div class="menu-navigation">
             <ul class="mobile-menu">
@@ -31,7 +31,7 @@
                 v-if="!userStore.isLoggedIn"
                 title="Login"
                 :to="{ name: 'Login' }"
-                class="arrow-button border-2 border-[#637EFE]"
+                class="shadow mt-5 arrow-button border-2 border-[#637EFE] bg-white hover:bg-white hover:text-adomate-purple font-bold rounded-md py-2 px-4 transition-all duration-300 ease-in-out"
               >
                 Sign in
                 <span class="arrow"></span>
