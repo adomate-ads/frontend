@@ -14,7 +14,7 @@
         class="absolute top-0 right-0 w-16 h-16 text-2xl text-black"
         @click="$emit('toggle')"
       >
-        <i class="fa-sharp fa-solid fa-xmark"></i>
+        <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="h-full overflow-y-auto py-10">
         <div class="px-5 py-8">
