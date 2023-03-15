@@ -78,6 +78,7 @@
             class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
           >
             <img
+              rel="prefetch"
               src="@/assets/home/banner.png"
               class="rounded-3xl relative left-5 bottom-5 z-20 drop-shadow-xl"
             />
