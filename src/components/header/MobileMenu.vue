@@ -31,7 +31,7 @@
                 v-if="!userStore.isLoggedIn"
                 title="Login"
                 :to="{ name: 'Login' }"
-                class="shadow mt-5 arrow-button border-2 border-[#637EFE] bg-white hover:bg-white hover:text-adomate-purple font-bold rounded-md py-2 px-4 transition-all duration-300 ease-in-out"
+                class="shadow mt-5 arrow-button border-2 border-[#637EFE] bg-white hover:bg-white hover:text-dark-purple font-bold rounded-md py-2 px-4 transition-all duration-300 ease-in-out"
               >
                 Sign in
                 <span class="arrow"></span>

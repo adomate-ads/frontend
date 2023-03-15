@@ -1,7 +1,7 @@
 <template>
   <!-- Landing Section -->
   <div id="landing-page" class="bg-extra-light-purple pt-1">
-    <div class="container mx-auto px-4 md:px-12 mt-10 md:mt-20 pb-10">
+    <div class="container mx-auto px-4 md:px-12 mt-10 md:mt-10 pb-10">
       <div
         class="flex flex-col md:flex-row md:items-center md:justify-between h-auto md:h-[600px]"
       >
@@ -261,47 +261,6 @@
           class="w-full sm:w-auto py-5 lg:px-5 2xl:px-10 transition ease-in-out delay-100 hover:scale-105 duration-200"
         >
           <LargePlans :plan="plan" :monthly="monthly" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--Why Us Section-->
-  <div id="why-us">
-    <div class="container mx-auto px-5 my-32 text-center snap-proximity snap-x">
-      <h3 class="text-4xl md:text-6xl font-bold">Why Us</h3>
-      <div
-        class="flex flex-col justify-center mt-6 md:flex-row md:items-center"
-      >
-        <div
-          class="bg-emerald-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-users h-20 text-emerald-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Staff that Cares</h4>
-          <p>
-            We are a small team of passionate individuals who care about your
-            business and want to see you succeed.
-          </p>
-        </div>
-        <div
-          class="bg-cyan-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-map h-20 text-cyan-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Local Optimization</h4>
-          <p>
-            Find undercompetitive keywords in your area and win something idk
-            blah blah blah
-          </p>
-        </div>
-        <div
-          class="bg-orange-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-users h-20 text-orange-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Staff that Cares</h4>
-          <p>
-            We are a small team of passionate individuals who care about your
-            business and want to see you succeed.
-          </p>
         </div>
       </div>
     </div>
