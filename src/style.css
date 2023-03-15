@@ -96,3 +96,8 @@
 .fade-in.delayed2 {
   animation-delay: 2.0s;
 }
+
+.particle {
+	position: absolute;
+ 	border-radius: 50%;
+}

@@ -1,7 +1,7 @@
-<template class="scroll-smooth">
+<template>
   <!-- Landing Section -->
   <div id="landing-page" class="bg-extra-light-purple pt-1">
-    <div class="container mx-auto px-4 md:px-12 mt-10 md:mt-20 pb-10">
+    <div class="container mx-auto px-4 md:px-12 mt-10 md:mt-10 pb-10">
       <div
         class="flex flex-col md:flex-row md:items-center md:justify-between h-auto md:h-[600px]"
       >
@@ -128,7 +128,7 @@
         </div>
         <div class="m-5 border-b-2">
           <i
-            class="fa-solid fa-database text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
+            class="shadow fa-solid fa-database text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
           ></i>
           <h2 class="text-2xl font-bold mb-2">1. Data Parser</h2>
           <p class="text-gray-700 mb-10 text-justify">
@@ -138,7 +138,7 @@
         </div>
         <div class="m-5 border-b-2">
           <i
-            class="fa-solid fa-chart-line text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
+            class="shadow fa-solid fa-chart-line text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
           ></i>
           <h2 class="text-2xl font-bold mb-2">2. Optimized Bidding</h2>
           <p class="text-gray-700 mb-10 text-justify">
@@ -148,7 +148,7 @@
         </div>
         <div class="m-5 border-b-2">
           <i
-            class="fa-solid fa-chart-simple text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
+            class="shadow fa-solid fa-chart-simple text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
           ></i>
           <h2 class="text-2xl font-bold mb-2">3. Analytics</h2>
           <p class="text-gray-700 mb-10 text-justify">
@@ -165,7 +165,9 @@
       <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
         <div class="col-span-3">
           <div class="flex justify-start md:justify-start">
-            <div class="bg-extra-light-purple text-dark-purple rounded-full">
+            <div
+              class="shadow bg-extra-light-purple text-dark-purple rounded-full"
+            >
               <p class="py-3 px-6">Build Exclusively For You</p>
             </div>
           </div>
@@ -264,52 +266,11 @@
     </div>
   </div>
 
-  <!--Why Us Section-->
-  <div id="why-us">
-    <div class="container mx-auto px-5 my-32 text-center snap-proximity snap-x">
-      <h3 class="text-4xl md:text-6xl font-bold">Why Us</h3>
-      <div
-        class="flex flex-col justify-center mt-6 md:flex-row md:items-center"
-      >
-        <div
-          class="bg-emerald-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-users h-20 text-emerald-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Staff that Cares</h4>
-          <p>
-            We are a small team of passionate individuals who care about your
-            business and want to see you succeed.
-          </p>
-        </div>
-        <div
-          class="bg-cyan-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-map h-20 text-cyan-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Local Optimization</h4>
-          <p>
-            Find undercompetitive keywords in your area and win something idk
-            blah blah blah
-          </p>
-        </div>
-        <div
-          class="bg-orange-100 rounded-xl px-10 py-10 mx-2 my-2 md:px-5 md:my-5 md:w-1/3"
-        >
-          <i class="fa-solid fa-users h-20 text-orange-400"></i>
-          <h4 class="text-3xl font-semibold mt-2 mb-2">Staff that Cares</h4>
-          <p>
-            We are a small team of passionate individuals who care about your
-            business and want to see you succeed.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!--  Call to Action  -->
   <div id="try-it-out">
     <div class="container mx-auto px-12 my-32">
       <div
-        class="bg-extra-light-purple rounded-lg w-full md:w-2/3 mx-auto py-10 px-14"
+        class="shadow bg-extra-light-purple rounded-lg w-full md:w-2/3 mx-auto py-10 px-14"
       >
         <div class="flex flex-col md:flex-row">
           <div>
@@ -338,7 +299,7 @@
                 />
                 <button
                   type="submit"
-                  class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple hover:bg-extra-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                  class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
                 >
                   <i class="fa-solid fa-arrow-right"></i>
                 </button>
