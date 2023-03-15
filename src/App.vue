@@ -1,14 +1,30 @@
 <template>
-  <Header />
-  <main>
-    <router-view />
-  </main>
-  <Footer />
+  <div v-if="!loading">
+    <Header />
+    <main>
+      <router-view />
+    </main>
+    <Footer />
+  </div>
+  <div v-else>
+    <div class="flex items-center justify-center h-screen">
+      <Loader />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import Footer from "@/views/partials/Footer.vue";
 import Header from "@/views/partials/Header.vue";
+import Loader from "@/components/Loader.vue";
+import { ref } from "vue";
+
+const loading = ref(true);
+
+const interval = setInterval(function () {
+  loading.value = false;
+  clearInterval(interval);
+}, 3000);
 </script>
 
 <style scoped></style>
