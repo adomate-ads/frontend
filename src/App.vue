@@ -21,6 +21,7 @@ import { ref } from "vue";
 
 const loading = ref(true);
 
+// eslint-disable-next-line func-names
 const interval = setInterval(function () {
   loading.value = false;
   clearInterval(interval);
