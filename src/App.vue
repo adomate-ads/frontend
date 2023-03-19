@@ -24,7 +24,7 @@ const loading = ref(true);
 const interval = setInterval(function () {
   loading.value = false;
   clearInterval(interval);
-}, 3000);
+}, 1500);
 </script>
 
 <style scoped></style>
