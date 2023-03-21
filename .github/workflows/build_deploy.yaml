@@ -52,7 +52,7 @@ jobs:
           git config --global user.name "Raajheer1"
           echo ${{ github.sha }}
           git add .
-          git commit -m "Update manifests to ${{ github.sha }}"
+          git commit -m "Update frontend manifests to ${{ github.sha }}"
       - name: Push to gitops repo
         run: |
           cd $GITHUB_WORKSPACE/gitops
