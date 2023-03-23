@@ -24,3 +24,10 @@ export interface Plan {
   features: string[];
   description: string;
 }
+
+export interface SignupSteps {
+  step: number;
+  title: string;
+  in_progress: boolean;
+  completed: boolean;
+}
