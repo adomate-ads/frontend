@@ -24,11 +24,9 @@
               businesses.
             </p>
             <div class="flex items-center space-x-4">
-              <button
-                class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
-              >
+              <button class="arrow-button border-2 border-[#637EFE] shadow">
                 Get Started
-                <i class="fa-solid fa-arrow-right ml-2"></i>
+                <span class="arrow"></span>
               </button>
               <a
                 href="#"
@@ -51,11 +49,11 @@
     <section class="py-10">
       <div class="container max-w-7xl mx-auto px-5 sm:px-10">
         <div
-          class="border-b border-gray-200 pb-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-between"
+          class="border-b border-gray-200 pb-6 grid place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-between"
         >
           <div>
             <h3
-              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold"
+              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold text-center lg:text-start"
             >
               +2000
             </h3>
@@ -65,7 +63,7 @@
           </div>
           <div>
             <h3
-              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold"
+              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold text-center lg:text-start"
             >
               $10,000
             </h3>
@@ -75,7 +73,7 @@
           </div>
           <div>
             <h3
-              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold"
+              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold text-center lg:text-start"
             >
               100k
             </h3>
@@ -85,7 +83,7 @@
           </div>
           <div>
             <h3
-              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold"
+              class="text-dark-purple text-2xl lg:text-3xl xl:text-5xl font-bold text-center lg:text-start"
             >
               100M
             </h3>

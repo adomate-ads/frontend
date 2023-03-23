@@ -7,11 +7,11 @@
       >
         <div class="md:w-7/12 md:pr-20">
           <h1
-            class="text-5xl pb-5 md:text-6xl text-center font-bold tracking-wide mb-4 md:mb-10 subpixel-antialiased md:text-left"
+            class="text-4xl pb-5 lg:text-6xl text-center font-bold tracking-wide mb-4 subpixel-antialiased md:text-left"
           >
             Automated Ad Campaigns
           </h1>
-          <div class="md:flex flex-row space-x-2 justify-start hidden">
+          <div class="xl:flex flex-row space-x-2 justify-start hidden">
             <!-- desktop animated header -->
             <h2 class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in">
               Built on fundamentals,
@@ -28,7 +28,7 @@
             </h2>
           </div>
           <h2
-            class="text-lg flex justify-center text-center md:hidden text-gray-700 mb-4 md:mb-10"
+            class="text-lg flex justify-center text-start xl:text-center xl:hidden text-gray-700 mb-4 xl:mb-10"
           >
             Built on fundamentals, fueled by data, and driven by machines
           </h2>
