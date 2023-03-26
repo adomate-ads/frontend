@@ -1,11 +1,14 @@
 <template>
   <!-- Landing Section -->
-  <div id="landing-page" class="bg-extra-light-purple pt-1">
+  <div
+    id="landing-page"
+    class="bg-extra-light-purple pb-0 md:pb-20 lg:pb-0 pt-1"
+  >
     <div class="container mx-auto px-4 md:px-12 mt-10 md:mt-10 pb-10">
       <div
-        class="flex flex-col md:flex-row md:items-center md:justify-between h-auto md:h-[600px]"
+        class="flex flex-col lg:flex-row md:items-center md:justify-between h-auto md:h-[600px]"
       >
-        <div class="md:w-7/12 md:pr-20">
+        <div class="lg:w-7/12 lg:pr-20">
           <h1
             class="text-4xl pb-5 lg:text-6xl text-center font-bold tracking-wide mb-4 subpixel-antialiased md:text-left"
           >
@@ -13,16 +16,16 @@
           </h1>
           <div class="xl:flex flex-row space-x-2 justify-start hidden">
             <!-- desktop animated header -->
-            <h2 class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in">
+            <h2 class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in">
               Built on fundamentals,
             </h2>
             <h2
-              class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed"
+              class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed"
             >
               fueled by data,
             </h2>
             <h2
-              class="text-lg md:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed2"
+              class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed2"
             >
               and driven by machines.
             </h2>
@@ -32,9 +35,9 @@
           >
             Built on fundamentals, fueled by data, and driven by machines
           </h2>
-          <div class="flex flex-col md:flex-row mb-4 md:mb-10">
+          <div class="flex flex-col lg:flex-row mb-4 lg:mb-10">
             <button
-              class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+              class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
             >
               Get Started
               <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -44,7 +47,7 @@
               Learn More
             </button>
           </div>
-          <div class="hidden md:flex flex-col md:flex-row">
+          <div class="hidden lg:flex flex-col lg:flex-row">
             <div class="flex items-center mr-10">
               <i
                 class="shadow fa-solid fa-money-bill text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
@@ -73,7 +76,7 @@
             </div>
           </div>
         </div>
-        <div class="w-full md:w-5/12 pt-10 pb-10 px-5">
+        <div class="w-full md:w-3/4 lg:w-5/12 pt-10 pb-10 px-5">
           <div
             class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
           >
@@ -84,7 +87,7 @@
             />
           </div>
         </div>
-        <div class="flex flex-row justify-center md:hidden">
+        <div class="flex flex-row justify-center lg:hidden">
           <div class="flex items-center mr-10">
             <i
               class="fa-solid fa-money-bill text-dark-purple mr-2 p-3 bg-white rounded-full h-6 w-6"
