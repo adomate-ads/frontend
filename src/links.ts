@@ -29,18 +29,8 @@ const Links: Link[] = [
     to: { name: "About" },
   },
   {
-    title: "Solutions",
-    to: "#",
-    sublinks: [
-      {
-        to: { name: "Google-Ads" },
-        title: "Google Ads",
-      },
-      {
-        to: { name: "SEO-Monitoring" },
-        title: "SEO Monitoring",
-      },
-    ],
+    title: "Services",
+    to: { name: "Services" },
   },
   {
     to: { name: "Pricing" },
