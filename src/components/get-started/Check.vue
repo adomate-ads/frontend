@@ -1,17 +1,34 @@
 <template>
   <div class="flex align-middle gap-x-2">
     <div
-      class="bg-dark-purple rounded-full w-8 h-8 text-center pt-1 transition duration-100"
+      v-if="!final"
+      class="rounded-full w-8 h-8 text-center pt-1 transition duration-100"
       :class="[
         {
           'bg-gray-300': !props.completed && !props.in_progress,
           'bg-adomate-off-white border-2 border-dashed border-dark-purple':
             props.in_progress,
+          'bg-dark-purple': props.completed,
         },
         props.in_progress ? 'text-dark-purple' : 'text-adomate-off-white',
       ]"
     >
       <i class="fa-solid fa-check"></i>
+    </div>
+    <div
+      v-else
+      class="rounded-full w-8 h-8 text-center pt-0.5 transition duration-100"
+      :class="[
+        {
+          'bg-gray-300': !props.completed && !props.in_progress,
+          'bg-adomate-off-white border-2 border-dashed border-dark-purple':
+            props.in_progress,
+          'bg-dark-purple': props.completed,
+        },
+        props.in_progress ? 'text-dark-purple' : 'text-adomate-off-white',
+      ]"
+    >
+      <i class="fa-solid fa-star"></i>
     </div>
     <p
       class="pt-1"
@@ -27,6 +44,7 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
+  final: boolean;
   in_progress: boolean;
   completed: boolean;
 }>();
