@@ -8,7 +8,7 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <URL
+        <Budget
           v-if="currentStep === 2"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
@@ -63,6 +63,7 @@ import Check from "@/components/get-started/Check.vue";
 import { onMounted, ref, watch } from "vue";
 import { SignupSteps } from "@/types";
 
+import Budget from "@/components/get-started/pages/Budget.vue";
 import URL from "@/components/get-started/pages/URL.vue";
 import Verification from "@/components/get-started/pages/Verification.vue";
 
