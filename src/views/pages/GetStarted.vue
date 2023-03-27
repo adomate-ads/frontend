@@ -37,7 +37,7 @@
       <template #right>
         <div v-for="step in steps" :key="step.step">
           <Check
-            :in_progress="step.in_progress"
+            :in-progress="step.in_progress"
             :completed="step.completed"
             :final="step.step === steps.length - 1"
           >

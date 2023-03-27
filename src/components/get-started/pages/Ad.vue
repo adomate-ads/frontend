@@ -8,8 +8,6 @@
       software regenerate ads for you.
     </p>
 
-    <company-logo :icon="'@/assets/logo.svg'" />
-
     <div class="flex flex-col place-items-end justify-center">
       <div class="flex text-center gap-x-10 text-lg">
         <button
@@ -31,8 +29,5 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import CompanyLogo from "@/components/ads/CompanyLogo.vue";
-</script>
-
+<script lang="ts" setup></script>
 <style scoped></style>

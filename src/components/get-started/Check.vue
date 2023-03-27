@@ -5,12 +5,12 @@
       class="rounded-full w-8 h-8 text-center pt-1 transition duration-100"
       :class="[
         {
-          'bg-gray-300': !props.completed && !props.in_progress,
+          'bg-gray-300': !props.completed && !props.inProgress,
           'bg-adomate-off-white border-2 border-dashed border-dark-purple':
-            props.in_progress,
+            props.inProgress,
           'bg-dark-purple': props.completed,
         },
-        props.in_progress ? 'text-dark-purple' : 'text-adomate-off-white',
+        props.inProgress ? 'text-dark-purple' : 'text-adomate-off-white',
       ]"
     >
       <i class="fa-solid fa-check"></i>
@@ -20,12 +20,12 @@
       class="rounded-full w-8 h-8 text-center pt-0.5 transition duration-100"
       :class="[
         {
-          'bg-gray-300': !props.completed && !props.in_progress,
+          'bg-gray-300': !props.completed && !props.inProgress,
           'bg-adomate-off-white border-2 border-dashed border-dark-purple':
-            props.in_progress,
+            props.inProgress,
           'bg-dark-purple': props.completed,
         },
-        props.in_progress ? 'text-dark-purple' : 'text-adomate-off-white',
+        props.inProgress ? 'text-dark-purple' : 'text-adomate-off-white',
       ]"
     >
       <i class="fa-solid fa-star"></i>
@@ -33,8 +33,8 @@
     <p
       class="pt-1"
       :class="{
-        'text-gray-300': !props.completed && !props.in_progress,
-        'text-gray-400': props.in_progress,
+        'text-gray-300': !props.completed && !props.inProgress,
+        'text-gray-400': props.inProgress,
       }"
     >
       <slot></slot>
@@ -45,7 +45,7 @@
 <script lang="ts" setup>
 const props = defineProps<{
   final: boolean;
-  in_progress: boolean;
+  inProgress: boolean;
   completed: boolean;
 }>();
 </script>
