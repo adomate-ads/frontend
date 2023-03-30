@@ -69,9 +69,9 @@
     </div>
 
     <div class="flex flex-col place-items-end justify-center">
-      <div class="flex text-center gap-x-10 text-lg">
+      <div class="flex text-center space-x-10 text-lg">
         <button
-          class="bg-transparent text-gray-500 px-8 rounded-lg"
+          class="bg-transparent text-gray-500 rounded-lg"
           @click="$emit('previous-step')"
         >
           <i class="fa-solid fa-caret-left"></i>

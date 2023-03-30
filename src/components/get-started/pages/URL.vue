@@ -24,9 +24,9 @@
         />
       </div>
     </form>
-    <div class="w-full text-center mx-auto gap-x-10 text-lg bottom-0">
+    <div class="w-full text-center mx-auto space-x-10 text-lg bottom-0">
       <button
-        class="bg-transparent text-gray-500 px-8 rounded-lg"
+        class="bg-transparent text-gray-500 rounded-lg"
         @click="$emit('previous-step')"
       >
         <i class="fa-solid fa-caret-left"></i>

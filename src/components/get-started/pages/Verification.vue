@@ -60,9 +60,9 @@
           :class="page >= 2 ? 'bg-dark-purple' : 'bg-gray-300'"
         ></button>
       </div>
-      <div class="flex text-center gap-x-10 text-lg">
+      <div class="flex text-center space-x-10 text-lg">
         <button
-          class="bg-transparent text-gray-500 px-8 rounded-lg"
+          class="bg-transparent text-gray-500 rounded-lg"
           @click="previousPage()"
         >
           <i class="fa-solid fa-caret-left"></i>
@@ -101,7 +101,7 @@ const nextPage = (): void => {
 
 const previousPage = (): void => {
   if (page.value === 0) {
-    emit("next-step");
+    emit("previous-step");
     return;
   }
 
