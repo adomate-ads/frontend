@@ -31,3 +31,13 @@ export interface SignupSteps {
   in_progress: boolean;
   completed: boolean;
 }
+
+export interface Location {
+  name: string;
+  address: string;
+}
+
+export interface Service {
+  name: string;
+  price?: number;
+}

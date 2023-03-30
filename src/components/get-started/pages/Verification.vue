@@ -3,6 +3,7 @@
     <div v-if="page == 0">
       <img
         src="https://cdn.discordapp.com/attachments/681679949681131520/1089680746672820226/image.png"
+        alt="Website Image"
       />
       <h2 class="text-2xl font-bold pb-3">Location & Services Verification</h2>
       <p class="py-3 text-gray-500">
@@ -12,32 +13,53 @@
     </div>
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold pb-3">Locations</h2>
-      <div class="py-3 text-gray-500">
-        <ul>
-          <li>- Location 1</li>
-          <li>- Location 2</li>
-          <li>- Location 3</li>
-          <li>- Location 4</li>
-          <li>- Location 5</li>
-          <li>- Location 6</li>
-          <li>- Location 7</li>
-          <li>- Add Location</li>
-        </ul>
+      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+        <div v-for="(location, idx) in sampleLocations" :key="idx">
+          <div
+            class="flex justify-between border-b-2 border-dashed border-dark-purple"
+            :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
+          >
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <p class="text-gray-500">{{ location.name }}</p>
+                <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+              </div>
+            </div>
+            <div class="flex space-x-2 mr-5">
+              <button class="bg-transparent text-gray-500 rounded-lg">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+              <button class="bg-transparent text-gray-500 rounded-lg">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div v-if="page == 2">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
-      <div class="py-3 text-gray-500">
-        <ul>
-          <li>- Google Ads Optimization</li>
-          <li>- Automated Ads</li>
-          <li>- Service 3</li>
-          <li>- Service 4</li>
-          <li>- Service 5</li>
-          <li>- Service 6</li>
-          <li>- Service 7</li>
-          <li>- Add Service</li>
-        </ul>
+      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+        <div v-for="(service, idx) in sampleServices" :key="idx">
+          <div
+            class="flex justify-between border-b-2 border-dashed border-dark-purple"
+            :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
+          >
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <p class="text-gray-500">{{ service.name }}</p>
+              </div>
+            </div>
+            <div class="flex space-x-2 mr-5">
+              <button class="bg-transparent text-gray-500 rounded-lg">
+                <i class="fa-solid fa-pencil"></i>
+              </button>
+              <button class="bg-transparent text-gray-500 rounded-lg">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -81,7 +103,28 @@
 </template>
 
 <script lang="ts" setup>
+import { Location, Service } from "@/types";
 import { ref } from "vue";
+
+const sampleLocations = ref<Location[]>([
+  {
+    name: "Location 1",
+    address: "Address 1",
+  },
+  {
+    name: "Location 2",
+    address: "Address 2",
+  },
+]);
+
+const sampleServices = ref<Service[]>([
+  {
+    name: "Service 1",
+  },
+  {
+    name: "Service 2",
+  },
+]);
 
 const emit = defineEmits<{
   (e: "next-step"): void;
