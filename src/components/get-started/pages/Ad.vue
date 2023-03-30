@@ -12,14 +12,14 @@
       <div class="flex text-center space-x-10 text-lg">
         <button
           class="bg-transparent text-gray-500 rounded-lg"
-          @click="$emit('previous-step')"
+          @click="emit('previous-step')"
         >
           <i class="fa-solid fa-caret-left"></i>
           Previous
         </button>
         <button
           class="shadow bg-dark-purple text-white font-semibold tracking-wide px-8 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
-          @click="$emit('next-step')"
+          @click="emit('next-step')"
         >
           Continue
           <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -29,5 +29,10 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const emit = defineEmits<{
+  (e: "next-step"): void;
+  (e: "previous-step"): void;
+}>();
+</script>
 <style scoped></style>
