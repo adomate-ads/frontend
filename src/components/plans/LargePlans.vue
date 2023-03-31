@@ -17,7 +17,7 @@
     <p class="text-gray-600 mt-4 pb-6 border-b-2">
       {{ props.plan.description }}
     </p>
-    <div class="mt-2">
+    <div class="mt-2 h-60">
       <h5 class="text-adomate-off-black font-semibold">
         {{ props.plan.feature_title }}
       </h5>
