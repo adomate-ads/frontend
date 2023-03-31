@@ -19,7 +19,7 @@ const routes = [
   {
     path: "/pricing",
     name: "Pricing",
-    component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
+    component: () => import("@/views/pages/Pricing.vue"),
   },
   {
     path: "/login",

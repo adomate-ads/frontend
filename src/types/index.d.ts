@@ -19,10 +19,11 @@ export interface Link {
 
 export interface Plan {
   name: string;
+  description: string;
   monthly_price: number;
   annual_price: number;
+  feature_title: string;
   features: string[];
-  description: string;
 }
 
 export interface SignupSteps {
