@@ -24,3 +24,32 @@ export interface Plan {
   features: string[];
   description: string;
 }
+
+export interface SignupSteps {
+  step: number;
+  title: string;
+  in_progress: boolean;
+  completed: boolean;
+}
+
+export interface Location {
+  name: string;
+  address: string;
+}
+
+export interface Service {
+  name: string;
+  price?: number;
+}
+
+export interface Member {
+  name: string;
+  role: string;
+  email: string;
+  image: string;
+  facebook?: string;
+  twitter?: string;
+  instagram?: string;
+  linkedin?: string;
+  github?: string;
+}

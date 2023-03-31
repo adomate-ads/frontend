@@ -12,14 +12,9 @@ const routes = [
     component: () => import("@/views/pages/About.vue"),
   },
   {
-    path: "/google-ads",
-    name: "Google-Ads",
-    component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
-  },
-  {
-    path: "/seo-monitoring",
-    name: "SEO-Monitoring",
-    component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
+    path: "/services",
+    name: "Services",
+    component: () => import("@/views/pages/Services.vue"),
   },
   {
     path: "/pricing",
@@ -35,6 +30,11 @@ const routes = [
     path: "/signup",
     name: "Signup",
     component: () => import("@/views/pages/Signup.vue"),
+  },
+  {
+    path: "/get-started",
+    name: "Get Started",
+    component: () => import("@/views/pages/GetStarted.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
