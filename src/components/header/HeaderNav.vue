@@ -52,7 +52,6 @@ const getName = (): string => {
 
 const route = useRoute();
 const currentRouteName = computed(() => route.name);
-console.log(currentRouteName.value);
 </script>
 
 <style scoped></style>
