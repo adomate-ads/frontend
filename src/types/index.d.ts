@@ -42,3 +42,9 @@ export interface Service {
   name: string;
   price?: number;
 }
+
+export interface FAQ {
+  question: string;
+  answer: string;
+  selected: boolean;
+}

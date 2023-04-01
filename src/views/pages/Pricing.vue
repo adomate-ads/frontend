@@ -58,16 +58,142 @@
         <i class="fa-solid fa-arrow-right ml-2"></i>
       </button>
     </div>
+
+    <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
+      <h3 class="text-5xl font-bold text-adomate-off-black">
+        It's easy to add extra benefits to all of our plans.
+      </h3>
+      <div class="flex flex-row gap-x-10 justify-center mt-16">
+        <div
+          v-for="x in 3"
+          :key="x"
+          class="justify-left text-left max-w-[380px]"
+        >
+          <div
+            class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle my-2"
+          >
+            <i class="fa-regular fa-star pt-4"></i>
+          </div>
+          <h5 class="text-adomate-off-black text-2xl font-semibold">
+            Smart Bidding
+          </h5>
+          <p class="text-gray-600">
+            We'll help you set up and optimize your campaigns for the best
+            results.
+          </p>
+          <p class="font-semibold mt-2">
+            From $5/mo per campaign. No setup fee
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center py-20 justify-center">
+      <h3 class="text-5xl font-bold text-adomate-off-black py-12">
+        Compare Plans by Features
+      </h3>
+      <div
+        class="flex flex-col max-w-[1000px] mx-auto divide-y divide-gray-300"
+      >
+        <div
+          class="flex flex-row justify-between border-b-2 border-gray-300 pb-2"
+        >
+          <h4 class="text-2xl font-bold text-adomate-off-black">
+            Adomate Features
+          </h4>
+          <div class="flex gap-x-16">
+            <div class="w-32">
+              <h5 class="text-xl text-adomate-off-black font-semibold">
+                Starter
+              </h5>
+            </div>
+            <div class="w-32">
+              <h5 class="text-xl text-adomate-off-black font-semibold">
+                Business
+              </h5>
+            </div>
+            <div class="w-32">
+              <h5 class="text-xl text-adomate-off-black font-semibold">
+                Enterprise
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between py-2">
+          <h4 class="font-semibold text-adomate-off-black">Monthly Fee</h4>
+          <div class="flex gap-x-16">
+            <div class="w-32 text-center">
+              <h5 class="text-adomate-off-black">$20/mo</h5>
+            </div>
+            <div class="w-32 text-center">
+              <h5 class="text-adomate-off-black">$50/mo</h5>
+            </div>
+            <div class="w-32 text-center">
+              <h5 class="text-adomate-off-black">$250/mo</h5>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row justify-between py-2">
+          <h4 class="font-semibold text-adomate-off-black">
+            Search Ad Generation
+          </h4>
+          <div class="flex gap-x-16">
+            <div class="w-32 text-center">
+              <i class="fa-solid fa-check text-green-500"></i>
+            </div>
+            <div class="w-32 text-center">
+              <i class="fa-solid fa-check text-green-500"></i>
+            </div>
+            <div class="w-32 text-center">
+              <i class="fa-solid fa-check text-green-500"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center py-20 mx-auto justify-center max-w-[1000px]">
+      <h3 class="text-5xl font-bold text-adomate-off-black py-12">
+        Frequently Asked Questions
+      </h3>
+      <div>
+        <div v-for="(faq, idx) in faqs" :key="idx">
+          <h2 id="accordion-flush-heading-1">
+            <button
+              type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-lg text-left text-gray-500 border-b border-gray-200"
+              @click="faq.selected = !faq.selected"
+            >
+              <span class="text-adomate-off-black text-lg">{{
+                faq.question
+              }}</span>
+              <i v-if="faq.selected" class="fa-solid fa-chevron-down"></i>
+              <i v-else class="fa-solid fa-chevron-up"></i>
+            </button>
+          </h2>
+          <div :class="[faq.selected ? '' : 'hidden']">
+            <div class="py-5 border-b border-gray-200 text-left">
+              <p class="mb-2 text-gray-500">
+                {{ faq.answer }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import FAQs from "@/faqs";
 import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/plans";
 
 import { ref } from "vue";
 
 const monthly = ref(false);
+
+const faqs = ref(FAQs);
 </script>
 
 <style scoped></style>
