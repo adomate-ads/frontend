@@ -17,23 +17,23 @@
           <div class="xl:flex flex-row space-x-2 justify-start hidden">
             <!-- desktop animated header -->
             <h2 class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in">
-              Built on fundamentals,
+              Built on fundamentals.
             </h2>
             <h2
               class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed"
             >
-              fueled by data,
+              Fueled by data.
             </h2>
             <h2
               class="text-lg lg:text-xl text-gray-700 mb-4 md:mb-10 fade-in delayed2"
             >
-              and driven by machines.
+              Driven by machines.
             </h2>
           </div>
           <h2
             class="text-lg flex justify-center text-start xl:text-center xl:hidden text-gray-700 mb-4 xl:mb-10"
           >
-            Built on fundamentals, fueled by data, and driven by machines
+            Built on fundamentals. Fueled by data. Driven by machines.
           </h2>
           <div class="flex flex-col lg:flex-row mb-4 lg:mb-10">
             <button
