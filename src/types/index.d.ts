@@ -48,3 +48,15 @@ export interface FAQ {
   answer: string;
   selected: boolean;
 }
+
+export interface Member {
+  name: string;
+  role: string;
+  email: string;
+  image: string;
+  facebook?: string;
+  twitter?: string;
+  instagram?: string;
+  linkedin?: string;
+  github?: string;
+}

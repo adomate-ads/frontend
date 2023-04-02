@@ -14,6 +14,7 @@
         v-if="props.sublinks.length > 0"
         class="fa-solid fa-chevron-down ml-2"
       ></i>
+      <slot></slot>
     </AuthLink>
 
     <a
@@ -28,6 +29,7 @@
         v-if="props.sublinks.length > 0"
         class="fa-solid fa-chevron-down ml-2"
       ></i>
+      <slot></slot>
     </a>
 
     <ul

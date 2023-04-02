@@ -268,7 +268,7 @@
         </p>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div v-for="(member, idx) in team" :key="idx">
+          <div v-for="(member, idx) in Members" :key="idx">
             <div class="h-40 sm:h-64 w-full overflow-hidden rounded-lg">
               <img
                 :src="member.image"
@@ -276,35 +276,56 @@
                 alt=""
               />
             </div>
-            <div class="mt-5 text-gray-400 text-sm">{{ member.rol }}</div>
+            <div class="mt-5 text-gray-400 text-sm">{{ member.role }}</div>
             <div class="mt-1 text-black text-xl font-bold">
               {{ member.name }}
+            </div>
+            <div
+              class="text-gray-400 hover:underline hover:decoration-dark-purple text-sm"
+            >
+              <a :href="`mailto:${member.email}`">{{ member.email }}</a>
             </div>
 
             <div class="flex items-center space-x-3 mt-3">
               <a
-                href="#"
+                v-if="member.facebook"
+                :href="member.facebook"
+                target="_blank"
                 class="w-7 h-7 text-sm inline-flex items-center justify-center text-white bg-gray-300 hover:bg-dark-purple transition duration-300 hover:-translate-y-0.5 rounded-full"
               >
                 <i class="fa-brands fa-facebook-f"></i>
               </a>
               <a
-                href="#"
+                v-if="member.twitter"
+                :href="member.twitter"
+                target="_blank"
                 class="w-7 h-7 text-sm inline-flex items-center justify-center text-white bg-gray-300 hover:bg-dark-purple transition duration-300 hover:-translate-y-0.5 rounded-full"
               >
                 <i class="fa-brands fa-twitter"></i>
               </a>
               <a
-                href="#"
+                v-if="member.instagram"
+                :href="member.instagram"
+                target="_blank"
                 class="w-7 h-7 text-sm inline-flex items-center justify-center text-white bg-gray-300 hover:bg-dark-purple transition duration-300 hover:-translate-y-0.5 rounded-full"
               >
                 <i class="fa-brands fa-instagram"></i>
               </a>
               <a
-                href="#"
+                v-if="member.linkedin"
+                :href="member.linkedin"
+                target="_blank"
                 class="w-7 h-7 text-sm inline-flex items-center justify-center text-white bg-gray-300 hover:bg-dark-purple transition duration-300 hover:-translate-y-0.5 rounded-full"
               >
                 <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a
+                v-if="member.github"
+                :href="member.github"
+                target="_blank"
+                class="w-7 h-7 text-sm inline-flex items-center justify-center text-white bg-gray-300 hover:bg-dark-purple transition duration-300 hover:-translate-y-0.5 rounded-full"
+              >
+                <i class="fa-brands fa-github"></i>
               </a>
             </div>
           </div>
@@ -315,6 +336,8 @@
 </template>
 
 <script lang="ts" setup>
+import Members from "@/team";
+
 const caseStudies = [
   {
     title: "Some Business -1",
@@ -333,33 +356,6 @@ const caseStudies = [
     icon: "fax",
     description: "Case Study summarized here, what were our findings.",
     link: "#",
-  },
-];
-
-const team = [
-  {
-    name: "Raaj Patel",
-    rol: "President & Founder",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
-  },
-  {
-    name: "Andrew Melbourne",
-    rol: "Sr. Blockchain D* Ridaaaaa", // Secretary & Co-Founder
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
-  },
-  {
-    name: "Nate Stelling",
-    rol: "Treasurer",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
-  },
-  {
-    name: "Jaden Banze",
-    rol: "Counts the Banzsss AKA 'HIM'",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   },
 ];
 </script>
