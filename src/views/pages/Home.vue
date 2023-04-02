@@ -258,11 +258,11 @@
           </div>
         </div>
       </div>
-      <div class="mt-10 flex flex-wrap justify-center">
+      <div class="mt-10 flex flex-row gap-x-6 justify-center">
         <div
           v-for="plan in Plans"
           :key="plan.name"
-          class="w-full sm:w-auto py-5 lg:px-5 2xl:px-10 transition ease-in-out delay-100 hover:scale-105 duration-200"
+          class="w-full sm:w-auto py-5 transition ease-in-out delay-100 hover:scale-105 duration-200"
         >
           <LargePlans :plan="plan" :monthly="monthly" />
         </div>
