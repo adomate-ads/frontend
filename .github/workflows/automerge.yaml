@@ -18,13 +18,13 @@ jobs:
   assign_reviewers:
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout
-          uses: actions/checkout@v2
-        - name: Set team as reviewer
-          uses: actions/core/set-github-team@v1
-          with:
-            team_id: frontend
-            team_name: Frontend Team
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set team as reviewer
+        uses: actions/core/set-github-team@v1
+        with:
+          team_id: frontend
+          team_name: Frontend Team
   automerge:
     needs: assign_reviewers
     runs-on: ubuntu-latest
@@ -33,6 +33,6 @@ jobs:
         uses: actions/core/automerge@v1
         with:
           required_status_checks:
-            - 'Check eslint'
+          - 'Check eslint'
           required_approvals:
-            - 'frontend'
+          - 'frontend'
