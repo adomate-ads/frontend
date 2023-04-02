@@ -164,11 +164,15 @@
               class="flex items-center justify-between w-full py-5 font-medium text-lg text-left text-gray-500 border-b border-gray-200"
               @click="faq.selected = !faq.selected"
             >
-              <span class="text-adomate-off-black text-lg">{{
-                faq.question
-              }}</span>
-              <i v-if="faq.selected" class="fa-solid fa-chevron-down"></i>
-              <i v-else class="fa-solid fa-chevron-up"></i>
+              <span class="text-adomate-off-black text-lg">
+                {{ faq.question }}
+              </span>
+              <div v-if="faq.selected" class="text-dark-purple">
+                <i class="fa-solid fa-chevron-up"></i>
+              </div>
+              <div v-else>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
             </button>
           </h2>
           <div :class="[faq.selected ? '' : 'hidden']">
@@ -189,11 +193,11 @@ import FAQs from "@/faqs";
 import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/plans";
 
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 
 const monthly = ref(false);
 
-const faqs = ref(FAQs);
+const faqs = reactive(FAQs);
 </script>
 
 <style scoped></style>
