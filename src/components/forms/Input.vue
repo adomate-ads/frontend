@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits, defineProps, ref } from "vue";
+import { defineProps, ref } from "vue";
 
 const props = defineProps({
   id: {
