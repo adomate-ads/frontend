@@ -20,11 +20,11 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@v2
-            - name: Set team as reviewer
-              uses: actions/core/set-github-team@v1
-              with:
-                team_id: frontend
-                team_name: Frontend Team
+        - name: Set team as reviewer
+          uses: actions/core/set-github-team@v1
+          with:
+            team_id: frontend
+            team_name: Frontend Team
   automerge:
     needs: assign_reviewers
     runs-on: ubuntu-latest
