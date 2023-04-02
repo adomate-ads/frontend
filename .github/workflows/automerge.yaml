@@ -35,4 +35,4 @@ jobs:
           required_status_checks:
             - 'Check eslint'
           required_approvals:
-            - 'adomate-ads/frontend'
+            - 'frontend'
