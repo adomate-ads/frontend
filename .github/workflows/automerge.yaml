@@ -1,0 +1,38 @@
+name: Automerge and Assign Reviewers
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+  check_run:
+    types:
+      - completed
+  check_suite:
+    types:
+      - completed
+  status: {}
+
+jobs:
+  assign_reviewers:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+            - name: Set team as reviewer
+              uses: actions/core/set-github-team@v1
+              with:
+                team_id: frontend
+                team_name: Frontend Team
+  automerge:
+    needs: assign_reviewers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto merge when ready
+        uses: actions/core/automerge@v1
+        with:
+          required_status_checks:
+            - 'Check eslint'
+          required_approvals:
+            - 'adomate-ads/frontend'
