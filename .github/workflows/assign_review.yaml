@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign "frontend" team as reviewer
-        uses: kentaro-m/auto-assign@v1.2.0
+        uses: kentaro-m/auto-assign@v1.2.5
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
 
