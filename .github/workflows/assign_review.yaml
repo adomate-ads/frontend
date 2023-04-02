@@ -19,11 +19,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Assign "frontend" team as reviewer
-        uses: pullreminders/assign-reviewer-action@v1.0.5
+        uses: kentaro-m/auto-assign@v1.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-        with:
-          assign: "adomate-ads/frontend"
 
   automerge:
     needs: assign_reviewers
