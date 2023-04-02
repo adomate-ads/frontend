@@ -1,35 +1,51 @@
 <template>
-  <div class="bg-extra-light-purple">
-    <div class="grid grid-cols-12">
-      <div id="bg-side-img" class="col-span-7"></div>
-      <div class="col-span-5 text-center my-28 mr-20">
-        <h2 class="text-4xl font-bold mb-10">Welcome Back!</h2>
-        <div class="rounded-lg bg-white p-8 w-2/3 mx-auto space-y-6">
-          <Input
-            id="email"
-            v-model="email"
-            type="email"
-            label=""
-            placeholder="Your email *"
-          />
+  <div
+    class="flex items-center flex-col justify-center p-5 sm:p-10 min-h-screen bg-gray-100"
+  >
+    <div class="text-align-center mb-5">
+      <router-link to="/" class="text-xl text-dark-purple font-bold sm:text-xl">
+        Adomate
+      </router-link>
+    </div>
+    <div
+      class="bg-white rounded-lg shadow-lg max-w-lg w-full md:p-6 min-h-[550px] h-full"
+    >
+      <form action="#" class="w-full px-5 sm:px-10 py-12">
+        <h3 class="text-gray-800 text-xl sm:text-2xl font-bold mb-6">
+          Welcome Back!
+        </h3>
+
+        <div class="mb-6">
+          <Input id="email" v-model="email" type="email" label="Email" />
+        </div>
+        <div class="mb-6">
           <Input
             id="password"
             v-model="password"
             type="password"
-            label=""
-            placeholder="Your password *"
+            label="Password"
           />
-          <p class="text-left text-dark-purple">Forgot Password?</p>
-          <button
-            class="bg-dark-purple text-white font-semibold tracking-wide w-2/3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
-          >
-            Continue
-          </button>
-          <p class="text-left">
-            Not a member yet? <span class="text-dark-purple">Sign up</span>
-          </p>
+          <div class="mt-3">
+            <a href="#" class="font-semibold text-xs text-extra-dark-purple"
+              >Forgot Password</a
+            >
+          </div>
         </div>
-      </div>
+
+        <div class="mb-6">
+          <button
+            class="bg-dark-purple text-white font-bold text-sm block w-full py-3 px-5 text-center rounded-lg focus:ring focus:ring-opacity-25 focus:ring-extra-dark-purple transition duration-200"
+          >
+            Sign In
+          </button>
+        </div>
+        <div class="text-gray-600 text-sm text-center">
+          Don't have an account
+          <router-link :to="{ name: 'Signup' }" class="text-dark-purple">
+            Sign up
+          </router-link>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -42,10 +58,4 @@ const email = ref("");
 const password = ref("");
 </script>
 
-<style scoped>
-#bg-side-img {
-  background-image: url("@/assets/login/sample-bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-</style>
+<style scoped></style>
