@@ -18,27 +18,7 @@ jobs:
   assign_reviewers:
     runs-on: ubuntu-latest
     steps:
-      - name: Assign "frontend" team as reviewer
+      - name: Assign Raaj and Jaden as reviewer
         uses: kentaro-m/auto-assign-action@v1.2.5
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
-
-  automerge:
-    needs: assign_reviewers
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Automerge
-        uses: pascalgn/automerge-action@v0.14.3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          MERGE_LABELS: "automerge"
-          MERGE_METHOD: "squash"
-          MERGE_COMMIT_MESSAGE: "Automatic merge of PR {pullRequest.number}: {pullRequest.title}"
-          MERGE_FORKS: "false"
-          UPDATE_LABELS: ""
-          REQUIRED_STATUS_CHECKS: "Check eslint"
-          REQUIRED_APPROVING_REVIEW_COUNT: 1
-          REQUIRED_TEAM_REVIEW_COUNT: 1
-          REQUIRED_REVIEWING_TEAM: "adomate-ads/frontend"
