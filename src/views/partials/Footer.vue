@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="mt-2 text-gray-500 md:flex items-center justify-between mb-10">
+    <div class="mt-2 text-gray-500 md:flex items-center justify-between pb-10">
       <div class="flex flex-row items-center space-x-4">
         <p class="font-semibold text-sm md:text-l px-2">
           ©
