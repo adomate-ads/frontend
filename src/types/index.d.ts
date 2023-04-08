@@ -19,10 +19,11 @@ export interface Link {
 
 export interface Plan {
   name: string;
+  description: string;
   monthly_price: number;
   annual_price: number;
+  feature_title: string;
   features: string[];
-  description: string;
 }
 
 export interface SignupSteps {
@@ -40,6 +41,12 @@ export interface Location {
 export interface Service {
   name: string;
   price?: number;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+  selected: boolean;
 }
 
 export interface Member {

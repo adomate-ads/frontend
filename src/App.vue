@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!loading">
+  <div v-if="!loading" class="bg-adomate-off-white">
     <Header />
     <main>
       <router-view />
@@ -7,7 +7,7 @@
     <Footer />
   </div>
   <div v-else>
-    <div class="flex items-center justify-center h-screen">
+    <div class="flex items-center justify-center h-screen bg-adomate-off-white">
       <Loader />
     </div>
   </div>

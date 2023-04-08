@@ -3,38 +3,43 @@ import type { Plan } from "@/types";
 const Plans: Plan[] = [
   {
     name: "Starter",
+    description: "Automated Ads for growing businesses in need of customers.",
     monthly_price: 20,
     annual_price: 220,
+    feature_title: "Features include:",
     features: [
-      "1 Target Location",
       "$500/mo Ad Spend Limit",
-      "Ad and Website Analytics",
+      "Weekly Website Parsing",
+      "Run 10 Auto Generated Ads",
+      "Dashboard Access with Basic Analytics",
     ],
-    description: "For small teams or personal use.",
   },
   {
     name: "Business",
+    description: "Ads for high traffic businesses with larger ad budgets.",
     monthly_price: 50,
     annual_price: 550,
+    feature_title: "All features of Starter plus:",
     features: [
-      "3 Target Locations",
       "$2,500/mo Ad Spend Limit",
-      "Ad Description Optimization",
-      "Monthly Website SEO Analysis",
+      "Daily Website Parsing",
+      "Run 50 Auto Generated Ads",
+      "Real-Time Analytics",
     ],
-    description: "For medium size businesses.",
   },
   {
     name: "Enterprise",
+    description:
+      "Ads for the largest businesses with quickly changing content.",
     monthly_price: 250,
     annual_price: 2750,
+    feature_title: "All features of Business plus:",
     features: [
-      "National Ad Targeting",
       "$10,000/mo Ad Spend Limit",
-      "Digital Ad Channel",
-      "Automatic Conversion Tracking",
+      "Hourly Website Parsing",
+      "Run 500 Auto Generated Ads",
+      "Smart Bidding",
     ],
-    description: "Large businesses.",
   },
 ];
 

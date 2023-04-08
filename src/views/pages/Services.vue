@@ -19,43 +19,34 @@
   <div class="snap-y snap-mandatory">
     <!-- Hero 1 - Dashboard -->
     <div class="snap-start shrink-0">
-      <svg
-        class="block sm:hidden w-full"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1100 250"
-      >
-        <path
-          fill="#637EFE"
-          fill-opacity="1"
-          d="M0,128L26.7,133.3C53.3,139,107,149,160,165.3C213.3,181,267,203,320,218.7C373.3,235,427,245,480,224C533.3,203,587,149,640,138.7C693.3,128,747,160,800,176C853.3,192,907,192,960,181.3C1013.3,171,1067,149,1120,149.3C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-        ></path>
-      </svg>
       <div class="bg-white sm:py-10">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
-            class="relative isolate overflow-hidden bg-dark-purple px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+            class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl mx-10 mb-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
           >
             <div
               class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
             >
               <h2
-                class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
               >
                 Monitor your analytics<br />24/7 using our dashboard.
               </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300">
+              <p class="mt-6 text-lg leading-8 text-gray-700">
                 Manage your campaigns, track your performance, get insights, and
                 more using our dashboard tool.
               </p>
               <div
-                class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
+                class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
               >
                 <a
                   href="#"
-                  class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-dark-purple shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
                   >Go to dashboard</a
                 >
-                <a href="#" class="text-sm font-semibold leading-6 text-white"
+                <a
+                  href="#"
+                  class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
                   >Learn more <span aria-hidden="true">→</span></a
                 >
               </div>
@@ -68,60 +59,40 @@
               />
             </div>
           </div>
-          <svg
-            class="block sm:hidden w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 200"
-          >
-            <path
-              fill="#637EFE"
-              fill-opacity="1"
-              d="M0,96L40,101.3C80,107,160,117,240,106.7C320,96,400,64,480,53.3C560,43,640,53,720,80C800,107,880,149,960,149.3C1040,149,1120,107,1200,80C1280,53,1360,43,1400,37.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-            ></path>
-          </svg>
         </div>
       </div>
     </div>
     <!-- Hero 2 - Ad Optimization -->
     <div class="snap-center shrink-0">
-      <svg
-        class="block sm:hidden w-full"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1100 250"
-      >
-        <path
-          fill="#637EFE"
-          fill-opacity="1"
-          d="M0,128L26.7,133.3C53.3,139,107,149,160,165.3C213.3,181,267,203,320,218.7C373.3,235,427,245,480,224C533.3,203,587,149,640,138.7C693.3,128,747,160,800,176C853.3,192,907,192,960,181.3C1013.3,171,1067,149,1120,149.3C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-        ></path>
-      </svg>
       <div class="bg-white sm:py-10 snap-center">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
-            class="relative isolate overflow-hidden bg-dark-purple px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+            class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
           >
             <div
               class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
             >
               <h2
-                class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
               >
                 Custom target locations<br />and ad spending limit.
               </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300">
+              <p class="mt-6 text-lg leading-8 text-gray-700">
                 You are in complete control of your campaign location targets
                 and budgeting. We have a variety of plans to suit the needs of
                 your business.
               </p>
               <div
-                class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
+                class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
               >
                 <a
                   href="#"
-                  class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-dark-purple shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
                   >See plans</a
                 >
-                <a href="#" class="text-sm font-semibold leading-6 text-white"
+                <a
+                  href="#"
+                  class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
                   >Learn more <span aria-hidden="true">→</span></a
                 >
               </div>
@@ -134,62 +105,46 @@
               />
             </div>
           </div>
-          <svg
-            class="block sm:hidden w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 200"
-          >
-            <path
-              fill="#637EFE"
-              fill-opacity="1"
-              d="M0,96L40,101.3C80,107,160,117,240,106.7C320,96,400,64,480,53.3C560,43,640,53,720,80C800,107,880,149,960,149.3C1040,149,1120,107,1200,80C1280,53,1360,43,1400,37.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-            ></path>
-          </svg>
         </div>
       </div>
     </div>
     <!-- Hero 3 - Availability -->
     <div class="snap-center shrink-0">
-      <svg
-        class="block sm:hidden w-full"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1100 250"
-      >
-        <path
-          fill="#637EFE"
-          fill-opacity="1"
-          d="M0,128L26.7,133.3C53.3,139,107,149,160,165.3C213.3,181,267,203,320,218.7C373.3,235,427,245,480,224C533.3,203,587,149,640,138.7C693.3,128,747,160,800,176C853.3,192,907,192,960,181.3C1013.3,171,1067,149,1120,149.3C1173.3,149,1227,171,1280,176C1333.3,181,1387,171,1413,165.3L1440,160L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z"
-        ></path>
-      </svg>
       <div class="bg-white sm:py-10 snap-center">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
-            class="relative isolate overflow-hidden bg-dark-purple px-6 pt-16 sm:rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
+            class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
           >
             <div
               class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
             >
               <h2
-                class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
               >
                 Available anytime,<br />anywhere.
               </h2>
-              <p class="mt-6 text-lg leading-8 text-gray-300">
+              <p class="mt-6 text-lg leading-8 text-gray-700">
                 We understand as a business owner that your time is valuable, so
                 our tools are built to be available on all devices, anytime,
                 anywhere.
               </p>
               <div
-                class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
+                class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
               >
                 <a
                   href="#"
-                  class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-dark-purple shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >Get started</a
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mb-0 lg:mr-5 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
                 >
-                <a href="#" class="text-sm font-semibold leading-6 text-white"
-                  >Learn more <span aria-hidden="true">→</span></a
-                >
+                  Get started
+                </a>
+                <div class="flex items-center">
+                  <a
+                    href="#"
+                    class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
+                  >
+                    Learn more <span aria-hidden="true">→</span>
+                  </a>
+                </div>
               </div>
             </div>
             <div class="flex justify-center lg:justify-end w-full h-full py-20">
@@ -200,17 +155,6 @@
               />
             </div>
           </div>
-          <svg
-            class="block sm:hidden w-full"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 200"
-          >
-            <path
-              fill="#637EFE"
-              fill-opacity="1"
-              d="M0,96L40,101.3C80,107,160,117,240,106.7C320,96,400,64,480,53.3C560,43,640,53,720,80C800,107,880,149,960,149.3C1040,149,1120,107,1200,80C1280,53,1360,43,1400,37.3L1440,32L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"
-            ></path>
-          </svg>
         </div>
       </div>
     </div>
