@@ -7,7 +7,7 @@
       @click="$emit('toggle')"
     ></div>
     <div
-      class="mobile-menu-inner relative w-[400px] max-w-[80%] h-full text-left bg-white dark:bg-black-deep dark:text-white -translate-x-full transition-all shadow-lg"
+      class="mobile-menu-inner relative w-[400px] max-w-[80%] h-full text-left bg-adomate-off-white dark:bg-black-deep dark:text-adomate-off-white -translate-x-full transition-all shadow-lg"
     >
       <button
         aria-label="Settings"
