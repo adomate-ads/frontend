@@ -343,7 +343,7 @@
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
 import LargePlans from "@/components/plans/LargePlans.vue";
-import Plans from "@/plans";
+import Plans from "@/data/plans";
 import { ref } from "vue";
 
 const monthly = ref(false);

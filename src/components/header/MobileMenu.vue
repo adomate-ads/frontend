@@ -51,7 +51,7 @@
 </template>
 
 <script setup lang="ts">
-import links, { ProfileLinks as profilelinks } from "@/links";
+import links, { ProfileLinks as profilelinks } from "@/data/links";
 import useUserStore from "@/stores/user";
 
 import MobileMenuItem from "./MobileMenuItem.vue";

@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import links, { ProfileLinks as profilelinks } from "@/links";
+import links, { ProfileLinks as profilelinks } from "@/data/links";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import useUserStore from "@/stores/user";

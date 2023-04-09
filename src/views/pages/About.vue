@@ -353,7 +353,7 @@
 
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
-import Members from "@/team";
+import Members from "@/data/team";
 
 const caseStudies = [
   {
