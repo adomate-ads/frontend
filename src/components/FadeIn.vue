@@ -32,7 +32,7 @@ const onIntersection: IntersectionObserverCallback = (entries) => {
     if (entry.isIntersecting) {
       setTimeout(() => {
         isViewable.value = true;
-      }, props.delay * 1000);
+      }, (props.delay + 0.05) * 1000);
     }
   });
 };
