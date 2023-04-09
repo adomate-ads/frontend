@@ -81,15 +81,17 @@
             </div>
           </div>
           <div class="w-full md:w-3/4 lg:w-5/12 pt-10 pb-10 px-5">
-            <div
-              class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
-            >
-              <img
-                rel="prefetch"
-                src="@/assets/home/banner.png"
-                class="rounded-3xl relative left-5 bottom-5 z-20 drop-shadow-xl"
-              />
-            </div>
+            <fade-in :delay="0.2">
+              <div
+                class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
+              >
+                <img
+                  rel="prefetch"
+                  src="@/assets/home/banner.png"
+                  class="rounded-3xl relative left-5 bottom-5 z-20 drop-shadow-xl"
+                />
+              </div>
+            </fade-in>
           </div>
           <div class="flex flex-row justify-center lg:hidden">
             <div class="flex items-center mr-10">

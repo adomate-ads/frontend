@@ -1,6 +1,7 @@
 <template>
   <div
     ref="viewableTarget"
+    class="w-full"
     :class="[
       'transition-opacity duration-500 ease-in',
       isViewable ? 'opacity-100' : 'opacity-0',
