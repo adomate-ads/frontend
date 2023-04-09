@@ -64,7 +64,7 @@
     </div>
 
     <!--  Pages  -->
-    <div class="flex flex-col place-items-end justify-center">
+    <div class="flex flex-col justify-center">
       <div class="flex space-x-2 mx-auto my-3">
         <button
           type="button"
@@ -82,16 +82,16 @@
           :class="page >= 2 ? 'bg-dark-purple' : 'bg-gray-300'"
         ></button>
       </div>
-      <div class="flex text-center space-x-10 text-lg">
+      <div class="flex justify-center space-x-10 text-lg">
         <button
-          class="bg-transparent text-gray-500 rounded-lg"
+          class="bg-transparent text-gray-500 rounded-lg w-44"
           @click="previousPage()"
         >
           <i class="fa-solid fa-caret-left"></i>
           Previous
         </button>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-8 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
           @click="nextPage()"
         >
           Continue

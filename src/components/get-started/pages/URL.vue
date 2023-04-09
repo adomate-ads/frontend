@@ -24,14 +24,11 @@
         />
       </div>
     </form>
-    <div class="w-full text-center mx-auto space-x-10 text-lg bottom-0">
-      <button
-        class="bg-transparent text-gray-500 rounded-lg"
-        @click="emit('previous-step')"
-      >
+    <div class="w-full text-center mx-auto space-x-10 text-lg justify-center">
+      <router-link to="/" class="bg-transparent text-gray-500 rounded-lg">
         <i class="fa-solid fa-caret-left"></i>
         Return Home
-      </button>
+      </router-link>
       <button
         class="shadow bg-dark-purple text-white font-semibold tracking-wide px-8 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
         @click="emit('next-step')"
