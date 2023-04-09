@@ -131,7 +131,7 @@
 
 <script setup lang="ts">
 import FadeIn from "@/components/FadeIn.vue";
-import { FooterLinks as footerLinks } from "@/links";
+import { FooterLinks as footerLinks } from "@/data/links";
 </script>
 
 <style scoped></style>

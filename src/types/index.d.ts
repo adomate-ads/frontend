@@ -60,3 +60,16 @@ export interface Member {
   linkedin?: string;
   github?: string;
 }
+
+export interface Feature {
+  title: string;
+  description: string;
+  starter: ContainFeature;
+  business: ContainFeature;
+  enterprise: ContainFeature;
+}
+
+export interface ContainFeature {
+  checked?: boolean;
+  description?: string;
+}
