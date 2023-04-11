@@ -11,7 +11,7 @@
         {{ props.monthly ? props.plan.annual_price : props.plan.monthly_price }}
       </h4>
       <span class="mt-3 text-gray-600 text-xl"> /Month </span>
-      <span class="mt-3.5 text-gray-500 ml-2"
+      <span class="mt-4 text-gray-500 ml-2"
         >{{ props.monthly ? "Billed Annually" : "" }}
       </span>
     </div>
