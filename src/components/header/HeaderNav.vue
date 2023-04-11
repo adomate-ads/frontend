@@ -18,7 +18,7 @@
           class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-dark-purple"
         ></span>
       </HeaderNavItem>
-      <button
+      <RouterLink
         v-if="!userStore.isLoggedIn"
         title="Login"
         :to="{ name: 'Login' }"
@@ -26,7 +26,7 @@
       >
         Sign in
         <span class="arrow"></span>
-      </button>
+      </RouterLink>
       <HeaderNavItem
         v-else
         :title="getName()"
@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import links, { ProfileLinks as profilelinks } from "@/links";
+import links, { ProfileLinks as profilelinks } from "@/data/links";
 import { computed } from "vue";
 import { useRoute } from "vue-router";
 import useUserStore from "@/stores/user";

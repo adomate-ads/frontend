@@ -18,7 +18,7 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <URL
+        <Signup
           v-if="currentStep === 4"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
@@ -64,6 +64,7 @@ import { onMounted, ref, watch } from "vue";
 import { SignupSteps } from "@/types";
 
 import Budget from "@/components/get-started/pages/Budget.vue";
+import Signup from "@/components/get-started/pages/Signup.vue";
 import URL from "@/components/get-started/pages/URL.vue";
 import Verification from "@/components/get-started/pages/Verification.vue";
 
