@@ -138,8 +138,9 @@
               How It Works
             </h2>
             <p class="text-gray-700 mb-10">
-              Do your thing 21, do you thing. Do your thing 21 do you thing. I
-              like girls who are boys - Raaj
+              We collect data, optimize, target high-performing keywords, and
+              improve campaigns using analytics tools. A comprehensive solution
+              for managing advertising efforts from start to finish.
             </p>
           </div>
           <div class="m-5 border-b-2">
@@ -148,8 +149,9 @@
             ></i>
             <h2 class="text-2xl font-bold mb-2">1. Data Parser</h2>
             <p class="text-gray-700 mb-10 text-justify">
-              We start by collecting your website info... scraping, scanning,
-              keyword prediction whatever.
+              We collect website data using techniques like web scraping,
+              scanning, and keyword prediction, then convert it into a
+              structured format for analysis.
             </p>
           </div>
           <div class="m-5 border-b-2">
@@ -158,8 +160,9 @@
             ></i>
             <h2 class="text-2xl font-bold mb-2">2. Optimized Bidding</h2>
             <p class="text-gray-700 mb-10 text-justify">
-              We optimizing our bidding process... We optimizing our bidding
-              process... We optimizing our bidding process...
+              We optimize our bidding process using advanced algorithms to
+              maximize the results and return on investment of your campaigns in
+              real-time.
             </p>
           </div>
           <div class="m-5 border-b-2">
@@ -168,8 +171,10 @@
             ></i>
             <h2 class="text-2xl font-bold mb-2">3. Analytics</h2>
             <p class="text-gray-700 mb-10 text-justify">
-              We check to see which keywords are converting the most and target
-              those, or something like that...
+              Our analytics tools identify high-performing keywords that drive
+              conversions, refining campaigns and targeting advertising for
+              improved performance with increased traffic and higher conversion
+              rates.
             </p>
           </div>
         </div>
@@ -196,11 +201,11 @@
             <p
               class="text-slate-700 text-lg pb-16 border-dashed border-b-2 border-light-purple"
             >
-              We start by collecting your website info... scraping, scanning,
-              keyword prediction whatever. We optimizing our bidding process...
-              We optimizing our bidding process... We optimizing our bidding
-              process... We check to see which keywords are converting the most
-              and target those, or something like that...
+              We cover your campaigns from start to finish. We collect your
+              website data using techniques like scraping and keyword
+              prediction. We optimize our bidding process in real-time, target
+              high-performing keywords, and increase conversion rates using
+              analytics tools.
             </p>
             <div class="grid grid-cols-2 gap-x-2 px-1 my-10 gap-y-10">
               <div>
@@ -211,7 +216,10 @@
                   >
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Fully featured, monthly reports allow you to blah blah blah...
+                  Stay informed with comprehensive monthly reports that provide
+                  in-depth analysis and insights into your campaigns. These
+                  reports are packed with all the data you need to make informed
+                  decisions and optimize your marketing strategies.
                 </p>
               </div>
               <div>
@@ -220,8 +228,10 @@
                   <span class="font-semibold text-lg mt-1">Real Analytics</span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Live Analytics allow you to stay updated on the latest trends,
-                  events and more...
+                  Keep a pulse on your campaigns with real-time analytics that
+                  provide a live view of your performance. Monitor key metrics,
+                  track your progress, and stay on top of trends and events to
+                  ensure your campaigns are always on track.
                 </p>
               </div>
               <div>
@@ -232,8 +242,10 @@
                   >
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Using our algorithm, we automatically optimize your campaigns,
-                  increasing performance by upto XX%.
+                  Take the hassle out of campaign optimization with our advanced
+                  algorithm that automatically optimizes your campaigns for peak
+                  performance. Our technology can increase performance by up to
+                  XX%, helping you get more from your marketing budget.
                 </p>
               </div>
               <div>
@@ -244,9 +256,11 @@
                   >
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  We stay up to date on the latest recommendations by google and
-                  parse your website daily allowing for you to stay focused on
-                  your customers while we focus on your website.
+                  Stay ahead of the competition with our cutting-edge SEO
+                  optimization services. We stay up to date on the latest Google
+                  recommendations and parse your website daily to ensure it is
+                  optimized for search engines. This way, you can focus on your
+                  customers while we take care of your website's visibility.
                 </p>
               </div>
             </div>
@@ -323,7 +337,7 @@
                     id="url"
                     type="url"
                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-light-purple focus:outline-2 focus:outline-offset-0 focus:outline-light-purple outline-none"
-                    placeholder="example.com"
+                    placeholder="https://www.example.com"
                     required
                   />
                   <button
