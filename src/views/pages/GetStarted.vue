@@ -13,7 +13,7 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <URL
+        <Ad
           v-if="currentStep === 3"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
@@ -63,6 +63,7 @@ import Check from "@/components/get-started/Check.vue";
 import { onMounted, ref, watch } from "vue";
 import { SignupSteps } from "@/types";
 
+import Ad from "@/components/get-started/pages/Ad.vue";
 import Budget from "@/components/get-started/pages/Budget.vue";
 import Signup from "@/components/get-started/pages/Signup.vue";
 import URL from "@/components/get-started/pages/URL.vue";

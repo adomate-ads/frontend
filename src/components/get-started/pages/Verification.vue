@@ -1,6 +1,6 @@
 <template>
-  <div class="h-full">
-    <div v-if="page == 0">
+  <div class="h-full flex flex-col justify-between">
+    <div v-if="page == 0" class="max-h-[400px] overflow-y-auto">
       <img
         src="https://cdn.discordapp.com/attachments/681679949681131520/1089680746672820226/image.png"
         alt="Website Image"
@@ -11,7 +11,7 @@
         information is incorrect, please correct it before continuing.
       </p>
     </div>
-    <div v-if="page == 1">
+    <div v-if="page == 1" class="max-h-[400px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Locations</h2>
       <p class="text-gray-500">
         These are the locations where you would like your ads displayed.
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-    <div v-if="page == 2">
+    <div v-if="page == 2" class="max-h-[400px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
       <p class="text-gray-500">
         These are the services we will create ads for. If you would like to add
