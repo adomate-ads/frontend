@@ -227,7 +227,7 @@ import Plans from "@/data/plans";
 import { reactive, ref } from "vue";
 import FadeIn from "@/components/FadeIn.vue";
 
-const monthly = ref(false);
+const monthly = ref(true);
 
 const faqs = reactive(FAQs);
 </script>
