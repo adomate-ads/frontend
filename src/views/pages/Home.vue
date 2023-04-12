@@ -177,6 +177,7 @@
     </div>
   </fade-in>
 
+  <!--  Build Exclusively For You  -->
   <fade-in>
     <div id="built-exclusively-for-you">
       <div class="container mx-auto px-12 my-32">
@@ -258,7 +259,9 @@
   <!--Plans Section-->
   <fade-in>
     <div id="plans">
-      <div class="container mx-auto px-20 my-32 flex flex-col items-center">
+      <div
+        class="container mx-auto px-8 lg:px-20 my-32 flex flex-col items-center"
+      >
         <h3 class="text-4xl md:text-6xl font-bold text-center">
           Choose The Best Plan For You
         </h3>
@@ -276,7 +279,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-10 flex flex-row gap-x-6 justify-center">
+        <div class="mt-10 flex flex-col lg:flex-row gap-x-6 justify-center">
           <div
             v-for="(plan, idx) in Plans"
             :key="idx"
@@ -346,7 +349,7 @@ import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/data/plans";
 import { ref } from "vue";
 
-const monthly = ref(false);
+const monthly = ref(true);
 </script>
 <style scoped>
 #landing-page {

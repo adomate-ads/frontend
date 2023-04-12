@@ -2,7 +2,7 @@
   <div class="fade-in-out-container">
     <lottie-player
       src="https://raw.githubusercontent.com/adomate-ads/frontend/master/src/assets/lottie/logo.json"
-      background="transparent"
+      background="#FAF9F6"
       speed="1"
       style="width: 200px; height: 200px"
       loop

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border rounded-2xl p-5 text-left bg-adomate-off-white max-w-[380px]"
+    class="border rounded-2xl p-5 text-left bg-adomate-off-white min-w-[330px] max-w-[380px] mx-auto"
   >
     <h3 class="text-lg font-bold text-adomate-off-black">
       {{ props.plan.name }}
@@ -10,8 +10,9 @@
         <span class="text-gray-600">$</span>
         {{ props.monthly ? props.plan.annual_price : props.plan.monthly_price }}
       </h4>
-      <span class="mt-4 text-gray-600">
-        {{ props.monthly ? "/Year" : "/Month" }}
+      <span class="mt-3 text-gray-600 text-xl"> /Month </span>
+      <span class="mt-4 text-gray-500 ml-2"
+        >{{ props.monthly ? "Billed Annually" : "" }}
       </span>
     </div>
     <p class="text-gray-600 mt-4 pb-6 border-b-2">

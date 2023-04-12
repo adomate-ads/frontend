@@ -36,7 +36,7 @@
 
     <fade-in :delay="0.1">
       <div class="-mt-64 mb-5 justify-center">
-        <div class="flex flex-row gap-x-6 justify-center">
+        <div class="flex flex-col lg:flex-row gap-x-6 justify-center">
           <div
             v-for="(plan, idx) in Plans"
             :key="idx"
@@ -227,7 +227,7 @@ import Plans from "@/data/plans";
 import { reactive, ref } from "vue";
 import FadeIn from "@/components/FadeIn.vue";
 
-const monthly = ref(false);
+const monthly = ref(true);
 
 const faqs = reactive(FAQs);
 </script>
