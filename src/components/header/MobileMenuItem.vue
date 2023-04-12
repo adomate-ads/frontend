@@ -7,7 +7,10 @@
       :roles="props.roles"
       :hide-unauthed="props.auth === true"
       class="font-semibold leading-9 capitalize text-black group-hover:text-dark-purple"
-      @click="checkClick()"
+      @click="
+        checkClick();
+        $emit('toggle');
+      "
     >
       {{ props.title }}
     </AuthLink>
@@ -16,7 +19,10 @@
       :href="props.href"
       :target="props.sameWindow ? '' : '_blank'"
       class="font-semibold leading-9 capitalize text-black group-hover:text-dark-purple"
-      @click="checkClick()"
+      @click="
+        checkClick();
+        $emit('toggle');
+      "
     >
       {{ props.title }}
     </a>
@@ -69,4 +75,5 @@ const checkClick = (): boolean => {
   }
   return true;
 };
+defineEmits(["toggle"]);
 </script>

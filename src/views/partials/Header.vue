@@ -27,7 +27,7 @@
           </div>
           <div class="col-span-1 text-right block lg:hidden">
             <button
-              class="text-black text-xl w-11 h-11 leading-10 rounded-md border-[1px] border-white hover:bg-primary hover:text-black hover:border-white transition-all"
+              class="text-black text-xl w-11 h-11 mr-2 leading-10 rounded-md border-[1px] border-adomate-off-white hover:bg-primary hover:text-black hover:border-white transition-all"
               @click="toggleNav()"
             >
               <i class="fa-solid fa-bars"></i>

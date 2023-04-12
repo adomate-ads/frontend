@@ -1,6 +1,6 @@
 <template>
   <div
-    class="border rounded-2xl p-5 text-left bg-adomate-off-white max-w-[380px]"
+    class="border rounded-2xl p-5 text-left bg-adomate-off-white min-w-[330px] max-w-[380px] mx-auto"
   >
     <h3 class="text-lg font-bold text-adomate-off-black">
       {{ props.plan.name }}

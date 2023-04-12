@@ -26,6 +26,7 @@
                 :title="link.title"
                 :to="link.to"
                 :sublinks="link.sublinks"
+                @toggle="$emit('toggle')"
               ></MobileMenuItem>
               <button
                 v-if="!userStore.isLoggedIn"
