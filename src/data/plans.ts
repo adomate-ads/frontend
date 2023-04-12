@@ -5,7 +5,7 @@ const Plans: Plan[] = [
     name: "Starter",
     description: "Ads for growing businesses in need of customers.",
     monthly_price: 20,
-    annual_price: 220,
+    annual_price: 18, // $216 Annually
     feature_title: "Features include:",
     features: [
       "$500/mo Ad Spend Limit",
@@ -18,7 +18,7 @@ const Plans: Plan[] = [
     name: "Business",
     description: "Ads for high traffic businesses with larger ad budgets.",
     monthly_price: 50,
-    annual_price: 550,
+    annual_price: 45, // $540 Annually
     feature_title: "All features of Starter plus:",
     features: [
       "$2,500/mo Ad Spend Limit",
@@ -32,7 +32,7 @@ const Plans: Plan[] = [
     description:
       "Ads for the largest businesses with quickly changing content.",
     monthly_price: 250,
-    annual_price: 2750,
+    annual_price: 225, // $2,700 Annually
     feature_title: "All features of Business plus:",
     features: [
       "$10,000/mo Ad Spend Limit",
