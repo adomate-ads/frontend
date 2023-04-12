@@ -13,6 +13,9 @@
     </div>
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold pb-3">Locations</h2>
+      <p class="text-gray-500">
+        These are the locations where you would like your ads displayed.
+      </p>
       <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
         <div v-for="(location, idx) in sampleLocations" :key="idx">
           <div
@@ -39,6 +42,10 @@
     </div>
     <div v-if="page == 2">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
+      <p class="text-gray-500">
+        These are the services we will create ads for. If you would like to add
+        more services, please click the button below.
+      </p>
       <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
         <div v-for="(service, idx) in sampleServices" :key="idx">
           <div
