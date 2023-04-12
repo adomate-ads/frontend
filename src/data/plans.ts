@@ -3,7 +3,7 @@ import type { Plan } from "@/types";
 const Plans: Plan[] = [
   {
     name: "Starter",
-    description: "Automated Ads for growing businesses in need of customers.",
+    description: "Ads for growing businesses in need of customers.",
     monthly_price: 20,
     annual_price: 220,
     feature_title: "Features include:",
