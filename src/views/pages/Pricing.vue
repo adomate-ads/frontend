@@ -26,7 +26,7 @@
                 ></span>
               </label>
               <div class="ml-2 text-gray-700">
-                Billed Annually <span class="text-gray-900">(-8%)</span>
+                Billed Annually <span class="text-gray-900">(-10%)</span>
               </div>
             </div>
           </div>
