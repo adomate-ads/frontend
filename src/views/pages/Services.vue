@@ -19,7 +19,7 @@
   <div class="snap-y snap-mandatory">
     <!-- Hero 1 - Dashboard -->
     <div class="snap-start shrink-0">
-      <div class="bg-white sm:py-10">
+      <div class="sm:py-10">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
             class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl mx-10 mb-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
@@ -41,7 +41,7 @@
               >
                 <a
                   href="#"
-                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
                   >Go to dashboard</a
                 >
                 <a
@@ -64,7 +64,7 @@
     </div>
     <!-- Hero 2 - Ad Optimization -->
     <div class="snap-center shrink-0">
-      <div class="bg-white sm:py-10 snap-center">
+      <div class="sm:py-10 snap-center">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
             class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
@@ -87,7 +87,7 @@
               >
                 <a
                   href="#"
-                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
                   >See plans</a
                 >
                 <a
@@ -110,7 +110,7 @@
     </div>
     <!-- Hero 3 - Availability -->
     <div class="snap-center shrink-0">
-      <div class="bg-white sm:py-10 snap-center">
+      <div class="sm:py-10 snap-center">
         <div class="mx-auto sm:px-6 lg:px-8">
           <div
             class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
@@ -133,7 +133,7 @@
               >
                 <a
                   href="#"
-                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mb-0 lg:mr-5 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+                  class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mb-0 lg:mr-5 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
                 >
                   Get started
                 </a>
