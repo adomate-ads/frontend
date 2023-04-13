@@ -1,6 +1,8 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div class="max-h-[400px] overflow-y-auto">@Andrew Write Code Here</div>
+    <div class="max-h-[400px] overflow-y-auto w-fit">
+      <SearchAdDemo></SearchAdDemo>
+    </div>
 
     <div class="flex justify-center space-x-10 text-lg">
       <button
@@ -22,6 +24,8 @@
 </template>
 
 <script lang="ts" setup>
+import SearchAdDemo from "@/components/SearchAdDemo.vue";
+
 const emit = defineEmits<{
   (e: "next-step"): void;
   (e: "previous-step"): void;
