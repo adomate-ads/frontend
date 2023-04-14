@@ -21,7 +21,7 @@
             id="input-group-1"
             v-model="url"
             type="text"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full pl-10 p-2.5"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-none rounded-lg block w-full pl-10 p-2.5"
             placeholder="https://adomate.ai"
             :class="[
               isValidURL() ? 'focus:border-light-purple' : 'border-red-500',

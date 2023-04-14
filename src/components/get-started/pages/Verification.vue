@@ -22,24 +22,59 @@
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
-            <div class="flex space-x-2">
-              <div class="py-1">
-                <p class="text-gray-500">{{ location.name }}</p>
-                <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+            <div
+              v-if="editStates[location.name]"
+              class="flex w-full justify-between"
+            >
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <input
+                    :ref="(el) => (inputRefs[location.name] = el)"
+                    v-model="location.name"
+                    class="bg-transparent focus:outline-none"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditState(location.name)"
+                >
+                  <i class="fa-solid fa-times"></i>
+                </button>
+                <button class="bg-transparent text-gray-500 rounded-lg">
+                  <i class="fa-solid fa-check"></i>
+                </button>
               </div>
             </div>
-            <div class="flex space-x-2 mr-5">
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-trash"></i>
-              </button>
+            <div v-else class="flex w-full justify-between">
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <p class="text-gray-500">{{ location.name }}</p>
+                  <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditState(location.name)"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="deleteLocation(location.name)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <div v-if="page == 2" class="max-h-[400px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
       <p class="text-gray-500">
@@ -111,25 +146,25 @@
 
 <script lang="ts" setup>
 import { Location, Service } from "@/types";
-import { ref } from "vue";
+import { nextTick, reactive, ref } from "vue";
 
 const sampleLocations = ref<Location[]>([
   {
-    name: "Location 1",
+    name: "Austin, TX",
     address: "Address 1",
   },
   {
-    name: "Location 2",
+    name: "Dallas, TX",
     address: "Address 2",
   },
 ]);
 
 const sampleServices = ref<Service[]>([
   {
-    name: "Service 1",
+    name: "Google Ads Automation",
   },
   {
-    name: "Service 2",
+    name: "Search Ads Automation",
   },
 ]);
 
@@ -139,6 +174,34 @@ const emit = defineEmits<{
 }>();
 
 const page = ref(0);
+const editStates = reactive<{ [key: string]: boolean }>({});
+const inputRefs = reactive<{ [key: string]: HTMLInputElement | null }>({});
+
+const toggleEditState = async (locationName: string): Promise<void> => {
+  const wasEditing = editStates[locationName];
+  editStates[locationName] = !editStates[locationName];
+
+  if (!wasEditing) {
+    await nextTick();
+    if (inputRefs[locationName]) {
+      inputRefs[locationName]?.focus();
+    }
+  }
+};
+
+const deleteLocation = (locationName: string): void => {
+  sampleLocations.value = sampleLocations.value.filter(
+    (location) => location.name !== locationName
+  );
+};
+
+const addLocation = (name: string, address: string): void => {
+  // TODO - Clear add location form
+  sampleLocations.value.push({
+    name,
+    address,
+  });
+};
 
 const nextPage = (): void => {
   if (page.value === 2) {
