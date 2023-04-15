@@ -1,13 +1,11 @@
 <template>
   <div class="h-full flex flex-col justify-between">
     <div v-if="page == 0" class="max-h-[400px] overflow-y-auto">
-      <img
-        src="https://cdn.discordapp.com/attachments/681679949681131520/1089680746672820226/image.png"
-        alt="Website Image"
-      />
       <h2 class="text-2xl font-bold pb-3">Location & Services Verification</h2>
       <p class="py-3 text-gray-500">
-        Please verify that the following information is correct. If any of the
+        Our software has parsed your website (similar to google) and has
+        detected all the possibly locations and services you offer. Please
+        verify that the following information is correct. If any of the
         information is incorrect, please correct it before continuing.
       </p>
     </div>

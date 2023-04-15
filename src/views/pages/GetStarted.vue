@@ -18,18 +18,13 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <Signup
+        <URL
           v-if="currentStep === 4"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
         <URL
           v-if="currentStep === 5"
-          @next-step="currentStep += 1"
-          @previous-step="currentStep -= 1"
-        />
-        <URL
-          v-if="currentStep === 6"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
@@ -65,7 +60,6 @@ import { SignupSteps } from "@/types";
 
 import Ad from "@/components/get-started/pages/Ad.vue";
 import Budget from "@/components/get-started/pages/Budget.vue";
-import Signup from "@/components/get-started/pages/Signup.vue";
 import URL from "@/components/get-started/pages/URL.vue";
 import Verification from "@/components/get-started/pages/Verification.vue";
 
@@ -96,18 +90,12 @@ const steps = ref<SignupSteps[]>([
   },
   {
     step: 4,
-    title: "Create an Account",
-    in_progress: false,
-    completed: false,
-  },
-  {
-    step: 5,
     title: "Payment",
     in_progress: false,
     completed: false,
   },
   {
-    step: 6,
+    step: 5,
     title: "Running Ads",
     in_progress: false,
     completed: false,
