@@ -23,15 +23,15 @@
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
             <div
-              v-if="editStates[location.name]"
+              v-if="editStatesLocation[location.name]"
               class="flex w-full justify-between"
             >
               <div class="flex space-x-2">
                 <div class="py-1">
                   <input
-                    :ref="(el) => (inputRefs[location.name] = el)"
+                    :ref="(el) => (inputRefsLocation[location.name] = el)"
                     v-model="location.name"
-                    class="bg-transparent focus:outline-none"
+                    class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
                   />
                 </div>
@@ -39,7 +39,7 @@
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditState(location.name)"
+                  @click="toggleEditLocation(location.name)"
                 >
                   <i class="fa-solid fa-times"></i>
                 </button>
@@ -58,7 +58,7 @@
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditState(location.name)"
+                  @click="toggleEditLocation(location.name)"
                 >
                   <i class="fa-solid fa-pencil"></i>
                 </button>
@@ -69,6 +69,31 @@
                   <i class="fa-solid fa-trash"></i>
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between border-b-2 border-dashed border-dark-purple"
+          :class="[sampleLocations.length % 2 == 0 ? 'bg-gray-100' : '']"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <input
+                  v-model="newLocation"
+                  class="bg-transparent focus:outline-none caret-dark-purple"
+                  type="text"
+                  placeholder="Add Location Here"
+                />
+              </div>
+            </div>
+            <div class="flex space-x-4 mr-5">
+              <button
+                class="bg-transparent text-gray-500 rounded-lg"
+                @click="addLocation(newLocation, '')"
+              >
+                <i class="fa-solid fa-check"></i>
+              </button>
             </div>
           </div>
         </div>
@@ -87,17 +112,77 @@
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
-            <div class="flex space-x-2">
-              <div class="py-1">
-                <p class="text-gray-500">{{ service.name }}</p>
+            <div
+              v-if="editStatesService[service.name]"
+              class="flex w-full justify-between"
+            >
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <input
+                    :ref="(el) => (inputRefsService[service.name] = el)"
+                    v-model="service.name"
+                    class="bg-transparent focus:outline-none caret-dark-purple"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditService(service.name)"
+                >
+                  <i class="fa-solid fa-times"></i>
+                </button>
+                <button class="bg-transparent text-gray-500 rounded-lg">
+                  <i class="fa-solid fa-check"></i>
+                </button>
               </div>
             </div>
-            <div class="flex space-x-2 mr-5">
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-trash"></i>
+            <div v-else class="flex w-full justify-between">
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <p class="text-gray-500">{{ service.name }}</p>
+                  <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditService(service.name)"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="deleteService(service.name)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between border-b-2 border-dashed border-dark-purple"
+          :class="[sampleServices.length % 2 == 0 ? 'bg-gray-100' : '']"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <input
+                  v-model="newService"
+                  class="bg-transparent focus:outline-none caret-dark-purple"
+                  type="text"
+                  placeholder="Add Service Here"
+                />
+              </div>
+            </div>
+            <div class="flex space-x-4 mr-5">
+              <button
+                class="bg-transparent text-gray-500 rounded-lg"
+                @click="addService(newService)"
+              >
+                <i class="fa-solid fa-check"></i>
               </button>
             </div>
           </div>
@@ -167,6 +252,8 @@ const sampleServices = ref<Service[]>([
     name: "Search Ads Automation",
   },
 ]);
+const newLocation = ref<string>("");
+const newService = ref<string>("");
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -174,17 +261,24 @@ const emit = defineEmits<{
 }>();
 
 const page = ref(0);
-const editStates = reactive<{ [key: string]: boolean }>({});
-const inputRefs = reactive<{ [key: string]: HTMLInputElement | null }>({});
+const editStatesLocation = reactive<{ [key: string]: boolean }>({});
+const inputRefsLocation = reactive<{ [key: string]: HTMLInputElement | null }>(
+  {}
+);
 
-const toggleEditState = async (locationName: string): Promise<void> => {
-  const wasEditing = editStates[locationName];
-  editStates[locationName] = !editStates[locationName];
+const editStatesService = reactive<{ [key: string]: boolean }>({});
+const inputRefsService = reactive<{ [key: string]: HTMLInputElement | null }>(
+  {}
+);
+
+const toggleEditLocation = async (locationName: string): Promise<void> => {
+  const wasEditing = editStatesLocation[locationName];
+  editStatesLocation[locationName] = !editStatesLocation[locationName];
 
   if (!wasEditing) {
     await nextTick();
-    if (inputRefs[locationName]) {
-      inputRefs[locationName]?.focus();
+    if (inputRefsLocation[locationName]) {
+      inputRefsLocation[locationName]?.focus();
     }
   }
 };
@@ -196,11 +290,44 @@ const deleteLocation = (locationName: string): void => {
 };
 
 const addLocation = (name: string, address: string): void => {
-  // TODO - Clear add location form
+  if (sampleLocations.value.some((location) => location.name === name)) {
+    newLocation.value = "";
+    return;
+  }
   sampleLocations.value.push({
     name,
     address,
   });
+  newLocation.value = "";
+};
+
+const toggleEditService = async (serviceName: string): Promise<void> => {
+  const wasEditing = editStatesService[serviceName];
+  editStatesService[serviceName] = !editStatesService[serviceName];
+
+  if (!wasEditing) {
+    await nextTick();
+    if (inputRefsService[serviceName]) {
+      inputRefsService[serviceName]?.focus();
+    }
+  }
+};
+
+const deleteService = (serviceName: string): void => {
+  sampleServices.value = sampleServices.value.filter(
+    (service) => service.name !== serviceName
+  );
+};
+
+const addService = (name: string): void => {
+  if (sampleServices.value.some((service) => service.name === name)) {
+    newService.value = "";
+    return;
+  }
+  sampleServices.value.push({
+    name,
+  });
+  newService.value = "";
 };
 
 const nextPage = (): void => {
