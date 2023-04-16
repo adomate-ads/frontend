@@ -1,61 +1,186 @@
 <template>
-  <div class="h-full">
-    <div v-if="page == 0">
-      <img
-        src="https://cdn.discordapp.com/attachments/681679949681131520/1089680746672820226/image.png"
-        alt="Website Image"
-      />
+  <div class="h-full flex flex-col justify-between">
+    <div v-if="page == 0" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Location & Services Verification</h2>
       <p class="py-3 text-gray-500">
-        Please verify that the following information is correct. If any of the
+        Our software has parsed your website (similar to google) and has
+        detected all the possibly locations and services you offer. Please
+        verify that the following information is correct. If any of the
         information is incorrect, please correct it before continuing.
       </p>
     </div>
-    <div v-if="page == 1">
+    <div v-if="page == 1" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Locations</h2>
-      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+      <p class="text-gray-500">
+        These are the locations where you would like your ads displayed.
+      </p>
+      <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
         <div v-for="(location, idx) in sampleLocations" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
-            <div class="flex space-x-2">
-              <div class="py-1">
-                <p class="text-gray-500">{{ location.name }}</p>
-                <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+            <div
+              v-if="editStatesLocation[location.name]"
+              class="flex w-full justify-between"
+            >
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <input
+                    :ref="(el) => (inputRefsLocation[location.name] = el)"
+                    v-model="location.name"
+                    class="bg-transparent focus:outline-none caret-dark-purple"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditLocation(location.name)"
+                >
+                  <i class="fa-solid fa-times"></i>
+                </button>
+                <button class="bg-transparent text-gray-500 rounded-lg">
+                  <i class="fa-solid fa-check"></i>
+                </button>
               </div>
             </div>
-            <div class="flex space-x-2 mr-5">
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-trash"></i>
+            <div v-else class="flex w-full justify-between">
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <p class="text-gray-500">{{ location.name }}</p>
+                  <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditLocation(location.name)"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="deleteLocation(location.name)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between border-b-2 border-dashed border-dark-purple"
+          :class="[sampleLocations.length % 2 == 0 ? 'bg-gray-100' : '']"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <input
+                  v-model="newLocation"
+                  class="bg-transparent focus:outline-none caret-dark-purple"
+                  type="text"
+                  placeholder="Add Location Here"
+                />
+              </div>
+            </div>
+            <div class="flex space-x-4 mr-5">
+              <button
+                class="bg-transparent text-gray-500 rounded-lg"
+                @click="addLocation(newLocation, '')"
+              >
+                <i class="fa-solid fa-check"></i>
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div v-if="page == 2">
+
+    <div v-if="page == 2" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
-      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+      <p class="text-gray-500">
+        These are the services we will create ads for. If you would like to add
+        more services, please click the button below.
+      </p>
+      <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
         <div v-for="(service, idx) in sampleServices" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
-            <div class="flex space-x-2">
-              <div class="py-1">
-                <p class="text-gray-500">{{ service.name }}</p>
+            <div
+              v-if="editStatesService[service.name]"
+              class="flex w-full justify-between"
+            >
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <input
+                    :ref="(el) => (inputRefsService[service.name] = el)"
+                    v-model="service.name"
+                    class="bg-transparent focus:outline-none caret-dark-purple"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditService(service.name)"
+                >
+                  <i class="fa-solid fa-times"></i>
+                </button>
+                <button class="bg-transparent text-gray-500 rounded-lg">
+                  <i class="fa-solid fa-check"></i>
+                </button>
               </div>
             </div>
-            <div class="flex space-x-2 mr-5">
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-pencil"></i>
-              </button>
-              <button class="bg-transparent text-gray-500 rounded-lg">
-                <i class="fa-solid fa-trash"></i>
+            <div v-else class="flex w-full justify-between">
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <p class="text-gray-500">{{ service.name }}</p>
+                  <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditService(service.name)"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="deleteService(service.name)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between border-b-2 border-dashed border-dark-purple"
+          :class="[sampleServices.length % 2 == 0 ? 'bg-gray-100' : '']"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <input
+                  v-model="newService"
+                  class="bg-transparent focus:outline-none caret-dark-purple"
+                  type="text"
+                  placeholder="Add Service Here"
+                />
+              </div>
+            </div>
+            <div class="flex space-x-4 mr-5">
+              <button
+                class="bg-transparent text-gray-500 rounded-lg"
+                @click="addService(newService)"
+              >
+                <i class="fa-solid fa-check"></i>
               </button>
             </div>
           </div>
@@ -104,27 +229,29 @@
 
 <script lang="ts" setup>
 import { Location, Service } from "@/types";
-import { ref } from "vue";
+import { nextTick, reactive, ref } from "vue";
 
 const sampleLocations = ref<Location[]>([
   {
-    name: "Location 1",
+    name: "Austin, TX",
     address: "Address 1",
   },
   {
-    name: "Location 2",
+    name: "Dallas, TX",
     address: "Address 2",
   },
 ]);
 
 const sampleServices = ref<Service[]>([
   {
-    name: "Service 1",
+    name: "Google Ads Automation",
   },
   {
-    name: "Service 2",
+    name: "Search Ads Automation",
   },
 ]);
+const newLocation = ref<string>("");
+const newService = ref<string>("");
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -132,6 +259,74 @@ const emit = defineEmits<{
 }>();
 
 const page = ref(0);
+const editStatesLocation = reactive<{ [key: string]: boolean }>({});
+const inputRefsLocation = reactive<{ [key: string]: HTMLInputElement | null }>(
+  {}
+);
+
+const editStatesService = reactive<{ [key: string]: boolean }>({});
+const inputRefsService = reactive<{ [key: string]: HTMLInputElement | null }>(
+  {}
+);
+
+const toggleEditLocation = async (locationName: string): Promise<void> => {
+  const wasEditing = editStatesLocation[locationName];
+  editStatesLocation[locationName] = !editStatesLocation[locationName];
+
+  if (!wasEditing) {
+    await nextTick();
+    if (inputRefsLocation[locationName]) {
+      inputRefsLocation[locationName]?.focus();
+    }
+  }
+};
+
+const deleteLocation = (locationName: string): void => {
+  sampleLocations.value = sampleLocations.value.filter(
+    (location) => location.name !== locationName
+  );
+};
+
+const addLocation = (name: string, address: string): void => {
+  if (sampleLocations.value.some((location) => location.name === name)) {
+    newLocation.value = "";
+    return;
+  }
+  sampleLocations.value.push({
+    name,
+    address,
+  });
+  newLocation.value = "";
+};
+
+const toggleEditService = async (serviceName: string): Promise<void> => {
+  const wasEditing = editStatesService[serviceName];
+  editStatesService[serviceName] = !editStatesService[serviceName];
+
+  if (!wasEditing) {
+    await nextTick();
+    if (inputRefsService[serviceName]) {
+      inputRefsService[serviceName]?.focus();
+    }
+  }
+};
+
+const deleteService = (serviceName: string): void => {
+  sampleServices.value = sampleServices.value.filter(
+    (service) => service.name !== serviceName
+  );
+};
+
+const addService = (name: string): void => {
+  if (sampleServices.value.some((service) => service.name === name)) {
+    newService.value = "";
+    return;
+  }
+  sampleServices.value.push({
+    name,
+  });
+  newService.value = "";
+};
 
 const nextPage = (): void => {
   if (page.value === 2) {

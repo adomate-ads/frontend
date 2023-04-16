@@ -29,23 +29,19 @@ interface AdProps {
   description: string;
 }
 const props = withDefaults(defineProps<AdProps>(), {
-  faviconUrl: "https://www.amazon.com/favicon.ico",
-  companyName: "Amazon.com",
-  companyUrl: "https://www.amazon.com",
-  headline: "Protein Powder",
+  faviconUrl: "https://adomate.ai/logo.png",
+  companyName: "adomate.ai",
+  companyUrl: "https://adomate.ai",
+  headline: "The easiest way to run digital ads for small businesses",
   description:
-    "Dymatize ISO100 Hydrolyzed Protein Powder, 100% Whey Isolate , 25g of Protein, 5.5g BCAAs, Gluten Free, Fast Absorbing, Easy Digesting, Gourmet Vanilla",
+    "Say goodbye to the headache of digital advertising! Adomate makes it easy to create and manage your Google Ads, all in one place. Plus, our analytics tools help you track your campaigns and make informed decisions.",
 });
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .ad {
-  width: 600px;
   font-family: "Roboto", sans-serif;
-
-  margin-left: 30px;
-  margin-top: 30px;
 }
 .sponsored {
   font-weight: 700;

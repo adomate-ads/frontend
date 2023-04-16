@@ -12,8 +12,14 @@
           business
         </h1>
         <p class="text-center pt-2 px-5 mb-10 mx-10">
+<<<<<<< HEAD
           With our automated advertising services, you can focus on what matters
           most. Like Raaj said, "Tres commas, baby."
+=======
+          Efficiently grow your business with our automated advertising
+          services. Advanced algorithms optimize campaigns for increased traffic
+          and higher conversion rates.
+>>>>>>> 1fda19acc0dd436bd09b54bad8905f1b513cbd9b
         </p>
       </div>
     </div>

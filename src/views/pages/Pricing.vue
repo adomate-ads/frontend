@@ -26,7 +26,7 @@
                 ></span>
               </label>
               <div class="ml-2 text-gray-700">
-                Billed Annually <span class="text-gray-900">(-%8)</span>
+                Billed Annually <span class="text-gray-900">(-10%)</span>
               </div>
             </div>
           </div>
@@ -49,10 +49,9 @@
         </div>
       </div>
     </fade-in>
-
     <fade-in>
       <div
-        class="w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between"
+        class="w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
       >
         <div>
           <p class="text-xs font-bold text-extra-dark-purple">
@@ -71,8 +70,8 @@
       </div>
     </fade-in>
 
-    <fade-in>
-      <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
+    <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
+      <fade-in>
         <h3 class="text-5xl font-bold text-adomate-off-black">
           It's easy to add extra benefits to all of our plans.
         </h3>
@@ -99,8 +98,8 @@
             </p>
           </div>
         </div>
-      </div>
-    </fade-in>
+      </fade-in>
+    </div>
 
     <fade-in>
       <div class="text-center py-20 justify-center">
