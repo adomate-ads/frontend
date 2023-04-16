@@ -12,6 +12,7 @@
         :elements-options="elementsOptions"
       >
         <StripeElement ref="card" :elements="elements" :options="cardOptions" />
+        {{ instance }} - Lint Fix - Remove later
       </StripeElements>
       <button type="button" @click="pay">Pay</button>
     </div>
@@ -76,7 +77,9 @@ const pay = (): void => {
   // Access instance methods, e.g. createToken()
   elms.value.instance.createToken(cardElement).then((result: object) => {
     // Handle result.error or result.token
-    console.log(result);
+    if (result.error) {
+      // Do something
+    }
   });
 };
 </script>
