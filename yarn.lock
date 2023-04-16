@@ -203,6 +203,11 @@
     tiny-glob "^0.2.9"
     tslib "^2.4.0"
 
+"@stripe/stripe-js@^1.52.1":
+  version "1.52.1"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-1.52.1.tgz#d821bcd627a34227c20fe87d7c8f8bd4386eaf2e"
+  integrity sha512-fza40OPSpGQlFxc5TZWiYC/6Lk89Sep1fLuv9ss33YS6lCAF8UZbfA1E6W+lwO4c7WRKZIZumHIEbPJfP/O9uw==
+
 "@types/json-schema@^7.0.9":
   version "7.0.11"
   resolved "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.11.tgz"
@@ -2494,6 +2499,11 @@ vue-router@4:
   integrity sha512-DYWYwsG6xNPmLq/FmZn8Ip+qrhFEzA14EI12MsMgVxvHFDYvlr4NXpVF5hrRH1wVcDP8fGi5F4rxuJSl8/r+EQ==
   dependencies:
     "@vue/devtools-api" "^6.4.5"
+
+vue-stripe-js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/vue-stripe-js/-/vue-stripe-js-1.0.1.tgz#7eba90a279d4ef466a5beb16d8ffe0633b62e52a"
+  integrity sha512-f2u+YkN42uHrUZbYiiqEQ+DtCyPQgJ/BdzU35EwhFqJghS6k2n8tw/VhYm35TjLsxJE+tYO7/pBUdTS+Xu5Rrw==
 
 vue-template-compiler@^2.7.14:
   version "2.7.14"

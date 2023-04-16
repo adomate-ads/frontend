@@ -18,7 +18,7 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <URL
+        <Payment
           v-if="currentStep === 4"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
@@ -60,6 +60,7 @@ import { SignupSteps } from "@/types";
 
 import Ad from "@/components/get-started/pages/Ad.vue";
 import Budget from "@/components/get-started/pages/Budget.vue";
+import Payment from "@/components/get-started/pages/Payment.vue";
 import URL from "@/components/get-started/pages/URL.vue";
 import Verification from "@/components/get-started/pages/Verification.vue";
 

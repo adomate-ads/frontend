@@ -1,6 +1,11 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div class="max-h-[400px] overflow-y-auto">
+    <div class="max-h-[300px] overflow-y-auto">
+      <h2 class="text-2xl font-bold pb-1">Ad Preview</h2>
+      <p class="py-3 text-gray-500">
+        Here an example of one of the many ads we have created for your
+        business. You may modify this ad at any time from the dashboard.
+      </p>
       <SearchAdDemo></SearchAdDemo>
     </div>
 

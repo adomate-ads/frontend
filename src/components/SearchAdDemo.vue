@@ -41,11 +41,7 @@ const props = withDefaults(defineProps<AdProps>(), {
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 .ad {
-  width: 600px;
   font-family: "Roboto", sans-serif;
-
-  margin-left: 30px;
-  margin-top: 30px;
 }
 .sponsored {
   font-weight: 700;

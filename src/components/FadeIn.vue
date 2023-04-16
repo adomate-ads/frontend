@@ -15,8 +15,8 @@
 import { onMounted, ref } from "vue";
 
 interface Props {
-  threshold: number;
-  delay: number;
+  threshold?: number;
+  delay?: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
