@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div v-if="page == 0" class="max-h-[400px] overflow-y-auto">
+    <div v-if="page == 0" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Location & Services Verification</h2>
       <p class="py-3 text-gray-500">
         Our software has parsed your website (similar to google) and has
@@ -9,12 +9,12 @@
         information is incorrect, please correct it before continuing.
       </p>
     </div>
-    <div v-if="page == 1" class="max-h-[400px] overflow-y-auto">
+    <div v-if="page == 1" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Locations</h2>
       <p class="text-gray-500">
         These are the locations where you would like your ads displayed.
       </p>
-      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+      <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
         <div v-for="(location, idx) in sampleLocations" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
@@ -98,13 +98,13 @@
       </div>
     </div>
 
-    <div v-if="page == 2" class="max-h-[400px] overflow-y-auto">
+    <div v-if="page == 2" class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Services</h2>
       <p class="text-gray-500">
         These are the services we will create ads for. If you would like to add
         more services, please click the button below.
       </p>
-      <div class="py-3 text-gray-500 max-h-[300px] overflow-y-auto">
+      <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
         <div v-for="(service, idx) in sampleServices" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"

@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div class="max-h-[400px] overflow-y-auto w-fit">
+    <div class="max-h-[400px] overflow-y-auto">
       <SearchAdDemo></SearchAdDemo>
     </div>
 

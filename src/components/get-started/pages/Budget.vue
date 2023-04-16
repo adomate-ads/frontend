@@ -26,48 +26,24 @@
       </div>
 
       <div class="flex flex-col w-full gap-y-4 mb-5">
-        <p class="text-gray-500">
-          We've selected the following plan for you based on your budget.
+        <p v-if="budget <= 10000" class="text-gray-500">
+          Based on your budget, we recommend the
+          <span v-if="budget < 500" class="font-bold"> Starter</span>
+          <span v-else-if="budget < 2500" class="font-bold"> Business</span>
+          <span v-else class="font-bold"> Enterprise</span>
+          plan. You may choose to modify this plan at any time from the
+          dashboard. To learn more about our plans, please visit our
+          <router-link
+            to="pricing"
+            class="underline decoration-2 decoration-dark-purple"
+          >
+            pricing page</router-link
+          >.
         </p>
-        <!--      TODO - refactor using plans.ts -->
-        <div
-          v-if="budget < 500"
-          class="w-full border-2 border-light-purple border-dashed pl-4 p-2 rounded-xl"
-        >
-          <h3 class="text-sm">
-            <span class="text-lg font-bold">Starter</span> - $20/Mo ($500 Ad
-            Spend Limit)
-          </h3>
-          - For small teams or personal use.
-        </div>
-        <div
-          v-else-if="budget < 2500"
-          class="w-full border-2 border-light-purple border-dashed pl-4 p-2 rounded-xl"
-        >
-          <h3 class="text-sm">
-            <span class="text-lg font-bold">Business</span> - $50/Mo ($2,500 Ad
-            Spend Limit)
-          </h3>
-          - For medium size businesses.
-        </div>
-        <div
-          v-else-if="budget < 10000"
-          class="w-full border-2 border-light-purple border-dashed pl-4 p-2 rounded-xl"
-        >
-          <h3 class="text-sm">
-            <span class="text-lg font-bold">Enterprise</span> - $250/Mo ($10,000
-            Ad Spend Limit)
-          </h3>
-          - Large businesses.
-        </div>
-        <div
-          v-else
-          class="w-full border-2 border-light-purple border-dashed pl-4 p-2 rounded-xl"
-        >
-          <h3 class="text-sm">
-            <span class="text-lg font-bold">Contact Us</span>
-          </h3>
-        </div>
+        <p v-else class="text-gray-500">
+          Your budget does not fall within our plans. Please Contact Us at
+          info@adomate.ai to get started.
+        </p>
       </div>
     </div>
 
