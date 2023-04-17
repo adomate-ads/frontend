@@ -1,17 +1,17 @@
 <template>
-  <div class="ad">
+  <div class="demo">
     <p class="sponsored">Sponsored</p>
-    <div class="ad-header">
-      <div class="ad-favicon">
+    <div class="demo-header">
+      <div class="demo-favicon">
         <img :src="props.faviconUrl" alt="" />
       </div>
-      <div class="ad-title">
-        <p class="ad-company-name">{{ props.companyName }}</p>
-        <p class="ad-company-url">{{ props.companyUrl }}</p>
+      <div class="demo-title">
+        <p class="demo-company-name">{{ props.companyName }}</p>
+        <p class="demo-company-url">{{ props.companyUrl }}</p>
       </div>
     </div>
-    <div class="ad-headline">{{ props.headline }}</div>
-    <div class="ad-description">
+    <div class="demo-headline">{{ props.headline }}</div>
+    <div class="demo-description">
       {{
         props.description.length > 150
           ? props.description.slice(0, 150) + "..."
@@ -50,30 +50,30 @@ const props = withDefaults(defineProps<AdProps>(), {
   margin-bottom: 6px;
 }
 
-.ad-header {
+.demo-header {
   display: flex;
   align-items: center;
 }
-.ad-company-name {
+.demo-company-name {
   font-size: 14px;
 }
-.ad-company-url {
+.demo-company-url {
   font-size: 12px;
 }
-.ad-headline {
+.demo-headline {
   font-size: 20px;
   font-weight: 400;
   color: rgb(26, 13, 171);
   margin-bottom: 2px;
   margin-top: 5px;
 }
-.ad-description {
+.demo-description {
   font-size: 14px;
   line-height: 22.12px;
   color: rgb(77, 81, 86);
 }
 
-.ad-favicon {
+.demo-favicon {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -83,7 +83,7 @@ const props = withDefaults(defineProps<AdProps>(), {
   justify-content: center;
   margin-right: 12px;
 }
-.ad-favicon img {
+.demo-favicon img {
   width: 18px;
   height: 18px;
 }
