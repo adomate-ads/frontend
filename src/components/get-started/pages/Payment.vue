@@ -1,18 +1,20 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div class="max-h-[300px] overflow-y-auto">
-      <h2 class="text-2xl font-bold pb-1">Payment</h2>
-      <p class="py-3 text-gray-500">...</p>
+    <div class="max-h-[300px]">
+      <h2 class="text-2xl font-bold mb-2">Payment</h2>
       <StripeElements
         v-if="stripeLoaded"
-        v-slot="{ elements, instance }"
+        v-slot="{ elements }"
         ref="elms"
         :stripe-key="stripeKey"
         :instance-options="instanceOptions"
         :elements-options="elementsOptions"
       >
-        <StripeElement ref="card" :elements="elements" :options="cardOptions" />
-        {{ instance }} - Lint Fix - Remove later
+        <StripeElement
+          type="payment"
+          :elements="elements"
+          :options="cardNumberOptions"
+        />
       </StripeElements>
       <button type="button" @click="pay">Pay</button>
     </div>
@@ -49,16 +51,23 @@ const emit = defineEmits<{
 const stripeKey = ref("pk_test_gb9Ci5uY6dvCkOw8JulaVyiA00LIxVv2Zm"); // test key
 const instanceOptions = ref({
   // https://stripe.com/docs/js/initializing#init_stripe_js-options
+  appearance: {
+    theme: "stripe",
+  },
 });
 const elementsOptions = ref({
   // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
   mode: "subscription",
   currency: "usd",
-  amount: 10,
+  amount: 100,
+  appearance: {
+    theme: "stripe",
+  },
 });
-const cardOptions = ref({
+const cardNumberOptions = ref({
   // https://stripe.com/docs/stripe.js#element-options
 });
+
 const stripeLoaded = ref(false);
 const card = ref();
 const elms = ref();
