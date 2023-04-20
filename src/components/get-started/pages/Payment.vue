@@ -190,6 +190,7 @@ const pay = (): void => {
 const nextPage = (): void => {
   if (page.value === 1) {
     emit("next-step");
+    GetStartedStore.setCheckout(false);
     return;
   }
 

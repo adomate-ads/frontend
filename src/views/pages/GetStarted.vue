@@ -23,7 +23,7 @@
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
         />
-        <URL
+        <Completion
           v-if="currentStep === 5"
           @next-step="currentStep += 1"
           @previous-step="currentStep -= 1"
@@ -102,9 +102,9 @@
 </template>
 
 <script lang="ts" setup>
-import FadeIn from "@/components/FadeIn.vue";
 import Card from "@/components/get-started/Card.vue";
 import Check from "@/components/get-started/Check.vue";
+import FadeIn from "@/components/FadeIn.vue";
 
 import { computed, onMounted, ref, watch } from "vue";
 import { SignupSteps } from "@/types";
@@ -112,6 +112,7 @@ import useGetStartedStore from "@/stores/get-started";
 
 import Ad from "@/components/get-started/pages/Ad.vue";
 import Budget from "@/components/get-started/pages/Budget.vue";
+import Completion from "@/components/get-started/pages/Completion.vue";
 import Payment from "@/components/get-started/pages/Payment.vue";
 import URL from "@/components/get-started/pages/URL.vue";
 import Verification from "@/components/get-started/pages/Verification.vue";
