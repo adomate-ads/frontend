@@ -1,6 +1,8 @@
 <template>
-  <div class="w-1/2 bg-adomate-off-white drop-shadow-lg rounded-2xl">
-    <div class="grid grid-cols-5 divide-x-2">
+  <div
+    class="w-full xl:w-3/5 md:w-5/6 bg-adomate-off-white md:border-dark lg:border-2 rounded-2xl"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-5 divide-x-2">
       <div class="col-span-3 p-6">
         <slot name="left"> </slot>
       </div>
@@ -10,5 +12,3 @@
     </div>
   </div>
 </template>
-
-<script lang="ts" setup></script>

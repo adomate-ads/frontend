@@ -1,6 +1,6 @@
 <template>
   <div class="h-full flex flex-col justify-between">
-    <div class="max-h-[300px]">
+    <div class="">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
       <StripeElements
         v-if="stripeLoaded"
@@ -10,13 +10,46 @@
         :instance-options="instanceOptions"
         :elements-options="elementsOptions"
       >
+        <div class="mb-4"> <!-- Stripe doesn't support collecting cardholder name. Check this workaround for production https://jsfiddle.net/7w2vnyb5/ -->
+          <label class="block font-sm text-gray-700 mb-2" for="name">
+            Full name
+          </label>
+          <div class="mt-1">
+            <input
+              id="name"
+              v-model="name"
+              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              type="text"
+            />
+          </div>
+        </div>
+        <div class="mb-4">
+          <label class="block font-sm text-gray-700 mb-2" for="email">
+            Email address
+          </label>
+          <div class="mt-1">
+            <input
+              id="email"
+              v-model="email"
+              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              type="email"
+            />
+          </div>
+        </div>
         <StripeElement
           type="payment"
           :elements="elements"
           :options="cardNumberOptions"
         />
       </StripeElements>
-      <button type="button" @click="pay">Pay</button>
+
+      <button
+        type="button"
+        class="bg-dark-purple px-2 py-1 my-5 rounded-lg font-semibold text-white"
+        @click="pay"
+      >
+        Pay
+      </button>
     </div>
 
     <div class="flex justify-center space-x-10 text-lg">

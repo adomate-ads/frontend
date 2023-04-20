@@ -30,7 +30,7 @@
         </div>
       </form>
     </div>
-    <div class="flex justify-center space-x-10 text-lg">
+    <div class="flex justify-center items-center space-x-10 text-lg">
       <router-link
         to="/"
         class="bg-transparent text-gray-500 rounded-lg w-44 text-center my-auto"
