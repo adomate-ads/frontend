@@ -365,7 +365,7 @@ import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/data/plans";
 import { ref } from "vue";
 
-const monthly = ref(true);
+const monthly = ref<boolean>(true);
 </script>
 <style scoped>
 #landing-page {

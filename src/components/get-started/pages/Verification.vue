@@ -28,7 +28,7 @@
                 <div class="py-1">
                   <input
                     :ref="(el) => (inputRefsLocation[location.name] = el)"
-                    v-model="location.name"
+                    v-model="temp"
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
                   />
@@ -41,7 +41,10 @@
                 >
                   <i class="fa-solid fa-times"></i>
                 </button>
-                <button class="bg-transparent text-gray-500 rounded-lg">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="saveLocation(location.name)"
+                >
                   <i class="fa-solid fa-check"></i>
                 </button>
               </div>
@@ -118,7 +121,7 @@
                 <div class="py-1">
                   <input
                     :ref="(el) => (inputRefsService[service.name] = el)"
-                    v-model="service.name"
+                    v-model="temp"
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
                   />
@@ -131,7 +134,10 @@
                 >
                   <i class="fa-solid fa-times"></i>
                 </button>
-                <button class="bg-transparent text-gray-500 rounded-lg">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="saveService(service.name)"
+                >
                   <i class="fa-solid fa-check"></i>
                 </button>
               </div>
@@ -250,6 +256,8 @@ const sampleServices = ref<Service[]>([
     name: "Search Ads Automation",
   },
 ]);
+
+const temp = ref<string>("");
 const newLocation = ref<string>("");
 const newService = ref<string>("");
 
@@ -270,7 +278,15 @@ const inputRefsService = reactive<{ [key: string]: HTMLInputElement | null }>(
 );
 
 const toggleEditLocation = async (locationName: string): Promise<void> => {
+  temp.value = locationName;
   const wasEditing = editStatesLocation[locationName];
+
+  Object.keys(editStatesLocation).forEach((key) => {
+    if (key !== locationName) {
+      editStatesLocation[key] = false;
+    }
+  });
+
   editStatesLocation[locationName] = !editStatesLocation[locationName];
 
   if (!wasEditing) {
@@ -279,6 +295,19 @@ const toggleEditLocation = async (locationName: string): Promise<void> => {
       inputRefsLocation[locationName]?.focus();
     }
   }
+};
+
+const saveLocation = (locationName: string): void => {
+  const location = sampleLocations.value.find(
+    (loc) => loc.name === locationName
+  );
+  if (location) {
+    location.name = temp.value;
+  }
+
+  editStatesLocation[locationName] = !editStatesLocation[locationName];
+
+  temp.value = "";
 };
 
 const deleteLocation = (locationName: string): void => {
@@ -300,7 +329,15 @@ const addLocation = (name: string, address: string): void => {
 };
 
 const toggleEditService = async (serviceName: string): Promise<void> => {
+  temp.value = serviceName;
   const wasEditing = editStatesService[serviceName];
+
+  Object.keys(editStatesLocation).forEach((key) => {
+    if (key !== serviceName) {
+      editStatesLocation[key] = false;
+    }
+  });
+
   editStatesService[serviceName] = !editStatesService[serviceName];
 
   if (!wasEditing) {
@@ -309,6 +346,19 @@ const toggleEditService = async (serviceName: string): Promise<void> => {
       inputRefsService[serviceName]?.focus();
     }
   }
+};
+
+const saveService = (serviceName: string): void => {
+  const service = sampleServices.value.find(
+    (serv) => serv.name === serviceName
+  );
+  if (service) {
+    service.name = temp.value;
+  }
+
+  editStatesService[serviceName] = !editStatesService[serviceName];
+
+  temp.value = "";
 };
 
 const deleteService = (serviceName: string): void => {
