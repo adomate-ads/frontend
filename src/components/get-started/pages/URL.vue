@@ -55,6 +55,9 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
+import useGetStartedStore from "@/stores/get-started";
+
+const GetStartedStore = useGetStartedStore();
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -69,9 +72,7 @@ const isValidURL = (): boolean => {
 };
 
 const updateURLParam = (): void => {
-  const page = new URL(window.location.href);
-  page.searchParams.set("URL", url.value);
-  window.history.pushState({}, "", page);
+  GetStartedStore.setURL(url.value);
 };
 
 onMounted(() => {
