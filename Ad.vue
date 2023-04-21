@@ -3,7 +3,7 @@
     <div class="max-h-[300px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-1">Ad Preview</h2>
       <p class="py-3 text-gray-500">
-        Here a preview of one of the 12 ads we've created for your business:
+        Here's a preview of one of the 12 ads we've created for your business:
       </p>
       <SearchAdDemo></SearchAdDemo>
     </div>
