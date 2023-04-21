@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const apiUrl = "https://api.adomate.ai/";
+const apiUrl =
+  import.meta.env.VITE_API === "prod"
+    ? "https://api.adomate.ai/"
+    : "http://localhost:3000/";
 
 export const API = axios.create({
   baseURL: apiUrl,
