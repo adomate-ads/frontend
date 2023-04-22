@@ -11,9 +11,14 @@
             <input
               id="fname"
               v-model="firstName"
-              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none"
               type="text"
               placeholder="Jane"
+              :class="[
+                isValidName(firstName)
+                  ? 'focus:border-light-purple'
+                  : 'border-red-500',
+              ]"
             />
           </div>
         </div>
@@ -25,9 +30,14 @@
             <input
               id="lname"
               v-model="lastName"
-              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none"
               type="text"
               placeholder="Doe"
+              :class="[
+                isValidName(lastName)
+                  ? 'focus:border-light-purple'
+                  : 'border-red-500',
+              ]"
             />
           </div>
         </div>
@@ -41,9 +51,14 @@
             <input
               id="email"
               v-model="email"
-              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none"
               type="text"
               placeholder="jane.doe@adomate.ai"
+              :class="[
+                isValidEmail(email)
+                  ? 'focus:border-light-purple'
+                  : 'border-red-500',
+              ]"
             />
           </div>
         </div>
@@ -56,9 +71,14 @@
           <input
             id="bname"
             v-model="businessName"
-            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
+            class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none"
             type="text"
             placeholder="Adomate LLC/Inc."
+            :class="[
+              isValidName(businessName)
+                ? 'focus:border-light-purple'
+                : 'border-red-500',
+            ]"
           />
         </div>
       </div>
@@ -105,6 +125,12 @@
         </button>
         <button
           class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          :disabled="
+            !isValidName(firstName) ||
+            !isValidName(lastName) ||
+            !isValidEmail(email) ||
+            !isValidName(businessName)
+          "
           @click="nextPage()"
         >
           Continue
@@ -131,6 +157,15 @@ const email = ref<string>("");
 const businessName = ref<string>("");
 
 const clientSecret = ref<string>("");
+
+const isValidName = (input: string): boolean => {
+  return input !== "";
+};
+
+const isValidEmail = (input: string): boolean => {
+  const urlRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+  return urlRegex.test(input);
+};
 
 const emit = defineEmits<{
   (e: "next-step"): void;

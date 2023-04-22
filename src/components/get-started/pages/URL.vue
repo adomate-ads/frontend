@@ -88,6 +88,8 @@ onMounted(() => {
   const urlParam = queryParams.get("URL");
   if (urlParam != null) {
     url.value = urlParam;
+  } else {
+    url.value = getStartedStore.getDomain;
   }
 });
 </script>

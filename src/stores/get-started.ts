@@ -39,6 +39,7 @@ const useGetStartedStore = defineStore("getStarted", {
     getCheckout: (state) => state.checkout,
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
+    getDomain: (state) => state.getStarted.domain,
   },
   actions: {
     async setURL(url: string): Promise<void> {
