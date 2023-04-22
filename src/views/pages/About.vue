@@ -52,7 +52,7 @@
       <section class="py-10">
         <div class="container max-w-7xl mx-auto px-5 sm:px-10">
           <div
-            class="border-b border-gray-200 pb-6 grid place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-between"
+            class="border-b border-gray-200 pb-6 grid place-items-center grid-cols-2 lg:grid-cols-4 gap-8 justify-center"
           >
             <div>
               <h3

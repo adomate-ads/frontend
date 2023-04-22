@@ -2,19 +2,6 @@ import type { Feature } from "@/types";
 
 const Features: Feature[] = [
   {
-    title: "Monthly Fee",
-    description: "No long-term contracts. Cancel anytime.",
-    starter: {
-      description: "$20/mo",
-    },
-    business: {
-      description: "$50/mo",
-    },
-    enterprise: {
-      description: "$250/mo",
-    },
-  },
-  {
     title: "Smart Ad Budgeting",
     description: "Generate ads for your business.",
     starter: {
