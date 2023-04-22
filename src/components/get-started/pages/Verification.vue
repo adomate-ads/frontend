@@ -15,19 +15,19 @@
         These are the locations where you would like your ads displayed.
       </p>
       <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
-        <div v-for="(location, idx) in sampleLocations" :key="idx">
+        <div v-for="(location, idx) in getStartedStore.getLocations" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
             <div
-              v-if="editStatesLocation[location.name]"
+              v-if="editStatesLocation[location]"
               class="flex w-full justify-between"
             >
               <div class="flex space-x-2">
                 <div class="py-1">
                   <input
-                    :ref="(el) => (inputRefsLocation[location.name] = el)"
+                    :ref="(el) => (inputRefsLocation[location] = el)"
                     v-model="temp"
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
@@ -37,13 +37,13 @@
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditLocation(location.name)"
+                  @click="toggleEditLocation(location)"
                 >
                   <i class="fa-solid fa-times"></i>
                 </button>
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="saveLocation(location.name)"
+                  @click="saveLocation(location)"
                 >
                   <i class="fa-solid fa-check"></i>
                 </button>
@@ -52,20 +52,20 @@
             <div v-else class="flex w-full justify-between">
               <div class="flex space-x-2">
                 <div class="py-1">
-                  <p class="text-gray-500">{{ location.name }}</p>
+                  <p class="text-gray-500">{{ location }}</p>
                   <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
                 </div>
               </div>
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditLocation(location.name)"
+                  @click="toggleEditLocation(location)"
                 >
                   <i class="fa-solid fa-pencil"></i>
                 </button>
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="deleteLocation(location.name)"
+                  @click="deleteLocation(location)"
                 >
                   <i class="fa-solid fa-trash"></i>
                 </button>
@@ -75,7 +75,9 @@
         </div>
         <div
           class="flex justify-between border-b-2 border-dashed border-dark-purple"
-          :class="[sampleLocations.length % 2 == 0 ? 'bg-gray-100' : '']"
+          :class="[
+            getStartedStore.getLocations.length % 2 == 0 ? 'bg-gray-100' : '',
+          ]"
         >
           <div class="flex w-full justify-between">
             <div class="flex space-x-2">
@@ -91,7 +93,7 @@
             <div class="flex space-x-4 mr-5">
               <button
                 class="bg-transparent text-gray-500 rounded-lg"
-                @click="addLocation(newLocation, '')"
+                @click="addLocation(newLocation)"
               >
                 <i class="fa-solid fa-check"></i>
               </button>
@@ -108,19 +110,19 @@
         more services, please click the button below.
       </p>
       <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
-        <div v-for="(service, idx) in sampleServices" :key="idx">
+        <div v-for="(service, idx) in getStartedStore.getServices" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
             :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
             <div
-              v-if="editStatesService[service.name]"
+              v-if="editStatesService[service]"
               class="flex w-full justify-between"
             >
               <div class="flex space-x-2">
                 <div class="py-1">
                   <input
-                    :ref="(el) => (inputRefsService[service.name] = el)"
+                    :ref="(el) => (inputRefsService[service] = el)"
                     v-model="temp"
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
@@ -130,13 +132,13 @@
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditService(service.name)"
+                  @click="toggleEditService(service)"
                 >
                   <i class="fa-solid fa-times"></i>
                 </button>
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="saveService(service.name)"
+                  @click="saveService(service)"
                 >
                   <i class="fa-solid fa-check"></i>
                 </button>
@@ -145,20 +147,20 @@
             <div v-else class="flex w-full justify-between">
               <div class="flex space-x-2">
                 <div class="py-1">
-                  <p class="text-gray-500">{{ service.name }}</p>
+                  <p class="text-gray-500">{{ service }}</p>
                   <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
                 </div>
               </div>
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="toggleEditService(service.name)"
+                  @click="toggleEditService(service)"
                 >
                   <i class="fa-solid fa-pencil"></i>
                 </button>
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="deleteService(service.name)"
+                  @click="deleteService(service)"
                 >
                   <i class="fa-solid fa-trash"></i>
                 </button>
@@ -168,7 +170,9 @@
         </div>
         <div
           class="flex justify-between border-b-2 border-dashed border-dark-purple"
-          :class="[sampleServices.length % 2 == 0 ? 'bg-gray-100' : '']"
+          :class="[
+            getStartedStore.getServices.length % 2 == 0 ? 'bg-gray-100' : '',
+          ]"
         >
           <div class="flex w-full justify-between">
             <div class="flex space-x-2">
@@ -234,28 +238,10 @@
 </template>
 
 <script lang="ts" setup>
-import { Location, Service } from "@/types";
 import { nextTick, reactive, ref } from "vue";
+import useGetStartedStore from "@/stores/get-started";
 
-const sampleLocations = ref<Location[]>([
-  {
-    name: "Austin, TX",
-    address: "Address 1",
-  },
-  {
-    name: "Dallas, TX",
-    address: "Address 2",
-  },
-]);
-
-const sampleServices = ref<Service[]>([
-  {
-    name: "Google Ads Automation",
-  },
-  {
-    name: "Search Ads Automation",
-  },
-]);
+const getStartedStore = useGetStartedStore();
 
 const temp = ref<string>("");
 const newLocation = ref<string>("");
@@ -298,33 +284,18 @@ const toggleEditLocation = async (locationName: string): Promise<void> => {
 };
 
 const saveLocation = (locationName: string): void => {
-  const location = sampleLocations.value.find(
-    (loc) => loc.name === locationName
-  );
-  if (location) {
-    location.name = temp.value;
-  }
+  getStartedStore.updateLocation(locationName, temp.value);
 
   editStatesLocation[locationName] = !editStatesLocation[locationName];
-
   temp.value = "";
 };
 
 const deleteLocation = (locationName: string): void => {
-  sampleLocations.value = sampleLocations.value.filter(
-    (location) => location.name !== locationName
-  );
+  getStartedStore.deleteLocation(locationName);
 };
 
-const addLocation = (name: string, address: string): void => {
-  if (sampleLocations.value.some((location) => location.name === name)) {
-    newLocation.value = "";
-    return;
-  }
-  sampleLocations.value.push({
-    name,
-    address,
-  });
+const addLocation = (name: string): void => {
+  getStartedStore.addLocation(name);
   newLocation.value = "";
 };
 
@@ -349,32 +320,18 @@ const toggleEditService = async (serviceName: string): Promise<void> => {
 };
 
 const saveService = (serviceName: string): void => {
-  const service = sampleServices.value.find(
-    (serv) => serv.name === serviceName
-  );
-  if (service) {
-    service.name = temp.value;
-  }
+  getStartedStore.updateService(serviceName, temp.value);
 
   editStatesService[serviceName] = !editStatesService[serviceName];
-
   temp.value = "";
 };
 
 const deleteService = (serviceName: string): void => {
-  sampleServices.value = sampleServices.value.filter(
-    (service) => service.name !== serviceName
-  );
+  getStartedStore.deleteService(serviceName);
 };
 
 const addService = (name: string): void => {
-  if (sampleServices.value.some((service) => service.name === name)) {
-    newService.value = "";
-    return;
-  }
-  sampleServices.value.push({
-    name,
-  });
+  getStartedStore.addService(name);
   newService.value = "";
 };
 

@@ -33,16 +33,6 @@ export interface SignupSteps {
   completed: boolean;
 }
 
-export interface Location {
-  name: string;
-  address: string;
-}
-
-export interface Service {
-  name: string;
-  price?: number;
-}
-
 export interface FAQ {
   question: string;
   answer: string;

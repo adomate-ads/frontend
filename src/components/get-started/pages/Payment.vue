@@ -88,6 +88,7 @@
         :elements-options="elementsOptions"
       >
         <StripeElement
+          v-ref="payment"
           type="payment"
           :elements="elements"
           :options="cardNumberOptions"
@@ -152,9 +153,7 @@ const instanceOptions = ref({
 });
 const elementsOptions = ref({
   // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
-  mode: "subscription",
-  currency: "usd",
-  amount: 100,
+  clientSecret: "",
   appearance: {
     theme: "stripe",
   },
@@ -164,7 +163,7 @@ const cardNumberOptions = ref({
 });
 
 const stripeLoaded = ref(false);
-const card = ref();
+const payment = ref();
 const elms = ref();
 
 onBeforeMount(() => {
@@ -176,15 +175,7 @@ onBeforeMount(() => {
 
 const pay = (): void => {
   // Get stripe element
-  const cardElement = card.value.stripeElement;
-
-  // Access instance methods, e.g. createToken()
-  elms.value.instance.createToken(cardElement).then((result: object) => {
-    // Handle result.error or result.token
-    if (result.error) {
-      // Do something
-    }
-  });
+  const paymentElement = payment.value.stripeElement;
 };
 
 const nextPage = (): void => {

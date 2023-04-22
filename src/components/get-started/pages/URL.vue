@@ -22,7 +22,7 @@
             v-model="url"
             type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-none rounded-lg block w-full pl-10 p-2.5"
-            placeholder="https://adomate.ai"
+            placeholder="adomate.ai"
             :class="[
               isValidURL() ? 'focus:border-light-purple' : 'border-red-500',
             ]"
@@ -57,7 +57,7 @@
 import { onMounted, ref } from "vue";
 import useGetStartedStore from "@/stores/get-started";
 
-const GetStartedStore = useGetStartedStore();
+const getStartedStore = useGetStartedStore();
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -67,12 +67,20 @@ const emit = defineEmits<{
 const url = ref("");
 
 const isValidURL = (): boolean => {
-  const urlRegex = /^(http|https):\/\/[^ "]+$/;
+  if (url.value.startsWith("https://")) {
+    url.value = url.value.replace("https://", "");
+  } else if (url.value.startsWith("http://")) {
+    url.value = url.value.replace("http://", "");
+  }
+
+  const urlRegex =
+    // eslint-disable-next-line max-len,no-control-regex
+    /^(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}\.?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-zA-Z0-9-]*[a-zA-Z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
   return urlRegex.test(url.value);
 };
 
 const updateURLParam = (): void => {
-  GetStartedStore.setURL(url.value);
+  getStartedStore.setURL(url.value);
 };
 
 onMounted(() => {
