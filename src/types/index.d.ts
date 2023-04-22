@@ -22,6 +22,8 @@ export interface Plan {
   description: string;
   monthly_price: number;
   annual_price: number;
+  monthly_stripe_id: string;
+  annual_stripe_id: string;
   feature_title: string;
   features: string[];
 }

@@ -14,7 +14,7 @@ interface GetStarted {
   last_name: string;
   email: string;
   company_name: string;
-  budget: number;
+  price: string;
   locations: string[];
   services: string[];
 }
@@ -28,7 +28,7 @@ const useGetStartedStore = defineStore("getStarted", {
         last_name: "",
         email: "",
         company_name: "",
-        budget: 0,
+        price: "",
         locations: [],
         services: [],
       },
@@ -36,7 +36,6 @@ const useGetStartedStore = defineStore("getStarted", {
       fetching: false,
     } as GetStartedState),
   getters: {
-    // getStarted: (state) => state.getStarted,
     getCheckout: (state) => state.checkout,
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
@@ -75,6 +74,9 @@ const useGetStartedStore = defineStore("getStarted", {
         (serv) => serv !== service
       );
     },
+    setPrice(price: string): void {
+      this.getStarted.price = price;
+    },
     setCheckout(status: boolean) {
       this.checkout = status;
     },
@@ -90,16 +92,27 @@ const useGetStartedStore = defineStore("getStarted", {
         console.log(e);
       }
     },
-    async CreateAccount(): Promise<string> {
+    setAccount(
+      first_name: string,
+      last_name: string,
+      email: string,
+      company_name: string
+    ): void {
+      this.getStarted.first_name = first_name;
+      this.getStarted.last_name = last_name;
+      this.getStarted.email = email;
+      this.getStarted.company_name = company_name;
+    },
+    async createAccount(): Promise<string> {
       try {
-        const data = await API.post("/v1/get-started/", {
+        const data = await API.post("/v1/get-started", {
           first_name: this.getStarted.first_name,
           last_name: this.getStarted.last_name,
           email: this.getStarted.email,
           company_name: this.getStarted.company_name,
           industry: "software",
           domain: this.getStarted.domain,
-          price: "price_1MzQkOFzHmjFR1Qwa4QajKrY",
+          price: this.getStarted.price,
         });
 
         if (data.status === 201) {

@@ -47,20 +47,6 @@
             />
           </div>
         </div>
-        <div class="mb-4 w-full">
-          <label class="block font-sm text-gray-700 mb-1" for="name">
-            Domain
-          </label>
-          <div class="mt-1">
-            <input
-              id="domain"
-              v-model="domain"
-              class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
-              type="text"
-              placeholder="adomate.ai"
-            />
-          </div>
-        </div>
       </div>
       <div class="mb-4 w-full">
         <label class="block font-sm text-gray-700 mb-1" for="name">
@@ -80,7 +66,7 @@
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
       <StripeElements
-        v-if="stripeLoaded"
+        v-if="stripeLoaded && clientSecret !== ''"
         v-slot="{ elements }"
         ref="elms"
         :stripe-key="stripeKey"
@@ -135,9 +121,16 @@ import { StripeElement, StripeElements } from "vue-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import useGetStartedStore from "@/stores/get-started";
 
-const GetStartedStore = useGetStartedStore();
+const getStartedStore = useGetStartedStore();
 
 const page = ref<number>(0);
+
+const firstName = ref<string>("");
+const lastName = ref<string>("");
+const email = ref<string>("");
+const businessName = ref<string>("");
+
+const clientSecret = ref<string>("");
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -153,7 +146,7 @@ const instanceOptions = ref({
 });
 const elementsOptions = ref({
   // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
-  clientSecret: "",
+  clientSecret: clientSecret.value,
   appearance: {
     theme: "stripe",
   },
@@ -178,15 +171,22 @@ const pay = (): void => {
   const paymentElement = payment.value.stripeElement;
 };
 
-const nextPage = (): void => {
+const nextPage = async (): Promise<void> => {
   if (page.value === 1) {
     emit("next-step");
-    GetStartedStore.setCheckout(false);
+    getStartedStore.setCheckout(false);
     return;
   }
 
+  getStartedStore.setAccount(
+    firstName.value,
+    lastName.value,
+    email.value,
+    businessName.value
+  );
+  clientSecret.value = await getStartedStore.createAccount();
+  getStartedStore.setCheckout(true);
   page.value += 1;
-  GetStartedStore.setCheckout(true);
 };
 
 const previousPage = (): void => {
@@ -196,7 +196,7 @@ const previousPage = (): void => {
   }
 
   page.value -= 1;
-  GetStartedStore.setCheckout(false);
+  getStartedStore.setCheckout(false);
 };
 </script>
 <style scoped></style>

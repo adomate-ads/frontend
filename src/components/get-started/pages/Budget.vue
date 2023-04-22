@@ -57,7 +57,7 @@
       </button>
       <button
         class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
-        @click="emit('next-step')"
+        @click="nextStep"
       >
         Continue
         <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -67,14 +67,35 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
+import Plans from "@/data/plans";
+import useGetStartedStore from "@/stores/get-started";
+
+const getStartedStore = useGetStartedStore();
 
 const emit = defineEmits<{
   (e: "next-step"): void;
   (e: "previous-step"): void;
 }>();
 
-const budget = ref(500);
+const budget = ref<number>(500);
+const monthly = ref<boolean>(false);
+
+const priceId = computed(() => {
+  if (monthly.value) {
+    if (budget.value < 500) return Plans[0].monthly_stripe_id;
+    if (budget.value < 2500) return Plans[1].monthly_stripe_id;
+    return Plans[2].monthly_stripe_id;
+  }
+  if (budget.value < 500) return Plans[0].annual_stripe_id;
+  if (budget.value < 2500) return Plans[1].annual_stripe_id;
+  return Plans[2].annual_stripe_id;
+});
+
+const nextStep = (): void => {
+  getStartedStore.setPrice(priceId.value);
+  emit("next-step");
+};
 </script>
 
 <style scoped></style>
