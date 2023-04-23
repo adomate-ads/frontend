@@ -1,19 +1,24 @@
 <template>
-  <div v-if="!loading" class="bg-adomate-off-white">
-    <Header />
-    <main>
-      <router-view />
-    </main>
-    <Footer />
-  </div>
-  <div v-else>
-    <div class="flex items-center justify-center h-screen bg-adomate-off-white">
+  <FadeOut>
+    <div
+      v-if="loading"
+      key="element1"
+      class="flex items-center justify-center h-screen bg-adomate-off-white"
+    >
       <Loader />
     </div>
-  </div>
+    <div v-else key="element2" class="bg-adomate-off-white">
+      <Header />
+      <main>
+        <router-view />
+      </main>
+      <Footer />
+    </div>
+  </FadeOut>
 </template>
 
 <script setup lang="ts">
+import FadeOut from "@/components/FadeOut.vue";
 import Footer from "@/views/partials/Footer.vue";
 import Header from "@/views/partials/Header.vue";
 import Loader from "@/components/Loader.vue";
