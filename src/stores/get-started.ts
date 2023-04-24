@@ -37,6 +37,7 @@ const useGetStartedStore = defineStore("getStarted", {
     } as GetStartedState),
   getters: {
     getCheckout: (state) => state.checkout,
+    getFetching: (state) => state.fetching,
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
     getDomain: (state) => state.getStarted.domain,
