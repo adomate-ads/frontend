@@ -55,10 +55,11 @@
       >
         <div>
           <p class="text-xs font-bold text-extra-dark-purple">
-            Custom Solution
+            Tailored Solutions
           </p>
           <h4 class="text-adomate-off-black font-semibold text-2xl">
-            Launched a business that doesn't fit the plans above?
+            Does your business require a unique plan that doesn't align with the
+            options above?
           </h4>
         </div>
         <button
@@ -73,29 +74,59 @@
     <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
       <fade-in>
         <h3 class="text-5xl font-bold text-adomate-off-black px-5">
-          It's easy to add extra benefits to all of our plans
+          Enhance Your Campaigns with Our Add-On Features
         </h3>
         <div class="flex flex-row gap-x-5 justify-center mt-16 px-5">
-          <div
-            v-for="x in 3"
-            :key="x"
-            class="justify-center text-center lg:text-left max-w-[380px]"
-          >
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
             <div
               class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
             >
               <i class="fa-regular fa-star pt-4"></i>
             </div>
             <h5 class="text-adomate-off-black text-2xl font-semibold">
-              Smart Bidding
+              AdGuard
             </h5>
             <p class="text-gray-600">
-              We'll help you set up and optimize your campaigns for the best
-              results.
+              Protect your ad budget with AdGuard, our essential add-on that
+              detects and blocks bots. Ensure your campaign budget targets
+              genuine users, maximizing your return on investment and
+              effectively reaching your audience.
             </p>
-            <p class="font-semibold mt-2">
-              From $5/mo per campaign. No setup fee
+            <p class="font-semibold mt-2">From $5/mo per campaign.</p>
+          </div>
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
+            <div
+              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
+            >
+              <i class="fa-regular fa-star pt-4"></i>
+            </div>
+            <h5 class="text-adomate-off-black text-2xl font-semibold">
+              GeoBoost
+            </h5>
+            <p class="text-gray-600">
+              Enhance your local targeting with GeoBoost. This feature
+              identifies high-potential geographic areas using demographic data
+              and local trends, helping your ads connect with the most relevant
+              and engaged audiences. Drive results and grow your local impact.
             </p>
+            <p class="font-semibold mt-2">From $10/mo per campaign.</p>
+          </div>
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
+            <div
+              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
+            >
+              <i class="fa-regular fa-star pt-4"></i>
+            </div>
+            <h5 class="text-adomate-off-black text-2xl font-semibold">
+              Competitor Watch
+            </h5>
+            <p class="text-gray-600">
+              Stay ahead with Competitor Watch, our add-on that monitors your
+              competitors' ad campaigns and strategies. Analyze industry trends,
+              uncover emerging opportunities, and gain a competitive edge by
+              making informed, data-driven decisions.
+            </p>
+            <p class="font-semibold mt-2">From $15/mo per campaign.</p>
           </div>
         </div>
       </fade-in>
