@@ -6,6 +6,7 @@ interface GetStartedState {
   getStarted: GetStarted;
   checkout: boolean;
   fetching: boolean;
+  error: string;
 }
 
 interface GetStarted {
@@ -34,6 +35,7 @@ const useGetStartedStore = defineStore("getStarted", {
       },
       checkout: false,
       fetching: false,
+      error: "",
     } as GetStartedState),
   getters: {
     getCheckout: (state) => state.checkout,
@@ -91,7 +93,7 @@ const useGetStartedStore = defineStore("getStarted", {
         this.getStarted.locations = data.locations;
         this.getStarted.services = data.services;
       } catch (e) {
-        console.log(e);
+        this.error = "Error fetching locations and services";
       }
     },
     setAccount(
