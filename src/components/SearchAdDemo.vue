@@ -22,11 +22,11 @@
 </template>
 <script lang="ts" setup>
 interface AdProps {
-  faviconUrl: string;
-  companyName: string;
-  companyUrl: string;
-  headline: string;
-  description: string;
+  faviconUrl?: string;
+  companyName?: string;
+  companyUrl?: string;
+  headline?: string;
+  description?: string;
 }
 const props = withDefaults(defineProps<AdProps>(), {
   faviconUrl: "https://adomate.ai/logo.png",
