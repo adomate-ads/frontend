@@ -1,5 +1,5 @@
 <template>
-  <fade-in>
+  <fade-in :threshold="0">
     <div class="container mx-auto px-4 sm:px-12 mt-10">
       <div
         id="cta"
