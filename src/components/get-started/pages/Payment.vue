@@ -133,7 +133,8 @@
           "
           @click="nextPage()"
         >
-          Continue
+          <span v-if="page === 0">Continue</span>
+          <span v-else>Checkout</span>
           <i class="fa-solid fa-arrow-right ml-2"></i>
         </button>
       </div>
@@ -203,11 +204,13 @@ onBeforeMount(() => {
 
 const pay = (): void => {
   // Get stripe element
-  const paymentElement = payment.value.stripeElement;
+  // const paymentElement = payment.value.stripeElement;
+  // Do something...
 };
 
 const nextPage = async (): Promise<void> => {
   if (page.value === 1) {
+    pay();
     emit("next-step");
     getStartedStore.setCheckout(false);
     return;
