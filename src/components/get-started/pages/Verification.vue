@@ -19,11 +19,7 @@
         <h2 class="text-2xl font-bold pb-3">
           Location & Services Verification
         </h2>
-        <p v-if="getStartedStore.getError" class="py-3 text-gray-500">
-          There was an error parsing your website. Please manually enter your
-          locations and services on the next pages or try again at a later time.
-        </p>
-        <p v-else class="py-3 text-gray-500">
+        <p class="py-3 text-gray-500">
           Our software has parsed your website (similar to google) and has
           detected all the possibly locations and services you offer. Please
           verify that the following information is correct. If any of the
@@ -369,7 +365,6 @@ const addService = (name: string): void => {
 
 const nextPage = (): void => {
   if (page.value === 2) {
-    getStartedStore.error = null; // Clear the error if there was one
     emit("next-step");
     return;
   }

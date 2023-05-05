@@ -4,9 +4,9 @@ import { API } from "@/utils/api";
 
 interface GetStartedState {
   getStarted: GetStarted;
-  error: string | null;
   checkout: boolean;
   fetching: boolean;
+  error: string;
 }
 
 interface GetStarted {
@@ -33,9 +33,9 @@ const useGetStartedStore = defineStore("getStarted", {
         locations: [],
         services: [],
       },
-      error: null,
       checkout: false,
       fetching: false,
+      error: "",
     } as GetStartedState),
   getters: {
     getCheckout: (state) => state.checkout,
@@ -43,7 +43,6 @@ const useGetStartedStore = defineStore("getStarted", {
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
     getDomain: (state) => state.getStarted.domain,
-    getError: (state) => state.error,
   },
   actions: {
     async setURL(url: string): Promise<void> {
@@ -87,16 +86,12 @@ const useGetStartedStore = defineStore("getStarted", {
     },
     async getLocationsAndServices(): Promise<void> {
       try {
-        const data = await API.get(
+        const { data } = await API.get(
           `/v1/get-started/location-service/${this.getStarted.domain}`
         );
 
-        if (data.status === 200) {
-          this.getStarted.locations = data.data.locations;
-          this.getStarted.services = data.data.services;
-        } else {
-          this.error = "Error fetching locations and services";
-        }
+        this.getStarted.locations = data.locations;
+        this.getStarted.services = data.services;
       } catch (e) {
         this.error = "Error fetching locations and services";
       }
@@ -122,8 +117,6 @@ const useGetStartedStore = defineStore("getStarted", {
           industry: "software",
           domain: this.getStarted.domain,
           price: this.getStarted.price,
-          locations: this.getStarted.locations,
-          services: this.getStarted.services,
         });
 
         if (data.status === 201) {
