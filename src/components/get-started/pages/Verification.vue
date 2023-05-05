@@ -51,6 +51,7 @@
                       v-model="temp"
                       class="bg-transparent focus:outline-none caret-dark-purple"
                       type="text"
+                      @keyup.enter="saveLocation(location)"
                     />
                   </div>
                 </div>
@@ -107,6 +108,7 @@
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
                     placeholder="Add Location Here"
+                    @keyup.enter="addLocation(newLocation)"
                   />
                 </div>
               </div>
@@ -146,6 +148,7 @@
                       v-model="temp"
                       class="bg-transparent focus:outline-none caret-dark-purple"
                       type="text"
+                      @keyup.enter="saveService(service)"
                     />
                   </div>
                 </div>
@@ -202,6 +205,7 @@
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
                     placeholder="Add Service Here"
+                    @keyup.enter="addService(newService)"
                   />
                 </div>
               </div>
