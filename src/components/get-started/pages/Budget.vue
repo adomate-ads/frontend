@@ -21,6 +21,7 @@
             type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg ring-transparent focus:border-light-purple block w-full pl-10 p-2.5"
             placeholder="500"
+            @keyup.enter="nextStep"
           />
         </div>
       </div>
