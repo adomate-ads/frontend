@@ -86,7 +86,7 @@
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
       <StripeElements
-        v-if="stripeLoaded && clientSecret !== ''"
+        v-if="stripeLoaded && elementsOptions.clientSecret !== ''"
         v-slot="{ elements }"
         ref="elms"
         :stripe-key="stripeKey"
@@ -94,7 +94,7 @@
         :elements-options="elementsOptions"
       >
         <StripeElement
-          v-ref="payment"
+          ref="payment"
           type="payment"
           :elements="elements"
           :options="cardNumberOptions"
@@ -157,8 +157,6 @@ const lastName = ref<string>("");
 const email = ref<string>("");
 const businessName = ref<string>("");
 
-const clientSecret = ref<string>("");
-
 const isValidName = (input: string): boolean => {
   return input !== "";
 };
@@ -182,7 +180,7 @@ const instanceOptions = ref({
 });
 const elementsOptions = ref({
   // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
-  clientSecret: clientSecret.value,
+  clientSecret: "",
   appearance: {
     theme: "stripe",
   },
@@ -222,7 +220,7 @@ const nextPage = async (): Promise<void> => {
     email.value,
     businessName.value
   );
-  clientSecret.value = await getStartedStore.createAccount();
+  elementsOptions.value.clientSecret = await getStartedStore.createAccount();
   getStartedStore.setCheckout(true);
   page.value += 1;
 };
