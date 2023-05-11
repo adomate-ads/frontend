@@ -15,14 +15,16 @@
               <h1
                 class="mb-8 text-3xl font-extrabold sm:text-4xl xl:text-5xl text-gray-900"
               >
-                A small team passionate about helping small businesses grow
+                Empowering Businesses with Innovative Ad Automation Solutions
               </h1>
               <p class="text-base text-gray-500 max-w-3xl mb-8">
-                We supply businesses of all sizes with modern Ad automation
-                tools allowing you to focus on your customers or something like
-                that. We believe that with our talented team, smart technology
-                and engaged users we can solve some of the biggest problems for
-                small businesses.
+                At Adomate, our dedicated team is passionate about helping
+                businesses thrive. We provide cutting-edge ad automation tools
+                to businesses of all sizes, enabling you to focus on what
+                matters most - your customers. We are confident that our
+                exceptional team, advanced technology, and engaged user base are
+                key to tackling the unique challenges faced by businesses in
+                today's digital landscape.
               </p>
               <div class="flex items-center space-x-4">
                 <button class="arrow-button border-2 border-[#637EFE] shadow">
@@ -52,7 +54,7 @@
       <section class="py-10">
         <div class="container max-w-7xl mx-auto px-5 sm:px-10">
           <div
-            class="border-b border-gray-200 pb-6 grid place-items-center sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-between"
+            class="border-b border-gray-200 pb-6 grid place-items-center grid-cols-2 lg:grid-cols-4 gap-8 justify-center"
           >
             <div>
               <h3
@@ -108,14 +110,14 @@
               <div class="mb-6 flex justify-center lg:justify-start">
                 <span
                   class="text-sm text-extra-dark-purple font-bold inline-block"
-                  >What makes Adomate different?</span
+                  >Discover the Adomate Difference</span
                 >
               </div>
               <h2 class="text-gray-900 text-xl md:text-2xl font-bold mb-3">
-                Adomate offers a unique approach to advertising with advanced
-                automation and optimization algorithms that set us apart. Check
-                out our video to see how we can transform your advertising
-                campaigns.
+                Adomate stands out in the advertising landscape with our
+                exceptional automation and optimization solutions. Watch our
+                video to uncover how we can revolutionize your advertising
+                campaigns and drive success.
               </h2>
             </div>
             <div
@@ -150,12 +152,15 @@
           <h2
             class="text-center text-gray-900 text-2xl lg:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
           >
-            Get started with Adomate
+            Jumpstart Your Business with Adomate
           </h2>
           <p
             class="text-center max-w-2xl mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
           >
-            Three Stage Pipeline
+            Getting started with Adomate is a breeze! Our simple sign-up process
+            and intuitive platform make it easy for you to launch and manage
+            your ad campaigns. Experience the Adomate platform through these
+            three essential stages:
           </p>
 
           <div
@@ -171,11 +176,12 @@
                 <h3
                   class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
                 >
-                  Run Ads
+                  Effortless Launch Ads
                 </h3>
                 <p class="text-gray-600 text-center text-base font-light">
-                  Get started with our automated ads platform. To get ads
-                  running within 5 minutes.
+                  Kick off your advertising journey by creating and launching
+                  your campaigns with just a few clicks. Our platform handles
+                  the heavy lifting, so you can focus on growing your business.
                 </p>
               </div>
             </div>
@@ -189,11 +195,12 @@
                 <h3
                   class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
                 >
-                  Optimization
+                  Continuous Optimization
                 </h3>
                 <p class="text-gray-600 text-center text-base font-light">
-                  Our smart optimization engine will automatically optimize your
-                  google ads to get the greatest return on investment.
+                  As your ads run, our intelligent algorithms work behind the
+                  scenes, constantly refining and adjusting your campaigns for
+                  optimal performance and maximum return on investment.
                 </p>
               </div>
             </div>
@@ -207,11 +214,13 @@
                 <h3
                   class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
                 >
-                  Analytics
+                  Comprehensive Analytics & Smart Bidding
                 </h3>
                 <p class="text-gray-600 text-center text-base font-light">
-                  See how we've optimized your ads and how much money you've
-                  saved, and how much additional traffic you've generated.
+                  Stay informed and make data-driven decisions with our in-depth
+                  analytics and monitoring tools. Plus, our smart bidding system
+                  ensures your ads are shown at the most opportune moments,
+                  maximizing your ad spend efficiency.
                 </p>
               </div>
             </div>
@@ -229,13 +238,21 @@
             </span>
           </div>
           <h2
-            class="text-gray-900 text-2xl lg:text-5xl font-bold max-w-xl lg:leading-tight mb-5"
+            class="text-gray-900 text-2xl lg:text-5xl font-bold max-w-3xl lg:leading-tight mb-5"
           >
-            AI that runs the world's best ads
+            Harness the Power of AI for Unparalleled Ad Performance
           </h2>
-          <p class="text-lg lg:text-xl text-gray-500 mb-8 max-w-3xl">
-            As data continues to drive the forefront of innovation, we're giving
-            your small business the tools to compete with the big guys.
+          <p class="text-lg lg:text-xl text-gray-500 mb-8">
+            In today's data-driven world, we're leveling the playing field by
+            equipping small businesses with cutting-edge tools to compete
+            alongside industry giants. Our AI-powered platform ensures that your
+            ads outshine the rest, delivering outstanding results tailored to
+            your unique business needs.
+            <br /><br />
+            Explore our success stories below and discover how Adomate has
+            transformed the advertising landscape for businesses just like
+            yours. Experience the difference AI can make in driving your
+            business to new heights.
           </p>
 
           <div
@@ -277,13 +294,14 @@
           <h2
             class="text-gray-900 text-2xl lg:text-5xl font-bold lg:leading-tight mb-4"
           >
-            Our Team
+            Meet the Adomate Innovators
           </h2>
           <p class="text-base sm:text-lg text-gray-500 mb-8 lg:mb-12">
-            Our talented team of professionals provides innovative solutions and
-            exceptional service to our clients. With diverse expertise and
-            experience, we work collaboratively to deliver the best possible
-            results.
+            Our dynamic team of experts brings together diverse skill sets and
+            experiences to deliver innovative solutions and unparalleled service
+            to our clients. United by a shared passion for excellence, we
+            collaborate seamlessly to unlock the true potential of your
+            advertising campaigns and drive your business forward.
           </p>
 
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">

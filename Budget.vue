@@ -1,12 +1,9 @@
 <template>
   <div class="h-full flex flex-col justify-between">
     <div class="max-h-[400px] overflow-y-auto">
-      <h2 class="text-2xl font-bold">Budget & Plan Selection</h2>
+      <h2 class="text-2xl font-bold">Budget & Planning</h2>
       <p class="py-3 text-gray-500">
-        Based on your industry and we've done our best to estimate a budget for
-        you however may modify it to your liking. You may modify you budget at
-        any time and our magical algorithms will adjust your campaigns
-        accordingly.
+        We’ve generated an estimated monthly budget based on your industry. If you wish to modify this budget, simply type in the box below:
       </p>
       <div class="w-full px-10">
         <div class="relative mb-6">
@@ -27,12 +24,11 @@
 
       <div class="flex flex-col w-full gap-y-4 mb-5">
         <p v-if="budget <= 10000" class="text-gray-500">
-          Based on your budget, we recommend the
+          Based on your budget, we recommend our
           <span v-if="budget < 500" class="font-bold"> Starter</span>
           <span v-else-if="budget < 2500" class="font-bold"> Business</span>
           <span v-else class="font-bold"> Enterprise</span>
-          plan. You may choose to modify this plan at any time from the
-          dashboard. To learn more about our plans, please visit our
+          plan. To learn more about our plans, please visit our
           <router-link
             to="pricing"
             class="underline decoration-2 decoration-dark-purple"
@@ -41,8 +37,8 @@
           >.
         </p>
         <p v-else class="text-gray-500">
-          Your budget does not fall within our plans. Please Contact Us at
-          info@adomate.ai to get started.
+          Your budget exceeds our largest plan. Please reach out to us at
+          info@adomate.ai for a personal conversation about services and pricing.
         </p>
       </div>
     </div>
@@ -57,7 +53,7 @@
       </button>
       <button
         class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
-        @click="nextStep"
+        @click="emit('next-step')"
       >
         Continue
         <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -67,35 +63,14 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from "vue";
-import Plans from "@/data/plans";
-import useGetStartedStore from "@/stores/get-started";
-
-const getStartedStore = useGetStartedStore();
+import { ref } from "vue";
 
 const emit = defineEmits<{
   (e: "next-step"): void;
   (e: "previous-step"): void;
 }>();
 
-const budget = ref<number>(500);
-const monthly = ref<boolean>(false);
-
-const priceId = computed(() => {
-  if (monthly.value) {
-    if (budget.value < 500) return Plans[0].monthly_stripe_id;
-    if (budget.value < 2500) return Plans[1].monthly_stripe_id;
-    return Plans[2].monthly_stripe_id;
-  }
-  if (budget.value < 500) return Plans[0].annual_stripe_id;
-  if (budget.value < 2500) return Plans[1].annual_stripe_id;
-  return Plans[2].annual_stripe_id;
-});
-
-const nextStep = (): void => {
-  getStartedStore.setPrice(priceId.value);
-  emit("next-step");
-};
+const budget = ref(500);
 </script>
 
 <style scoped></style>

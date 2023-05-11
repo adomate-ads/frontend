@@ -138,43 +138,46 @@
               How It Works
             </h2>
             <p class="text-gray-700 mb-10">
-              We collect data, optimize, target high-performing keywords, and
-              improve campaigns using analytics tools. A comprehensive solution
-              for managing advertising efforts from start to finish.
+              Adomate simplifies Google Ads for small businesses, using AI to
+              create targeted ad campaigns from just a website URL and budget,
+              allowing you to focus on growing your business.
             </p>
           </div>
           <div class="m-5 border-b-2">
             <i
               class="shadow fa-solid fa-database text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
-            <h2 class="text-2xl font-bold mb-2">1. Data Parser</h2>
-            <p class="text-gray-700 mb-10 text-justify">
-              We collect website data using techniques like web scraping,
-              scanning, and keyword prediction, then convert it into a
-              structured format for analysis.
+            <h2 class="text-2xl font-bold mb-2">
+              1. Effortless Campaign Creation
+            </h2>
+            <p class="text-gray-700 mb-10">
+              Enter your website URL and budget, and Adomate's AI analyzes your
+              site and crafts captivating, tailored ads for your target
+              audience.
             </p>
           </div>
           <div class="m-5 border-b-2">
             <i
               class="shadow fa-solid fa-chart-line text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
-            <h2 class="text-2xl font-bold mb-2">2. Optimized Bidding</h2>
-            <p class="text-gray-700 mb-10 text-justify">
-              We optimize our bidding process using advanced algorithms to
-              maximize the results and return on investment of your campaigns in
-              real-time.
+            <h2 class="text-2xl font-bold mb-2">
+              2. Smart Bidding and Budgeting
+            </h2>
+            <p class="text-gray-700 mb-10">
+              Adomate's data-driven approach optimizes your ad spend by
+              automatically adjusting to industry trends for maximum exposure
+              and return on investment.
             </p>
           </div>
           <div class="m-5 border-b-2">
             <i
               class="shadow fa-solid fa-chart-simple text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
-            <h2 class="text-2xl font-bold mb-2">3. Analytics</h2>
-            <p class="text-gray-700 mb-10 text-justify">
-              Our analytics tools identify high-performing keywords that drive
-              conversions, refining campaigns and targeting advertising for
-              improved performance with increased traffic and higher conversion
-              rates.
+            <h2 class="text-2xl font-bold mb-2">3. Ongoing Optimization</h2>
+            <p class="text-gray-700 mb-10">
+              Adomate continually monitors and optimizes your ads, providing
+              comprehensive performance reports and insights for data-driven
+              decision-making.
             </p>
           </div>
         </div>
@@ -201,37 +204,40 @@
             <p
               class="text-slate-700 text-lg pb-16 border-dashed border-b-2 border-light-purple"
             >
-              We cover your campaigns from start to finish. We collect your
-              website data using techniques like scraping and keyword
-              prediction. We optimize our bidding process in real-time, target
-              high-performing keywords, and increase conversion rates using
-              analytics tools.
+              From start to finish, we've got your campaigns covered. Utilizing
+              techniques like web scraping and keyword prediction, we gather
+              your website data, optimize our bidding process in real-time,
+              target high-performing keywords, and boost conversion rates
+              through analytics tools.
             </p>
             <div class="grid grid-cols-2 gap-x-2 px-1 my-10 gap-y-10">
               <div>
                 <h4>
                   <i class="fa-solid fa-file mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1"
-                    >Monthly Reports</span
-                  >
+                  <span class="font-semibold text-lg mt-1">
+                    Customized Ad Design
+                  </span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Stay informed with comprehensive monthly reports that provide
-                  in-depth analysis and insights into your campaigns. These
-                  reports are packed with all the data you need to make informed
-                  decisions and optimize your marketing strategies.
+                  Adomate's powerful AI-driven platform generates unique and
+                  engaging ad designs tailored to your business. Stand out from
+                  the competition with eye-catching visuals that resonate with
+                  your target audience, driving clicks and conversions.
                 </p>
               </div>
               <div>
                 <h4>
                   <i class="fa-solid fa-chart-simple mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1">Real Analytics</span>
+                  <span class="font-semibold text-lg mt-1">
+                    Monthly Reports & Real Analytics
+                  </span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Keep a pulse on your campaigns with real-time analytics that
-                  provide a live view of your performance. Monitor key metrics,
-                  track your progress, and stay on top of trends and events to
-                  ensure your campaigns are always on track.
+                  Gain valuable insights from comprehensive monthly reports,
+                  packed with data to inform your decisions and refine your
+                  marketing strategies. Monitor key metrics, track progress, and
+                  stay current with real-time analytics, ensuring your campaigns
+                  always remain on target.
                 </p>
               </div>
               <div>
@@ -242,25 +248,22 @@
                   >
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Take the hassle out of campaign optimization with our advanced
-                  algorithm that automatically optimizes your campaigns for peak
-                  performance. Our technology can increase performance by up to
-                  XX%, helping you get more from your marketing budget.
+                  Experience hassle-free campaign optimization with our advanced
+                  algorithm that automatically maximizes your campaign's
+                  performance. Our technology can boost results by up to XX%,
+                  helping you extract the most from your marketing budget.
                 </p>
               </div>
               <div>
                 <h4>
                   <i class="fa-solid fa-arrow-up mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1"
-                    >SEO Optimizations</span
-                  >
+                  <span class="font-semibold text-lg mt-1">Bot Blocking</span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Stay ahead of the competition with our cutting-edge SEO
-                  optimization services. We stay up to date on the latest Google
-                  recommendations and parse your website daily to ensure it is
-                  optimized for search engines. This way, you can focus on your
-                  customers while we take care of your website's visibility.
+                  Safeguard your ad spend by preventing bots from clicking on
+                  your ads and wasting valuable resources. Our innovative
+                  bot-blocking technology ensures that only genuine human
+                  interactions count towards your ad performance.
                 </p>
               </div>
             </div>
@@ -365,7 +368,7 @@ import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/data/plans";
 import { ref } from "vue";
 
-const monthly = ref(true);
+const monthly = ref<boolean>(true);
 </script>
 <style scoped>
 #landing-page {

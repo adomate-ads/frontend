@@ -2,7 +2,8 @@ name: Check eslint
 
 on:
   push:
-    branches: ["master", "dev"]
+    branches:
+      - '*'
   pull_request:
     types: [opened, synchronize, reopened]
   merge_group:

@@ -3,11 +3,7 @@
     <div class="max-h-[400px] overflow-y-auto">
       <h2 class="text-2xl font-bold pb-3">Website URL</h2>
       <p class="py-3 text-gray-500">
-        Enter the link to your website below to begin the process. Adomate will
-        start by scraping your website to gain an in-depth understanding of the
-        services your business provides and the locations that you serve. By
-        scraping your website, Adomate will be able to provide your business
-        with better suited ads tailored to your exact business.
+        To get started, please enter the link to your website. Our fine-tuned Artificial Intelligence will review the content of your website to understand what your business does and where it operates. From there, we can generate compelling ads tailored to you!
       </p>
       <h3 class="py-3 text-extra-dark-purple pl-10">Website Link</h3>
       <form class="w-full px-10" @submit.prevent>
@@ -22,7 +18,7 @@
             v-model="url"
             type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:outline-none rounded-lg block w-full pl-10 p-2.5"
-            placeholder="adomate.ai"
+            placeholder="https://adomate.ai"
             :class="[
               isValidURL() ? 'focus:border-light-purple' : 'border-red-500',
             ]"
@@ -30,7 +26,7 @@
         </div>
       </form>
     </div>
-    <div class="flex justify-center items-center space-x-10 text-lg">
+    <div class="flex justify-center space-x-10 text-lg">
       <router-link
         to="/"
         class="bg-transparent text-gray-500 rounded-lg w-44 text-center my-auto"
@@ -55,9 +51,6 @@
 
 <script lang="ts" setup>
 import { onMounted, ref } from "vue";
-import useGetStartedStore from "@/stores/get-started";
-
-const getStartedStore = useGetStartedStore();
 
 const emit = defineEmits<{
   (e: "next-step"): void;
@@ -67,20 +60,14 @@ const emit = defineEmits<{
 const url = ref("");
 
 const isValidURL = (): boolean => {
-  if (url.value.startsWith("https://")) {
-    url.value = url.value.replace("https://", "");
-  } else if (url.value.startsWith("http://")) {
-    url.value = url.value.replace("http://", "");
-  }
-
-  const urlRegex =
-    // eslint-disable-next-line max-len,no-control-regex
-    /^(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}\.?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-zA-Z0-9-]*[a-zA-Z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])$/;
+  const urlRegex = /^(http|https):\/\/[^ "]+$/;
   return urlRegex.test(url.value);
 };
 
 const updateURLParam = (): void => {
-  getStartedStore.setURL(url.value);
+  const page = new URL(window.location.href);
+  page.searchParams.set("URL", url.value);
+  window.history.pushState({}, "", page);
 };
 
 onMounted(() => {
@@ -88,8 +75,6 @@ onMounted(() => {
   const urlParam = queryParams.get("URL");
   if (urlParam != null) {
     url.value = urlParam;
-  } else {
-    url.value = getStartedStore.getDomain;
   }
 });
 </script>

@@ -35,7 +35,7 @@
     </fade-in>
 
     <fade-in :delay="0.1">
-      <div class="-mt-64 mb-5 justify-center">
+      <div class="-mt-40 lg:-mt-64 mb-5 justify-center">
         <div class="flex flex-col lg:flex-row gap-x-6 justify-center">
           <div
             v-for="(plan, idx) in Plans"
@@ -51,14 +51,15 @@
     </fade-in>
     <fade-in>
       <div
-        class="w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
+        class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
       >
         <div>
           <p class="text-xs font-bold text-extra-dark-purple">
-            Custom Solution
+            Tailored Solutions
           </p>
           <h4 class="text-adomate-off-black font-semibold text-2xl">
-            Launched a business that doesn't fit the plans above?
+            Does your business require a unique plan that doesn't align with the
+            options above?
           </h4>
         </div>
         <button
@@ -72,62 +73,98 @@
 
     <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
       <fade-in>
-        <h3 class="text-5xl font-bold text-adomate-off-black">
-          It's easy to add extra benefits to all of our plans.
+        <h3 class="text-5xl font-bold text-adomate-off-black px-5">
+          Enhance Your Campaigns with Our Add-On Features
         </h3>
-        <div class="flex flex-row gap-x-10 justify-center mt-16">
-          <div
-            v-for="x in 3"
-            :key="x"
-            class="justify-left text-left max-w-[380px]"
-          >
+        <div class="flex flex-row gap-x-5 justify-center mt-16 px-5">
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
             <div
-              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle my-2"
+              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
             >
               <i class="fa-regular fa-star pt-4"></i>
             </div>
             <h5 class="text-adomate-off-black text-2xl font-semibold">
-              Smart Bidding
+              AdGuard
             </h5>
             <p class="text-gray-600">
-              We'll help you set up and optimize your campaigns for the best
-              results.
+              Protect your ad budget with AdGuard, our essential add-on that
+              detects and blocks bots. Ensure your campaign budget targets
+              genuine users, maximizing your return on investment and
+              effectively reaching your audience.
             </p>
-            <p class="font-semibold mt-2">
-              From $5/mo per campaign. No setup fee
+            <p class="font-semibold mt-2">From $5/mo per campaign.</p>
+          </div>
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
+            <div
+              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
+            >
+              <i class="fa-regular fa-star pt-4"></i>
+            </div>
+            <h5 class="text-adomate-off-black text-2xl font-semibold">
+              GeoBoost
+            </h5>
+            <p class="text-gray-600">
+              Enhance your local targeting with GeoBoost. This feature
+              identifies high-potential geographic areas using demographic data
+              and local trends, helping your ads connect with the most relevant
+              and engaged audiences. Drive results and grow your local impact.
             </p>
+            <p class="font-semibold mt-2">From $10/mo per campaign.</p>
+          </div>
+          <div class="justify-center text-center lg:text-left max-w-[380px]">
+            <div
+              class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
+            >
+              <i class="fa-regular fa-star pt-4"></i>
+            </div>
+            <h5 class="text-adomate-off-black text-2xl font-semibold">
+              Competitor Watch
+            </h5>
+            <p class="text-gray-600">
+              Stay ahead with Competitor Watch, our add-on that monitors your
+              competitors' ad campaigns and strategies. Analyze industry trends,
+              uncover emerging opportunities, and gain a competitive edge by
+              making informed, data-driven decisions.
+            </p>
+            <p class="font-semibold mt-2">From $15/mo per campaign.</p>
           </div>
         </div>
       </fade-in>
     </div>
 
     <fade-in>
-      <div class="text-center py-20 justify-center">
+      <div class="text-center py-20 justify-center px-5">
         <h3 class="text-5xl font-bold text-adomate-off-black py-12">
-          Compare Plans by Features
+          Compare plans by features
         </h3>
         <div
           class="flex flex-col max-w-[1000px] mx-auto divide-y divide-gray-300"
         >
           <div
-            class="flex flex-row justify-between border-b-2 border-gray-300 pb-2"
+            class="flex flex-row items-end justify-between border-b-2 border-gray-300 pb-2"
           >
-            <h4 class="text-2xl font-bold text-adomate-off-black">
-              Adomate Features
+            <h4 class="text-xl md:text-2xl font-bold text-adomate-off-black">
+              Features
             </h4>
-            <div class="flex gap-x-16">
-              <div class="w-32">
-                <h5 class="text-xl text-adomate-off-black font-semibold">
+            <div class="flex items-center gap-x-12 md:gap-x-20">
+              <div class="text-right">
+                <h5
+                  class="text-l md:text-xl text-adomate-off-black font-semibold"
+                >
                   Starter
                 </h5>
               </div>
-              <div class="w-32">
-                <h5 class="text-xl text-adomate-off-black font-semibold">
+              <div class="text-right">
+                <h5
+                  class="text-l md:text-xl text-adomate-off-black font-semibold"
+                >
                   Business
                 </h5>
               </div>
-              <div class="w-32">
-                <h5 class="text-xl text-adomate-off-black font-semibold">
+              <div class="text-right">
+                <h5
+                  class="text-l md:text-xl text-adomate-off-black font-semibold xs:pr-0 sm:pr-4 md:pr-8"
+                >
                   Enterprise
                 </h5>
               </div>
@@ -136,7 +173,7 @@
           <div
             v-for="(feature, idx) in Features"
             :key="idx"
-            class="flex flex-row justify-between py-2"
+            class="flex flex-row justify-between items-center py-2"
           >
             <fade-in :delay="(idx + 1) / 5">
               <h4 class="font-semibold text-adomate-off-black text-left">
@@ -144,8 +181,8 @@
               </h4>
             </fade-in>
             <fade-in :delay="(idx + 1) / 5">
-              <div class="flex gap-x-16">
-                <div class="w-32 text-center">
+              <div class="flex justify-evenly items-center gap-x-16">
+                <div class="text-center flex items-center">
                   <i
                     v-if="feature.starter.checked"
                     class="fa-solid fa-check text-green-500"
@@ -154,7 +191,7 @@
                     {{ feature.starter.description }}
                   </h5>
                 </div>
-                <div class="w-32 text-center">
+                <div class="text-center flex items-center">
                   <i
                     v-if="feature.business.checked"
                     class="fa-solid fa-check text-green-500"
@@ -163,7 +200,7 @@
                     {{ feature.business.description }}
                   </h5>
                 </div>
-                <div class="w-32 text-center">
+                <div class="text-center flex items-center">
                   <i
                     v-if="feature.enterprise.checked"
                     class="fa-solid fa-check text-green-500"
@@ -180,7 +217,7 @@
     </fade-in>
 
     <fade-in>
-      <div class="text-center py-20 mx-auto justify-center max-w-[1000px]">
+      <div class="text-center py-20 mx-auto justify-center max-w-[1000px] px-8">
         <h3 class="text-5xl font-bold text-adomate-off-black py-12">
           Frequently Asked Questions
         </h3>
