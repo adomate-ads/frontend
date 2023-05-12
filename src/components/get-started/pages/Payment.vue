@@ -240,7 +240,7 @@ const nextPage = async (): Promise<void> => {
     const paymentIntent = getStartedStore.getPaymentIntent;
     elementsOptions.value.clientSecret = paymentIntent.ClientSecret;
     getStartedStore.setCheckout(true);
-    // page.value += 1;
+    page.value += 1;
   }
 };
 
