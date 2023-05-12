@@ -1,3 +1,4 @@
+import axios, { AxiosError } from "axios";
 import { defineStore } from "pinia";
 
 import { API } from "@/utils/api";
@@ -19,6 +20,7 @@ interface GetStarted {
   price: string;
   locations: string[];
   services: string[];
+  budget: number;
 }
 
 interface PaymentIntent {
@@ -46,6 +48,7 @@ const useGetStartedStore = defineStore("getStarted", {
         price: "",
         locations: [],
         services: [],
+        budget: 0,
       },
       PaymentIntent: {
         id: "",
@@ -104,11 +107,15 @@ const useGetStartedStore = defineStore("getStarted", {
     setPrice(price: string): void {
       this.getStarted.price = price;
     },
+    setBudget(budget: number): void {
+      this.getStarted.budget = budget;
+    },
     setCheckout(status: boolean) {
       this.checkout = status;
     },
     async getLocationsAndServices(): Promise<void> {
       try {
+        this.fetching = true;
         const data = await API.get(
           `/v1/get-started/location-service/${this.getStarted.domain}`
         );
@@ -119,8 +126,10 @@ const useGetStartedStore = defineStore("getStarted", {
         } else {
           this.error = "Error fetching locations and services";
         }
+        this.fetching = false;
       } catch (e) {
         this.error = "Error fetching locations and services";
+        this.fetching = false;
       }
     },
     setAccount(
@@ -134,8 +143,10 @@ const useGetStartedStore = defineStore("getStarted", {
       this.getStarted.email = email;
       this.getStarted.company_name = company_name;
     },
-    async createAccount(): Promise<string> {
+    async createAccount(): Promise<void> {
       try {
+        this.fetching = true;
+        const ip = await axios.get("https://api.ipify.org?format=json");
         const data = await API.post("/v1/get-started", {
           first_name: this.getStarted.first_name,
           last_name: this.getStarted.last_name,
@@ -146,7 +157,11 @@ const useGetStartedStore = defineStore("getStarted", {
           price: this.getStarted.price,
           locations: this.getStarted.locations,
           services: this.getStarted.services,
+          budget: this.getStarted.budget,
+          ip: ip.data.ip,
         });
+
+        console.log(data.status);
 
         if (data.status === 201) {
           this.PaymentIntent = {
@@ -156,10 +171,20 @@ const useGetStartedStore = defineStore("getStarted", {
             Tax: data.data.message.tax,
             items: data.data.message.items,
           } as PaymentIntent;
+        } else {
+          this.error = "Error creating account";
         }
-        return "";
-      } catch (e) {
-        return "";
+        this.fetching = false;
+      } catch (err: Error | AxiosError) {
+        if (axios.isAxiosError(err)) {
+          // Access to config, request, and response
+          this.error = err.response?.data.error;
+          this.fetching = false;
+        } else {
+          // Just a stock error
+          this.error = "Error creating account";
+          this.fetching = false;
+        }
       }
     },
   },

@@ -52,7 +52,7 @@
           <div class="w-full">
             <h3 class="text-gray-400">Subscribe to Adomate</h3>
             <div class="flex mb-10">
-              {{ GetStartedStore.getPaymentIntent.items }}
+              {{ GetStartedStore.getPaymentIntent }}
               <h2 class="font-semibold text-4xl text-gray-800">$550.00</h2>
               <div class="mx-2 justify-center">
                 <p class="text-sm text-gray-400">per</p>

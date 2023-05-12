@@ -82,6 +82,9 @@
           />
         </div>
       </div>
+      <p v-if="getStartedStore.getError" class="text-xs text-red-600">
+        {{ getStartedStore.getError }}
+      </p>
     </div>
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
@@ -124,7 +127,8 @@
           Previous
         </button>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 flex items-center justify-center"
+          :class="getStartedStore.getFetching ? 'py-1' : 'py-4'"
           :disabled="
             !isValidName(firstName) ||
             !isValidName(lastName) ||
@@ -133,9 +137,14 @@
           "
           @click="nextPage()"
         >
-          <span v-if="page === 0">Continue</span>
-          <span v-else>Checkout</span>
-          <i class="fa-solid fa-arrow-right ml-2"></i>
+          <span v-if="getStartedStore.getFetching">
+            <loader :width="50" :height="50"></loader>
+          </span>
+          <span v-else>
+            <span v-if="page === 0">Continue</span>
+            <span v-else>Checkout</span>
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
         </button>
       </div>
     </div>
@@ -147,6 +156,8 @@ import { onBeforeMount, ref } from "vue";
 import { StripeElement, StripeElements } from "vue-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import useGetStartedStore from "@/stores/get-started";
+
+import Loader from "@/components/Loader.vue";
 
 const getStartedStore = useGetStartedStore();
 
@@ -216,6 +227,8 @@ const nextPage = async (): Promise<void> => {
     return;
   }
 
+  getStartedStore.error = null;
+
   getStartedStore.setAccount(
     firstName.value,
     lastName.value,
@@ -223,11 +236,12 @@ const nextPage = async (): Promise<void> => {
     businessName.value
   );
   await getStartedStore.createAccount();
-  const paymentIntent = getStartedStore.getPaymentIntent;
-  console.log(paymentIntent);
-  elementsOptions.value.clientSecret = paymentIntent.ClientSecret;
-  getStartedStore.setCheckout(true);
-  page.value += 1;
+  if (getStartedStore.getError == null) {
+    const paymentIntent = getStartedStore.getPaymentIntent;
+    elementsOptions.value.clientSecret = paymentIntent.ClientSecret;
+    getStartedStore.setCheckout(true);
+    // page.value += 1;
+  }
 };
 
 const previousPage = (): void => {

@@ -94,6 +94,7 @@ const priceId = computed(() => {
 });
 
 const nextStep = (): void => {
+  getStartedStore.setBudget(budget.value * 100);
   getStartedStore.setPrice(priceId.value);
   emit("next-step");
 };
