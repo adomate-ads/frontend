@@ -80,7 +80,7 @@ const emit = defineEmits<{
 }>();
 
 const budget = ref<number>(500);
-const monthly = ref<boolean>(false);
+const monthly = ref<boolean>(true);
 
 const priceId = computed(() => {
   if (monthly.value) {
