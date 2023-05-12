@@ -171,7 +171,9 @@ const emit = defineEmits<{
   (e: "previous-step"): void;
 }>();
 
-const stripeKey = ref("pk_test_gb9Ci5uY6dvCkOw8JulaVyiA00LIxVv2Zm"); // test key
+const stripeKey = ref(
+  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
+); // test key
 const instanceOptions = ref({
   // https://stripe.com/docs/js/initializing#init_stripe_js-options
   appearance: {
@@ -220,7 +222,10 @@ const nextPage = async (): Promise<void> => {
     email.value,
     businessName.value
   );
-  elementsOptions.value.clientSecret = await getStartedStore.createAccount();
+  await getStartedStore.createAccount();
+  const paymentIntent = getStartedStore.getPaymentIntent;
+  console.log(paymentIntent);
+  elementsOptions.value.clientSecret = paymentIntent.ClientSecret;
   getStartedStore.setCheckout(true);
   page.value += 1;
 };

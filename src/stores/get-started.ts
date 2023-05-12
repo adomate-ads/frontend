@@ -4,6 +4,7 @@ import { API } from "@/utils/api";
 
 interface GetStartedState {
   getStarted: GetStarted;
+  PaymentIntent: PaymentIntent;
   error: string | null;
   checkout: boolean;
   fetching: boolean;
@@ -20,6 +21,19 @@ interface GetStarted {
   services: string[];
 }
 
+interface PaymentIntent {
+  id: string;
+  ClientSecret: string;
+  Total: number;
+  Tax: number;
+  items: PaymentIntentItem[];
+}
+
+interface PaymentIntentItem {
+  id: string;
+  price: number;
+}
+
 const useGetStartedStore = defineStore("getStarted", {
   state: () =>
     ({
@@ -33,6 +47,13 @@ const useGetStartedStore = defineStore("getStarted", {
         locations: [],
         services: [],
       },
+      PaymentIntent: {
+        id: "",
+        ClientSecret: "",
+        Total: 0,
+        Tax: 0,
+        items: [],
+      },
       error: null,
       checkout: false,
       fetching: false,
@@ -43,6 +64,7 @@ const useGetStartedStore = defineStore("getStarted", {
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
     getDomain: (state) => state.getStarted.domain,
+    getPaymentIntent: (state) => state.PaymentIntent,
     getError: (state) => state.error,
   },
   actions: {
@@ -127,7 +149,13 @@ const useGetStartedStore = defineStore("getStarted", {
         });
 
         if (data.status === 201) {
-          return data.data.message.payment_intent;
+          this.PaymentIntent = {
+            id: data.data.message.id,
+            ClientSecret: data.data.message.payment_intent,
+            Total: data.data.message.total,
+            Tax: data.data.message.tax,
+            items: data.data.message.items,
+          } as PaymentIntent;
         }
         return "";
       } catch (e) {
