@@ -173,15 +173,17 @@ const useGetStartedStore = defineStore("getStarted", {
           this.error = "Error creating account";
         }
         this.fetching = false;
-      } catch (err: Error | AxiosError) {
-        if (axios.isAxiosError(err)) {
-          // Access to config, request, and response
-          this.error = err.response?.data.error;
-          this.fetching = false;
-        } else {
-          // Just a stock error
-          this.error = "Error creating account";
-          this.fetching = false;
+      } catch (err: unknown) {
+        if (err instanceof Error || err instanceof AxiosError) {
+          if (axios.isAxiosError(err)) {
+            // Access to config, request, and response
+            this.error = err.response?.data.error;
+            this.fetching = false;
+          } else {
+            // Just a stock error
+            this.error = "Error creating account";
+            this.fetching = false;
+          }
         }
       }
     },
