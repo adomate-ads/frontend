@@ -161,8 +161,6 @@ const useGetStartedStore = defineStore("getStarted", {
           ip: ip.data.ip,
         });
 
-        console.log(data.status);
-
         if (data.status === 201) {
           this.PaymentIntent = {
             id: data.data.message.id,
