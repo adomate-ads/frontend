@@ -1,20 +1,20 @@
 <template>
   <div
-  v-if="loading"
-  key="element1"
-  class="flex items-center justify-center h-screen bg-adomate-off-white"
+    v-if="loading"
+    key="element1"
+    class="flex items-center justify-center h-screen bg-adomate-off-white"
   >
-  <FadeOut>
+    <FadeOut>
       <Loader />
     </FadeOut>
-    </div>
-    <div v-else key="element2" class="bg-adomate-off-white">
-      <Header />
-      <main>
-        <router-view />
-      </main>
-      <Footer />
-    </div>
+  </div>
+  <div v-else key="element2" class="bg-adomate-off-white">
+    <Header />
+    <main>
+      <router-view />
+    </main>
+    <Footer />
+  </div>
 </template>
 
 <script setup lang="ts">
