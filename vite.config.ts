@@ -5,7 +5,14 @@ import { fileURLToPath, URL } from "url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), VueTypeImports()],
+  plugins: [vue(
+    {
+      template: {
+        compilerOptions: {
+          isCustomElement: tag => tag.search("lottie-player") === 0
+        }
+    }
+}), VueTypeImports()],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
