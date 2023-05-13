@@ -149,12 +149,13 @@
       </div>
     </div>
   </div>
+  {{ error }}
 </template>
 
 <script lang="ts" setup>
+import { loadStripe, Stripe } from "@stripe/stripe-js";
 import { onBeforeMount, ref } from "vue";
 import { StripeElement, StripeElements } from "vue-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
 import useGetStartedStore from "@/stores/get-started";
 
 import Loader from "@/components/Loader.vue";
@@ -206,17 +207,43 @@ const stripeLoaded = ref(false);
 const payment = ref();
 const elms = ref();
 
-onBeforeMount(() => {
-  const stripePromise = loadStripe(stripeKey.value);
-  stripePromise.then(() => {
+let stripe: Stripe | null = null;
+
+const error = ref<string>("");
+
+onBeforeMount(async () => {
+  stripe = await loadStripe(stripeKey.value);
+  if (stripe) {
     stripeLoaded.value = true;
-  });
+  }
 });
 
 const pay = (): void => {
   // Get stripe element
   // const paymentElement = payment.value.stripeElement;
-  // Do something...
+  console.log(payment.value.stripeElement);
+  console.log(elms.value.stripeElement);
+
+  if (!stripe || !payment.value.stripeElement) {
+    error.value = "Stripe is not loaded";
+    return;
+  }
+
+  stripe
+    .confirmPayment({
+      elements: elms.value.stripeElement,
+      clientSecret: elementsOptions.value.clientSecret,
+      confirmParams: {
+        // Return URL where the customer should be redirected after the PaymentIntent is confirmed.
+        return_url: "https://adomate.ai",
+      },
+      redirect: "always",
+    })
+    .then(function (result: { error: any }) {
+      if (result.error) {
+        error.value = result.error.message;
+      }
+    });
 };
 
 const nextPage = async (): Promise<void> => {
