@@ -1,11 +1,12 @@
 <template>
+  <div
+  v-if="loading"
+  key="element1"
+  class="flex items-center justify-center h-screen bg-adomate-off-white"
+  >
   <FadeOut>
-    <div
-      v-if="loading"
-      key="element1"
-      class="flex items-center justify-center h-screen bg-adomate-off-white"
-    >
       <Loader />
+    </FadeOut>
     </div>
     <div v-else key="element2" class="bg-adomate-off-white">
       <Header />
@@ -14,7 +15,6 @@
       </main>
       <Footer />
     </div>
-  </FadeOut>
 </template>
 
 <script setup lang="ts">
