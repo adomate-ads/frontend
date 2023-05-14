@@ -88,21 +88,9 @@
     </div>
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
-      <StripeElements
-        v-if="stripeLoaded && elementsOptions.clientSecret !== ''"
-        v-slot="{ elements }"
-        ref="elms"
-        :stripe-key="stripeKey"
-        :instance-options="instanceOptions"
-        :elements-options="elementsOptions"
-      >
-        <StripeElement
-          ref="payment"
-          type="payment"
-          :elements="elements"
-          :options="cardNumberOptions"
-        />
-      </StripeElements>
+      <div id="payment-element">
+        <!--Stripe.js injects the Payment Element-->
+      </div>
     </div>
 
     <div class="flex flex-col justify-center">
@@ -138,7 +126,11 @@
           @click="nextPage()"
         >
           <span v-if="getStartedStore.getFetching">
-            <loader :width="50" :height="50"></loader>
+            <loader
+              :width="50"
+              :height="50"
+              :background="'transparent'"
+            ></loader>
           </span>
           <span v-else>
             <span v-if="page === 0">Continue</span>
@@ -149,13 +141,12 @@
       </div>
     </div>
   </div>
-  {{ error }}
+  {{ err }}
 </template>
 
 <script lang="ts" setup>
-import { loadStripe, Stripe } from "@stripe/stripe-js";
-import { onBeforeMount, ref } from "vue";
-import { StripeElement, StripeElements } from "vue-stripe-js";
+// import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { nextTick, ref } from "vue";
 import useGetStartedStore from "@/stores/get-started";
 
 import Loader from "@/components/Loader.vue";
@@ -183,72 +174,42 @@ const emit = defineEmits<{
   (e: "previous-step"): void;
 }>();
 
-const stripeKey = ref(
+const stripe = Stripe(
   "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
-); // test key
-const instanceOptions = ref({
-  // https://stripe.com/docs/js/initializing#init_stripe_js-options
-  appearance: {
-    theme: "stripe",
-  },
-});
-const elementsOptions = ref({
-  // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
-  clientSecret: "",
-  appearance: {
-    theme: "stripe",
-  },
-});
-const cardNumberOptions = ref({
-  // https://stripe.com/docs/stripe.js#element-options
-});
+);
 
-const stripeLoaded = ref(false);
-const payment = ref();
-const elms = ref();
+let elements = stripe.elements();
 
-let stripe: Stripe | null = null;
+const appearance = {
+  theme: "stripe",
+};
 
-const error = ref<string>("");
+let clientSecret = "";
 
-onBeforeMount(async () => {
-  stripe = await loadStripe(stripeKey.value);
-  if (stripe) {
-    stripeLoaded.value = true;
-  }
-});
+const err = ref<string>("");
 
-const pay = (): void => {
-  // Get stripe element
-  // const paymentElement = payment.value.stripeElement;
-  console.log(payment.value.stripeElement);
-  console.log(elms.value.stripeElement);
+const pay = async (): Promise<void> => {
+  getStartedStore.fetching = true;
+  const { error } = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      // Make sure to change this to your payment completion page
+      return_url: "https://adomate.ai",
+    },
+  });
 
-  if (!stripe || !payment.value.stripeElement) {
-    error.value = "Stripe is not loaded";
-    return;
+  if (error.type === "card_error" || error.type === "validation_error") {
+    err.value = error.message;
+  } else {
+    err.value = "An unexpected error occurred.";
   }
 
-  stripe
-    .confirmPayment({
-      elements: elms.value.stripeElement,
-      clientSecret: elementsOptions.value.clientSecret,
-      confirmParams: {
-        // Return URL where the customer should be redirected after the PaymentIntent is confirmed.
-        return_url: "https://adomate.ai",
-      },
-      redirect: "always",
-    })
-    .then(function (result: { error: any }) {
-      if (result.error) {
-        error.value = result.error.message;
-      }
-    });
+  getStartedStore.fetching = false;
 };
 
 const nextPage = async (): Promise<void> => {
   if (page.value === 1) {
-    pay();
+    await pay();
     emit("next-step");
     getStartedStore.setCheckout(false);
     return;
@@ -265,9 +226,18 @@ const nextPage = async (): Promise<void> => {
   await getStartedStore.createAccount();
   if (getStartedStore.getError == null) {
     const paymentIntent = getStartedStore.getPaymentIntent;
-    elementsOptions.value.clientSecret = paymentIntent.ClientSecret;
+    clientSecret = paymentIntent.ClientSecret;
+    elements = stripe.elements({ appearance, clientSecret });
+    const paymentElementOptions = {
+      layout: "tabs",
+    };
+    const paymentElement = elements.create("payment", paymentElementOptions);
+
     getStartedStore.setCheckout(true);
     page.value += 1;
+
+    await nextTick(); // Wait for the dom to add the div
+    paymentElement.mount("#payment-element");
   }
 };
 
