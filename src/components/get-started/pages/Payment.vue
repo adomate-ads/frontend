@@ -82,24 +82,15 @@
           />
         </div>
       </div>
+      <p v-if="getStartedStore.getError" class="text-xs text-red-600">
+        {{ getStartedStore.getError }}
+      </p>
     </div>
     <div v-if="page == 1">
       <h2 class="text-2xl font-bold mb-2">Payment</h2>
-      <StripeElements
-        v-if="stripeLoaded && clientSecret !== ''"
-        v-slot="{ elements }"
-        ref="elms"
-        :stripe-key="stripeKey"
-        :instance-options="instanceOptions"
-        :elements-options="elementsOptions"
-      >
-        <StripeElement
-          v-ref="payment"
-          type="payment"
-          :elements="elements"
-          :options="cardNumberOptions"
-        />
-      </StripeElements>
+      <div id="payment-element">
+        <!--Stripe.js injects the Payment Element-->
+      </div>
     </div>
 
     <div class="flex flex-col justify-center">
@@ -124,7 +115,8 @@
           Previous
         </button>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 flex items-center justify-center"
+          :class="getStartedStore.getFetching ? 'py-1' : 'py-4'"
           :disabled="
             !isValidName(firstName) ||
             !isValidName(lastName) ||
@@ -133,20 +125,31 @@
           "
           @click="nextPage()"
         >
-          <span v-if="page === 0">Continue</span>
-          <span v-else>Checkout</span>
-          <i class="fa-solid fa-arrow-right ml-2"></i>
+          <span v-if="getStartedStore.getFetching">
+            <loader
+              :width="50"
+              :height="50"
+              :background="'transparent'"
+            ></loader>
+          </span>
+          <span v-else>
+            <span v-if="page === 0">Continue</span>
+            <span v-else>Checkout</span>
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </span>
         </button>
       </div>
     </div>
   </div>
+  {{ err }}
 </template>
 
 <script lang="ts" setup>
-import { onBeforeMount, ref } from "vue";
-import { StripeElement, StripeElements } from "vue-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+// import { loadStripe, Stripe } from "@stripe/stripe-js";
+import { nextTick, ref } from "vue";
 import useGetStartedStore from "@/stores/get-started";
+
+import Loader from "@/components/Loader.vue";
 
 const getStartedStore = useGetStartedStore();
 
@@ -156,8 +159,6 @@ const firstName = ref<string>("");
 const lastName = ref<string>("");
 const email = ref<string>("");
 const businessName = ref<string>("");
-
-const clientSecret = ref<string>("");
 
 const isValidName = (input: string): boolean => {
   return input !== "";
@@ -173,48 +174,49 @@ const emit = defineEmits<{
   (e: "previous-step"): void;
 }>();
 
-const stripeKey = ref("pk_test_gb9Ci5uY6dvCkOw8JulaVyiA00LIxVv2Zm"); // test key
-const instanceOptions = ref({
-  // https://stripe.com/docs/js/initializing#init_stripe_js-options
-  appearance: {
-    theme: "stripe",
-  },
-});
-const elementsOptions = ref({
-  // https://stripe.com/docs/js/elements_object/create#stripe_elements-options
-  clientSecret: clientSecret.value,
-  appearance: {
-    theme: "stripe",
-  },
-});
-const cardNumberOptions = ref({
-  // https://stripe.com/docs/stripe.js#element-options
-});
+// eslint-disable-next-line no-undef
+const stripe = Stripe(
+  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
+);
 
-const stripeLoaded = ref(false);
-const payment = ref();
-const elms = ref();
+let elements = stripe.elements();
 
-onBeforeMount(() => {
-  const stripePromise = loadStripe(stripeKey.value);
-  stripePromise.then(() => {
-    stripeLoaded.value = true;
+const appearance = {
+  theme: "stripe",
+};
+
+let clientSecret = "";
+
+const err = ref<string>("");
+
+const pay = async (): Promise<void> => {
+  getStartedStore.fetching = true;
+  const { error } = await stripe.confirmPayment({
+    elements,
+    confirmParams: {
+      // Make sure to change this to your payment completion page
+      return_url: "https://adomate.ai",
+    },
   });
-});
 
-const pay = (): void => {
-  // Get stripe element
-  // const paymentElement = payment.value.stripeElement;
-  // Do something...
+  if (error.type === "card_error" || error.type === "validation_error") {
+    err.value = error.message;
+  } else {
+    err.value = "An unexpected error occurred.";
+  }
+
+  getStartedStore.fetching = false;
 };
 
 const nextPage = async (): Promise<void> => {
   if (page.value === 1) {
-    pay();
+    await pay();
     emit("next-step");
     getStartedStore.setCheckout(false);
     return;
   }
+
+  getStartedStore.error = null;
 
   getStartedStore.setAccount(
     firstName.value,
@@ -222,9 +224,22 @@ const nextPage = async (): Promise<void> => {
     email.value,
     businessName.value
   );
-  clientSecret.value = await getStartedStore.createAccount();
-  getStartedStore.setCheckout(true);
-  page.value += 1;
+  await getStartedStore.createAccount();
+  if (getStartedStore.getError == null) {
+    const paymentIntent = getStartedStore.getPaymentIntent;
+    clientSecret = paymentIntent.ClientSecret;
+    elements = stripe.elements({ appearance, clientSecret });
+    const paymentElementOptions = {
+      layout: "tabs",
+    };
+    const paymentElement = elements.create("payment", paymentElementOptions);
+
+    getStartedStore.setCheckout(true);
+    page.value += 1;
+
+    await nextTick(); // Wait for the dom to add the div
+    paymentElement.mount("#payment-element");
+  }
 };
 
 const previousPage = (): void => {

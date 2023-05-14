@@ -1,12 +1,14 @@
+import axios, { AxiosError } from "axios";
 import { defineStore } from "pinia";
 
 import { API } from "@/utils/api";
 
 interface GetStartedState {
   getStarted: GetStarted;
+  PaymentIntent: PaymentIntent;
+  error: string | null;
   checkout: boolean;
   fetching: boolean;
-  error: string;
 }
 
 interface GetStarted {
@@ -18,6 +20,20 @@ interface GetStarted {
   price: string;
   locations: string[];
   services: string[];
+  budget: number;
+}
+
+interface PaymentIntent {
+  id: string;
+  ClientSecret: string;
+  Total: number;
+  Tax: number;
+  items: PaymentIntentItem[];
+}
+
+interface PaymentIntentItem {
+  id: string;
+  price: number;
 }
 
 const useGetStartedStore = defineStore("getStarted", {
@@ -32,10 +48,18 @@ const useGetStartedStore = defineStore("getStarted", {
         price: "",
         locations: [],
         services: [],
+        budget: 0,
       },
+      PaymentIntent: {
+        id: "",
+        ClientSecret: "",
+        Total: 0,
+        Tax: 0,
+        items: [],
+      },
+      error: null,
       checkout: false,
       fetching: false,
-      error: "",
     } as GetStartedState),
   getters: {
     getCheckout: (state) => state.checkout,
@@ -43,6 +67,8 @@ const useGetStartedStore = defineStore("getStarted", {
     getLocations: (state) => state.getStarted.locations,
     getServices: (state) => state.getStarted.services,
     getDomain: (state) => state.getStarted.domain,
+    getPaymentIntent: (state) => state.PaymentIntent,
+    getError: (state) => state.error,
   },
   actions: {
     async setURL(url: string): Promise<void> {
@@ -81,19 +107,29 @@ const useGetStartedStore = defineStore("getStarted", {
     setPrice(price: string): void {
       this.getStarted.price = price;
     },
+    setBudget(budget: number): void {
+      this.getStarted.budget = budget;
+    },
     setCheckout(status: boolean) {
       this.checkout = status;
     },
     async getLocationsAndServices(): Promise<void> {
       try {
-        const { data } = await API.get(
+        this.fetching = true;
+        const data = await API.get(
           `/v1/get-started/location-service/${this.getStarted.domain}`
         );
 
-        this.getStarted.locations = data.locations;
-        this.getStarted.services = data.services;
+        if (data.status === 200) {
+          this.getStarted.locations = data.data.locations;
+          this.getStarted.services = data.data.services;
+        } else {
+          this.error = "Error fetching locations and services";
+        }
+        this.fetching = false;
       } catch (e) {
         this.error = "Error fetching locations and services";
+        this.fetching = false;
       }
     },
     setAccount(
@@ -107,8 +143,10 @@ const useGetStartedStore = defineStore("getStarted", {
       this.getStarted.email = email;
       this.getStarted.company_name = company_name;
     },
-    async createAccount(): Promise<string> {
+    async createAccount(): Promise<void> {
       try {
+        this.fetching = true;
+        const ip = await axios.get("https://api.ipify.org?format=json");
         const data = await API.post("/v1/get-started", {
           first_name: this.getStarted.first_name,
           last_name: this.getStarted.last_name,
@@ -117,14 +155,36 @@ const useGetStartedStore = defineStore("getStarted", {
           industry: "software",
           domain: this.getStarted.domain,
           price: this.getStarted.price,
+          locations: this.getStarted.locations,
+          services: this.getStarted.services,
+          budget: this.getStarted.budget,
+          ip: ip.data.ip,
         });
 
         if (data.status === 201) {
-          return data.data.message.payment_intent;
+          this.PaymentIntent = {
+            id: data.data.message.id,
+            ClientSecret: data.data.message.payment_intent,
+            Total: data.data.message.total,
+            Tax: data.data.message.tax,
+            items: data.data.message.items,
+          } as PaymentIntent;
+        } else {
+          this.error = "Error creating account";
         }
-        return "";
-      } catch (e) {
-        return "";
+        this.fetching = false;
+      } catch (err: unknown) {
+        if (err instanceof Error || err instanceof AxiosError) {
+          if (axios.isAxiosError(err)) {
+            // Access to config, request, and response
+            this.error = err.response?.data.error;
+            this.fetching = false;
+          } else {
+            // Just a stock error
+            this.error = "Error creating account";
+            this.fetching = false;
+          }
+        }
       }
     },
   },
