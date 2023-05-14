@@ -174,6 +174,7 @@ const emit = defineEmits<{
   (e: "previous-step"): void;
 }>();
 
+// eslint-disable-next-line no-undef
 const stripe = Stripe(
   "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
 );
