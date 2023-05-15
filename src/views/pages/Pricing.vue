@@ -51,9 +51,9 @@
     </fade-in>
     <fade-in>
       <div
-        class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
+        class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex flex-col lg:flex-row items-center lg:justify-between"
       >
-        <div>
+        <div class="mb-4 lg:mb-0">
           <p class="text-xs font-bold text-extra-dark-purple">
             Tailored Solutions
           </p>
@@ -63,7 +63,7 @@
           </h4>
         </div>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 w-auto md:w-60"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-5 rounded mt-4 lg:mt-0 lg:ml-4 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 md:w-60"
         >
           Contact Us
           <i class="fa-solid fa-arrow-right ml-2"></i>
