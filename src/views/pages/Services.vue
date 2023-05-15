@@ -5,7 +5,7 @@
         <h1
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
         >
-          Services built to help scale
+          Tools built to help scale
           <strong
             class="h-full w-full transition hover:text-transparent ease-in-out bg-clip-text bg-gradient-to-br from-dark-purple via-light-purple to-dark-purple"
           >
@@ -14,7 +14,7 @@
           business
         </h1>
         <p
-          class="text-l text-center pt-6 px-5 mx-10 border-b-2 lg:border-b-0 pb-10"
+          class="text-l text-center pt-6 px-5 mx-10 border-b-2 lg:border-b-0 pb-10 hover:border-dark-purple transition ease-in-out delay-50"
         >
           Efficiently grow your business with our automated advertising
           services. Advanced algorithms optimize campaigns for increased traffic
@@ -39,20 +39,58 @@
         <button
           class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
         >
-          Get Started
+          Go to dashboard
           <span class="arrow"></span>
         </button>
       </div>
       <div class="w-full lg:w-1/2 flex justify-center items-center relative">
         <div class="absolute w-4/5 h-full">
           <div
-            class="bg-dark-purple rounded-full blur-2xl w-full h-full opacity-40"
+            class="bg-dark-purple rounded-full blur-2xl w-full h-full opacity-25"
           ></div>
         </div>
         <img
           src="@/assets/home/banner_macbookpro15_front.png"
           class="w-4/5 max-w-full relative z-10"
         />
+      </div>
+    </div>
+  </fade-in>
+  <div
+    class="px-5 mx-10 py-10 border-b-2 lg:border-b-0 hover:border-dark-purple transition ease-in-out delay-50"
+  ></div>
+  <fade-in>
+    <div class="flex flex-col-reverse lg:flex-row pt-20 my-0 lg:my-20">
+      <div class="w-full lg:w-1/2 flex justify-center items-center relative">
+        <div class="absolute w-4/5 h-full">
+          <div
+            class="bg-dark-purple rounded-full blur-2xl w-full h-full opacity-25"
+          ></div>
+        </div>
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/925/603/original/marketing-campaign-business-strategy-digital-product-advertising-target-audience-in-social-media-brand-communication-company-website-flat-design-modern-illustration-vector.jpg"
+          class="w-3/4 max-w-4/5 relative z-10 rounded-md"
+        />
+      </div>
+      <div
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+      >
+        <h1
+          class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
+        >
+          Custom target locations and ad spending limit
+        </h1>
+        <p class="text-center lg:text-left pt-6">
+          You are in complete control of your campaign location targets and
+          budgeting. We have a variety of plans to suit the needs of your
+          business.
+        </p>
+        <button
+          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
+        >
+          See plans
+          <span class="arrow"></span>
+        </button>
       </div>
     </div>
   </fade-in>
@@ -83,8 +121,8 @@
           <p class="text-4xl font-semibold text-white">
             Frequently Asked Questions
           </p>
-          <p class="text-xl pt-2">Everything you need to know about Adomate.</p>
-          <p class="text-xl pt-2">Can't find what you're looking for?</p>
+          <p class="text-xl pt-2">Commonly asked questions about Adomate.</p>
+          <p class="text-xl pt-2">Need more support?</p>
           <a
             class="underline text-xl pt-2 hover:text-white"
             href="mailto:support@adomate.ai"
