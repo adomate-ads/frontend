@@ -1,180 +1,99 @@
 <template>
   <fade-in>
-    <div id="services">
+    <div id="services-landing" class="py-10">
       <div class="w-full flex place-items-center flex-col">
         <h1
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-20 px-5"
+          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
         >
-          Services built to help scale
-          <strong class="hover:text-dark-purple transition-colors ease-in-out"
-            >your</strong
+          Tools built to help scale
+          <strong
+            class="h-full w-full transition hover:text-transparent ease-in-out bg-clip-text bg-gradient-to-br from-dark-purple via-light-purple to-dark-purple"
           >
+            your
+          </strong>
           business
         </h1>
-        <p class="text-center pt-2 px-5 mb-10 mx-10">
+        <p
+          class="text-l text-center pt-6 px-5 mx-10 border-b-2 lg:border-b-0 pb-10 hover:border-dark-purple transition ease-in-out delay-50"
+        >
           Efficiently grow your business with our automated advertising
           services. Advanced algorithms optimize campaigns for increased traffic
           and higher conversion rates.
         </p>
       </div>
     </div>
-  </fade-in>
 
-  <div class="snap-y snap-mandatory">
-    <!-- Hero 1 - Dashboard -->
-    <fade-in :delay="0.05">
-      <div class="snap-start shrink-0">
-        <div class="sm:py-10">
-          <div class="mx-auto sm:px-6 lg:px-8">
-            <div
-              class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl mx-10 mb-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
-            >
-              <div
-                class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
-              >
-                <h2
-                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-                >
-                  Monitor your analytics<br />24/7 using our dashboard.
-                </h2>
-                <p class="mt-6 text-lg leading-8 text-gray-700">
-                  Manage your campaigns, track your performance, get insights,
-                  and more using our dashboard tool.
-                </p>
-                <div
-                  class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
-                >
-                  <a
-                    href="#"
-                    class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
-                    >Go to dashboard</a
-                  >
-                  <a
-                    href="#"
-                    class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
-                    >Learn more <span aria-hidden="true">→</span></a
-                  >
-                </div>
-              </div>
-              <div
-                class="flex justify-center lg:justify-end w-full h-full py-20"
-              >
-                <img
-                  class="w-3/4 rounded-xl hover:scale-105 transition duration-500 ease-in-out shadow-xl"
-                  src="@/assets/home/banner.png"
-                  alt="Dashboard Screenshot"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="flex flex-col lg:flex-row my-0 lg:my-20">
+      <div
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+      >
+        <h1
+          class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
+        >
+          Monitor your analytics using our 24/7 dashboard
+        </h1>
+        <p class="text-center lg:text-left pt-6">
+          Manage your campaigns, track your performance, get insights, and more
+          using our dashboard tool.
+        </p>
+        <button
+          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
+        >
+          Go to dashboard
+          <span class="arrow"></span>
+        </button>
       </div>
-    </fade-in>
-    <!-- Hero 2 - Ad Optimization -->
-    <fade-in :delay="0.05">
-      <div class="snap-center shrink-0">
-        <div class="sm:py-10 snap-center">
-          <div class="mx-auto sm:px-6 lg:px-8">
-            <div
-              class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
-            >
-              <div
-                class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
-              >
-                <h2
-                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-                >
-                  Custom target locations<br />and ad spending limit.
-                </h2>
-                <p class="mt-6 text-lg leading-8 text-gray-700">
-                  You are in complete control of your campaign location targets
-                  and budgeting. We have a variety of plans to suit the needs of
-                  your business.
-                </p>
-                <div
-                  class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
-                >
-                  <a
-                    href="#"
-                    class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mr-5 lg:mb-0 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
-                    >See plans</a
-                  >
-                  <a
-                    href="#"
-                    class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
-                    >Learn more <span aria-hidden="true">→</span></a
-                  >
-                </div>
-              </div>
-              <div
-                class="flex justify-center lg:justify-end w-full h-full py-20"
-              >
-                <img
-                  class="w-3/4 rounded-xl hover:scale-105 transition duration-500 ease-in-out shadow-xl"
-                  src="https://static.vecteezy.com/system/resources/previews/010/925/603/original/marketing-campaign-business-strategy-digital-product-advertising-target-audience-in-social-media-brand-communication-company-website-flat-design-modern-illustration-vector.jpg"
-                  alt="App screenshot"
-                />
-              </div>
-            </div>
-          </div>
+      <div class="w-full lg:w-1/2 flex justify-center items-center relative">
+        <div class="absolute w-4/5 h-full">
+          <div
+            class="bg-dark-purple rounded-full blur-2xl w-full h-full opacity-25"
+          ></div>
         </div>
+        <img
+          src="@/assets/home/banner_macbookpro15_front.png"
+          class="w-4/5 max-w-full relative z-10"
+        />
       </div>
-    </fade-in>
-    <!-- Hero 3 - Availability -->
-    <fade-in :delay="0.05">
-      <div class="snap-center shrink-0">
-        <div class="sm:py-10 snap-center">
-          <div class="mx-auto sm:px-6 lg:px-8">
-            <div
-              class="relative isolate overflow-hidden bg-light-purple px-6 pt-16 rounded-3xl m-10 sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
-            >
-              <div
-                class="mx-auto max-w-md text-center lg:mx-0 lg: lg:py-32 lg:text-left"
-              >
-                <h2
-                  class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-                >
-                  Available anytime,<br />anywhere.
-                </h2>
-                <p class="mt-6 text-lg leading-8 text-gray-700">
-                  We understand as a business owner that your time is valuable,
-                  so our tools are built to be available on all devices,
-                  anytime, anywhere.
-                </p>
-                <div
-                  class="mt-10 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-x-6"
-                >
-                  <a
-                    href="#"
-                    class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded-md mb-4 lg:mb-0 lg:mr-5 hover:bg-adomate-off-white hover:text-dark-purple transition hover:-translate-y-1"
-                  >
-                    Get started
-                  </a>
-                  <div class="flex items-center">
-                    <a
-                      href="#"
-                      class="text-sm font-semibold leading-6 text-gray-900 hover:text-dark-purple transition"
-                    >
-                      Learn more <span aria-hidden="true">→</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div
-                class="flex justify-center lg:justify-end w-full h-full py-20"
-              >
-                <img
-                  class="w-3/4 rounded-xl hover:scale-105 transition duration-500 ease-in-out shadow-xl"
-                  src="https://cdn.vox-cdn.com/thumbor/NqNRM6S4nYLA0Gi0yrajnvEal5Y=/1400x0/filters:no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19234747/fortnite_firing_range.png"
-                  alt="App screenshot"
-                />
-              </div>
-            </div>
-          </div>
+    </div>
+  </fade-in>
+  <div
+    class="px-5 mx-10 py-10 border-b-2 lg:border-b-0 hover:border-dark-purple transition ease-in-out delay-50"
+  ></div>
+  <fade-in>
+    <div class="flex flex-col-reverse lg:flex-row pt-20 my-0 lg:my-20">
+      <div class="w-full lg:w-1/2 flex justify-center items-center relative">
+        <div class="absolute w-4/5 h-full">
+          <div
+            class="bg-dark-purple rounded-full blur-2xl w-full h-full opacity-25"
+          ></div>
         </div>
+        <img
+          src="https://static.vecteezy.com/system/resources/previews/010/925/603/original/marketing-campaign-business-strategy-digital-product-advertising-target-audience-in-social-media-brand-communication-company-website-flat-design-modern-illustration-vector.jpg"
+          class="w-3/4 max-w-4/5 relative z-10 rounded-md"
+        />
       </div>
-    </fade-in>
-  </div>
+      <div
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+      >
+        <h1
+          class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
+        >
+          Custom target locations and ad spending limit
+        </h1>
+        <p class="text-center lg:text-left pt-6">
+          You are in complete control of your campaign location targets and
+          budgeting. We have a variety of plans to suit the needs of your
+          business.
+        </p>
+        <button
+          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
+        >
+          See plans
+          <span class="arrow"></span>
+        </button>
+      </div>
+    </div>
+  </fade-in>
 
   <!-- FAQ Section -->
   <div id="faq" class="w-full">
@@ -202,8 +121,8 @@
           <p class="text-4xl font-semibold text-white">
             Frequently Asked Questions
           </p>
-          <p class="text-xl pt-2">Everything you need to know about Adomate.</p>
-          <p class="text-xl pt-2">Can't find what you're looking for?</p>
+          <p class="text-xl pt-2">Commonly asked questions about Adomate.</p>
+          <p class="text-xl pt-2">Need more support?</p>
           <a
             class="underline text-xl pt-2 hover:text-white"
             href="mailto:support@adomate.ai"
