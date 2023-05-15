@@ -74,7 +74,7 @@ const FooterLinks: Link[] = [
         title: "Our Blog",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing" },
         title: "Plans and Pricing",
       },
       {
@@ -126,7 +126,7 @@ const FooterLinks: Link[] = [
         title: "How it works",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing" },
         title: "Pricing",
       },
       {

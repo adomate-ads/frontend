@@ -21,6 +21,7 @@
             type="text"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg ring-transparent focus:border-light-purple block w-full pl-10 p-2.5"
             placeholder="500"
+            @keyup.enter="nextStep"
           />
         </div>
       </div>
@@ -79,7 +80,7 @@ const emit = defineEmits<{
 }>();
 
 const budget = ref<number>(500);
-const monthly = ref<boolean>(false);
+const monthly = ref<boolean>(true);
 
 const priceId = computed(() => {
   if (monthly.value) {
@@ -93,6 +94,7 @@ const priceId = computed(() => {
 });
 
 const nextStep = (): void => {
+  getStartedStore.setBudget(budget.value * 100);
   getStartedStore.setPrice(priceId.value);
   emit("next-step");
 };

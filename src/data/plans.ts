@@ -6,8 +6,8 @@ const Plans: Plan[] = [
     description: "Ads for growing businesses in need of customers.",
     monthly_price: 20,
     annual_price: 18, // $216 Annually
-    monthly_stripe_id: "price_1Ma4kkFzHmjFR1QwB3XdX8mA",
-    annual_stripe_id: "price_1MzQjwFzHmjFR1Qwi9XLUqij",
+    monthly_stripe_id: "price_1N6NH6JSLdyWx69CWTxHBlPk",
+    annual_stripe_id: "price_1N6NJvJSLdyWx69CIFPyg6Fc",
     feature_title: "Features include:",
     features: [
       "$500/mo Ad Spend Limit",
@@ -21,8 +21,8 @@ const Plans: Plan[] = [
     description: "Ads for high traffic businesses with larger ad budgets.",
     monthly_price: 50,
     annual_price: 45, // $540 Annually
-    monthly_stripe_id: "price_1Ma4kkFzHmjFR1QwIRUOqkOh",
-    annual_stripe_id: "price_1MzQkOFzHmjFR1Qwa4QajKrY",
+    monthly_stripe_id: "price_1N6NH7JSLdyWx69COdQB1ncv",
+    annual_stripe_id: "price_1N6NJXJSLdyWx69CCpeTOfOz",
     feature_title: "All features of Starter plus:",
     features: [
       "$2,500/mo Ad Spend Limit",
@@ -37,8 +37,8 @@ const Plans: Plan[] = [
       "Ads for the largest businesses with quickly changing content.",
     monthly_price: 250,
     annual_price: 225, // $2,700 Annually
-    monthly_stripe_id: "price_1Ma4klFzHmjFR1QwD6MunuZO",
-    annual_stripe_id: "price_1MzQkiFzHmjFR1QwR4v44twS",
+    monthly_stripe_id: "price_1N6NH7JSLdyWx69CC3m9QxUr",
+    annual_stripe_id: "price_1N6NIyJSLdyWx69CNnJ05RId",
     feature_title: "All features of Business plus:",
     features: [
       "$10,000/mo Ad Spend Limit",
