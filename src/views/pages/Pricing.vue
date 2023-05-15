@@ -63,7 +63,7 @@
           </h4>
         </div>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 w-auto md:w-60"
         >
           Contact Us
           <i class="fa-solid fa-arrow-right ml-2"></i>
