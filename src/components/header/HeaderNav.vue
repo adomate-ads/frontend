@@ -47,7 +47,7 @@ import HeaderNavItem from "./HeaderNavItem.vue";
 
 const userStore = useUserStore();
 const getName = (): string => {
-  return `${userStore.user?.first_name} ${userStore.user?.last_name}`;
+  return `${userStore.user?.firstName} ${userStore.user?.lastName}`;
 };
 
 const route = useRoute();
