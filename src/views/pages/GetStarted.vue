@@ -32,7 +32,7 @@
       <template v-if="!checkout" #right>
         <div v-for="step in steps" :key="step.step">
           <Check
-            :in-progress="step.in_progress"
+            :in-progress="step.inProgress"
             :completed="step.completed"
             :final="step.step === steps.length - 1"
           >
@@ -131,11 +131,10 @@ const tax = computed(() => {
   return (GetStartedStore.getPaymentIntent.Tax / 100).toFixed(2);
 });
 
-const plan = (price_id: string): Plan => {
+const plan = (priceID: string): Plan => {
   return Plans.filter(
     (subPlan) =>
-      subPlan.monthly_stripe_id === price_id ||
-      subPlan.annual_stripe_id === price_id
+      subPlan.monthlyStripeID === priceID || subPlan.annualStripeID === priceID
   )[0];
 };
 
@@ -143,37 +142,37 @@ const steps = ref<SignupSteps[]>([
   {
     step: 0,
     title: "Website Data Collection",
-    in_progress: true,
+    inProgress: true,
     completed: false,
   },
   {
     step: 1,
     title: "Verify Location & Services",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 2,
     title: "Set Budget & Select Plan",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 3,
     title: "Preview and Confirm Ad",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 4,
     title: "Payment",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 5,
     title: "Running Ads",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
 ]);
@@ -184,13 +183,13 @@ const currentStep = ref(0);
 
 watch(currentStep, (newStep: number, oldStep: number) => {
   if (newStep > oldStep) {
-    steps.value[newStep].in_progress = true;
-    steps.value[oldStep].in_progress = false;
+    steps.value[newStep].inProgress = true;
+    steps.value[oldStep].inProgress = false;
     steps.value[oldStep].completed = true;
   } else {
-    steps.value[newStep].in_progress = true;
+    steps.value[newStep].inProgress = true;
     steps.value[newStep].completed = false;
-    steps.value[oldStep].in_progress = false;
+    steps.value[oldStep].inProgress = false;
   }
 });
 
