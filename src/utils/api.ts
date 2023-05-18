@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const apiUrl =
-  import.meta.env.VITE_API === "prod"
-    ? "https://api.adomate.ai/"
-    : "https://api.dev.adomate.ai/";
+  import.meta.env.VITE_API === "dev"
+    ? "https://api.dev.adomate.ai/"
+    : "https://api.adomate.ai/";
 
 // const apiUrl = "http://localhost:3000/";
 
