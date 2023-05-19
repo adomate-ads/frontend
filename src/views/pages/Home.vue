@@ -260,7 +260,7 @@
         </div>
         <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
           <lottie-player
-            src="https://raw.githubusercontent.com/adomate-ads/frontend/feat/lottie-animation/src/assets/lottie/AdomateGetStarted.json"
+            src="https://raw.githubusercontent.com/adomate-ads/frontend/feat/master/src/assets/lottie/AdomateGetStarted.json"
             background="transparent"
             speed="1"
             :style="`width: 90%; height: 90%`"
