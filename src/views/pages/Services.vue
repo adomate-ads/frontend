@@ -6,11 +6,7 @@
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
         >
           Tools built to help scale
-          <strong
-            class="h-full w-full transition hover:text-transparent ease-in-out bg-clip-text bg-gradient-to-br from-dark-purple via-light-purple to-dark-purple"
-          >
-            your
-          </strong>
+          <strong class="h-full w-full text-dark-purple">your</strong>
           business
         </h1>
         <p
@@ -25,7 +21,7 @@
 
     <div class="flex flex-col lg:flex-row my-0 lg:my-20">
       <div
-        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-20"
       >
         <h1
           class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
@@ -56,9 +52,7 @@
       </div>
     </div>
   </fade-in>
-  <div
-    class="px-5 mx-10 py-10 border-b-2 lg:border-b-0 hover:border-dark-purple transition ease-in-out delay-50"
-  ></div>
+
   <fade-in>
     <div class="flex flex-col-reverse lg:flex-row pt-20 my-0 lg:my-20">
       <div class="w-full lg:w-1/2 flex justify-center items-center relative">
@@ -73,7 +67,7 @@
         />
       </div>
       <div
-        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-20"
       >
         <h1
           class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
