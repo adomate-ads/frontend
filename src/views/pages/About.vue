@@ -150,12 +150,12 @@
       <section class="py-10 lg:mt-8">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
           <h2
-            class="text-center text-gray-900 text-2xl lg:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
+            class="text-center text-gray-900 text-2xl md:text-4xl xl:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
           >
             Jumpstart Your Business with Adomate
           </h2>
           <p
-            class="text-center max-w-2xl mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
+            class="text-center mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
           >
             Getting started with Adomate is a breeze! Our simple sign-up process
             and intuitive platform make it easy for you to launch and manage
@@ -164,13 +164,13 @@
           </p>
 
           <div
-            class="lg:flex items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
+            class="lg:flex lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
           >
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
               <div
-                class="flex-shrink-0 mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
               >
                 <i class="fas fa-rocket fa-2x text-adomate-off-white"></i>
               </div>
@@ -190,10 +190,10 @@
               </div>
             </div>
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
               <div
-                class="flex-shrink-0 mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
               >
                 <i class="fas fa-chart-line fa-2x text-adomate-off-white"></i>
               </div>
@@ -211,10 +211,10 @@
               </div>
             </div>
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
               <div
-                class="flex-shrink-0 mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
               >
                 <i class="fas fa-chart-bar fa-2x text-adomate-off-white"></i>
               </div>

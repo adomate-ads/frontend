@@ -6,11 +6,7 @@
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
         >
           Tools built to help scale
-          <strong
-            class="h-full w-full transition hover:text-transparent ease-in-out bg-clip-text bg-gradient-to-br from-dark-purple via-light-purple to-dark-purple"
-          >
-            your
-          </strong>
+          <strong class="h-full w-full text-dark-purple">your</strong>
           business
         </h1>
         <p
@@ -25,7 +21,7 @@
 
     <div class="flex flex-col lg:flex-row my-0 lg:my-20">
       <div
-        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-20"
       >
         <h1
           class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
@@ -56,9 +52,7 @@
       </div>
     </div>
   </fade-in>
-  <div
-    class="px-5 mx-10 py-10 border-b-2 lg:border-b-0 hover:border-dark-purple transition ease-in-out delay-50"
-  ></div>
+
   <fade-in>
     <div class="flex flex-col-reverse lg:flex-row pt-20 my-0 lg:my-20">
       <div class="w-full lg:w-1/2 flex justify-center items-center relative">
@@ -73,7 +67,7 @@
         />
       </div>
       <div
-        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-40"
+        class="w-full lg:w-1/2 flex justify-center flex-col items-center lg:items-start px-10 lg:px-20"
       >
         <h1
           class="text-3xl xl:text-4xl font-semibold subpixel-antialiased text-center lg:text-left"
@@ -109,15 +103,11 @@
     >
       <div class="text-gray-200 flex justify-start items-start mb-8 pr-20">
         <div class="sticky top-32">
-          <svg
-            class="hidden lg:flex w-20 fill-white mb-5"
-            viewBox="0 0 1000 1000"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 500 0C 224 0 0 224 0 500C 0 776 224 1000 500 1000C 776 1000 1000 776 1000 500C 1000 224 776 0 500 0C 500 0 500 0 500 0 M 501 191C 626 191 690 275 690 375C 690 475 639 483 595 513C 573 525 558 553 559 575C 559 591 554 602 541 601C 541 601 460 601 460 601C 446 601 436 581 436 570C 436 503 441 488 476 454C 512 421 566 408 567 373C 566 344 549 308 495 306C 463 303 445 314 411 361C 400 373 384 382 372 373C 372 373 318 333 318 333C 309 323 303 307 312 293C 362 218 401 191 501 191C 501 191 501 191 501 191M 500 625C 541 625 575 659 575 700C 576 742 540 776 500 775C 457 775 426 739 425 700C 425 659 459 625 500 625C 500 625 500 625 500 625"
-            />
-          </svg>
+          <div class="lg:flex w-20 h-20 bg-white rounded-full mb-5">
+            <i
+              class="m-auto fa-solid fa-question text-dark-purple w-14 h-14"
+            ></i>
+          </div>
           <p class="text-4xl font-semibold text-white">
             Frequently Asked Questions
           </p>

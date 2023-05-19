@@ -129,9 +129,9 @@
   <!-- How it works section -->
   <fade-in :threshold="0.4">
     <div id="how-it-works">
-      <div class="container mx-auto px-12 my-32">
+      <div class="container mx-auto my-32">
         <div class="flex flex-col justify-center md:flex-row">
-          <div class="px-5">
+          <div class="flex-1 px-5">
             <h2
               class="text-4xl text-center md:text-6xl md:text-left font-bold mb-10"
             >
@@ -143,7 +143,7 @@
               allowing you to focus on growing your business.
             </p>
           </div>
-          <div class="m-5 border-b-2">
+          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
             <i
               class="shadow fa-solid fa-database text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
@@ -156,7 +156,7 @@
               audience.
             </p>
           </div>
-          <div class="m-5 border-b-2">
+          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
             <i
               class="shadow fa-solid fa-chart-line text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
@@ -169,7 +169,7 @@
               and return on investment.
             </p>
           </div>
-          <div class="m-5 border-b-2">
+          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
             <i
               class="shadow fa-solid fa-chart-simple text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
             ></i>
@@ -202,7 +202,7 @@
               From start to finish, we have you covered.
             </h2>
             <p
-              class="text-slate-700 text-lg pb-16 border-dashed border-b-2 border-light-purple"
+              class="text-slate-700 text-lg pb-10 border-dashed border-b-2 border-light-purple"
             >
               From start to finish, we've got your campaigns covered. Utilizing
               techniques like web scraping and keyword prediction, we gather
@@ -214,30 +214,23 @@
               <div>
                 <h4>
                   <i class="fa-solid fa-file mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1">
-                    Customized Ad Design
-                  </span>
+                  <span class="font-semibold text-lg mt-1"> Tailored Ads </span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Adomate's powerful AI-driven platform generates unique and
-                  engaging ad designs tailored to your business. Stand out from
-                  the competition with eye-catching visuals that resonate with
-                  your target audience, driving clicks and conversions.
+                  Our platform generates unique and engaging ad designs tailored
+                  to your business.
                 </p>
               </div>
               <div>
                 <h4>
                   <i class="fa-solid fa-chart-simple mr-2 text-dark-purple"></i>
                   <span class="font-semibold text-lg mt-1">
-                    Monthly Reports & Real Analytics
+                    Monthly Reports
                   </span>
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Gain valuable insights from comprehensive monthly reports,
-                  packed with data to inform your decisions and refine your
-                  marketing strategies. Monitor key metrics, track progress, and
-                  stay current with real-time analytics, ensuring your campaigns
-                  always remain on target.
+                  Monitor key metrics, track progress, and stay current with
+                  real-time analytics.
                 </p>
               </div>
               <div>
@@ -248,10 +241,8 @@
                   >
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
-                  Experience hassle-free campaign optimization with our advanced
-                  algorithm that automatically maximizes your campaign's
-                  performance. Our technology can boost results by up to XX%,
-                  helping you extract the most from your marketing budget.
+                  Hassle-free campaign optimization with our advanced
+                  algorithms.
                 </p>
               </div>
               <div>
@@ -261,9 +252,7 @@
                 </h4>
                 <p class="text-slate-700 m-1 text-md">
                   Safeguard your ad spend by preventing bots from clicking on
-                  your ads and wasting valuable resources. Our innovative
-                  bot-blocking technology ensures that only genuine human
-                  interactions count towards your ad performance.
+                  your ads and wasting valuable resources.
                 </p>
               </div>
             </div>
@@ -326,15 +315,16 @@
   <!--  Call to Action  -->
   <fade-in>
     <div id="try-it-out">
-      <div class="container mx-auto px-12 my-32">
+      <div class="container mx-auto my-32">
         <div
-          class="shadow bg-extra-light-purple rounded-lg w-full md:w-2/3 mx-auto py-10 px-14"
+          class="shadow bg-extra-light-purple rounded-lg w-full md:w-4/5 xl:w-2/3 mx-auto py-10 px-10"
         >
           <div class="flex flex-col md:flex-row">
             <div>
               <h3 class="text-4xl font-bold py-3">Try it out</h3>
               <p class="text-gray-500">
-                By clicking the button you agree to our TOS.
+                Enter your URL below to see how an ad would look for your
+                website.
               </p>
               <form class="mt-3 py-3">
                 <label
@@ -352,7 +342,7 @@
                     id="url"
                     type="url"
                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-light-purple focus:outline-2 focus:outline-offset-0 focus:outline-light-purple outline-none"
-                    placeholder="https://www.example.com"
+                    placeholder="adomate.ai"
                     required
                   />
                   <button

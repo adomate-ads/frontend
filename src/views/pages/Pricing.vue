@@ -35,7 +35,7 @@
     </fade-in>
 
     <fade-in :delay="0.1">
-      <div class="-mt-40 lg:-mt-64 mb-5 justify-center">
+      <div class="-mt-40 lg:-mt-64 mb-5 justify-center mx-5">
         <div class="flex flex-col lg:flex-row gap-x-6 justify-center">
           <div
             v-for="(plan, idx) in Plans"
@@ -51,7 +51,7 @@
     </fade-in>
     <fade-in>
       <div
-        class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
+        class="w-4/5 xl:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex justify-between overflow-auto"
       >
         <div>
           <p class="text-xs font-bold text-extra-dark-purple">
@@ -72,11 +72,15 @@
     </fade-in>
 
     <div class="bg-gray-100 text-center justify-center -mt-14 pt-32 pb-20">
-      <fade-in>
-        <h3 class="text-5xl font-bold text-adomate-off-black px-5">
+      <fade-in class="">
+        <h3
+          class="text-center mx-auto text-5xl font-bold text-adomate-off-black px-5 max-w-3xl"
+        >
           Enhance Your Campaigns with Our Add-On Features
         </h3>
-        <div class="flex flex-row gap-x-5 justify-center mt-16 px-5">
+        <div
+          class="flex flex-row gap-x-5 justify-center mt-16 px-5 mx-5 xl:mx-0"
+        >
           <div class="justify-center text-center lg:text-left max-w-[380px]">
             <div
               class="rounded-full h-12 w-12 bg-adomate-navy text-adomate-off-white text-center align-middle mx-auto lg:mx-0 my-2"
