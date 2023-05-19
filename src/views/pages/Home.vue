@@ -188,7 +188,7 @@
   <!--  Build Exclusively For You  -->
   <fade-in>
     <div id="built-exclusively-for-you">
-      <div class="container mx-auto px-12 my-32">
+      <div class="container flex mx-auto px-12 my-32">
         <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
           <div class="col-span-3">
             <div class="flex justify-start md:justify-start">
@@ -268,6 +268,16 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
+          <lottie-player
+            src="https://raw.githubusercontent.com/adomate-ads/frontend/feat/lottie-animation/src/assets/lottie/AdomateGetStarted.json"
+            background="transparent"
+            speed="1"
+            :style="`width: 90%; height: 90%`"
+            loop
+            autoplay
+          ></lottie-player>
         </div>
       </div>
     </div>
