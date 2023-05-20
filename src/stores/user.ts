@@ -11,11 +11,11 @@ interface UserState {
 
 interface User {
   id: number;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   roles: string[];
-  created_at: string;
-  updated_at: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 const useUserStore = defineStore("user", {

@@ -26,6 +26,7 @@
             :class="[
               isValidURL() ? 'focus:border-light-purple' : 'border-red-500',
             ]"
+            @keyup.enter="nextPage()"
           />
         </div>
       </form>
@@ -41,10 +42,7 @@
       <button
         class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
         :disabled="!isValidURL()"
-        @click="
-          emit('next-step');
-          updateURLParam();
-        "
+        @click="nextPage()"
       >
         Continue
         <i class="fa-solid fa-arrow-right ml-2"></i>
@@ -81,6 +79,13 @@ const isValidURL = (): boolean => {
 
 const updateURLParam = (): void => {
   getStartedStore.setURL(url.value);
+};
+
+const nextPage = (): void => {
+  if (isValidURL()) {
+    updateURLParam();
+    emit("next-step");
+  }
 };
 
 onMounted(() => {

@@ -32,7 +32,7 @@
       <template v-if="!checkout" #right>
         <div v-for="step in steps" :key="step.step">
           <Check
-            :in-progress="step.in_progress"
+            :in-progress="step.inProgress"
             :completed="step.completed"
             :final="step.step === steps.length - 1"
           >
@@ -52,26 +52,29 @@
           <div class="w-full">
             <h3 class="text-gray-400">Subscribe to Adomate</h3>
             <div class="flex mb-10">
-              <h2 class="font-semibold text-4xl text-gray-800">$550.00</h2>
+              <h2 class="font-semibold text-4xl text-gray-800">${{ total }}</h2>
               <div class="mx-2 justify-center">
                 <p class="text-sm text-gray-400">per</p>
                 <p class="text-sm text-gray-400">month</p>
               </div>
             </div>
             <div class="flex flex-col gap-y-4 mb-4">
-              <div class="flex justify-between">
-                <div>
-                  <h4 class="text-gray-800">Business Plan</h4>
+              <div
+                v-for="(item, idx) in GetStartedStore.getPaymentIntent.items"
+                :key="idx"
+                class="flex justify-between"
+              >
+                <div v-if="plan(item.id)">
+                  <h4 class="text-gray-800">{{ plan(item.id).name }} Plan</h4>
                   <p class="text-sm text-gray-400">Billed Montly</p>
                 </div>
-                <p class="text-gray-800 text-lg">$50.00</p>
-              </div>
-              <div class="flex justify-between">
-                <div>
+                <div v-else>
                   <h4 class="text-gray-800">Ad Budget</h4>
                   <p class="text-sm text-gray-400">Billed Montly</p>
                 </div>
-                <p class="text-gray-800 text-lg">$500.00</p>
+                <p class="text-gray-800 text-lg">
+                  ${{ (item.price / 100).toFixed(2) }}
+                </p>
               </div>
             </div>
             <div class="flex flex-col gap-x-1 border-t-2">
@@ -79,19 +82,19 @@
                 <div>
                   <h4 class="text-gray-400 text-sm">Sub-Total</h4>
                 </div>
-                <p class="text-gray-400 text-sm">$550.00</p>
+                <p class="text-gray-400 text-sm">${{ total - tax }}</p>
               </div>
               <div class="flex justify-between">
                 <div>
                   <h4 class="text-gray-400 text-sm">Tax</h4>
                 </div>
-                <p class="text-gray-400 text-sm">$5.00</p>
+                <p class="text-gray-400 text-sm">${{ tax }}</p>
               </div>
               <div class="flex justify-between mt-1">
                 <div>
                   <h4 class="text-gray-800">Total</h4>
                 </div>
-                <p class="text-gray-800 text-lg">$555.00</p>
+                <p class="text-gray-800 text-lg">${{ total }}</p>
               </div>
             </div>
           </div>
@@ -107,7 +110,8 @@ import Check from "@/components/get-started/Check.vue";
 import FadeIn from "@/components/FadeIn.vue";
 
 import { computed, onMounted, ref, watch } from "vue";
-import { SignupSteps } from "@/types";
+import { Plan, SignupSteps } from "@/types";
+import Plans from "@/data/plans";
 import useGetStartedStore from "@/stores/get-started";
 
 import Ad from "@/components/get-started/pages/Ad.vue";
@@ -119,41 +123,56 @@ import Verification from "@/components/get-started/pages/Verification.vue";
 
 const GetStartedStore = useGetStartedStore();
 
+const total = computed(() => {
+  return (GetStartedStore.getPaymentIntent.Total / 100).toFixed(2);
+});
+
+const tax = computed(() => {
+  return (GetStartedStore.getPaymentIntent.Tax / 100).toFixed(2);
+});
+
+const plan = (priceID: string): Plan => {
+  return Plans.filter(
+    (subPlan) =>
+      subPlan.monthlyStripeID === priceID || subPlan.annualStripeID === priceID
+  )[0];
+};
+
 const steps = ref<SignupSteps[]>([
   {
     step: 0,
     title: "Website Data Collection",
-    in_progress: true,
+    inProgress: true,
     completed: false,
   },
   {
     step: 1,
     title: "Verify Location & Services",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 2,
     title: "Set Budget & Select Plan",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 3,
     title: "Preview and Confirm Ad",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 4,
     title: "Payment",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
   {
     step: 5,
     title: "Running Ads",
-    in_progress: false,
+    inProgress: false,
     completed: false,
   },
 ]);
@@ -164,13 +183,13 @@ const currentStep = ref(0);
 
 watch(currentStep, (newStep: number, oldStep: number) => {
   if (newStep > oldStep) {
-    steps.value[newStep].in_progress = true;
-    steps.value[oldStep].in_progress = false;
+    steps.value[newStep].inProgress = true;
+    steps.value[oldStep].inProgress = false;
     steps.value[oldStep].completed = true;
   } else {
-    steps.value[newStep].in_progress = true;
+    steps.value[newStep].inProgress = true;
     steps.value[newStep].completed = false;
-    steps.value[oldStep].in_progress = false;
+    steps.value[oldStep].inProgress = false;
   }
 });
 

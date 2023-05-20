@@ -20,18 +20,18 @@ export interface Link {
 export interface Plan {
   name: string;
   description: string;
-  monthly_price: number;
-  annual_price: number;
-  monthly_stripe_id: string;
-  annual_stripe_id: string;
-  feature_title: string;
+  monthlyPrice: number;
+  annualPrice: number;
+  monthlyStripeID: string;
+  annualStripeID: string;
+  featureTitle: string;
   features: string[];
 }
 
 export interface SignupSteps {
   step: number;
   title: string;
-  in_progress: boolean;
+  inProgress: boolean;
   completed: boolean;
 }
 

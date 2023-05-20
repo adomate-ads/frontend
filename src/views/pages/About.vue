@@ -150,27 +150,29 @@
       <section class="py-10 lg:mt-8">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
           <h2
-            class="text-center text-gray-900 text-2xl lg:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
+            class="text-center text-gray-900 text-2xl md:text-4xl xl:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
           >
             Jumpstart Your Business with Adomate
           </h2>
           <p
-            class="text-center max-w-2xl mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
+            class="text-center mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
           >
             Getting started with Adomate is a breeze! Our simple sign-up process
             and intuitive platform make it easy for you to launch and manage
             your ad campaigns. Experience the Adomate platform through these
-            three essential stages:
+            three essential stages
           </p>
 
           <div
-            class="lg:flex items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
+            class="lg:flex lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
           >
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
-              <div class="flex-shrink-0 mb-4 bg-light-purple p-2 rounded-3xl">
-                <i class="fa-solid fa-1 w-16 h-16 text-adomate-off-white"></i>
+              <div
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+              >
+                <i class="fas fa-rocket fa-2x text-adomate-off-white"></i>
               </div>
               <div>
                 <h3
@@ -182,14 +184,18 @@
                   Kick off your advertising journey by creating and launching
                   your campaigns with just a few clicks. Our platform handles
                   the heavy lifting, so you can focus on growing your business.
+                  The best part? You don’t need any prior advertising
+                  experience.
                 </p>
               </div>
             </div>
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
-              <div class="flex-shrink-0 mb-4 bg-light-purple p-2 rounded-3xl">
-                <i class="fa-solid fa-2 w-16 h-16 text-adomate-off-white"></i>
+              <div
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+              >
+                <i class="fas fa-chart-line fa-2x text-adomate-off-white"></i>
               </div>
               <div>
                 <h3
@@ -205,22 +211,25 @@
               </div>
             </div>
             <div
-              class="flex flex-col justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+              class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
             >
-              <div class="flex-shrink-0 mb-4 bg-light-purple p-2 rounded-3xl">
-                <i class="fa-solid fa-3 w-16 h-16 text-adomate-off-white"></i>
+              <div
+                class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+              >
+                <i class="fas fa-chart-bar fa-2x text-adomate-off-white"></i>
               </div>
               <div>
                 <h3
                   class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
                 >
-                  Comprehensive Analytics & Smart Bidding
+                  Comprehensive Analytics
                 </h3>
                 <p class="text-gray-600 text-center text-base font-light">
-                  Stay informed and make data-driven decisions with our in-depth
-                  analytics and monitoring tools. Plus, our smart bidding system
-                  ensures your ads are shown at the most opportune moments,
-                  maximizing your ad spend efficiency.
+                  Unlock valuable insights and drive results with our
+                  comprehensive analytics and monitoring tools. Our smart
+                  bidding system strategically optimizes ad placements,
+                  maximizing your ad spend efficiency for optimal campaign
+                  performance.
                 </p>
               </div>
             </div>
