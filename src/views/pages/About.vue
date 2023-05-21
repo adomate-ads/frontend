@@ -313,7 +313,7 @@
             advertising campaigns and drive your business forward.
           </p>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="(member, idx) in Members" :key="idx">
               <div class="h-40 sm:h-64 w-full overflow-hidden rounded-lg">
                 <img

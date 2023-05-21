@@ -53,6 +53,21 @@ export interface Member {
   github?: string;
 }
 
+export interface Review {
+  name: string;
+  role: string;
+  review: string;
+  company: string;
+  image: string;
+}
+export interface Testimonial {
+  name: string;
+  role: string;
+  review: string;
+  company: string;
+  image: string;
+}
+
 export interface Feature {
   title: string;
   description: string;
