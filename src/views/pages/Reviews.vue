@@ -25,14 +25,17 @@
           >
         </p>
       </div>
-      <div
-        class="flex flex-wrap justify-center pt-8 pb-4 px-4 rounded-lg bg-faf9f6"
-      >
-        <i class="fab fa-github w-32 h-32 my-2 mx-2 text-gray-600"></i>
-        <i class="fa-brands fa-google w-32 h-32 my-2 mx-2 text-gray-600"></i>
-        <i class="fa-brands fa-facebook w-32 h-32 my-2 mx-2 text-gray-600"></i>
-        <i class="fa-brands fa-apple w-32 h-32 my-2 mx-2 text-gray-600"></i>
-        <i class="fa-brands fa-aws w-32 h-32 my-2 mx-2 text-gray-600"></i>
+      <div class="flex justify-center pt-6">
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg bg-adomate-cream"
+        >
+          <i class="fab fa-github w-32 h-32 my-2 mx-2"></i>
+          <i class="fa-brands fa-google w-32 h-32 my-2 mx-2"></i>
+          <i class="fa-brands fa-facebook w-32 h-32 my-2 mx-2"></i>
+          <i class="fa-brands fa-apple w-32 h-32 my-2 mx-2"></i>
+          <i class="fa-brands fa-aws w-32 h-32 my-2 mx-2"></i>
+          <i class="fa-brands fa-spotify w-32 h-32 my-2 mx-2"></i>
+        </div>
       </div>
     </FadeIn>
     <FadeIn>
