@@ -2,51 +2,51 @@ import { Testimonial } from "@/types";
 
 const Testimonials: Testimonial[] = [
   {
-    name: "John Doe",
-    role: "CEO",
+    name: "Emma Thompson",
+    role: "Marketing Director",
     review:
-      "We've been able to cancel all other ad subscriptions and replace them with Adomate.",
-    company: "GotHub",
+      "Adomate's advertising strategies have been a game-changer for our business. Our brand awareness has skyrocketed, and we've seen a significant increase in customer engagement.",
+    company: "Thompson & Sons",
     image: "https://adomate.ai/logo.png",
   },
   {
-    name: "Jane Smith",
-    role: "CEO",
+    name: "Oliver Wilson",
+    role: "Business Owner",
     review:
-      "My team is now able to focus on building features instead of worrying about ad revenue.",
-    company: "Horizon",
+      "Adomate's ad campaigns have exceeded our expectations. Their team is highly professional and proactive, always going the extra mile to ensure our advertising success.",
+    company: "Wilson Enterprises",
     image: "https://adomate.ai/logo.png",
   },
   {
-    name: "John Doe",
-    role: "CEO",
+    name: "Sophie Davis",
+    role: "Marketing Manager",
     review:
-      "We've been able to cancel all other ad subscriptions and replace them with Adomate.",
-    company: "Bicrosoft",
+      "Partnering with Adomate was a game-changer for our digital marketing efforts. Their targeted ad campaigns have helped us reach our ideal audience and drive meaningful results.",
+    company: "Davis Marketing Solutions",
     image: "https://adomate.ai/logo.png",
   },
   {
-    name: "Jane Smith",
-    role: "CEO",
+    name: "Liam Anderson",
+    role: "Ecommerce Manager",
     review:
-      "My team is now able to focus on building features instead of worrying about ad revenue.",
-    company: "T-Nobile",
+      "Adomate's expertise in digital advertising has significantly boosted our online sales. They have provided valuable insights and tailored strategies that have exceeded our expectations.",
+    company: "Anderson Retailers",
     image: "https://adomate.ai/logo.png",
   },
   {
-    name: "John Doe",
-    role: "CEO",
+    name: "Isabella Clark",
+    role: "Small Business Owner",
     review:
-      "We've been able to cancel all other ad subscriptions and replace them with Adomate.",
-    company: "Maple",
+      "Adomate has been instrumental in helping our small business grow. Their ad campaigns have helped us reach a wider audience and increase our customer base.",
+    company: "Clark's Boutique",
     image: "https://adomate.ai/logo.png",
   },
   {
-    name: "Jane Smith",
-    role: "CEO",
+    name: "Mason Parker",
+    role: "Marketing Specialist",
     review:
-      "My team is now able to focus on building features instead of worrying about ad revenue.",
-    company: "Alphazon",
+      "Adomate's data-driven approach and innovative strategies have transformed our advertising efforts. They have helped us optimize our campaigns and achieve impressive results.",
+    company: "Parker Solutions",
     image: "https://adomate.ai/logo.png",
   },
 ];

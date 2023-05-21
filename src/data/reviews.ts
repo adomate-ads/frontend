@@ -2,38 +2,92 @@ import { Review } from "@/types";
 
 const Reviews: Review[] = [
   {
-    name: "Jack Sparrow",
-    role: "President & Founder",
-    company: "Pirates Inc.",
+    name: "Emily Anderson",
+    role: "Marketing Director",
+    company: "XYZ Tech Solutions",
     review:
-      "My Pirate business has grown 10x since I started using Adomate. My ship is now the fastest in the seven seas!",
+      "Adomate's advertising strategies have been instrumental in driving qualified leads to our business. We've seen a remarkable increase in conversions and revenue.",
     image:
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   },
   {
-    name: "Bob the Builder",
-    role: "Builder",
-    company: "Bob the Builder Inc.",
+    name: "David Roberts",
+    role: "E-commerce Manager",
+    company: "Fashion Hub",
     review:
-      "Can we fix it? Yes we can! Adomate has helped me grow my business and now I can fix anything!",
+      "Thanks to Adomate, our online store has experienced exponential growth. Their targeted ads have helped us reach the right audience and boost sales.",
     image:
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   },
   {
-    name: "John Doe",
-    role: "Painter",
-    company: "John Doe Painting Inc.",
+    name: "Sarah Thompson",
+    role: "CEO",
+    company: "Thompson & Co.",
     review:
-      "Adomate makes my business run smoothly. I can focus on my clients and not worry about my ads.",
+      "Adomate's advertising expertise has helped us establish a strong brand presence. Their strategies have significantly increased our brand awareness and customer loyalty.",
     image:
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   },
   {
-    name: "Jane Smith",
-    role: "Plumber",
-    company: "Jane Smith Plumbing Inc.",
+    name: "Michael Davis",
+    role: "Marketing Manager",
+    company: "Global Solutions",
     review:
-      "Adomate has helped me grow my business and now I can pipes without worrying about my ads.",
+      "Adomate's ad optimization techniques have revolutionized our campaign performance. We've achieved higher click-through rates and improved overall ROI.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "Jennifer Wilson",
+    role: "Business Owner",
+    company: "Wilson Fitness Studio",
+    review:
+      "With Adomate's targeted ad campaigns, our fitness studio has attracted a steady stream of new clients. Their marketing strategies have been vital to our growth.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "Robert Adams",
+    role: "CEO",
+    company: "Adams Real Estate",
+    review:
+      "Adomate's innovative advertising solutions have helped us generate quality leads and increase property sales. Their expertise in the real estate industry is unmatched.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "Laura Collins",
+    role: "Marketing Director",
+    company: "Collins Hotels",
+    review:
+      "Adomate's data-driven ad strategies have significantly improved our hotel bookings. Their targeted approach has attracted more guests and boosted our revenue.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "Daniel Miller",
+    role: "Founder",
+    company: "Miller's Bakery",
+    review:
+      "Adomate's advertising campaigns have helped us reach a wider audience for our bakery products. We've experienced a surge in online orders and foot traffic to our store.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "Sophia Lee",
+    role: "Marketing Manager",
+    company: "Lee's Fashion Boutique",
+    review:
+      "Thanks to Adomate's tailored ad campaigns, our boutique has seen a remarkable increase in customer engagement and sales. Their expertise has been invaluable.",
+    image:
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+  },
+  {
+    name: "John Thompson",
+    role: "CEO",
+    company: "Thompson Logistics",
+    review:
+      "Adomate's strategic ad placements have enhanced our brand visibility in the logistics industry. We've gained more leads and expanded our customer base.",
     image:
       "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
   },
