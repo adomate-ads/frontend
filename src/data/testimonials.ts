@@ -49,5 +49,29 @@ const Testimonials: Testimonial[] = [
     company: "Parker Solutions",
     image: "https://adomate.ai/logo.png",
   },
+  {
+    name: "Jake Wright",
+    role: "Marketing Director",
+    review:
+      "Adomate's advertising strategies have been a game-changer for our business. Our brand awareness has skyrocketed, and we've seen a significant increase in customer engagement.",
+    company: "Wright & Sons",
+    image: "https://adomate.ai/logo.png",
+  },
+  {
+    name: "Amelia Lewis",
+    role: "Business Owner",
+    review:
+      "Adomate's ad campaigns have exceeded our expectations. Their team is highly professional and proactive, always going the extra mile to ensure our advertising success.",
+    company: "Lewis Enterprises",
+    image: "https://adomate.ai/logo.png",
+  },
+  {
+    name: "James Harris",
+    role: "Marketing Manager",
+    review:
+      "Partnering with Adomate was a game-changer for our digital marketing efforts. Their targeted ad campaigns have helped us reach our ideal audience and drive meaningful results.",
+    company: "Harris Marketing Solutions",
+    image: "https://adomate.ai/logo.png",
+  },
 ];
 export default Testimonials;

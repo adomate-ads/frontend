@@ -37,6 +37,14 @@
           <i class="fa-brands fa-apple w-32 h-32 my-2 mx-2 text-gray-600"></i>
           <i class="fa-brands fa-aws w-32 h-32 my-2 mx-2 text-gray-600"></i>
           <i class="fa-brands fa-spotify w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <i class="fa-brands fa-steam w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <i class="fa-brands fa-youtube w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <i class="fa-brands fa-ebay w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <i class="fa-brands fa-xbox w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <i
+            class="fa-brands fa-squarespace w-32 h-32 my-2 mx-2 text-gray-600"
+          ></i>
+          <i class="fa-brands fa-wix w-32 h-32 my-2 mx-2 text-gray-600"></i>
         </div>
       </div>
     </FadeIn>
@@ -49,31 +57,33 @@
             >Client Success Stories</strong
           >
         </h1>
-        <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar">
-          <div class="flex-shrink-0 flex-grow-0 flex-basis-0 p-2">
-            <div class="flex space-x-4">
-              <div v-for="(review, idx) in Reviews" :key="idx">
-                <div class="max-w-xs">
-                  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-4">
-                      <div class="flex flex-col items-center">
-                        <img
-                          :src="review.image"
-                          class="w-24 h-24 object-cover rounded-full mb-4"
-                          alt="reviewer"
-                        />
-                        <h3 class="text-lg font-semibold text-center">
-                          {{ review.name }}
-                        </h3>
-                        <p class="text-gray-600 text-sm text-center">
-                          {{ review.role }}
-                        </p>
-                        <p class="text-gray-600 text-sm text-center">
-                          {{ review.company }}
-                        </p>
-                        <p class="italic text-gray-700 text-center mt-4">
-                          {{ review.review }}
-                        </p>
+        <FadeIn>
+          <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar">
+            <div class="flex-shrink-0 flex-grow-0 flex-basis-0 p-2">
+              <div class="flex space-x-4">
+                <div v-for="(review, idx) in Reviews" :key="idx">
+                  <div class="max-w-xs">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                      <div class="p-4">
+                        <div class="flex flex-col items-center">
+                          <img
+                            :src="review.image"
+                            class="w-24 h-24 object-cover rounded-full mb-4"
+                            alt="reviewer"
+                          />
+                          <h3 class="text-lg font-semibold text-center">
+                            {{ review.name }}
+                          </h3>
+                          <p class="text-gray-600 text-sm text-center">
+                            {{ review.role }}
+                          </p>
+                          <p class="text-gray-600 text-sm text-center">
+                            {{ review.company }}
+                          </p>
+                          <p class="italic text-gray-700 text-center mt-4">
+                            {{ review.review }}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -81,7 +91,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </FadeIn>
     <FadeIn>
@@ -126,9 +136,11 @@
     <FadeIn>
       <div class="flex justify-center">
         <button
-          class="bg-dark-purple hover:bg-light-purple text-white font-bold py-2 px-4 rounded-full mt-10"
+          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
         >
-          <a href="https://youtu.be/dQw4w9WgXcQ"> See More </a>
+          <a href="https://youtu.be/dQw4w9WgXcQ">
+            See More <i class="fas fa-arrow-right"></i>
+          </a>
         </button>
       </div>
     </FadeIn>
@@ -144,16 +156,16 @@ import Testimonials from "@/data/testimonials";
 <style>
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
-  background-color: #637efe;
+  background-color: #31394d;
   border-radius: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #a3b2ff;
+  background-color: #637efe;
   border-radius: 8px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: #a3b2ff;
+  background-color: #637efe;
 }
 </style>
