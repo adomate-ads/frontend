@@ -7,8 +7,7 @@ const Reviews: Review[] = [
     company: "XYZ Tech Solutions",
     review:
       "Adomate's advertising strategies have been instrumental in driving qualified leads to our business. We've seen a remarkable increase in conversions and revenue.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "David Roberts",
@@ -16,8 +15,7 @@ const Reviews: Review[] = [
     company: "Fashion Hub",
     review:
       "Thanks to Adomate, our online store has experienced exponential growth. Their targeted ads have helped us reach the right audience and boost sales.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Sarah Thompson",
@@ -25,8 +23,7 @@ const Reviews: Review[] = [
     company: "Thompson & Co.",
     review:
       "Adomate's advertising expertise has helped us establish a strong brand presence. Their strategies have significantly increased our brand awareness and customer loyalty.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Michael Davis",
@@ -34,8 +31,7 @@ const Reviews: Review[] = [
     company: "Global Solutions",
     review:
       "Adomate's ad optimization techniques have revolutionized our campaign performance. We've achieved higher click-through rates and improved overall ROI.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Jennifer Wilson",
@@ -43,8 +39,7 @@ const Reviews: Review[] = [
     company: "Wilson Fitness Studio",
     review:
       "With Adomate's targeted ad campaigns, our fitness studio has attracted a steady stream of new clients. Their marketing strategies have been vital to our growth.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Robert Adams",
@@ -52,8 +47,7 @@ const Reviews: Review[] = [
     company: "Adams Real Estate",
     review:
       "Adomate's innovative advertising solutions have helped us generate quality leads and increase property sales. Their expertise in the real estate industry is unmatched.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Laura Collins",
@@ -61,8 +55,7 @@ const Reviews: Review[] = [
     company: "Collins Hotels",
     review:
       "Adomate's data-driven ad strategies have significantly improved our hotel bookings. Their targeted approach has attracted more guests and boosted our revenue.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Daniel Miller",
@@ -70,8 +63,7 @@ const Reviews: Review[] = [
     company: "Miller's Bakery",
     review:
       "Adomate's advertising campaigns have helped us reach a wider audience for our bakery products. We've experienced a surge in online orders and foot traffic to our store.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "Sophia Lee",
@@ -79,8 +71,7 @@ const Reviews: Review[] = [
     company: "Lee's Fashion Boutique",
     review:
       "Thanks to Adomate's tailored ad campaigns, our boutique has seen a remarkable increase in customer engagement and sales. Their expertise has been invaluable.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
   {
     name: "John Thompson",
@@ -88,8 +79,7 @@ const Reviews: Review[] = [
     company: "Thompson Logistics",
     review:
       "Adomate's strategic ad placements have enhanced our brand visibility in the logistics industry. We've gained more leads and expanded our customer base.",
-    image:
-      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
+    image: "https://adomate.ai/logo.png",
   },
 ];
 

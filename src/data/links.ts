@@ -56,8 +56,8 @@ const FooterLinks: Link[] = [
         title: "Careers",
       },
       {
-        to: { name: "NotFound" },
-        title: "Press and Media",
+        to: { name: "Reviews" },
+        title: "Reviews and Testimonials",
       },
     ],
   },
@@ -67,7 +67,7 @@ const FooterLinks: Link[] = [
     sublinks: [
       {
         to: { name: "NotFound" },
-        title: "Our Blog",
+        title: "Press and Media",
       },
       {
         to: { name: "Pricing" },
@@ -103,10 +103,6 @@ const FooterLinks: Link[] = [
         to: { name: "NotFound" },
         title: "Contact Us",
       },
-      {
-        to: { name: "NotFound" },
-        title: "Support Center",
-      },
     ],
   },
   {
@@ -126,8 +122,8 @@ const FooterLinks: Link[] = [
         title: "Pricing",
       },
       {
-        to: { name: "Reviews" },
-        title: "Reviews and Testimonials",
+        to: { name: "NotFound" },
+        title: "Case Studies",
       },
     ],
   },

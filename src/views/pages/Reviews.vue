@@ -29,22 +29,12 @@
         <div
           class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg"
         >
-          <i class="fab fa-github w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-google w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i
-            class="fa-brands fa-facebook w-32 h-32 my-2 mx-2 text-gray-600"
-          ></i>
-          <i class="fa-brands fa-apple w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-aws w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-spotify w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-steam w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-youtube w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-ebay w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i class="fa-brands fa-xbox w-32 h-32 my-2 mx-2 text-gray-600"></i>
-          <i
-            class="fa-brands fa-squarespace w-32 h-32 my-2 mx-2 text-gray-600"
-          ></i>
-          <i class="fa-brands fa-wix w-32 h-32 my-2 mx-2 text-gray-600"></i>
+          <img
+            v-for="(icon, index) in icons"
+            :key="index"
+            :src="icon"
+            class="w-32 h-32 my-2 mx-2 object-contain"
+          />
         </div>
       </div>
     </FadeIn>
@@ -151,6 +141,21 @@
 import FadeIn from "@/components/FadeIn.vue";
 import Reviews from "@/data/reviews";
 import Testimonials from "@/data/testimonials";
+
+const icons: string[] = [
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+  "https://adomate.ai/logo.png",
+];
 </script>
 
 <style>
