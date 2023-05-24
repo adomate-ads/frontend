@@ -13,10 +13,10 @@ interface GetStartedState {
 
 interface GetStarted {
   domain: string;
-  first_name: string;
-  last_name: string;
+  firstName: string;
+  lastName: string;
   email: string;
-  company_name: string;
+  companyName: string;
   price: string;
   locations: string[];
   services: string[];
@@ -41,10 +41,10 @@ const useGetStartedStore = defineStore("getStarted", {
     ({
       getStarted: {
         domain: "",
-        first_name: "",
-        last_name: "",
+        firstName: "",
+        lastName: "",
         email: "",
-        company_name: "",
+        companyName: "",
         price: "",
         locations: [],
         services: [],
@@ -133,25 +133,25 @@ const useGetStartedStore = defineStore("getStarted", {
       }
     },
     setAccount(
-      first_name: string,
-      last_name: string,
+      firstName: string,
+      lastName: string,
       email: string,
-      company_name: string
+      companyName: string
     ): void {
-      this.getStarted.first_name = first_name;
-      this.getStarted.last_name = last_name;
+      this.getStarted.firstName = firstName;
+      this.getStarted.lastName = lastName;
       this.getStarted.email = email;
-      this.getStarted.company_name = company_name;
+      this.getStarted.companyName = companyName;
     },
     async createAccount(): Promise<void> {
       try {
         this.fetching = true;
         const ip = await axios.get("https://api.ipify.org?format=json");
         const data = await API.post("/v1/get-started", {
-          first_name: this.getStarted.first_name,
-          last_name: this.getStarted.last_name,
+          first_name: this.getStarted.firstName,
+          last_name: this.getStarted.lastName,
           email: this.getStarted.email,
-          company_name: this.getStarted.company_name,
+          company_name: this.getStarted.companyName,
           industry: "software",
           domain: this.getStarted.domain,
           price: this.getStarted.price,

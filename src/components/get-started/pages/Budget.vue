@@ -84,13 +84,13 @@ const monthly = ref<boolean>(true);
 
 const priceId = computed(() => {
   if (monthly.value) {
-    if (budget.value < 500) return Plans[0].monthly_stripe_id;
-    if (budget.value < 2500) return Plans[1].monthly_stripe_id;
-    return Plans[2].monthly_stripe_id;
+    if (budget.value < 500) return Plans[0].monthlyStripeID;
+    if (budget.value < 2500) return Plans[1].monthlyStripeID;
+    return Plans[2].monthlyStripeID;
   }
-  if (budget.value < 500) return Plans[0].annual_stripe_id;
-  if (budget.value < 2500) return Plans[1].annual_stripe_id;
-  return Plans[2].annual_stripe_id;
+  if (budget.value < 500) return Plans[0].annualStripeID;
+  if (budget.value < 2500) return Plans[1].annualStripeID;
+  return Plans[2].annualStripeID;
 });
 
 const nextStep = (): void => {
