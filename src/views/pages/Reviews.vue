@@ -2,9 +2,7 @@
   <div id="reviews">
     <FadeIn>
       <div class="w-full flex place-items-center flex-col">
-        <h1
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
-        >
+        <h1 class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5">
           We are trusted by over
           <strong>100+</strong>
           businesses to run their ads
@@ -17,48 +15,37 @@
     </FadeIn>
     <FadeIn>
       <div class="flex justify-center pt-6">
-        <p
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
-        >
+        <p class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5">
           <strong class="h-full w-full">Our Esteemed Partners</strong>
         </p>
       </div>
       <div class="flex justify-center pt-6">
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg"
-        >
-          <img
-            v-for="(icon, index) in icons"
-            :key="index"
-            :src="icon"
-            class="w-32 h-32 my-2 mx-2 object-contain"
-          />
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg">
+          <img v-for="(icon, index) in icons" :key="index" :src="icon" class="w-32 h-32 my-2 mx-2 object-contain" />
         </div>
       </div>
     </FadeIn>
     <FadeIn>
       <div class="max-w-7xl mx-auto px-5 sm:px-10 p-4">
-        <h2
-          class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10"
-        >
+        <h2 class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10">
           Driving Unprecedented Success
         </h2>
         <p class="text-lg lg:text-xl text-gray-500 mb-8">
-          Whether you're a dynamic startup seeking rapid expansion or a seasoned
-          industry titan aiming to maintain a competitive edge in a cutthroat
-          market, Adomate is equipped with a comprehensive range of services
-          meticulously tailored to meet your unique needs. Our strategies are
-          born from an innate understanding of the evolving digital realm,
-          ensuring that your brand will not only stand out but also flourish in
-          the face of adversity.
+          Whether you're a dynamic startup on the path to rapid expansion or a
+          seasoned industry titan aiming to maintain your competitive edge,
+          Adomate is here to empower your success. Our comprehensive range of
+          services is meticulously tailored to meet your unique needs, providing
+          you with everything you need to excel in the digital realm. With
+          Adomate by your side, your brand will not only stand out but also
+          flourish, as we leverage our deep understanding of the digital
+          landscape to propel your growth. Trust us to deliver unparalleled
+          results and elevate your brand to new heights of success.
         </p>
       </div>
     </FadeIn>
     <FadeIn>
       <div class="container mx-auto px-6">
-        <h1
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
-        >
+        <h1 class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 px-5">
           <strong class="h-full w-full">Client Success Stories</strong>
         </h1>
         <FadeIn>
@@ -70,11 +57,7 @@
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                       <div class="p-4">
                         <div class="flex flex-col items-center">
-                          <img
-                            :src="review.image"
-                            class="w-24 h-24 object-cover rounded-full mb-4"
-                            alt="reviewer"
-                          />
+                          <img :src="review.image" class="w-24 h-24 object-cover rounded-full mb-4" alt="reviewer" />
                           <h3 class="text-lg font-semibold text-center">
                             {{ review.name }}
                           </h3>
@@ -100,9 +83,7 @@
     </FadeIn>
     <FadeIn>
       <div class="max-w-7xl mx-auto px-5 sm:px-10 p-4">
-        <h2
-          class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10"
-        >
+        <h2 class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10">
           Revolutionizing Online Advertising
         </h2>
         <p class="text-lg lg:text-xl text-gray-500 mb-8">
@@ -121,9 +102,7 @@
     </FadeIn>
     <FadeIn>
       <div class="flex justify-center px-6 py-4">
-        <h1
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
-        >
+        <h1 class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 px-5">
           <strong class="h-full w-full">Testimonials</strong>
         </h1>
       </div>
@@ -134,11 +113,7 @@
               <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="p-4">
                   <div class="flex items-center mb-4">
-                    <img
-                      class="w-12 h-12 rounded-full mr-4"
-                      :src="testimonial.image"
-                      :alt="testimonial.company"
-                    />
+                    <img class="w-12 h-12 rounded-full mr-4" :src="testimonial.image" :alt="testimonial.company" />
                     <div>
                       <h3 class="text-lg font-semibold">
                         {{ testimonial.name }}
@@ -160,9 +135,7 @@
     </FadeIn>
     <FadeIn>
       <div class="flex justify-center">
-        <button
-          class="arrow-button border-2 border-[#637EFE] shadow mt-10 mb-10 lg:mb-0"
-        >
+        <button class="arrow-button border-2 border-[#637EFE] shadow mt-10 mb-10 lg:mb-0">
           <a href="https://youtu.be/dQw4w9WgXcQ">
             See More <i class="fas fa-arrow-right"></i>
           </a>
@@ -171,9 +144,7 @@
     </FadeIn>
     <FadeIn>
       <div class="max-w-7xl mx-auto px-5 sm:px-10 p-4">
-        <h2
-          class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10"
-        >
+        <h2 class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10">
           Empowering Business Goals
         </h2>
         <p class="text-lg lg:text-xl text-gray-500 mb-8">
@@ -185,9 +156,7 @@
           ability to deliver on our promises and make a lasting impact on their
           bottom line.
         </p>
-        <h2
-          class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10"
-        >
+        <h2 class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10">
           Join the Adomate Community Today
         </h2>
         <p class="text-lg lg:text-xl text-gray-500 mb-8">
