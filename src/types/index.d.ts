@@ -65,3 +65,9 @@ export interface ContainFeature {
   checked?: boolean;
   description?: string;
 }
+
+export interface Blog {
+  headline: string;
+  sub: string;
+  description: string;
+}
