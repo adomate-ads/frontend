@@ -18,21 +18,50 @@
     <FadeIn>
       <div class="flex justify-center pt-6">
         <p
-          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5"
+          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5 pb-5"
         >
           <strong class="h-full w-full">Our Esteemed Partners</strong>
         </p>
       </div>
-      <div class="flex justify-center pt-6">
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg"
-        >
-          <img
-            v-for="(icon, index) in icons"
-            :key="index"
-            :src="icon"
-            class="w-32 h-32 my-2 mx-2 object-contain"
-          />
+      <div class="flex justify-center pt-6 bg-gray-100">
+        <div class="flex flex-col items-center sm:flex-row justify-center">
+          <div class="sm:w-1/2 p-4 flex items-center">
+            <div>
+              <p class="text-l text-center pt-2 px-5 mx-10 text-gray-500">
+                We are proud to collaborate with some of the most innovative and
+                industry-leading brands globally. Our partners place their trust
+                in us to deliver exceptional results, and we are dedicated to
+                ensuring their continued success.
+              </p>
+              <p class="text-l text-center pt-2 px-5 mx-10 text-gray-500">
+                As a Responsible Advertising Agency, we prioritize brand safety
+                and protection. We implement robust measures to ensure that our
+                partners' brands are shielded and their advertisements are
+                displayed within a secure environment, fostering trust and
+                confidence among their target audience. We are committed to
+                providing our partners with the highest level of service, and we
+                are constantly striving to improve our offerings to meet their
+                evolving needs.
+              </p>
+              <div class="flex justify-center mt-5 mb-5">
+                <button
+                  class="arrow-button border-2 border-[#637EFE] shadow lg:mb-0"
+                >
+                  Learn More About How We Work With Our Partners
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center pt-8 pb-4 px-4 rounded-lg"
+          >
+            <img
+              v-for="(icon, index) in icons"
+              :key="index"
+              :src="icon"
+              class="w-32 h-32 my-2 mx-2 object-contain"
+            />
+          </div>
         </div>
       </div>
     </FadeIn>
@@ -101,24 +130,49 @@
       </div>
     </FadeIn>
     <FadeIn>
-      <div class="max-w-7xl mx-auto px-5 sm:px-10 p-4">
-        <h2
-          class="text-gray-900 text-xl lg:text-3xl font-bold max-w-2xl lg:leading-tight mb-5 mt-10"
+      <div class="flex justify-center pt-6">
+        <p
+          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-10 px-5 pb-5"
         >
-          Revolutionizing Online Advertising
-        </h2>
-        <p class="text-lg lg:text-xl text-gray-500 mb-8">
-          As Adomate expands its reach and serves a growing number of
-          businesses, we are resolute in our conviction to revolutionize the
-          online advertising landscape. With our innovative strategies,
-          cutting-edge technology, and a team of dedicated experts, we are
-          poised to reshape how businesses advertise online. Whether you're a
-          startup seeking rapid expansion or an established company aiming to
-          stay ahead in a competitive market, our comprehensive range of
-          services is designed to meet your unique needs. Trust us to deliver
-          exceptional results, propelling your business to new heights of
-          success and growth.
+          <strong class="h-full w-full">
+            Revolutionizing Online Advertising
+          </strong>
         </p>
+      </div>
+      <div class="flex justify-center pt-6 bg-gray-100">
+        <div class="flex flex-col items-center sm:flex-row justify-center">
+          <div class="sm:w-1/2 p-4 flex items-center">
+            <div>
+              <p class="text-l text-center pt-2 px-5 mx-10 text-gray-500">
+                As Adomate expands its reach and serves a growing number of
+                businesses, we are resolute in our conviction to revolutionize
+                the online advertising landscape. With our innovative
+                strategies, cutting-edge technology, and a team of dedicated
+                experts, we are poised to reshape how businesses advertise
+                online. Whether you're a startup seeking rapid expansion or an
+                established company aiming to stay ahead in a competitive
+                market, our comprehensive range of services is designed to meet
+                your unique needs. Trust us to deliver exceptional results,
+                propelling your business to new heights of success and growth.
+              </p>
+              <p class="text-l text-center pt-2 px-5 mx-10 text-gray-500">
+                Watch the video from our team to learn more about how Adomate is
+                poised to revolutionize the online advertising landscape.
+              </p>
+            </div>
+          </div>
+          <div class="sm:w-1/2 p-5 flex items-center justify-center">
+            <video
+              class="w-50 h-40 md:w-full md:h-auto"
+              controls
+              :src="'@/assets/video.mp4'"
+              type="video/mp4"
+              controlsList="nodownload"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
       </div>
     </FadeIn>
     <FadeIn>
@@ -126,13 +180,14 @@
         <h1
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 px-5"
         >
-          <strong class="h-full w-full">Testimonials</strong>
+          <strong class="h-full w-full">Featured Stories</strong>
         </h1>
       </div>
       <div class="flex justify-center mt-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
           <div v-for="(testimonial, idx) in Testimonials" :key="idx">
             <div class="max-w-md">
+          <!-- @click="showPopup = true">-->
               <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="p-4">
                   <div class="flex items-center mb-4">
@@ -203,16 +258,13 @@
   </div>
 </template>
 
+<!-- import showPopup from "@/components/reviews/ReviewsPopup.vue"; -->
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
 import Reviews from "@/data/reviews";
 import Testimonials from "@/data/testimonials";
 
 const icons: string[] = [
-  "https://adomate.ai/logo.png",
-  "https://adomate.ai/logo.png",
-  "https://adomate.ai/logo.png",
-  "https://adomate.ai/logo.png",
   "https://adomate.ai/logo.png",
   "https://adomate.ai/logo.png",
   "https://adomate.ai/logo.png",
