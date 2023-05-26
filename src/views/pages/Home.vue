@@ -39,17 +39,21 @@
             >
               Built on fundamentals. Fueled by data. Driven by machines.
             </h2>
-            <div class="flex flex-col lg:flex-row mb-4 lg:mb-10">
-              <button
+            <div class="flex flex-col lg:flex-row mb-4 lg:mb-10 items-center">
+              <router-link
+                to="/get-started"
                 class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
               >
                 Get Started
                 <i class="fa-solid fa-arrow-right ml-2"></i>
-              </button>
-              <button class="bg-transparent text-black px-8 rounded-lg">
+              </router-link>
+              <router-link
+                to="/services"
+                class="bg-transparent text-black px-8 rounded-lg"
+              >
                 <i class="fa-solid fa-play mx-1 text-dark-purple"></i>
                 Learn More
-              </button>
+              </router-link>
             </div>
             <div class="hidden lg:flex flex-col lg:flex-row">
               <div class="flex items-center mr-10">
