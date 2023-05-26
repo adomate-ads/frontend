@@ -186,49 +186,55 @@
       <div class="flex justify-center mt-8">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
           <div v-for="(testimonial, idx) in Testimonials" :key="idx">
-            <div class="max-w-md">
-              <button class="cursor-pointer" @click="open = true">
+            <div class="max-w-md h-full">
+              <button class="cursor-pointer" @click="openPopup(idx)">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div class="p-4">
-                    <div class="flex items-center mb-4">
-                      <img
-                        class="w-12 h-12 rounded-full mr-4"
-                        :src="testimonial.logo"
-                        :alt="testimonial.company"
-                      />
-                      <div>
-                        <h3 class="text-lg font-semibold">
-                          {{ testimonial.name }}
-                        </h3>
-                        <p class="text-gray-600 text-sm">
-                          {{ testimonial.company }}
-                        </p>
+                  <div class="p-4 flex items-center">
+                    <img
+                      class="w-12 h-12 rounded-full mr-4 flex-shrink-0 object-cover"
+                      :src="testimonial.logo"
+                      :alt="testimonial.company"
+                    />
+                    <div class="flex-grow">
+                      <div class="flex items-center mb-4">
+                        <div>
+                          <h3 class="text-lg font-semibold">
+                            {{ testimonial.name }}
+                          </h3>
+                          <p class="text-gray-600 text-sm">
+                            {{ testimonial.company }}
+                          </p>
+                        </div>
                       </div>
+                      <p class="italic text-gray-700 text-left">
+                        {{ testimonial.review }}
+                      </p>
                     </div>
-                    <p class="italic text-gray-700">{{ testimonial.review }}</p>
                   </div>
                 </div>
               </button>
               <teleport to="body">
                 <div
-                  v-if="open"
-                  class="fixed inset-0 flex items-center justify-center z-50 px-4 py-6 sm:px-0 sm:py-0"
+                  v-if="open && openIndex === idx"
+                  class="fixed inset-0 flex items-center justify-center z-50 sm:px-0 sm:py-0"
                 >
                   <div
-                    class="bg-gray-200 bg-opacity-100 rounded-lg w-3/4 max-w-4xl h-3/4 max-h-3/4 sm:w-2/3 sm:max-w-md md:w-1/2 md:max-w-lg lg:w-1/3 lg:max-w-xl xl:w-2/5 xl:max-w-3xl px-4 py-6"
+                    class="bg-gray-200 bg-opacity-100 rounded-lg w-3/4 max-w-4xl h-3/4 max-h-3/4 sm:w-2/3 sm:max-w-md md:w-1/2 md:max-w-lg lg:w-1/3 lg:max-w-xl xl:w-2/5 xl:max-w-3xl px-1 py-6"
                   >
                     <div class="p-4 flex flex-col items-center h-full">
                       <h2 class="text-xl font-semibold text-dark-purple">
                         {{ testimonial.company }}
                       </h2>
-                      <img
-                        :src="testimonial.image"
-                        class="w-24 h-24 object-cover rounded-full"
-                      />
                       <div
-                        class="flex-grow overflow-y-auto mt-8 custom-scrollbar"
+                        class="flex-grow overflow-y-auto p-4 custom-scrollbar"
                       >
-                        <p class="text-black">{{ testimonial.testimonial }}</p>
+                        <img :src="testimonial.image" class="w-35 h-30 p-4" />
+                        <p class="text-black text-center p-1 italic">
+                          {{ testimonial.testimonial }}
+                        </p>
+                        <p class="text-black text-right p-1 italic">
+                          - {{ testimonial.name }}
+                        </p>
                       </div>
                       <div class="mt-auto">
                         <button
@@ -289,7 +295,6 @@
     </FadeIn>
   </div>
 </template>
-
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
 import { ref } from "vue";
@@ -297,6 +302,7 @@ import Reviews from "@/data/reviews";
 import Testimonials from "@/data/testimonials";
 
 const open = ref(false);
+const openIndex = ref(0);
 
 const icons: string[] = [
   "https://adomate.ai/logo.png",
@@ -308,6 +314,11 @@ const icons: string[] = [
   "https://adomate.ai/logo.png",
   "https://adomate.ai/logo.png",
 ];
+
+function openPopup(idx: number): void {
+  open.value = true;
+  openIndex.value = idx;
+}
 </script>
 
 <style>
