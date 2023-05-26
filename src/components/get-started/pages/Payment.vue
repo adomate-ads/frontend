@@ -94,6 +94,9 @@
     </div>
 
     <div class="flex flex-col justify-center">
+      <div class="w-full my-1 text-center">
+        <p class="text-red-500">{{ err }}</p>
+      </div>
       <div class="flex space-x-2 mx-auto my-3">
         <button
           type="button"
@@ -112,11 +115,16 @@
           @click="previousPage()"
         >
           <i class="fa-solid fa-caret-left"></i>
-          Previous
+          <span v-if="page === 0">Previous</span>
+          <span v-else>Cancel</span>
         </button>
         <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 flex items-center justify-center"
-          :class="getStartedStore.getFetching ? 'py-1' : 'py-4'"
+          class="shadow text-white font-semibold tracking-wide w-44 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 flex items-center justify-center duration-200"
+          :class="
+            getStartedStore.getFetching
+              ? 'py-1 bg-adomate-off-white border-dark-purple border-2'
+              : 'py-4 bg-dark-purple'
+          "
           :disabled="
             !isValidName(firstName) ||
             !isValidName(lastName) ||
@@ -141,7 +149,6 @@
       </div>
     </div>
   </div>
-  {{ err }}
 </template>
 
 <script lang="ts" setup>
@@ -189,30 +196,34 @@ let clientSecret = "";
 
 const err = ref<string>("");
 
-const pay = async (): Promise<void> => {
+const pay = async (): Promise<boolean> => {
   getStartedStore.fetching = true;
   const { error } = await stripe.confirmPayment({
     elements,
     confirmParams: {
       // Make sure to change this to your payment completion page
-      return_url: "https://adomate.ai",
+      return_url: "https://adomate.ai/get-started#completed",
     },
   });
 
   if (error.type === "card_error" || error.type === "validation_error") {
     err.value = error.message;
-  } else {
-    err.value = "An unexpected error occurred.";
+    getStartedStore.fetching = false;
+    return false;
   }
 
   getStartedStore.fetching = false;
+  return true;
 };
 
 const nextPage = async (): Promise<void> => {
   if (page.value === 1) {
-    await pay();
-    emit("next-step");
-    getStartedStore.setCheckout(false);
+    const success = await pay();
+    if (success) {
+      emit("next-step");
+      getStartedStore.setCheckout(false);
+      return;
+    }
     return;
   }
 
