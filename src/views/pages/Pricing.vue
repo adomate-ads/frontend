@@ -220,7 +220,7 @@
       </div>
     </fade-in>
 
-    <fade-in>
+    <fade-in id="faqs">
       <div class="text-center py-20 mx-auto justify-center max-w-[1000px] px-8">
         <h3 class="text-5xl font-bold text-adomate-off-black py-12">
           Frequently Asked Questions

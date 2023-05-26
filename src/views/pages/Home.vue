@@ -344,17 +344,26 @@
                   </div>
                   <input
                     id="url"
+                    v-model="url"
                     type="url"
                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-light-purple focus:outline-2 focus:outline-offset-0 focus:outline-light-purple outline-none"
                     placeholder="adomate.ai"
                     required
                   />
                   <button
-                    type="submit"
-                    class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                    v-if="url.length === 0"
+                    class="text-white absolute right-2.5 bottom-2.5 bg-light-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                    disabled
                   >
                     <i class="fa-solid fa-arrow-right"></i>
                   </button>
+                  <router-link
+                    v-else
+                    :to="`/get-started?URL=${url}`"
+                    class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                  >
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </router-link>
                 </div>
               </form>
             </div>
@@ -372,6 +381,7 @@ import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/data/plans";
 import { ref } from "vue";
 
+const url = ref<string>("");
 const monthly = ref<boolean>(true);
 </script>
 <style scoped>
