@@ -67,7 +67,9 @@ export interface ContainFeature {
 }
 
 export interface Blog {
+  img_src: string;
   headline: string;
   sub: string;
   description: string;
+  link: string;
 }
