@@ -90,7 +90,7 @@
         <h1
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 px-5"
         >
-          <strong class="h-full w-full">Client Success Stories</strong>
+          <strong class="h-full w-full">Client Reviews </strong>
         </h1>
         <FadeIn>
           <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar">
@@ -165,9 +165,9 @@
             <video
               class="w-50 h-40 md:w-full md:h-auto"
               controls
-              :src="'@/assets/video.mp4'"
+              loop
+              :src="'src/assets/videos/RevolutionizingOnlineAdvertising.mp4'"
               type="video/mp4"
-              controlsList="nodownload"
             >
               Your browser does not support the video tag.
             </video>
@@ -187,29 +187,61 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
           <div v-for="(testimonial, idx) in Testimonials" :key="idx">
             <div class="max-w-md">
-          <!-- @click="showPopup = true">-->
-              <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div class="p-4">
-                  <div class="flex items-center mb-4">
-                    <img
-                      class="w-12 h-12 rounded-full mr-4"
-                      :src="testimonial.image"
-                      :alt="testimonial.company"
-                    />
-                    <div>
-                      <h3 class="text-lg font-semibold">
-                        {{ testimonial.name }}
-                      </h3>
-                      <p class="text-gray-600 text-sm">
+              <button class="cursor-pointer" @click="open = true">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                  <div class="p-4">
+                    <div class="flex items-center mb-4">
+                      <img
+                        class="w-12 h-12 rounded-full mr-4"
+                        :src="testimonial.logo"
+                        :alt="testimonial.company"
+                      />
+                      <div>
+                        <h3 class="text-lg font-semibold">
+                          {{ testimonial.name }}
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                          {{ testimonial.company }}
+                        </p>
+                      </div>
+                    </div>
+                    <p class="italic text-gray-700">{{ testimonial.review }}</p>
+                  </div>
+                </div>
+              </button>
+              <teleport to="body">
+                <div
+                  v-if="open"
+                  class="fixed inset-0 flex items-center justify-center z-50 px-4 py-6 sm:px-0 sm:py-0"
+                >
+                  <div
+                    class="bg-gray-200 bg-opacity-100 rounded-lg w-3/4 max-w-4xl h-3/4 max-h-3/4 sm:w-2/3 sm:max-w-md md:w-1/2 md:max-w-lg lg:w-1/3 lg:max-w-xl xl:w-2/5 xl:max-w-3xl px-4 py-6"
+                  >
+                    <div class="p-4 flex flex-col items-center h-full">
+                      <h2 class="text-xl font-semibold text-dark-purple">
                         {{ testimonial.company }}
-                      </p>
+                      </h2>
+                      <img
+                        :src="testimonial.image"
+                        class="w-24 h-24 object-cover rounded-full"
+                      />
+                      <div
+                        class="flex-grow overflow-y-auto mt-8 custom-scrollbar"
+                      >
+                        <p class="text-black">{{ testimonial.testimonial }}</p>
+                      </div>
+                      <div class="mt-auto">
+                        <button
+                          class="arrow-button border-[#637EFE] mt-6 lg:mt-8 justify-center"
+                          @click="open = false"
+                        >
+                          Close
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <p class="italic text-gray-700">
-                    {{ testimonial.review }}
-                  </p>
                 </div>
-              </div>
+              </teleport>
             </div>
           </div>
         </div>
@@ -258,11 +290,13 @@
   </div>
 </template>
 
-<!-- import showPopup from "@/components/reviews/ReviewsPopup.vue"; -->
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
+import { ref } from "vue";
 import Reviews from "@/data/reviews";
 import Testimonials from "@/data/testimonials";
+
+const open = ref(false);
 
 const icons: string[] = [
   "https://adomate.ai/logo.png",

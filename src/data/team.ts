@@ -45,7 +45,7 @@ const Members: Member[] = [
     role: "Developer",
     email: "vishwam.raval@adomate.ai",
     image:
-      "https://media.licdn.com/dms/image/D5603AQFr-KQuNETvtA/profile-displayphoto-shrink_800_800/0/1676963887148?e=1690416000&v=beta&t=OJO__eFiqWhU2HdYZNOowyKLqmZInjAkOaTCqetefGM",
+      "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png",
     instagram: "https://www.instagram.com/vishwamr07/",
     linkedin: "https://www.linkedin.com/in/vishwamr/",
     github: "https://github.com/vishwamraval",

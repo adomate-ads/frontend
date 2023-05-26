@@ -65,7 +65,9 @@ export interface Testimonial {
   role: string;
   review: string;
   company: string;
+  logo: string;
   image: string;
+  testimonial: string;
 }
 
 export interface Feature {
