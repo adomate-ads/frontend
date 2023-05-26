@@ -204,7 +204,6 @@ const completed = (): void => {
 onMounted(() => {
   // Direct Navigation to Step
   const { hash } = window.location;
-  console.log(hash);
   if (hash) {
     if (hash.startsWith("#step")) {
       const step = parseInt(hash.replace("#step", ""), 10);
