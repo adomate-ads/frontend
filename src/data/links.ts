@@ -48,7 +48,7 @@ const FooterLinks: Link[] = [
         title: "Mission and Vision",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "About", params: { section: "our-team" } },
         title: "Our Team",
       },
       {
@@ -92,7 +92,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing", params: { section: "faqs" } },
         title: "FAQs",
       },
       {
