@@ -193,13 +193,26 @@ watch(currentStep, (newStep: number, oldStep: number) => {
   }
 });
 
+const completed = (): void => {
+  currentStep.value = 5;
+  steps.value[1].completed = true;
+  steps.value[2].completed = true;
+  steps.value[3].completed = true;
+  steps.value[4].completed = true;
+};
+
 onMounted(() => {
   // Direct Navigation to Step
   const { hash } = window.location;
-  if (hash && hash.startsWith("#step")) {
-    const step = parseInt(hash.replace("#step", ""), 10);
-    if (step) {
-      currentStep.value = step;
+  console.log(hash);
+  if (hash) {
+    if (hash.startsWith("#step")) {
+      const step = parseInt(hash.replace("#step", ""), 10);
+      if (step) {
+        currentStep.value = step;
+      }
+    } else if (hash === "#completed") {
+      completed();
     }
   }
 });
