@@ -189,27 +189,23 @@
             <div class="max-w-md h-full">
               <button class="cursor-pointer" @click="openPopup(idx)">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div class="p-4 flex items-center">
-                    <img
-                      class="w-12 h-12 rounded-full mr-4 flex-shrink-0 object-cover"
-                      :src="testimonial.logo"
-                      :alt="testimonial.company"
-                    />
-                    <div class="flex-grow">
-                      <div class="flex items-center mb-4">
-                        <div>
-                          <h3 class="text-lg font-semibold">
-                            {{ testimonial.name }}
-                          </h3>
-                          <p class="text-gray-600 text-sm">
-                            {{ testimonial.company }}
-                          </p>
-                        </div>
+                  <div class="p-4 text-justify">
+                    <div class="flex items-center mb-4">
+                      <img
+                        class="w-12 h-12 rounded-full mr-4"
+                        :src="testimonial.logo"
+                        :alt="testimonial.company"
+                      />
+                      <div>
+                        <h3 class="text-lg font-semibold">
+                          {{ testimonial.name }}
+                        </h3>
+                        <p class="text-gray-600 text-sm">
+                          {{ testimonial.company }}
+                        </p>
                       </div>
-                      <p class="italic text-gray-700 text-left">
-                        {{ testimonial.review }}
-                      </p>
                     </div>
+                    <p class="italic text-gray-700">{{ testimonial.review }}</p>
                   </div>
                 </div>
               </button>
