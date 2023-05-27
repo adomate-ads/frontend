@@ -7,7 +7,7 @@ const routes = [
     component: () => import("@/views/pages/Home.vue"),
   },
   {
-    path: "/about",
+    path: "/about/:section?",
     name: "About",
     component: () => import("@/views/pages/About.vue"),
   },
@@ -17,7 +17,7 @@ const routes = [
     component: () => import("@/views/pages/Services.vue"),
   },
   {
-    path: "/pricing",
+    path: "/pricing/:section?",
     name: "Pricing",
     component: () => import("@/views/pages/Pricing.vue"),
   },
@@ -42,6 +42,11 @@ const routes = [
     component: () => import("@/views/pages/Reviews.vue"),
   },
   {
+    path: "/resources",
+    name: "Resources",
+    component: () => import("@/views/pages/Resources.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: () => import("@/views/pages/errors/ErrorNotFound.vue"),
@@ -52,7 +57,14 @@ const buildRouter = (): Router => {
   const r = routes;
 
   return createRouter({
-    scrollBehavior() {
+    scrollBehavior(to) {
+      if (to.params.section) {
+        return {
+          el: `#${to.params.section}`,
+          top: 75,
+          behavior: "smooth",
+        };
+      }
       return {
         top: 0,
         behavior: "smooth",

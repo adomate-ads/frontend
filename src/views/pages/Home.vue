@@ -39,17 +39,21 @@
             >
               Built on fundamentals. Fueled by data. Driven by machines.
             </h2>
-            <div class="flex flex-col lg:flex-row mb-4 lg:mb-10">
-              <button
+            <div class="flex flex-col lg:flex-row mb-4 lg:mb-10 items-center">
+              <router-link
                 class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 lg:mr-5 lg:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+                to="/get-started"
               >
                 Get Started
                 <i class="fa-solid fa-arrow-right ml-2"></i>
-              </button>
-              <button class="bg-transparent text-black px-8 rounded-lg">
+              </router-link>
+              <router-link
+                to="/services"
+                class="bg-transparent text-black px-8 rounded-lg"
+              >
                 <i class="fa-solid fa-play mx-1 text-dark-purple"></i>
                 Learn More
-              </button>
+              </router-link>
             </div>
             <div class="hidden lg:flex flex-col lg:flex-row">
               <div class="flex items-center mr-10">
@@ -340,17 +344,26 @@
                   </div>
                   <input
                     id="url"
+                    v-model="url"
                     type="url"
                     class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-xl bg-gray-50 focus:ring-light-purple focus:outline-2 focus:outline-offset-0 focus:outline-light-purple outline-none"
                     placeholder="adomate.ai"
                     required
                   />
                   <button
-                    type="submit"
-                    class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                    v-if="url.length === 0"
+                    class="text-white absolute right-2.5 bottom-2.5 bg-light-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                    disabled
                   >
                     <i class="fa-solid fa-arrow-right"></i>
                   </button>
+                  <router-link
+                    v-else
+                    :to="`/get-started?URL=${url}`"
+                    class="text-white absolute right-2.5 bottom-2.5 bg-dark-purple focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+                  >
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </router-link>
                 </div>
               </form>
             </div>
@@ -368,6 +381,7 @@ import LargePlans from "@/components/plans/LargePlans.vue";
 import Plans from "@/data/plans";
 import { ref } from "vue";
 
+const url = ref<string>("");
 const monthly = ref<boolean>(true);
 </script>
 <style scoped>
