@@ -189,7 +189,7 @@
             <div class="max-w-md h-full">
               <button class="cursor-pointer" @click="openPopup(idx)">
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                  <div class="p-4 text-justify">
+                  <div class="p-4 text-left">
                     <div class="flex items-center mb-4">
                       <img
                         class="w-12 h-12 rounded-full mr-4"
