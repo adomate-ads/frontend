@@ -52,16 +52,12 @@ const FooterLinks: Link[] = [
         title: "Our Team",
       },
       {
-        to: { name: "NotFound" },
+        href: "https://www.linkedin.com/company/adomate-ai/jobs/",
         title: "Careers",
       },
       {
-        to: { name: "NotFound" },
-        title: "Press and Media",
-      },
-      {
-        to: { name: "NotFound" },
-        title: "Testimonials",
+        to: { name: "Reviews" },
+        title: "Reviews and Testimonials",
       },
     ],
   },
@@ -107,10 +103,6 @@ const FooterLinks: Link[] = [
         to: { name: "NotFound" },
         title: "Contact Us",
       },
-      {
-        to: { name: "NotFound" },
-        title: "Support Center",
-      },
     ],
   },
   {
@@ -128,10 +120,6 @@ const FooterLinks: Link[] = [
       {
         to: { name: "Pricing" },
         title: "Pricing",
-      },
-      {
-        to: { name: "NotFound" },
-        title: "Reviews",
       },
       {
         to: { name: "NotFound" },
