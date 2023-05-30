@@ -100,7 +100,7 @@ const FooterLinks: Link[] = [
         title: "Live Chat",
       },
       {
-        to: { name: "NotFound" },
+        href: "mailto:support@adomate.ai",
         title: "Contact Us",
       },
     ],
@@ -118,8 +118,8 @@ const FooterLinks: Link[] = [
         title: "How it works",
       },
       {
-        to: { name: "Pricing" },
-        title: "Pricing",
+        to: { name: "Resources" },
+        title: "Resources",
       },
       {
         to: { name: "About", params: { section: "case-studies" } },
