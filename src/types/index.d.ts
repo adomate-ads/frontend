@@ -90,3 +90,16 @@ export interface Blog {
   description: string;
   link: string;
 }
+
+export interface PopularArticles {
+  title: string;
+  description: string;
+  link: string;
+}
+
+export interface PopularTutorials {
+  title: string;
+  description: string;
+  thumbnail: string;
+  link: string;
+}
