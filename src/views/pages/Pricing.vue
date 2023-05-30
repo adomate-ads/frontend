@@ -49,7 +49,7 @@
         </div>
       </div>
     </fade-in>
-    <fade-in>
+    <fade-in id="custom-solution">
       <div
         class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex flex-col lg:flex-row items-center lg:justify-between"
       >

@@ -74,7 +74,7 @@ const FooterLinks: Link[] = [
         title: "Plans and Pricing",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "KnowledgeBase" },
         title: "Knowledge Base",
       },
       {
@@ -110,7 +110,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing", params: { section: "custom-solution" } },
         title: "Request a quote",
       },
       {
@@ -122,7 +122,7 @@ const FooterLinks: Link[] = [
         title: "Pricing",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "About", params: { section: "case-studies" } },
         title: "Case Studies",
       },
     ],

@@ -238,7 +238,7 @@
       </section>
     </fade-in>
 
-    <fade-in>
+    <fade-in id="case-studies">
       <section class="py-10 mt-5 lg:mt-10">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
           <div class="mb-6 flex justify-start">

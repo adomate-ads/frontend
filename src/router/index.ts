@@ -42,6 +42,11 @@ const routes = [
     component: () => import("@/views/pages/Reviews.vue"),
   },
   {
+    path: "/knowledge-base",
+    name: "KnowledgeBase",
+    component: () => import("@/views/pages/KnowledgeBase.vue"),
+  },
+  {
     path: "/resources",
     name: "Resources",
     component: () => import("@/views/pages/Resources.vue"),
