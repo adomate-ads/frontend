@@ -47,6 +47,29 @@ const routes = [
     component: () => import("@/views/pages/KnowledgeBase.vue"),
   },
   {
+    path: "/knowledge-base/getting-started",
+    name: "GettingStarted",
+    component: () => import("@/views/pages/knowledge-base/GettingStarted.vue"),
+  },
+  {
+    path: "/knowledge-base/features-and-functionality",
+    name: "FeaturesAndFunctionality",
+    component: () =>
+      import("@/views/pages/knowledge-base/FeaturesAndFunctionality.vue"),
+  },
+  {
+    path: "/knowledge-base/tips-and-tutorials",
+    name: "TipsAndTutorials",
+    component: () =>
+      import("@/views/pages/knowledge-base/TipsAndTutorials.vue"),
+  },
+  {
+    path: "/knowledge-base/troubleshooting-and-faqs",
+    name: "TroubleshootingAndFaqs",
+    component: () =>
+      import("@/views/pages/knowledge-base/TroubleshootingAndFaqs.vue"),
+  },
+  {
     path: "/resources",
     name: "Resources",
     component: () => import("@/views/pages/Resources.vue"),

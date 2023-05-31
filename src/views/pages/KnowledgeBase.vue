@@ -34,7 +34,7 @@
       </div>
     </FadeIn>
     <FadeIn>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 py-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-6">
         <div class="bg-white shadow-lg rounded-lg p-6">
           <div class="flex items-center justify-center mb-4">
             <i class="fas fa-rocket text-4xl xl:text-5xl"></i>
@@ -42,7 +42,7 @@
           <h1
             class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
           >
-            Getting Started
+            Getting Started with Adomate
           </h1>
           <p class="text-l text-center py-2">Ready to dive into Adomate?</p>
 
@@ -51,6 +51,26 @@
             section will guide you through the initial steps, setup process, and
             key concepts. Maximize your experience with Adomate's powerful
             tools.
+          </p>
+        </div>
+        <div class="bg-white shadow-lg rounded-lg p-6">
+          <div class="flex items-center justify-center mb-4">
+            <i class="fas fa-sliders text-4xl xl:text-5xl"></i>
+          </div>
+          <h1
+            class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
+          >
+            Features and Functionality
+          </h1>
+          <p class="text-l text-center py-2">
+            Ready to dive into Adomate's features and functionality?
+          </p>
+
+          <p class="text-center">
+            Learn how to use Adomate's powerful tools to create, manage, and
+            optimize your campaigns. Explore the different features and
+            functionality available to you and discover how to leverage them to
+            achieve your goals.
           </p>
         </div>
         <div class="bg-white shadow-lg rounded-lg p-6">
@@ -79,7 +99,7 @@
           <h1
             class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
           >
-            Troubleshooting
+            Troubleshooting and FAQs
           </h1>
           <p class="text-l text-center py-2">
             Encountering a challenge or issue while using Adomate?
@@ -121,23 +141,23 @@
           <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar">
             <div class="flex-shrink-0 flex-grow-0 flex-basis-0 p-2">
               <div class="flex space-x-4">
-                <div v-for="(Tutorials, idx) in PopularTutorials" :key="idx">
+                <div v-for="(tutorials, idx) in PopularTutorials" :key="idx">
                   <div class="max-w-xs">
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                       <div class="p-4">
                         <div class="flex flex-col items-center">
                           <img
-                            :src="Tutorials.thumbnail"
+                            :src="tutorials.thumbnail"
                             class="w-50 h-30 object-cover mb-4"
-                            alt="Tutorials.thumbnail"
+                            alt="tutorials.thumbnail"
                           />
                           <h3 class="text-lg font-semibold text-center">
-                            {{ Tutorials.title }}
+                            {{ tutorials.title }}
                           </h3>
                           <p class="text-gray-600 text-sm text-center">
-                            {{ Tutorials.description }}
+                            {{ tutorials.description }}
                           </p>
-                          <a :href="Tutorials.link" class="text-blue-500 mt-4"
+                          <a :href="tutorials.link" class="text-blue-500 mt-4"
                             >Read More</a
                           >
                         </div>
@@ -150,6 +170,9 @@
           </div>
         </FadeIn>
       </div>
+    </FadeIn>
+    <FadeIn>
+      <div class=""></div>
     </FadeIn>
   </div>
 </template>

@@ -103,3 +103,40 @@ export interface PopularTutorials {
   thumbnail: string;
   link: string;
 }
+
+export interface GettingStarted {
+  title: string;
+  subtitle: string;
+  description: string;
+  code: string;
+  image: string;
+  video: string;
+  linkid: string;
+}
+
+export interface TipsTutorials {
+  title: string;
+  subtitle: string;
+  description: string;
+  code: string;
+  image: string;
+  video: string;
+}
+
+export interface FeatureFunctionality {
+  title: string;
+  subtitle: string;
+  description: string;
+  code: string;
+  image: string;
+  video: string;
+}
+
+export interface TroubleshootingFaqs {
+  title: string;
+  subtitle: string;
+  description: string;
+  code: string;
+  image: string;
+  video: string;
+}
