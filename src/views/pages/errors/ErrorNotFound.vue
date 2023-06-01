@@ -9,14 +9,14 @@
         The page you are looking for might have been removed, had its name
         changed, or is temporarily unavailable.
       </h2>
-      <a href="https://adomate.ai/">
+      <RouterLink to="/">
         <button
           class="bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded ml-5 mt-10"
         >
           <i class="fa-solid fa-arrow-left mr-2"></i>
           Back to Homepage
         </button>
-      </a>
+      </RouterLink>
     </div>
   </div>
 </template>

@@ -52,6 +52,11 @@ const routes = [
     component: () => import("@/views/pages/knowledge-base/GettingStarted.vue"),
   },
   {
+    path: "/knowledge-base/developer-documentation",
+    name: "DeveloperDocumentation",
+    component: () => import("@/views/pages/knowledge-base/DeveloperDocumentation.vue"),
+  },
+  {
     path: "/knowledge-base/features-and-functionality",
     name: "FeaturesAndFunctionality",
     component: () =>
@@ -62,6 +67,21 @@ const routes = [
     name: "TipsAndTutorials",
     component: () =>
       import("@/views/pages/knowledge-base/TipsAndTutorials.vue"),
+  },
+  {
+    path: "/knowledge-base/billing-and-payments",
+    name: "BillingAndPayments",
+    component: () => import("@/views/pages/knowledge-base/BillingAndPayments.vue"),
+  },
+  {
+    path:"/knowledge-base/reporting-and-analytics",
+    name: "ReportingAndAnalytics",
+    component: () => import("@/views/pages/knowledge-base/ReportingAndAnalytics.vue"),
+  },
+  {
+    path: "/knowledge-base/security-and-privacy",
+    name: "SecurityAndPrivacy",
+    component: () => import("@/views/pages/knowledge-base/SecurityAndPrivacy.vue"),
   },
   {
     path: "/knowledge-base/troubleshooting-and-faqs",

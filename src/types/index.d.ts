@@ -91,6 +91,14 @@ export interface Blog {
   link: string;
 }
 
+export interface KnowledgeBaseCard {
+  icon: string;
+  title: string;
+  tagline: string;
+  description: string;
+  href: string;
+}
+
 export interface PopularArticles {
   title: string;
   description: string;

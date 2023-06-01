@@ -35,80 +35,28 @@
     </FadeIn>
     <FadeIn>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-6">
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <div class="flex items-center justify-center mb-4">
-            <i class="fas fa-rocket text-4xl xl:text-5xl"></i>
-          </div>
-          <h1
-            class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
-          >
-            Getting Started with Adomate
-          </h1>
-          <p class="text-l text-center py-2">Ready to dive into Adomate?</p>
+        <div
+          v-for="(cards, idx) in kbcards"
+          :key="idx"
+          class="bg-white shadow-lg rounded-lg p-6"
+        >
+          <router-link :to="cards.href">
+            <div class="flex items-center justify-center mb-4">
+              <i :class="'fas fa-' + cards.icon + ' text-4xl xl:text-5xl'"></i>
+            </div>
+            <h1
+              class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
+            >
+              {{ cards.title }}
+            </h1>
+            <p class="text-l text-center py-2">
+              {{ cards.tagline }}
+            </p>
 
-          <p class="text-center">
-            Whether you're new to Adomate or just looking for a refresher, this
-            section will guide you through the initial steps, setup process, and
-            key concepts. Maximize your experience with Adomate's powerful
-            tools.
-          </p>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <div class="flex items-center justify-center mb-4">
-            <i class="fas fa-sliders text-4xl xl:text-5xl"></i>
-          </div>
-          <h1
-            class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
-          >
-            Features and Functionality
-          </h1>
-          <p class="text-l text-center py-2">
-            Ready to dive into Adomate's features and functionality?
-          </p>
-
-          <p class="text-center">
-            Learn how to use Adomate's powerful tools to create, manage, and
-            optimize your campaigns. Explore the different features and
-            functionality available to you and discover how to leverage them to
-            achieve your goals.
-          </p>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <div class="flex items-center justify-center mb-4">
-            <i class="fas fa-lightbulb text-4xl xl:text-5xl"></i>
-          </div>
-          <h1
-            class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
-          >
-            Tips and Tutorials
-          </h1>
-          <p class="text-l text-center py-2">
-            Looking to level up your skills with Adomate?
-          </p>
-
-          <p class="text-center">
-            Explore a wide range of topics, from advanced techniques to creative
-            strategies, and learn how to optimize your productivity and achieve
-            impressive results with Adomate.
-          </p>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <div class="flex items-center justify-center mb-4">
-            <i class="fas fa-screwdriver-wrench text-4xl xl:text-5xl"></i>
-          </div>
-          <h1
-            class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
-          >
-            Troubleshooting and FAQs
-          </h1>
-          <p class="text-l text-center py-2">
-            Encountering a challenge or issue while using Adomate?
-          </p>
-          <p class="text-center">
-            Don't worry, we've got you covered! Get back on track and maximize
-            your experience with expert guidance. Find answers to common issues
-            and learn how to troubleshoot them.
-          </p>
+            <p class="text-center">
+              {{ cards.description }}
+            </p>
+          </router-link>
         </div>
       </div>
     </FadeIn>
@@ -172,13 +120,34 @@
       </div>
     </FadeIn>
     <FadeIn>
-      <div class=""></div>
+      <div class="px-5 sm:px-10 p-4">
+        <h1
+          class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 pb-5 px-5"
+        >
+          <strong class="h-full w-full">
+            We are here to help you to get the most out of Adomate
+          </strong>
+        </h1>
+        <p class="text-lg lg:text-xl text-gray-500 mb-8">
+          Thank you for visiting our knowledge base! We hope that you found the
+          information and resources provided here helpful in maximizing your
+          experience with Adomate. If you have any further questions or need
+          additional assistance, please don't hesitate to reach out to our
+          support team. We are committed to providing excellent customer service
+          and are here to support you every step of the way. Stay up to date
+          with the latest updates and announcements by visiting our website and
+          checking out our community forums. We appreciate your feedback and
+          suggestions to continuously improve our knowledge base and enhance
+          your Adomate journey.
+        </p>
+      </div>
     </FadeIn>
   </div>
 </template>
 
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
+import kbcards from "@/data/knowledge-base/kb-cards";
 import PopularArticles from "@/data/knowledge-base/popular-articles";
 import PopularTutorials from "@/data/knowledge-base/popular-tutorials";
 </script>
