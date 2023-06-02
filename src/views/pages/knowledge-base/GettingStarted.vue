@@ -33,16 +33,14 @@
       </div>
     </FadeIn>
     <FadeIn>
-      <div
-        class="bg-gray-100 text-black h-60 w-64 left-20 top-100 overflow-y-auto z-10"
-      >
-        <div class="p-4">
-          <h2 class="text-lg font-bold">Getting Started</h2>
-          <ul class="mt-4">
-            <li v-for="(link, idx) in GettingStartedKB" :key="idx">
-              <a :href="link.linkid">{{ link.title }}</a>
-            </li>
-          </ul>
+      <div class="flex w-5/6 mx-auto my-10 px-5 py-5">
+        <div class="w-1/5">
+          <h3 class="mb-4 border-r-2 border-gray-200 pr-4"></h3>
+        </div>
+        <div class="flex-grow">
+          <h1 class="text-5xl font-bold justify-center text-adomate-navy">
+            Getting Started
+          </h1>
         </div>
       </div>
     </FadeIn>
@@ -51,5 +49,5 @@
 
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
-import GettingStartedKB from "@/data/knowledge-base/getting-started";
+// import GettingStartedKB from "@/data/knowledge-base/getting-started";
 </script>

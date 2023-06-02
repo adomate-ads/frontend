@@ -72,7 +72,9 @@
             <div class="bg-white rounded-lg shadow-lg p-4">
               <h2 class="text-lg font-bold">{{ article.title }}</h2>
               <p class="mt-2">{{ article.description }}</p>
-              <a :href="article.link" class="text-blue-500 mt-4">Read More</a>
+              <router-link :to="article.link" class="text-blue-500 mt-4"
+                >Read More</router-link
+              >
             </div>
           </div>
         </div>
@@ -94,24 +96,79 @@
                     <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                       <div class="p-4">
                         <div class="flex flex-col items-center">
-                          <img
-                            :src="tutorials.thumbnail"
-                            class="w-50 h-30 object-cover mb-4"
-                            alt="tutorials.thumbnail"
-                          />
+                          <button
+                            class="cursor-pointer"
+                            @click="openPopup(idx)"
+                          >
+                            <img
+                              :src="tutorials.thumbnail"
+                              class="w-50 h-30 object-cover mb-4"
+                              alt="tutorials.thumbnail"
+                            />
+                          </button>
                           <h3 class="text-lg font-semibold text-center">
                             {{ tutorials.title }}
                           </h3>
                           <p class="text-gray-600 text-sm text-center">
                             {{ tutorials.description }}
                           </p>
-                          <a :href="tutorials.link" class="text-blue-500 mt-4"
-                            >Read More</a
+                          <router-link
+                            :to="tutorials.link"
+                            class="text-blue-500 mt-4"
+                            >Read More</router-link
                           >
                         </div>
                       </div>
                     </div>
                   </div>
+                  <teleport to="body">
+                    <div
+                      v-if="open && openIndex === idx"
+                      class="fixed inset-0 flex items-center justify-center z-50 sm:px-0 sm:py-0"
+                    >
+                      <div
+                        class="bg-gray-200 bg-opacity-100 rounded-lg w-3/4 max-w-4xl h-2/3 max-h-2/3 sm:w-2/3 sm:max-w-md md:w-1/2 md:max-w-lg lg:w-1/3 lg:max-w-xl xl:w-2/5 xl:max-w-3xl px-1 py-6"
+                      >
+                        <div class="p-4 flex flex-col items-center h-full">
+                          <h2 class="text-xl font-semibold text-dark-purple">
+                            {{ tutorials.title }}
+                          </h2>
+                          <div
+                            class="flex-grow overflow-y-auto p-4 custom-scrollbar"
+                          >
+                            <video
+                              class="w-150 h-100 md:w-full md:h-auto"
+                              controls
+                              loop
+                              :src="tutorials.video"
+                              type="video/mp4"
+                            >
+                              Your browser does not support the video tag.
+                            </video>
+
+                            <p class="text-black text-center p-1 italic">
+                              {{ tutorials.description }}
+                            </p>
+                          </div>
+                          <div class="mt-auto flex justify-center">
+                            <router-link :to="tutorials.link">
+                              <button
+                                class="arrow-button border-[#637EFE] mt-4 lg:mt-8 mr-4"
+                              >
+                                Read More
+                              </button>
+                            </router-link>
+                            <button
+                              class="arrow-button border-[#637EFE] mt-4 lg:mt-8"
+                              @click="open = false"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </teleport>
                 </div>
               </div>
             </div>
@@ -150,6 +207,14 @@ import FadeIn from "@/components/FadeIn.vue";
 import kbcards from "@/data/knowledge-base/kb-cards";
 import PopularArticles from "@/data/knowledge-base/popular-articles";
 import PopularTutorials from "@/data/knowledge-base/popular-tutorials";
+import { ref } from "vue";
+
+const open = ref(false);
+const openIndex = ref(0);
+function openPopup(idx: number): void {
+  open.value = true;
+  openIndex.value = idx;
+}
 </script>
 
 <style>

@@ -54,7 +54,8 @@ const routes = [
   {
     path: "/knowledge-base/developer-documentation",
     name: "DeveloperDocumentation",
-    component: () => import("@/views/pages/knowledge-base/DeveloperDocumentation.vue"),
+    component: () =>
+      import("@/views/pages/knowledge-base/DeveloperDocumentation.vue"),
   },
   {
     path: "/knowledge-base/features-and-functionality",
@@ -71,17 +72,20 @@ const routes = [
   {
     path: "/knowledge-base/billing-and-payments",
     name: "BillingAndPayments",
-    component: () => import("@/views/pages/knowledge-base/BillingAndPayments.vue"),
+    component: () =>
+      import("@/views/pages/knowledge-base/BillingAndPayments.vue"),
   },
   {
-    path:"/knowledge-base/reporting-and-analytics",
+    path: "/knowledge-base/reporting-and-analytics",
     name: "ReportingAndAnalytics",
-    component: () => import("@/views/pages/knowledge-base/ReportingAndAnalytics.vue"),
+    component: () =>
+      import("@/views/pages/knowledge-base/ReportingAndAnalytics.vue"),
   },
   {
     path: "/knowledge-base/security-and-privacy",
     name: "SecurityAndPrivacy",
-    component: () => import("@/views/pages/knowledge-base/SecurityAndPrivacy.vue"),
+    component: () =>
+      import("@/views/pages/knowledge-base/SecurityAndPrivacy.vue"),
   },
   {
     path: "/knowledge-base/troubleshooting-and-faqs",

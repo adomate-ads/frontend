@@ -110,11 +110,14 @@ export interface PopularTutorials {
   description: string;
   thumbnail: string;
   link: string;
+  video: string;
 }
 
 export interface GettingStarted {
   title: string;
-  subtitle: string;
+  subtopic1: string;
+  subtopic2: string;
+  subtopic3: string;
   description: string;
   code: string;
   image: string;
