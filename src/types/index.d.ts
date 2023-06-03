@@ -118,14 +118,15 @@ export interface GettingStarted {
   subtopic1: string;
   subtopic2: string;
   subtopic3: string;
-  description: string;
-  code: string;
+  description1: string;
+  description2: string;
+  description3: string;
   image: string;
   video: string;
   linkid: string;
 }
 
-export interface TipsTutorials {
+export interface DeveloperDocs {
   title: string;
   subtitle: string;
   description: string;
@@ -141,6 +142,43 @@ export interface FeatureFunctionality {
   code: string;
   image: string;
   video: string;
+}
+
+export interface TipsTutorials {
+  title: string;
+  subtitle: string;
+  description: string;
+  code: string;
+  image: string;
+  video: string;
+  code1: string;
+  code2: string;
+  code3: string;
+}
+/* <div
+v-if="topic.code1"
+class="text-sm text-white bg-adomate-navy p-2 rounded-lg py-4"
+>
+<code style="white-space: pre-line">{{ topic.code1 }}</code>
+</div>
+*/
+
+export interface BillingPayments {
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export interface ReportingAnalytics {
+  title: string;
+  subtitle: string;
+  description: string;
+}
+
+export interface SecurityPrivacy {
+  title: string;
+  subtitle: string;
+  description: string;
 }
 
 export interface TroubleshootingFaqs {
