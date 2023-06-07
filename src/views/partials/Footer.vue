@@ -89,18 +89,17 @@
         class="mt-2 text-gray-500 md:flex items-center justify-between pb-10"
       >
         <div class="flex flex-row items-center space-x-4">
-          <p class="font-semibold text-sm md:text-l px-2">
-            ©
+          <p class="font-bold text-sm md:text-l px-2">
+            © {{ new Date().getFullYear() }}
             <a
               class="hover:underline underline-offset-2"
               href="https://adomate.ai/"
               >Adomate LLC</a
             >
-            - {{ new Date().getFullYear() }}
           </p>
-          <p class="text-sm">Privacy Policy</p>
-          <p class="text-sm">Cookies</p>
-          <p class="text-sm">Terms of Service</p>
+          <p class="text-sm color-gray-500">Privacy Policy</p>
+          <p class="text-sm color-gray-500">Cookies</p>
+          <p class="text-sm color-gray-500">Terms of Service</p>
         </div>
         <div
           class="flex items-center place-content-start flex-row gap-x-4 py-4"

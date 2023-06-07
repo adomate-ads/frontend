@@ -38,75 +38,6 @@
           <h3 class="text-l font-bold justify-center text-adomate-navy">
             Getting Started
           </h3>
-          <ul class="list-disc ml-4 pl-4">
-            <li
-              v-for="topic in GettingStartedKB"
-              :key="topic.linkid"
-              class="relative"
-            >
-              <h4>
-                <a :href="`#${topic.linkid}`"> {{ topic.title }}</a>
-              </h4>
-              <ul class="list-disc ml-4 pl-4">
-                <li v-if="topic.subtopic1" class="relative">
-                  <a :href="`#${topic.subtopic1}`"> {{ topic.subtopic1 }}</a>
-                </li>
-                <li v-if="topic.subtopic2" class="relative">
-                  <a :href="`#${topic.subtopic2}`"> {{ topic.subtopic2 }}</a>
-                </li>
-                <li v-if="topic.subtopic3" class="relative">
-                  <a :href="`#${topic.subtopic3}`"> {{ topic.subtopic3 }}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="flex-grow px-10 ml-4 py-5 bg-gray-100">
-          <div v-for="topic in GettingStartedKB" :key="topic.linkid">
-            <h2
-              :id="topic.linkid"
-              class="text-3xl font-bold justify-center text-adomate-navy"
-            >
-              {{ topic.title }}
-            </h2>
-            <video v-if="topic.video" class="w-full" controls>
-              <source :src="topic.video" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <h3
-              v-if="topic.subtopic1"
-              :id="topic.subtopic1"
-              class="text-xl font-bold justify-center text-adomate-navy py-2"
-            >
-              {{ topic.subtopic1 }}
-            </h3>
-            <p v-if="topic.description1" class="text-adomate-navy py-2">
-              {{ topic.description1 }}
-            </p>
-            <div v-if="topic.image" class="flex justify-center">
-              <img :src="topic.image" :alt="topic.title" class="w-1/2" />
-            </div>
-            <h3
-              v-if="topic.subtopic2"
-              :id="topic.subtopic2"
-              class="text-xl font-bold justify-center text-adomate-navy"
-            >
-              {{ topic.subtopic2 }}
-            </h3>
-            <p v-if="topic.description2" class="text-adomate-navy py-2">
-              {{ topic.description2 }}
-            </p>
-            <h3
-              v-if="topic.subtopic3"
-              :id="topic.subtopic3"
-              class="text-xl font-bold justify-center text-adomate-navy"
-            >
-              {{ topic.subtopic3 }}
-            </h3>
-            <p v-if="topic.description3" class="text-adomate-navy py-2">
-              {{ topic.description3 }}
-            </p>
-          </div>
         </div>
       </div>
     </FadeIn>
@@ -115,7 +46,6 @@
 
 <script lang="ts" setup>
 import FadeIn from "@/components/FadeIn.vue";
-import GettingStartedKB from "@/data/knowledge-base/getting-started";
 </script>
 
 <style>
