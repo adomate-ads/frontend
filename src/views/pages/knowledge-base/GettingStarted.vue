@@ -33,11 +33,36 @@
     <FadeIn>
       <div class="flex w-5/6 mx-auto my-10 px-5 py-5">
         <div
-          class="w-4/5 px-4 py-2 h-50 w-70 overflow-x-hidden overflow-y-auto custom-scrollbar"
+          class="w-3/5 px-4 py-2 h-50 w-70 overflow-x-hidden overflow-y-auto custom-scrollbar"
         >
           <h3 class="text-l font-bold justify-center text-adomate-navy">
             Getting Started
           </h3>
+          <ul class="list-disc ml-4 pl-4">
+            <li class="relative">
+              <h4>
+                <a href="#"> T1</a>
+              </h4>
+            </li>
+          </ul>
+        </div>
+        <div class="flex-grow px-5 py-5 bg-gray-100">
+          <h2 class="text-3xl font-bold justify-center text-adomate-navy">
+            This is the article title
+          </h2>
+          <p class="text-adomate-navy py-2">
+            This is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            In assumenda quae, cumque laboriosam qui doloremque tempora harum
+            perspiciatis placeat fugit aut consequatur distinctio, culpa
+            voluptatum accusantium ratione modi ullam accusamus.
+          </p>
+          <div class="flex justify-center">
+            <img
+              src="@/assets/knowledge-base/getting-started/AdomateDashboardLogin.png"
+              alt="title"
+              class="w-1/2"
+            />
+          </div>
         </div>
       </div>
     </FadeIn>
