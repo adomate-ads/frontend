@@ -95,7 +95,6 @@ export interface KnowledgeBaseCard {
   icon: string;
   title: string;
   tagline: string;
-  description: string;
   href: string;
 }
 

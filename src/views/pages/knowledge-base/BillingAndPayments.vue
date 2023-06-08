@@ -54,13 +54,12 @@
         </div>
         <div class="flex-grow px-5 py-5 bg-gray-100">
           <h2 class="text-3xl font-bold justify-center text-adomate-navy">
-            This is the article title
+            Billing and Payments
           </h2>
           <p class="text-adomate-navy py-2">
-            This is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            In assumenda quae, cumque laboriosam qui doloremque tempora harum
-            perspiciatis placeat fugit aut consequatur distinctio, culpa
-            voluptatum accusantium ratione modi ullam accusamus.
+            Learn how to manage your billing and payment information, view your
+            invoices, and update your payment method. Find answers to common
+            questions about billing and payments.
           </p>
           <div class="flex justify-center">
             <img

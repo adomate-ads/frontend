@@ -52,10 +52,6 @@
             <p class="text-l text-center py-2">
               {{ cards.tagline }}
             </p>
-
-            <p class="text-center">
-              {{ cards.description }}
-            </p>
           </router-link>
         </div>
       </div>

@@ -50,13 +50,12 @@
         </div>
         <div class="flex-grow px-5 py-5 bg-gray-100">
           <h2 class="text-3xl font-bold justify-center text-adomate-navy">
-            This is the article title
+            Tips and Tutorials
           </h2>
           <p class="text-adomate-navy py-2">
-            This is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            In assumenda quae, cumque laboriosam qui doloremque tempora harum
-            perspiciatis placeat fugit aut consequatur distinctio, culpa
-            voluptatum accusantium ratione modi ullam accusamus.
+            Explore a wide range of topics, from advanced techniques to creative
+            strategies, and learn how to optimize your productivity and achieve
+            impressive results with Adomate.
           </p>
           <div class="flex justify-center">
             <img

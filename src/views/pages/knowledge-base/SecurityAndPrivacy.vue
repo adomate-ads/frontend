@@ -55,13 +55,12 @@
         </div>
         <div class="flex-grow px-5 py-5 bg-gray-100">
           <h2 class="text-3xl font-bold justify-center text-adomate-navy">
-            This is the article title
+            Security and Privacy
           </h2>
           <p class="text-adomate-navy py-2">
-            This is a Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            In assumenda quae, cumque laboriosam qui doloremque tempora harum
-            perspiciatis placeat fugit aut consequatur distinctio, culpa
-            voluptatum accusantium ratione modi ullam accusamus.
+            Learn how Adomate protects your data from unauthorized access and
+            how to ensure your data is secure. We take your privacy seriously
+            and are committed to protecting your personal information.
           </p>
           <div class="flex justify-center">
             <img
