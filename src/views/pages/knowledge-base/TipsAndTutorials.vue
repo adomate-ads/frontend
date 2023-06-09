@@ -43,7 +43,7 @@
           <ul class="list-disc ml-4 pl-4">
             <li class="relative">
               <h4>
-                <a href="#"> T1</a>
+                <a href="#"> Overview</a>
               </h4>
             </li>
           </ul>
@@ -59,7 +59,7 @@
           </p>
           <div class="flex justify-center">
             <img
-              src="@/assets/knowledge-base/getting-started/AdomateDashboardLogin.png"
+              src="@/assets/knowledge-base/tips-tutorials/sample-bg.jpg"
               alt="title"
               class="w-1/2"
             />
