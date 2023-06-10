@@ -101,7 +101,7 @@
                             @click="openPopup(idx)"
                           >
                             <img
-                              :src="`@/assets/videos/thumbnails/${tutorials.thumbnail}.png`"
+                              :src="`src/assets/videos/thumbnails/${tutorials.thumbnail}.png`"
                               class="w-50 h-30 object-cover mb-4"
                               :alt="tutorials.thumbnail"
                             />
@@ -140,7 +140,7 @@
                               class="w-150 h-100 md:w-full md:h-auto"
                               controls
                               loop
-                              :src="`@/assets/videos/tutorials/${tutorials.video}.mp4`"
+                              :src="`src/assets/videos/tutorials/${tutorials.video}.mp4`"
                               type="video/mp4"
                             >
                               Your browser does not support the video tag.
