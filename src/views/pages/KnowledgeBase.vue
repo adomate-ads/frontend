@@ -34,25 +34,29 @@
       </div>
     </FadeIn>
     <FadeIn>
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-6">
-        <div
-          v-for="(cards, idx) in kbcards"
-          :key="idx"
-          class="bg-white shadow-lg rounded-lg p-6"
-        >
-          <router-link :to="cards.href">
-            <div class="flex items-center justify-center mb-4">
-              <i :class="'fas fa-' + cards.icon + ' text-4xl xl:text-5xl'"></i>
-            </div>
-            <h1
-              class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
-            >
-              {{ cards.title }}
-            </h1>
-            <p class="text-l text-center py-2">
-              {{ cards.tagline }}
-            </p>
-          </router-link>
+      <div class="px-5">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 px-6 py-6">
+          <div
+            v-for="(cards, idx) in kbcards"
+            :key="idx"
+            class="bg-white shadow-lg rounded-lg p-6"
+          >
+            <router-link :to="cards.href">
+              <div class="flex items-center justify-center mb-4">
+                <i
+                  :class="'fas fa-' + cards.icon + ' text-4xl xl:text-5xl'"
+                ></i>
+              </div>
+              <h1
+                class="text-2xl xl:text-4xl font-semibold subpixel-antialiased text-center mb-4"
+              >
+                {{ cards.title }}
+              </h1>
+              <p class="text-l text-center py-2">
+                {{ cards.tagline }}
+              </p>
+            </router-link>
+          </div>
         </div>
       </div>
     </FadeIn>
@@ -84,7 +88,7 @@
           <strong class="h-full w-full">Quick Tutorials</strong>
         </h1>
         <FadeIn>
-          <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar">
+          <div class="flex flex-row overflow-x-auto mt-8 custom-scrollbar px-5">
             <div class="flex-shrink-0 flex-grow-0 flex-basis-0 p-2">
               <div class="flex space-x-4">
                 <div v-for="(tutorials, idx) in PopularTutorials" :key="idx">
@@ -177,11 +181,11 @@
         <h1
           class="text-4xl xl:text-5xl font-semibold subpixel-antialiased text-center pt-5 pb-5 px-5"
         >
-          <strong class="h-full w-full">
+          <strong class="h-full w-full px-5">
             We are here to help you to get the most out of Adomate
           </strong>
         </h1>
-        <p class="text-lg lg:text-xl text-gray-500 mb-8">
+        <p class="text-lg lg:text-xl text-gray-500 mb-8 px-5">
           Thank you for visiting our knowledge base! We hope that you found the
           information and resources provided here helpful in maximizing your
           experience with Adomate. If you have any further questions or need
