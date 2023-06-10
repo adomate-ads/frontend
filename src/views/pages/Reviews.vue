@@ -166,7 +166,7 @@
               class="w-50 h-40 md:w-full md:h-auto"
               controls
               loop
-              :src="'src/assets/videos/RevolutionizingOnlineAdvertising.mp4'"
+              src="@/assets/videos/tutorials/CreateACampaign.mp4"
               type="video/mp4"
             >
               Your browser does not support the video tag.

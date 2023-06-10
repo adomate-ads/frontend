@@ -90,3 +90,24 @@ export interface Blog {
   description: string;
   link: string;
 }
+
+export interface KnowledgeBaseCard {
+  icon: string;
+  title: string;
+  tagline: string;
+  href: string;
+}
+
+export interface PopularArticles {
+  title: string;
+  description: string;
+  link: string;
+}
+
+export interface PopularTutorials {
+  title: string;
+  description: string;
+  thumbnail: string;
+  link: string;
+  video: string;
+}
