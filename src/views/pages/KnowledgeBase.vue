@@ -101,7 +101,7 @@
                             @click="openPopup(idx)"
                           >
                             <img
-                              :src="`/assets/videos/thumbnails/${tutorials.thumbnail}.png`"
+                              :src="`@/assets/videos/thumbnails/${tutorials.thumbnail}.png`"
                               class="w-50 h-30 object-cover mb-4"
                               :alt="tutorials.thumbnail"
                             />
