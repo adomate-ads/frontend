@@ -262,12 +262,12 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
+        <div class="flex justify-center items-center my-10 md:my-20">
           <lottie-player
-            src="https://raw.githubusercontent.com/adomate-ads/frontend/feat/master/src/assets/lottie/AdomateGetStarted.json"
+            src="https://raw.githubusercontent.com/adomate-ads/frontend/master/src/assets/lottie/logo.json"
+            style="max-width: 100%; height: auto; max-height: 80vh"
             background="transparent"
-            speed="1"
-            :style="`width: 90%; height: 90%`"
+            speed="0.75"
             loop
             autoplay
           ></lottie-player>
@@ -367,7 +367,11 @@
                 </div>
               </form>
             </div>
-            <div>Image will go here of how a search ad might appear</div>
+            <div
+              class="flex justify-center items-center mt-5 md:mt-0 md:ml-10 lg:ml-20"
+            >
+              <img src="@/assets/adomate_homepage.png" alt="Your Homepage" />
+            </div>
           </div>
         </div>
       </div>

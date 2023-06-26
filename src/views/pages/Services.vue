@@ -32,12 +32,14 @@
           Manage your campaigns, track your performance, get insights, and more
           using our dashboard tool.
         </p>
-        <button
-          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
-        >
-          Go to dashboard
-          <span class="arrow"></span>
-        </button>
+        <a href="https://app.adomate.ai/login">
+          <button
+            class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
+          >
+            Go to dashboard
+            <span class="arrow"></span>
+          </button>
+        </a>
       </div>
       <div class="w-full lg:w-1/2 flex justify-center items-center relative">
         <div class="absolute w-4/5 h-full">
@@ -79,12 +81,14 @@
           budgeting. We have a variety of plans to suit the needs of your
           business.
         </p>
-        <button
-          class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
-        >
-          See plans
-          <span class="arrow"></span>
-        </button>
+        <router-link to="/pricing">
+          <button
+            class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
+          >
+            See plans
+            <span class="arrow"></span>
+          </button>
+        </router-link>
       </div>
     </div>
   </fade-in>

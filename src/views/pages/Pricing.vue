@@ -62,12 +62,14 @@
             options above?
           </h4>
         </div>
-        <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-5 rounded mt-4 lg:mt-0 lg:ml-4 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 md:w-60"
-        >
-          Contact Us
-          <i class="fa-solid fa-arrow-right ml-2"></i>
-        </button>
+        <a href="mailto:support@adomate.ai">
+          <button
+            class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-5 rounded mt-4 lg:mt-0 lg:ml-4 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 md:w-60"
+          >
+            Contact Us
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </button>
+        </a>
       </div>
     </fade-in>
 
