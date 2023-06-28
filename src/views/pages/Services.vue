@@ -163,7 +163,7 @@ const faqs = [
   },
   {
     title: "How much does it cost?",
-    desc: "Our pricing varies with the size of your business. We offer a variety of services to fit your needs. But buy enterprise even if you're a small business. It's worth it.",
+    desc: "Our pricing varies with the size of your business. We offer a variety of services to fit your needs. go to our pricing page to learn more.",
   },
   {
     title: "Why not use an Ad Agency/Manager?",
@@ -171,15 +171,12 @@ const faqs = [
   },
   {
     title: "How does billing work",
-    desc: "You pay us money. We give you services. It's that simple.",
+    desc: "You will be billed monthly. You can cancel at any time.",
   },
   {
-    title: "She like the way that I dance, she like the way that I move",
-    desc: "She like the way that I rock, she like the way that I woo",
-  },
-  {
-    title: "Another question",
-    desc: "Another answer",
+    title:
+      "What is the difference between Adomate and other Ad Agencies/Managers?",
+    desc: "Adomate has a team of experts that will work with you to create the best ads for your business. We also use advanced AI tools to provide you with the best results.",
   },
   {
     title: "How can we monitor the performance of our ads?",

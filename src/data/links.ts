@@ -57,7 +57,7 @@ const FooterLinks: Link[] = [
       },
       {
         to: { name: "Reviews" },
-        title: "Reviews and Testimonials",
+        title: "Reviews",
       },
     ],
   },

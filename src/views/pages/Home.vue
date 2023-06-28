@@ -131,146 +131,93 @@
   </fade-in>
 
   <!-- How it works section -->
-  <fade-in :threshold="0.4">
-    <div id="how-it-works">
-      <div class="container mx-auto my-32">
-        <div class="flex flex-col justify-center md:flex-row">
-          <div class="flex-1 px-5">
-            <h2
-              class="text-4xl text-center md:text-6xl md:text-left font-bold mb-10"
-            >
-              How It Works
-            </h2>
-            <p class="text-gray-700 mb-10">
-              Adomate simplifies Google Ads for small businesses, using AI to
-              create targeted ad campaigns from just a website URL and budget,
-              allowing you to focus on growing your business.
-            </p>
-          </div>
-          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
-            <i
-              class="shadow fa-solid fa-database text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
-            ></i>
-            <h2 class="text-2xl font-bold mb-2">
-              1. Effortless Campaign Creation
-            </h2>
-            <p class="text-gray-700 mb-10">
-              Enter your website URL and budget, and Adomate's AI analyzes your
-              site and crafts captivating, tailored ads for your target
-              audience.
-            </p>
-          </div>
-          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
-            <i
-              class="shadow fa-solid fa-chart-line text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
-            ></i>
-            <h2 class="text-2xl font-bold mb-2">
-              2. Smart Bidding and Budgeting
-            </h2>
-            <p class="text-gray-700 mb-10">
-              Adomate's data-driven approach optimizes your ad spend by
-              automatically adjusting to industry trends for maximum exposure
-              and return on investment.
-            </p>
-          </div>
-          <div class="flex-1 mx-2 xl:mx-5 border-b-2">
-            <i
-              class="shadow fa-solid fa-chart-simple text-black mt-2 mb-2 p-6 bg-gray-200 rounded-full h-8 w-8"
-            ></i>
-            <h2 class="text-2xl font-bold mb-2">3. Ongoing Optimization</h2>
-            <p class="text-gray-700 mb-10">
-              Adomate continually monitors and optimizes your ads, providing
-              comprehensive performance reports and insights for data-driven
-              decision-making.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </fade-in>
-
-  <!--  Build Exclusively For You  -->
   <fade-in>
     <div id="built-exclusively-for-you">
       <div class="container flex mx-auto px-12 my-32">
-        <div class="flex flex-col justify-center w-full md:flex-row md:w-1/2">
-          <div class="col-span-3">
-            <div class="flex justify-start md:justify-start">
-              <div
-                class="shadow bg-extra-light-purple text-dark-purple rounded-full"
+        <div class="md:flex md:flex-row">
+          <div class="md:w-1/2">
+            <div class="col-span-3">
+              <div class="flex justify-start md:justify-start">
+                <div
+                  class="shadow bg-extra-light-purple text-dark-purple rounded-full"
+                >
+                  <p class="py-3 px-6">Build Exclusively For You</p>
+                </div>
+              </div>
+              <h2 class="mt-3 text-4xl font-bold mb-4">
+                From start to finish, we have you covered.
+              </h2>
+              <p
+                class="text-slate-700 text-lg pb-10 border-dashed border-b-2 border-light-purple"
               >
-                <p class="py-3 px-6">Build Exclusively For You</p>
-              </div>
-            </div>
-            <h2 class="mt-3 text-4xl font-bold mb-4">
-              From start to finish, we have you covered.
-            </h2>
-            <p
-              class="text-slate-700 text-lg pb-10 border-dashed border-b-2 border-light-purple"
-            >
-              From start to finish, we've got your campaigns covered. Utilizing
-              techniques like web scraping and keyword prediction, we gather
-              your website data, optimize our bidding process in real-time,
-              target high-performing keywords, and boost conversion rates
-              through analytics tools.
-            </p>
-            <div class="grid grid-cols-2 gap-x-2 px-1 my-10 gap-y-10">
-              <div>
-                <h4>
-                  <i class="fa-solid fa-file mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1"> Tailored Ads </span>
-                </h4>
-                <p class="text-slate-700 m-1 text-md">
-                  Our platform generates unique and engaging ad designs tailored
-                  to your business.
-                </p>
-              </div>
-              <div>
-                <h4>
-                  <i class="fa-solid fa-chart-simple mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1">
-                    Monthly Reports
-                  </span>
-                </h4>
-                <p class="text-slate-700 m-1 text-md">
-                  Monitor key metrics, track progress, and stay current with
-                  real-time analytics.
-                </p>
-              </div>
-              <div>
-                <h4>
-                  <i class="fa-solid fa-plus mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1"
-                    >Automatic Optimization</span
-                  >
-                </h4>
-                <p class="text-slate-700 m-1 text-md">
-                  Hassle-free campaign optimization with our advanced
-                  algorithms.
-                </p>
-              </div>
-              <div>
-                <h4>
-                  <i class="fa-solid fa-arrow-up mr-2 text-dark-purple"></i>
-                  <span class="font-semibold text-lg mt-1">Bot Blocking</span>
-                </h4>
-                <p class="text-slate-700 m-1 text-md">
-                  Safeguard your ad spend by preventing bots from clicking on
-                  your ads and wasting valuable resources.
-                </p>
+                From start to finish, we've got your campaigns covered.
+                Utilizing techniques like web scraping and keyword prediction,
+                we gather your website data, optimize our bidding process in
+                real-time, target high-performing keywords, and boost conversion
+                rates through analytics tools.
+              </p>
+              <div class="grid grid-cols-2 gap-x-2 px-1 my-10 gap-y-10">
+                <div>
+                  <h4>
+                    <i class="fa-solid fa-file mr-2 text-dark-purple"></i>
+                    <span class="font-semibold text-lg mt-1">Tailored Ads</span>
+                  </h4>
+                  <p class="text-slate-700 m-1 text-md">
+                    Our platform generates unique and engaging ad designs
+                    tailored to your business.
+                  </p>
+                </div>
+                <div>
+                  <h4>
+                    <i
+                      class="fa-solid fa-chart-simple mr-2 text-dark-purple"
+                    ></i>
+                    <span class="font-semibold text-lg mt-1"
+                      >Monthly Reports</span
+                    >
+                  </h4>
+                  <p class="text-slate-700 m-1 text-md">
+                    Monitor key metrics, track progress, and stay current with
+                    real-time analytics.
+                  </p>
+                </div>
+                <div>
+                  <h4>
+                    <i class="fa-solid fa-plus mr-2 text-dark-purple"></i>
+                    <span class="font-semibold text-lg mt-1"
+                      >Automatic Optimization</span
+                    >
+                  </h4>
+                  <p class="text-slate-700 m-1 text-md">
+                    Hassle-free campaign optimization with our advanced
+                    algorithms.
+                  </p>
+                </div>
+                <div>
+                  <h4>
+                    <i class="fa-solid fa-arrow-up mr-2 text-dark-purple"></i>
+                    <span class="font-semibold text-lg mt-1">Bot Blocking</span>
+                  </h4>
+                  <p class="text-slate-700 m-1 text-md">
+                    Safeguard your ad spend by preventing bots from clicking on
+                    your ads and wasting valuable resources.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="flex justify-center items-center my-10 md:my-20">
-          <lottie-player
-            src="https://raw.githubusercontent.com/adomate-ads/frontend/master/src/assets/lottie/logo.json"
-            style="max-width: 100%; height: auto; max-height: 80vh"
-            background="transparent"
-            speed="0.75"
-            loop
-            autoplay
-          ></lottie-player>
+          <div
+            class="md:w-1/2 md:flex md:justify-center md:items-center my-10 md:my-20"
+          >
+            <lottie-player
+              src="https://raw.githubusercontent.com/adomate-ads/frontend/master/src/assets/lottie/AdomateGetStarted.json"
+              style="max-width: 100%; height: auto; max-height: 80vh"
+              background="transparent"
+              speed="1"
+              loop
+              autoplay
+            ></lottie-player>
+          </div>
         </div>
       </div>
     </div>
@@ -370,7 +317,18 @@
             <div
               class="flex justify-center items-center mt-5 md:mt-0 md:ml-10 lg:ml-20"
             >
-              <img src="@/assets/adomate_homepage.png" alt="Your Homepage" />
+              <div class="flex flex-col gap-4">
+                <img
+                  src="@/assets/adomate_search_ad.png"
+                  alt="Your Search Ad Preview"
+                  class="rounded-xl shadow-xl"
+                />
+                <img
+                  src="@/assets/adomate_shopping_ad.png"
+                  alt="Your Shopping Ad Preview"
+                  class="rounded-xl shadow-xl"
+                />
+              </div>
             </div>
           </div>
         </div>
