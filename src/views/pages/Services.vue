@@ -171,7 +171,7 @@ const faqs = [
   },
   {
     title: "How does billing work",
-    desc: "You will be billed monthly. You can cancel at any time.",
+    desc: "You will be billed monthly or yearly. You can cancel at any time.",
   },
   {
     title:

@@ -99,6 +99,11 @@ const routes = [
     component: () => import("@/views/pages/Resources.vue"),
   },
   {
+    path: "/mission-and-vision",
+    name: "MissionAndVision",
+    component: () => import("@/views/pages/MissionAndVision.vue"),
+  },
+  {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
     component: () => import("@/views/pages/errors/ErrorNotFound.vue"),

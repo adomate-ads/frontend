@@ -44,7 +44,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "MissionAndVision" },
         title: "Mission and Vision",
       },
       {
