@@ -323,11 +323,11 @@
                   alt="Your Search Ad Preview"
                   class="rounded-xl shadow-xl"
                 />
-                <img
+                <!-- <img
                   src="@/assets/adomate_shopping_ad.png"
                   alt="Your Shopping Ad Preview"
                   class="rounded-xl shadow-xl"
-                />
+                /> -->
               </div>
             </div>
           </div>
