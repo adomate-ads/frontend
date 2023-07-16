@@ -27,12 +27,14 @@
                 today's digital landscape.
               </p>
               <div class="flex items-center space-x-4">
-                <button class="arrow-button border-2 border-[#637EFE] shadow">
-                  Get Started
-                  <span class="arrow"></span>
-                </button>
+                <router-link to="/get-started">
+                  <button class="arrow-button border-2 border-[#637EFE] shadow">
+                    Get Started
+                    <span class="arrow"></span>
+                  </button>
+                </router-link>
                 <a
-                  href="#"
+                  href="mailto:support@adomate.ai"
                   class="text-gray-900 inline-flex items-center space-x-2 p-2 hover:text-dark-purple font-semibold transition"
                 >
                   <span>Contact us</span>

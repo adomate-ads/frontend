@@ -44,7 +44,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "MissionAndVision" },
         title: "Mission and Vision",
       },
       {
@@ -57,7 +57,7 @@ const FooterLinks: Link[] = [
       },
       {
         to: { name: "Reviews" },
-        title: "Reviews and Testimonials",
+        title: "Reviews",
       },
     ],
   },
