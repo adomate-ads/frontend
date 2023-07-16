@@ -12,7 +12,7 @@ const Members: Member[] = [
   },
   {
     name: "Andrew Melbourne",
-    role: "Developer",
+    role: "Co-Founder & Developer",
     email: "andrew.melbourne@adomate.ai",
     image: "/src/assets/about/team/andrew_melbourne.jpg",
     linkedin: "https://www.linkedin.com/in/melbourneandrew/",
