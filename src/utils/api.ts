@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiUrl =
-  import.meta.env.VITE_API === "dev"
+  import.meta.env.MODE === "development"
     ? "https://api.dev.adomate.ai/"
     : "https://api.adomate.ai/";
 

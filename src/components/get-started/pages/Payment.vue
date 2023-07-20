@@ -182,7 +182,9 @@ const emit = defineEmits<{
 }>();
 
 // eslint-disable-next-line no-undef
-const stripe = Stripe(import.meta.env.VITE_STRIPE_KEY);
+const stripe = Stripe(
+  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
+);
 
 let elements = stripe.elements();
 

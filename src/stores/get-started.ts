@@ -87,9 +87,7 @@ const useGetStartedStore = defineStore("getStarted", {
     async getIP(): Promise<void> {
       try {
         this.fetching = true;
-        const data = await axios.get(
-          `https://api.ipdata.co/?api-key=${import.meta.env.VITE_IP_API_KEY}`
-        );
+        const data = await API.get(`/v1/get-started/ip-info`);
 
         if (data.status === 200) {
           this.getStarted.ip = data.data.ip;
