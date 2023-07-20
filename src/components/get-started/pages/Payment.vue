@@ -182,9 +182,7 @@ const emit = defineEmits<{
 }>();
 
 // eslint-disable-next-line no-undef
-const stripe = Stripe(
-  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
-);
+const stripe = Stripe(import.meta.env.VITE_STRIPE_KEY);
 
 let elements = stripe.elements();
 
@@ -247,7 +245,6 @@ const nextPage = async (): Promise<void> => {
 
     getStartedStore.setCheckout(true);
     page.value += 1;
-
     await nextTick(); // Wait for the dom to add the div
     paymentElement.mount("#payment-element");
   }

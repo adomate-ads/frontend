@@ -88,7 +88,7 @@ const nextPage = (): void => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
   const queryParams = new URLSearchParams(window.location.search);
   const urlParam = queryParams.get("URL");
   if (urlParam != null) {
@@ -96,6 +96,7 @@ onMounted(() => {
   } else {
     url.value = getStartedStore.getDomain;
   }
+  await getStartedStore.getIP();
 });
 </script>
 

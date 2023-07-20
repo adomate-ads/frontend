@@ -20,7 +20,10 @@ interface GetStarted {
   price: string;
   locations: string[];
   services: string[];
+  headlines: string[];
+  descriptions: string[];
   budget: number;
+  ip: string;
 }
 
 interface PaymentIntent {
@@ -48,7 +51,10 @@ const useGetStartedStore = defineStore("getStarted", {
         price: "",
         locations: [],
         services: [],
+        headlines: [],
+        descriptions: [],
         budget: 0,
+        ip: "",
       },
       PaymentIntent: {
         id: "",
@@ -77,6 +83,27 @@ const useGetStartedStore = defineStore("getStarted", {
       this.fetching = true;
       await this.getLocationsAndServices();
       this.fetching = false;
+    },
+    async getIP(): Promise<void> {
+      try {
+        this.fetching = true;
+        const data = await axios.get(
+          `https://api.ipdata.co/?api-key=${import.meta.env.VITE_IP_API_KEY}`
+        );
+
+        if (data.status === 200) {
+          this.getStarted.ip = data.data.ip;
+          this.getStarted.locations.push(
+            `${data.data.city}, ${data.data.region}`
+          );
+        } else {
+          this.error = "Error fetching locations";
+        }
+        this.fetching = false;
+      } catch (e) {
+        this.error = "Error fetching locations";
+        this.fetching = false;
+      }
     },
     addLocation(location: string): void {
       this.getStarted.locations.push(location);
@@ -121,7 +148,9 @@ const useGetStartedStore = defineStore("getStarted", {
         );
 
         if (data.status === 200) {
-          this.getStarted.locations = data.data.locations;
+          this.getStarted.locations = this.getStarted.locations.concat(
+            data.data.locations
+          );
           this.getStarted.services = data.data.services;
         } else {
           this.error = "Error fetching locations and services";
@@ -130,6 +159,35 @@ const useGetStartedStore = defineStore("getStarted", {
       } catch (e) {
         this.error = "Error fetching locations and services";
         this.fetching = false;
+      }
+    },
+    async getAdContent(): Promise<void> {
+      try {
+        this.fetching = true;
+        const data = await API.post(`/v1/get-started/ad-content`, {
+          domain: this.getStarted.domain,
+          services: this.getStarted.services,
+        });
+
+        if (data.status === 200) {
+          this.getStarted.headlines = data.data.headlines;
+          this.getStarted.descriptions = data.data.descriptions;
+        } else {
+          this.error = "Error fetching ad content";
+        }
+        this.fetching = false;
+      } catch (err: unknown) {
+        if (err instanceof Error || err instanceof AxiosError) {
+          if (axios.isAxiosError(err)) {
+            // Access to config, request, and response
+            this.error = err.response?.data.error;
+            this.fetching = false;
+          } else {
+            // Just a stock error
+            this.error = "Error fetching ad content";
+            this.fetching = false;
+          }
+        }
       }
     },
     setAccount(
@@ -146,7 +204,9 @@ const useGetStartedStore = defineStore("getStarted", {
     async createAccount(): Promise<void> {
       try {
         this.fetching = true;
-        const ip = await axios.get("https://api.ipify.org?format=json");
+        const ip = await axios.get(
+          `https://api.ipdata.co/?api-key=${import.meta.env.VITE_IP_API_KEY}`
+        );
         const data = await API.post("/v1/get-started", {
           first_name: this.getStarted.firstName,
           last_name: this.getStarted.lastName,
@@ -157,6 +217,8 @@ const useGetStartedStore = defineStore("getStarted", {
           price: this.getStarted.price,
           locations: this.getStarted.locations,
           services: this.getStarted.services,
+          headlines: this.getStarted.headlines,
+          descriptions: this.getStarted.descriptions,
           budget: this.getStarted.budget,
           ip: ip.data.ip,
         });
