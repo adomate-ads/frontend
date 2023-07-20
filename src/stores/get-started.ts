@@ -99,7 +99,15 @@ const useGetStartedStore = defineStore("getStarted", {
         }
         this.fetching = false;
       } catch (e) {
-        this.error = "Error fetching locations";
+        // This is just so locally it still works. Remove this code when we have a proper dev api
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        if (e.response.data.error.includes("reserved IP address")) {
+          this.getStarted.ip = "8.8.8.8";
+          this.getStarted.locations.push("Mountain View, CA");
+        } else {
+          this.error = "Error fetching locations";
+        }
         this.fetching = false;
       }
     },

@@ -52,8 +52,8 @@
 </template>
 
 <script lang="ts" setup>
+import { computed, ref } from "vue";
 import Loader from "@/components/Loader.vue";
-import { ref } from "vue";
 import SearchAdDemo from "@/components/SearchAdDemo.vue";
 import useGetStartedStore from "@/stores/get-started";
 
@@ -65,7 +65,9 @@ const emit = defineEmits<{
 }>();
 
 const index = ref<number>(0);
-const maxIndex = ref<number>(getStartedStore.getStarted.headlines.length - 1);
+const maxIndex = computed(
+  () => getStartedStore.getStarted.headlines.length - 1
+);
 setInterval(() => {
   if (index.value < maxIndex.value) {
     index.value += 1;
