@@ -23,13 +23,16 @@
         Here an example of one of the many ads we have created for your
         business. You may modify this ad at any time from the dashboard.
       </p>
-      <SearchAdDemo
-        :favicon-url="`https://${getStartedStore.getStarted.domain}/favicon.ico`"
-        :company-name="getStartedStore.getStarted.domain"
-        :company-url="`https://${getStartedStore.getStarted.domain}`"
-        :headline="getStartedStore.getStarted.headlines[index]"
-        :description="getStartedStore.getStarted.descriptions[index]"
-      ></SearchAdDemo>
+      <transition name="fade" mode="out-in">
+        <SearchAdDemo
+          :key="index"
+          :favicon-url="`https://${getStartedStore.getStarted.domain}/favicon.ico`"
+          :company-name="getStartedStore.getStarted.domain"
+          :company-url="`https://${getStartedStore.getStarted.domain}`"
+          :headline="getStartedStore.getStarted.headlines[index]"
+          :description="getStartedStore.getStarted.descriptions[index]"
+        ></SearchAdDemo>
+      </transition>
     </div>
 
     <div class="flex justify-center space-x-10 text-lg">
@@ -74,6 +77,21 @@ setInterval(() => {
   } else {
     index.value = 0;
   }
-}, 10000);
+}, 5 * 1000);
 </script>
-<style scoped></style>
+<style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+</style>

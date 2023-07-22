@@ -4,8 +4,8 @@ const Plans: Plan[] = [
   {
     name: "Starter",
     description: "Ads for growing businesses in need of customers.",
-    monthlyPrice: 20,
-    annualPrice: 18, // $216 Annually
+    monthlyPrice: 29,
+    annualPrice: 25, // $300 Annually
     monthlyStripeID: "price_1N6NH6JSLdyWx69CWTxHBlPk",
     annualStripeID: "price_1N6NJvJSLdyWx69CIFPyg6Fc",
     featureTitle: "Features include:",
@@ -19,8 +19,8 @@ const Plans: Plan[] = [
   {
     name: "Business",
     description: "Ads for high traffic businesses with larger ad budgets.",
-    monthlyPrice: 50,
-    annualPrice: 45, // $540 Annually
+    monthlyPrice: 79,
+    annualPrice: 70, // $840 Annually
     monthlyStripeID: "price_1N6NH7JSLdyWx69COdQB1ncv",
     annualStripeID: "price_1N6NJXJSLdyWx69CCpeTOfOz",
     featureTitle: "All features of Starter plus:",
@@ -35,8 +35,8 @@ const Plans: Plan[] = [
     name: "Enterprise",
     description:
       "Ads for the largest businesses with quickly changing content.",
-    monthlyPrice: 250,
-    annualPrice: 225, // $2,700 Annually
+    monthlyPrice: 349,
+    annualPrice: 325, // $3,900 Annually
     monthlyStripeID: "price_1N6NH7JSLdyWx69CC3m9QxUr",
     annualStripeID: "price_1N6NIyJSLdyWx69CNnJ05RId",
     featureTitle: "All features of Business plus:",
