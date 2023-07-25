@@ -91,7 +91,7 @@
               >
                 <img
                   rel="prefetch"
-                  src="@/assets/home/banner.png"
+                  src="@/assets/home/dashboard.png"
                   class="rounded-3xl relative left-5 bottom-5 z-20 drop-shadow-xl"
                 />
               </div>
