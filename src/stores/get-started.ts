@@ -210,9 +210,6 @@ const useGetStartedStore = defineStore("getStarted", {
     async createAccount(): Promise<void> {
       try {
         this.fetching = true;
-        const ip = await axios.get(
-          `https://api.ipdata.co/?api-key=${import.meta.env.VITE_IP_API_KEY}`
-        );
         const data = await API.post("/v1/get-started", {
           first_name: this.getStarted.firstName,
           last_name: this.getStarted.lastName,
@@ -226,7 +223,7 @@ const useGetStartedStore = defineStore("getStarted", {
           headlines: this.getStarted.headlines,
           descriptions: this.getStarted.descriptions,
           budget: this.getStarted.budget,
-          ip: ip.data.ip,
+          ip: this.getStarted.ip,
         });
 
         if (data.status === 201) {
