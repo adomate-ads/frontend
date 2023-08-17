@@ -39,9 +39,6 @@ jobs:
       - name: Update manifests
         run: |
           cd $GITHUB_WORKSPACE/gitops/overlays/prod
-          cd apps
-          cd frontend
-          cd manifests
           kustomize edit set image ${{ secrets.DOCKER_USER }}/${{ secrets.REPOSITORY_NAME }}=${{ secrets.DOCKER_USER }}/${{ secrets.REPOSITORY_NAME }}:${{ github.sha }}
       - name: Commit and push changes
         run: |
