@@ -25,9 +25,9 @@
         <h1 class="text-2xl font-bold mb-4">Contact</h1>
         <a
           class="text-gray-800 mb-2 hover:underline underline-offset-2"
-          href="http://maps.google.com/?q=17350 State Highway 249 STE 220. Houston, Texas 77064"
+          href="http://maps.google.com/?q=5900 Balcones Drive STE 100. Austin, Texas 78731"
         >
-          17350 State Highway 249 STE 220. Houston, Texas 77064
+          5900 Balcones Drive STE 100. Austin, Texas 78731
         </a>
         <p class="text-gray-800 mb-2">(124) 456-7890</p>
         <a
@@ -44,10 +44,10 @@
           <fade-in :delay="0.1">
             <a
               class="text-gray-800 mb-4 hover:underline underline-offset-2 break-all"
-              href="http://maps.google.com/?q=17350 State Highway 249 STE 220. Houston, Texas 77064"
+              href="http://maps.google.com/?q=5900 Balcones Drive STE 100. Austin, Texas 78731"
             >
-              17350 State Highway 249 STE 220.<br />
-              Houston, Texas 77064
+              5900 Balcones Drive STE 100.<br />
+              Austin, Texas 78731
             </a>
           </fade-in>
           <fade-in :delay="0.2">
