@@ -1,135 +1,136 @@
 <template>
-  <FadeOut>
-    <div
-      v-if="getStartedStore.getFetching"
-      key="element1"
-      class="h-full flex flex-col justify-between"
-      :class="[
-        'transition-opacity duration-500 ease-in',
-        getStartedStore.getFetching ? 'opacity-100' : 'opacity-0',
-      ]"
-    >
-      <div class="mx-auto my-auto">
-        <loader class="mx-auto" />
-        <p class="text-gray-400">Please wait as we parse your website.</p>
-      </div>
+  <div class="h-full flex flex-col justify-between">
+    <div v-if="page == 0" class="max-h-[300px] overflow-y-auto">
+      <h2 class="text-2xl font-bold pb-3">Location & Services Verification</h2>
+      <p v-if="getStartedStore.getError" class="py-3 text-gray-500">
+        There was an error parsing your website. Please manually enter your
+        locations and services on the next pages or try again at a later time.
+      </p>
+      <p v-else class="py-3 text-gray-500">
+        Our software has parsed your website (similar to google) and has
+        detected all the possibly locations and services you offer. Please
+        verify that the following information is correct. If any of the
+        information is incorrect, please correct it before continuing.
+      </p>
     </div>
-    <div v-else class="h-full flex flex-col justify-between">
-      <div v-if="page == 0" class="max-h-[300px] overflow-y-auto">
-        <h2 class="text-2xl font-bold pb-3">
-          Location & Services Verification
-        </h2>
-        <p v-if="getStartedStore.getError" class="py-3 text-gray-500">
-          There was an error parsing your website. Please manually enter your
-          locations and services on the next pages or try again at a later time.
-        </p>
-        <p v-else class="py-3 text-gray-500">
-          Our software has parsed your website (similar to google) and has
-          detected all the possibly locations and services you offer. Please
-          verify that the following information is correct. If any of the
-          information is incorrect, please correct it before continuing.
-        </p>
-      </div>
-      <div v-if="page == 1" class="max-h-[300px] overflow-y-auto">
-        <h2 class="text-2xl font-bold pb-3">Locations</h2>
-        <p class="text-gray-500">
-          These are the locations where you would like your ads displayed.
-        </p>
-        <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
-          <div
-            v-for="(location, idx) in getStartedStore.getLocations"
-            :key="idx"
-          >
-            <div
-              class="flex justify-between border-b-2 border-dashed border-dark-purple"
-              :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
-            >
-              <div
-                v-if="editStatesLocation[location]"
-                class="flex w-full justify-between"
-              >
-                <div class="flex space-x-2">
-                  <div class="py-1">
-                    <input
-                      :ref="(el) => (inputRefsLocation[location] = el)"
-                      v-model="temp"
-                      class="bg-transparent focus:outline-none caret-dark-purple"
-                      type="text"
-                      @keyup.enter="saveLocation(location)"
-                    />
-                  </div>
-                </div>
-                <div class="flex space-x-4 mr-5">
-                  <button
-                    class="bg-transparent text-gray-500 rounded-lg"
-                    @click="toggleEditLocation(location)"
-                  >
-                    <i class="fa-solid fa-times"></i>
-                  </button>
-                  <button
-                    class="bg-transparent text-gray-500 rounded-lg"
-                    @click="saveLocation(location)"
-                  >
-                    <i class="fa-solid fa-check"></i>
-                  </button>
-                </div>
-              </div>
-              <div v-else class="flex w-full justify-between">
-                <div class="flex space-x-2">
-                  <div class="py-1">
-                    <p class="text-gray-500">{{ location }}</p>
-                    <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
-                  </div>
-                </div>
-                <div class="flex space-x-4 mr-5">
-                  <button
-                    class="bg-transparent text-gray-500 rounded-lg"
-                    @click="toggleEditLocation(location)"
-                  >
-                    <i class="fa-solid fa-pencil"></i>
-                  </button>
-                  <button
-                    class="bg-transparent text-gray-500 rounded-lg"
-                    @click="deleteLocation(location)"
-                  >
-                    <i class="fa-solid fa-trash"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div v-if="page == 1" class="max-h-[300px] overflow-y-auto">
+      <h2 class="text-2xl font-bold pb-3">Locations</h2>
+      <p class="text-gray-500">
+        These are the locations where you would like your ads displayed.
+      </p>
+      <div class="py-3 text-gray-500 max-h-[250px] overflow-y-auto">
+        <div v-for="(location, idx) in getStartedStore.getLocations" :key="idx">
           <div
             class="flex justify-between border-b-2 border-dashed border-dark-purple"
-            :class="[
-              getStartedStore.getLocations.length % 2 == 0 ? 'bg-gray-100' : '',
-            ]"
+            :class="[idx % 2 == 0 ? 'bg-gray-100' : '']"
           >
-            <div class="flex w-full justify-between">
+            <div
+              v-if="editStatesLocation[location]"
+              class="flex w-full justify-between"
+            >
               <div class="flex space-x-2">
                 <div class="py-1">
                   <input
-                    v-model="newLocation"
+                    :ref="(el) => (inputRefsLocation[location] = el)"
+                    v-model="temp"
                     class="bg-transparent focus:outline-none caret-dark-purple"
                     type="text"
-                    placeholder="Add Location Here"
-                    @keyup.enter="addLocation(newLocation)"
+                    @keyup.enter="saveLocation(location)"
                   />
                 </div>
               </div>
               <div class="flex space-x-4 mr-5">
                 <button
                   class="bg-transparent text-gray-500 rounded-lg"
-                  @click="addLocation(newLocation)"
+                  @click="toggleEditLocation(location)"
+                >
+                  <i class="fa-solid fa-times"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="saveLocation(location)"
                 >
                   <i class="fa-solid fa-check"></i>
                 </button>
               </div>
             </div>
+            <div v-else class="flex w-full justify-between">
+              <div class="flex space-x-2">
+                <div class="py-1">
+                  <p class="text-gray-500">{{ location }}</p>
+                  <!--                <p class="text-xs text-gray-400">{{ location.address }}</p>-->
+                </div>
+              </div>
+              <div class="flex space-x-4 mr-5">
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="toggleEditLocation(location)"
+                >
+                  <i class="fa-solid fa-pencil"></i>
+                </button>
+                <button
+                  class="bg-transparent text-gray-500 rounded-lg"
+                  @click="deleteLocation(location)"
+                >
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex justify-between border-b-2 border-dashed border-dark-purple"
+          :class="[
+            getStartedStore.getLocations.length % 2 == 0 ? 'bg-gray-100' : '',
+          ]"
+        >
+          <div class="flex w-full justify-between">
+            <div class="flex space-x-2">
+              <div class="py-1">
+                <input
+                  v-model="newLocation"
+                  class="bg-transparent focus:outline-none caret-dark-purple"
+                  type="text"
+                  placeholder="Add Location Here"
+                  @keyup.enter="addLocation(newLocation)"
+                />
+              </div>
+            </div>
+            <div class="flex space-x-4 mr-5">
+              <button
+                class="bg-transparent text-gray-500 rounded-lg"
+                @click="addLocation(newLocation)"
+              >
+                <i class="fa-solid fa-check"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div v-if="page == 2" class="max-h-[300px] overflow-y-auto">
+    <FadeOut v-if="page == 2">
+      <div
+        v-if="getStartedStore.getFetching"
+        key="element1"
+        class="h-full flex flex-col justify-between"
+        :class="[
+          'transition-opacity duration-500 ease-in',
+          getStartedStore.getFetching ? 'opacity-100' : 'opacity-0',
+        ]"
+      >
+        <div class="mx-auto my-auto">
+          <loader class="mx-auto" />
+          <p class="text-gray-400">
+            Please wait as we finish parsing your website.
+          </p>
+          <p class="text-center text-gray-400 text-xs">
+            (This may take up to 45 seconds)
+          </p>
+        </div>
+      </div>
+
+      <div v-else class="max-h-[300px] overflow-y-auto">
         <h2 class="text-2xl font-bold pb-3">Services</h2>
         <p class="text-gray-500">
           These are the services we will create ads for. If you would like to
@@ -225,45 +226,45 @@
           </div>
         </div>
       </div>
+    </FadeOut>
 
-      <!--  Pages  -->
-      <div class="flex flex-col justify-center">
-        <div class="flex space-x-2 mx-auto my-3">
-          <button
-            type="button"
-            class="w-2.5 h-2.5 rounded-full"
-            :class="page >= 0 ? 'bg-dark-purple' : 'bg-gray-300'"
-          ></button>
-          <button
-            type="button"
-            class="w-2.5 h-2.5 rounded-full"
-            :class="page >= 1 ? 'bg-dark-purple' : 'bg-gray-300'"
-          ></button>
-          <button
-            type="button"
-            class="w-2.5 h-2.5 rounded-full"
-            :class="page >= 2 ? 'bg-dark-purple' : 'bg-gray-300'"
-          ></button>
-        </div>
-        <div class="flex justify-center space-x-10 text-lg">
-          <button
-            class="bg-transparent text-gray-500 rounded-lg w-44"
-            @click="previousPage()"
-          >
-            <i class="fa-solid fa-caret-left"></i>
-            Previous
-          </button>
-          <button
-            class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
-            @click="nextPage()"
-          >
-            Continue
-            <i class="fa-solid fa-arrow-right ml-2"></i>
-          </button>
-        </div>
+    <!--  Pages  -->
+    <div class="flex flex-col justify-center">
+      <div class="flex space-x-2 mx-auto my-3">
+        <button
+          type="button"
+          class="w-2.5 h-2.5 rounded-full"
+          :class="page >= 0 ? 'bg-dark-purple' : 'bg-gray-300'"
+        ></button>
+        <button
+          type="button"
+          class="w-2.5 h-2.5 rounded-full"
+          :class="page >= 1 ? 'bg-dark-purple' : 'bg-gray-300'"
+        ></button>
+        <button
+          type="button"
+          class="w-2.5 h-2.5 rounded-full"
+          :class="page >= 2 ? 'bg-dark-purple' : 'bg-gray-300'"
+        ></button>
+      </div>
+      <div class="flex justify-center space-x-10 text-lg">
+        <button
+          class="bg-transparent text-gray-500 rounded-lg w-44"
+          @click="previousPage()"
+        >
+          <i class="fa-solid fa-caret-left"></i>
+          Previous
+        </button>
+        <button
+          class="shadow bg-dark-purple text-white font-semibold tracking-wide w-44 py-4 rounded mb-4 md:mr-5 md:mb-0 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1"
+          @click="nextPage()"
+        >
+          Continue
+          <i class="fa-solid fa-arrow-right ml-2"></i>
+        </button>
       </div>
     </div>
-  </FadeOut>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -369,6 +370,7 @@ const addService = (name: string): void => {
 
 const nextPage = (): void => {
   if (page.value === 2) {
+    getStartedStore.getAdContent();
     getStartedStore.error = null; // Clear the error if there was one
     emit("next-step");
     return;

@@ -44,24 +44,20 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "MissionAndVision" },
         title: "Mission and Vision",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "About", params: { section: "our-team" } },
         title: "Our Team",
       },
       {
-        to: { name: "NotFound" },
+        href: "https://www.linkedin.com/company/adomate-ai/jobs/",
         title: "Careers",
       },
       {
-        to: { name: "NotFound" },
-        title: "Press and Media",
-      },
-      {
-        to: { name: "NotFound" },
-        title: "Testimonials",
+        to: { name: "Reviews" },
+        title: "Reviews",
       },
     ],
   },
@@ -78,7 +74,7 @@ const FooterLinks: Link[] = [
         title: "Plans and Pricing",
       },
       {
-        to: { name: "NotFound" },
+        to: { name: "KnowledgeBase" },
         title: "Knowledge Base",
       },
       {
@@ -92,7 +88,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing", params: { section: "faqs" } },
         title: "FAQs",
       },
       {
@@ -104,12 +100,8 @@ const FooterLinks: Link[] = [
         title: "Live Chat",
       },
       {
-        to: { name: "NotFound" },
+        href: "mailto:support@adomate.ai",
         title: "Contact Us",
-      },
-      {
-        to: { name: "NotFound" },
-        title: "Support Center",
       },
     ],
   },
@@ -118,7 +110,7 @@ const FooterLinks: Link[] = [
     to: "#",
     sublinks: [
       {
-        to: { name: "NotFound" },
+        to: { name: "Pricing", params: { section: "custom-solution" } },
         title: "Request a quote",
       },
       {
@@ -126,15 +118,11 @@ const FooterLinks: Link[] = [
         title: "How it works",
       },
       {
-        to: { name: "Pricing" },
-        title: "Pricing",
+        to: { name: "Resources" },
+        title: "Resources",
       },
       {
-        to: { name: "NotFound" },
-        title: "Reviews",
-      },
-      {
-        to: { name: "NotFound" },
+        to: { name: "About", params: { section: "case-studies" } },
         title: "Case Studies",
       },
     ],

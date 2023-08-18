@@ -14,11 +14,13 @@
           <h3 class="text-l font-semibold pb-3 align-middle md:pb-0">
             Ready to get started?
           </h3>
-          <button
-            class="shadow bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
-          >
-            Create an Account
-          </button>
+          <RouterLink to="/signup">
+            <button
+              class="shadow bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
+            >
+              Create an Account
+            </button>
+          </RouterLink>
         </div>
       </div>
       <div class="flex items-start flex-col py-5 md:hidden">
@@ -89,18 +91,17 @@
         class="mt-2 text-gray-500 md:flex items-center justify-between pb-10"
       >
         <div class="flex flex-row items-center space-x-4">
-          <p class="font-semibold text-sm md:text-l px-2">
-            ©
+          <p class="font-bold text-sm md:text-l px-2">
+            © {{ new Date().getFullYear() }}
             <a
               class="hover:underline underline-offset-2"
               href="https://adomate.ai/"
               >Adomate LLC</a
             >
-            - {{ new Date().getFullYear() }}
           </p>
-          <p class="text-sm">Privacy Policy</p>
-          <p class="text-sm">Cookies</p>
-          <p class="text-sm">Terms of Service</p>
+          <p class="text-sm color-gray-500">Privacy Policy</p>
+          <p class="text-sm color-gray-500">Cookies</p>
+          <p class="text-sm color-gray-500">Terms of Service</p>
         </div>
         <div
           class="flex items-center place-content-start flex-row gap-x-4 py-4"

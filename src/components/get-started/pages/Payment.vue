@@ -247,7 +247,6 @@ const nextPage = async (): Promise<void> => {
 
     getStartedStore.setCheckout(true);
     page.value += 1;
-
     await nextTick(); // Wait for the dom to add the div
     paymentElement.mount("#payment-element");
   }

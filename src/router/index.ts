@@ -7,7 +7,7 @@ const routes = [
     component: () => import("@/views/pages/Home.vue"),
   },
   {
-    path: "/about",
+    path: "/about/:section?",
     name: "About",
     component: () => import("@/views/pages/About.vue"),
   },
@@ -17,7 +17,7 @@ const routes = [
     component: () => import("@/views/pages/Services.vue"),
   },
   {
-    path: "/pricing",
+    path: "/pricing/:section?",
     name: "Pricing",
     component: () => import("@/views/pages/Pricing.vue"),
   },
@@ -37,9 +37,71 @@ const routes = [
     component: () => import("@/views/pages/GetStarted.vue"),
   },
   {
+    path: "/reviews",
+    name: "Reviews",
+    component: () => import("@/views/pages/Reviews.vue"),
+  },
+  {
+    path: "/knowledge-base",
+    name: "KnowledgeBase",
+    component: () => import("@/views/pages/KnowledgeBase.vue"),
+  },
+  {
+    path: "/knowledge-base/getting-started",
+    name: "GettingStarted",
+    component: () => import("@/views/pages/knowledge-base/GettingStarted.vue"),
+  },
+  {
+    path: "/knowledge-base/developer-documentation",
+    name: "DeveloperDocumentation",
+    component: () =>
+      import("@/views/pages/knowledge-base/DeveloperDocumentation.vue"),
+  },
+  {
+    path: "/knowledge-base/features-and-functionality",
+    name: "FeaturesAndFunctionality",
+    component: () =>
+      import("@/views/pages/knowledge-base/FeaturesAndFunctionality.vue"),
+  },
+  {
+    path: "/knowledge-base/tips-and-tutorials",
+    name: "TipsAndTutorials",
+    component: () =>
+      import("@/views/pages/knowledge-base/TipsAndTutorials.vue"),
+  },
+  {
+    path: "/knowledge-base/billing-and-payments",
+    name: "BillingAndPayments",
+    component: () =>
+      import("@/views/pages/knowledge-base/BillingAndPayments.vue"),
+  },
+  {
+    path: "/knowledge-base/reporting-and-analytics",
+    name: "ReportingAndAnalytics",
+    component: () =>
+      import("@/views/pages/knowledge-base/ReportingAndAnalytics.vue"),
+  },
+  {
+    path: "/knowledge-base/security-and-privacy",
+    name: "SecurityAndPrivacy",
+    component: () =>
+      import("@/views/pages/knowledge-base/SecurityAndPrivacy.vue"),
+  },
+  {
+    path: "/knowledge-base/troubleshooting-and-faqs",
+    name: "TroubleshootingAndFaqs",
+    component: () =>
+      import("@/views/pages/knowledge-base/TroubleshootingAndFaqs.vue"),
+  },
+  {
     path: "/resources",
     name: "Resources",
     component: () => import("@/views/pages/Resources.vue"),
+  },
+  {
+    path: "/mission-and-vision",
+    name: "MissionAndVision",
+    component: () => import("@/views/pages/MissionAndVision.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
@@ -52,7 +114,14 @@ const buildRouter = (): Router => {
   const r = routes;
 
   return createRouter({
-    scrollBehavior() {
+    scrollBehavior(to) {
+      if (to.params.section) {
+        return {
+          el: `#${to.params.section}`,
+          top: 75,
+          behavior: "smooth",
+        };
+      }
       return {
         top: 0,
         behavior: "smooth",

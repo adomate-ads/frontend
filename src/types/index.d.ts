@@ -53,6 +53,23 @@ export interface Member {
   github?: string;
 }
 
+export interface Review {
+  name: string;
+  role: string;
+  review: string;
+  company: string;
+  image: string;
+}
+export interface Testimonial {
+  name: string;
+  role: string;
+  review: string;
+  company: string;
+  logo: string;
+  image: string;
+  testimonial: string;
+}
+
 export interface Feature {
   title: string;
   description: string;
@@ -72,4 +89,25 @@ export interface Blog {
   sub: string;
   description: string;
   link: string;
+}
+
+export interface KnowledgeBaseCard {
+  icon: string;
+  title: string;
+  tagline: string;
+  href: string;
+}
+
+export interface PopularArticles {
+  title: string;
+  description: string;
+  link: string;
+}
+
+export interface PopularTutorials {
+  title: string;
+  description: string;
+  thumbnail: string;
+  link: string;
+  video: string;
 }

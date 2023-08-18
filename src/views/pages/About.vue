@@ -27,12 +27,14 @@
                 today's digital landscape.
               </p>
               <div class="flex items-center space-x-4">
-                <button class="arrow-button border-2 border-[#637EFE] shadow">
-                  Get Started
-                  <span class="arrow"></span>
-                </button>
+                <router-link to="/get-started">
+                  <button class="arrow-button border-2 border-[#637EFE] shadow">
+                    Get Started
+                    <span class="arrow"></span>
+                  </button>
+                </router-link>
                 <a
-                  href="#"
+                  href="mailto:support@adomate.ai"
                   class="text-gray-900 inline-flex items-center space-x-2 p-2 hover:text-dark-purple font-semibold transition"
                 >
                   <span>Contact us</span>
@@ -238,7 +240,7 @@
       </section>
     </fade-in>
 
-    <fade-in>
+    <fade-in id="case-studies">
       <section class="py-10 mt-5 lg:mt-10">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
           <div class="mb-6 flex justify-start">
@@ -297,7 +299,7 @@
     </fade-in>
 
     <!-- Team -->
-    <fade-in>
+    <fade-in id="our-team">
       <section class="py-10 mt-5 lg:mt-10">
         <div class="max-w-7xl mx-auto px-5 sm:px-10">
           <h2
@@ -313,7 +315,7 @@
             advertising campaigns and drive your business forward.
           </p>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div v-for="(member, idx) in Members" :key="idx">
               <div class="h-40 sm:h-64 w-full overflow-hidden rounded-lg">
                 <img

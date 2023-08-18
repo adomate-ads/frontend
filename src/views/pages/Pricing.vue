@@ -49,7 +49,7 @@
         </div>
       </div>
     </fade-in>
-    <fade-in>
+    <fade-in id="custom-solution">
       <div
         class="w-4/5 lg:w-2/3 bg-adomate-off-white mx-auto drop-shadow-xl p-8 flex flex-col lg:flex-row items-center lg:justify-between"
       >
@@ -62,12 +62,14 @@
             options above?
           </h4>
         </div>
-        <button
-          class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-5 rounded mt-4 lg:mt-0 lg:ml-4 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 md:w-60"
-        >
-          Contact Us
-          <i class="fa-solid fa-arrow-right ml-2"></i>
-        </button>
+        <a href="mailto:support@adomate.ai">
+          <button
+            class="shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-5 rounded mt-4 lg:mt-0 lg:ml-4 hover:bg-white hover:text-dark-purple transition hover:-translate-y-1 md:w-60"
+          >
+            Contact Us
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </button>
+        </a>
       </div>
     </fade-in>
 
@@ -220,7 +222,7 @@
       </div>
     </fade-in>
 
-    <fade-in>
+    <fade-in id="faqs">
       <div class="text-center py-20 mx-auto justify-center max-w-[1000px] px-8">
         <h3 class="text-5xl font-bold text-adomate-off-black py-12">
           Frequently Asked Questions
