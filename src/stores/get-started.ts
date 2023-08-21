@@ -77,11 +77,11 @@ const useGetStartedStore = defineStore("getStarted", {
     getError: (state) => state.error,
   },
   actions: {
-    async setURL(url: string): Promise<void> {
+    async setURL(url: string, token: string): Promise<void> {
       this.getStarted.domain = url;
 
       this.fetching = true;
-      await this.getLocationsAndServices();
+      await this.getLocationsAndServices(token);
       this.fetching = false;
     },
     async getIP(): Promise<void> {
@@ -146,11 +146,14 @@ const useGetStartedStore = defineStore("getStarted", {
     setCheckout(status: boolean) {
       this.checkout = status;
     },
-    async getLocationsAndServices(): Promise<void> {
+    async getLocationsAndServices(token: string): Promise<void> {
       try {
         this.fetching = true;
-        const data = await API.get(
-          `/v1/get-started/location-service/${this.getStarted.domain}`
+        const request = {
+          'cf_token': token,
+        }
+        const data = await API.post(
+          `/v1/get-started/location-service/${this.getStarted.domain}`, token
         );
 
         if (data.status === 200) {

@@ -15,5 +15,15 @@
     <script src="https://kit.fontawesome.com/434825a0f1.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer>
+      window.onloadTurnstileCallback = function () {
+          turnstile.render('#example-container', {
+              sitekey: '0x4AAAAAAAIbgguO9ISlLbmL',
+              callback: function(token) {
+                  console.log(`Challenge Success ${token}`);
+              },
+          });
+      };
+    </script>
   </body>
 </html>

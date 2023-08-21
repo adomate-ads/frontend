@@ -78,7 +78,7 @@ const isValidURL = (): boolean => {
 };
 
 const updateURLParam = (): void => {
-  getStartedStore.setURL(url.value);
+  getStartedStore.setURL(url.value, cf_token);
 };
 
 const nextPage = (): void => {
