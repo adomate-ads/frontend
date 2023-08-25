@@ -149,7 +149,7 @@ const useGetStartedStore = defineStore("getStarted", {
     async getLocationsAndServices(): Promise<void> {
       try {
         this.fetching = true;
-        const data = await API.get(
+        const data = await API.post(
           `/v1/get-started/location-service/${this.getStarted.domain}`
         );
 
