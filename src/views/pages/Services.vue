@@ -1,5 +1,106 @@
 <template>
   <fade-in>
+    <section class="py-10 lg:mt-8 mb-5">
+      <div class="max-w-7xl mx-auto px-5 sm:px-10">
+        <h2
+          class="text-center text-gray-900 text-2xl md:text-4xl xl:text-5xl font-bold max-w-4xl mx-auto lg:leading-tight mb-5"
+        >
+          Advertise Effortlessly with Adomate
+        </h2>
+        <p
+          class="text-center mx-auto text-base sm:text-lg text-gray-500 mb-8 lg:mb-12 xl:mb-16"
+        >
+          Adomate is a fully automated advertising platform that generates your
+          ad content, launches your campaigns, and optimizes your ads for
+          maximum performance. Our platform is designed to help you scale your
+          business and reach your goals.
+        </p>
+
+        <div
+          class="lg:flex lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
+        >
+          <div
+            class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+          >
+            <div
+              class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+            >
+              <i class="fas fa-rocket fa-2x text-adomate-off-white"></i>
+            </div>
+            <div>
+              <h3
+                class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
+              >
+                Effortless Launch Ads
+              </h3>
+              <p class="text-gray-600 text-center text-base font-light">
+                Kick off your advertising journey by creating and launching your
+                campaigns with just a few clicks. Our platform handles the heavy
+                lifting, so you can focus on growing your business. The best
+                part? You don’t need any prior advertising experience.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+          >
+            <div
+              class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+            >
+              <i class="fas fa-chart-line fa-2x text-adomate-off-white"></i>
+            </div>
+            <div>
+              <h3
+                class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
+              >
+                Continuous Optimization
+              </h3>
+              <p class="text-gray-600 text-center text-base font-light">
+                As your ads run, our intelligent algorithms work behind the
+                scenes, constantly refining and adjusting your campaigns for
+                optimal performance and maximum return on investment.
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex-1 justify-center items-center border-b border-gray-200 lg:border-none py-4 pb-8"
+          >
+            <div
+              class="mx-auto mb-4 bg-light-purple p-4 rounded-3xl w-20 h-20 flex justify-center items-center"
+            >
+              <i class="fas fa-chart-bar fa-2x text-adomate-off-white"></i>
+            </div>
+            <div>
+              <h3
+                class="text-gray-900 text-xl md:text-2xl text-center font-bold mb-3"
+              >
+                Comprehensive Analytics
+              </h3>
+              <p class="text-gray-600 text-center text-base font-light">
+                Unlock valuable insights and drive results with our
+                comprehensive analytics and monitoring tools. Our smart bidding
+                system strategically optimizes ad placements, maximizing your ad
+                spend efficiency for optimal campaign performance.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="lg:flex lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-5 xl:space-x-10"
+        >
+          <router-link
+            class="m-auto shadow bg-dark-purple text-white font-semibold tracking-wide px-4 py-4 rounded mb-4 transition hover:-translate-y-1"
+            to="/get-started"
+          >
+            Try it out
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+          </router-link>
+        </div>
+      </div>
+    </section>
+  </fade-in>
+
+  <fade-in>
     <div id="services-landing" class="py-10">
       <div class="w-full flex place-items-center flex-col">
         <h1
