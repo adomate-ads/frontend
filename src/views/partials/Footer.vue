@@ -14,7 +14,7 @@
           <h3 class="text-l font-semibold pb-3 align-middle md:pb-0">
             Ready to get started?
           </h3>
-          <RouterLink to="/signup">
+          <RouterLink to="/get-started">
             <button
               class="shadow bg-dark-purple text-white font-semibold tracking-wide px-3 py-3 rounded ml-5 hover:bg-white hover:text-dark-purple border border-dark-purple border-2 transition"
             >

@@ -18,15 +18,17 @@
           class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-dark-purple"
         ></span>
       </HeaderNavItem>
-      <RouterLink
+      <a
         v-if="!userStore.isLoggedIn"
+        href="https://app.adomate.ai/login"
         title="Login"
-        :to="{ name: 'Login' }"
         class="arrow-button border-2 border-[#637EFE] shadow"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         Sign in
         <span class="arrow"></span>
-      </RouterLink>
+      </a>
       <HeaderNavItem
         v-else
         :title="getName()"
