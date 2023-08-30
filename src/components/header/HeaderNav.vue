@@ -23,8 +23,6 @@
         href="https://app.adomate.ai/login"
         title="Login"
         class="arrow-button border-2 border-[#637EFE] shadow"
-        target="_blank"
-        rel="noopener noreferrer"
       >
         Sign in
         <span class="arrow"></span>
