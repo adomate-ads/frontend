@@ -32,7 +32,7 @@
           Manage your campaigns, track your performance, get insights, and more
           using our dashboard tool.
         </p>
-        <a href="https://app.adomate.ai">
+        <a href="https://app.adomate.ai/login">
           <button
             class="arrow-button border-2 border-[#637EFE] shadow mt-4 mb-20 lg:mb-0"
           >
