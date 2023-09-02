@@ -20,7 +20,7 @@
       </HeaderNavItem>
       <a
         v-if="!userStore.isLoggedIn"
-        href="https://app.adomate.ai/login"
+        href="https://app.adomate.ai"
         title="Login"
         class="arrow-button border-2 border-[#637EFE] shadow"
       >
