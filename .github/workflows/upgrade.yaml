@@ -1,0 +1,41 @@
+name: Upgrade Dependencies
+
+on:
+  schedule:
+    - cron: '1 0 * * 0'
+  workflow_dispatch:
+
+jobs:
+  yarn-upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'yarn'
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Setup git and create branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+        run: |
+          git config --global user.name "Adomate-ai"
+          git config --global user.email "raaj.patel@adomate.ai"
+
+          git checkout -b chore/upgrade-dependencies-$(date +%Y-%m-%d)
+          git push --set-upstream origin chore/upgrade-dependencies-$(date +%Y-%m-%d)
+      - name: Upgrade dependencies
+        run: yarn upgrade --latest
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+        run: |
+          git add .
+          git commit -m "chore: upgrade dependencies"
+          git push
+      - name: Create PR
+        env:
+          GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
+        run: |
+          gh pr create -t "Chore: Upgrade Dependencies" -B main -H chore/upgrade-dependencies-$(date +%Y-%m-%d) --body "Weekly automated PR to upgrade dependencies using \`yarn upgrade --latest\`. Please verify the changes and merge."
