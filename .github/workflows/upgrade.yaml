@@ -27,6 +27,8 @@ jobs:
           git push --set-upstream origin chore/upgrade-dependencies-$(date +%Y-%m-%d)
       - name: Upgrade dependencies
         run: yarn upgrade --latest
+      - name: Lint fix
+        run: yarn lint:fix
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}
