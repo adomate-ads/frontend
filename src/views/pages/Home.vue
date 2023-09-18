@@ -10,7 +10,7 @@
         <div
           class="flex flex-col lg:flex-row md:items-center md:justify-between h-auto md:h-[600px]"
         >
-          <div class="lg:w-7/12 lg:pr-20">
+          <div class="lg:w-1/2 lg:pr-20">
             <h1
               class="text-4xl pb-5 lg:text-6xl text-center font-bold tracking-wide mb-4 subpixel-antialiased md:text-left"
             >
@@ -84,7 +84,7 @@
               </div>
             </div>
           </div>
-          <div class="w-full md:w-3/4 lg:w-5/12 pt-10 pb-10 px-5">
+          <div class="w-full md:w-3/4 lg:w-1/2 pt-10 pb-10 px-5">
             <fade-in :delay="0.2">
               <div
                 class="ring-2 ring-dark-purple ring-offset-4 ring-offset-transparent rounded-3xl z-0"
