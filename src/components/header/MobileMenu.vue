@@ -31,7 +31,7 @@
               <button
                 v-if="!userStore.isLoggedIn"
                 title="Login"
-                :to="{ name: 'Login' }"
+                href="https://app.adomate.ai/"
                 class="shadow mt-5 arrow-button border-2 border-[#637EFE] bg-white hover:bg-white hover:text-dark-purple font-bold rounded-md py-2 px-4 transition-all duration-300 ease-in-out"
               >
                 Sign in
