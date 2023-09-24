@@ -24,7 +24,7 @@ const useUserStore = defineStore("user", {
       user: null,
       fetching: false,
       hasFetched: false,
-    } as UserState),
+    }) as UserState,
   getters: {
     isLoggedIn: (state) => !!state.user,
   },

@@ -134,7 +134,7 @@ const tax = computed(() => {
 const plan = (priceID: string): Plan => {
   return Plans.filter(
     (subPlan) =>
-      subPlan.monthlyStripeID === priceID || subPlan.annualStripeID === priceID
+      subPlan.monthlyStripeID === priceID || subPlan.annualStripeID === priceID,
   )[0];
 };
 

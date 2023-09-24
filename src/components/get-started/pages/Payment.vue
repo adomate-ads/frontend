@@ -183,7 +183,7 @@ const emit = defineEmits<{
 
 // eslint-disable-next-line no-undef
 const stripe = Stripe(
-  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6"
+  "pk_test_51N6NB7JSLdyWx69CLTQWTydpReygPyivfe8gnZc0hbGcSMVQQwnCzfHICp7k3kPARYw4KWOEkAE7KeMQBeI3LN6t00Th2gqJD6",
 );
 
 let elements = stripe.elements();
@@ -233,7 +233,7 @@ const nextPage = async (): Promise<void> => {
     firstName.value,
     lastName.value,
     email.value,
-    businessName.value
+    businessName.value,
   );
   await getStartedStore.createAccount();
   if (getStartedStore.getError == null) {

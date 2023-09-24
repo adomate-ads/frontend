@@ -30,9 +30,12 @@ const viewableTarget = ref<HTMLElement | null>(null);
 const onIntersection: IntersectionObserverCallback = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      setTimeout(() => {
-        isViewable.value = true;
-      }, (props.delay + 0.05) * 1000);
+      setTimeout(
+        () => {
+          isViewable.value = true;
+        },
+        (props.delay + 0.05) * 1000,
+      );
     }
   });
 };

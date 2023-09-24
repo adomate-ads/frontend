@@ -288,12 +288,12 @@ const emit = defineEmits<{
 const page = ref(0);
 const editStatesLocation = reactive<{ [key: string]: boolean }>({});
 const inputRefsLocation = reactive<{ [key: string]: HTMLInputElement | null }>(
-  {}
+  {},
 );
 
 const editStatesService = reactive<{ [key: string]: boolean }>({});
 const inputRefsService = reactive<{ [key: string]: HTMLInputElement | null }>(
-  {}
+  {},
 );
 
 const toggleEditLocation = async (locationName: string): Promise<void> => {
