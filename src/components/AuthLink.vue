@@ -23,7 +23,7 @@ const props = withDefaults(
     auth: undefined,
     hideUnauthed: undefined,
     roles: () => [],
-  }
+  },
 );
 const store = useUserStore();
 const display = computed(() => {

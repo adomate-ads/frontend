@@ -69,7 +69,7 @@ const emit = defineEmits<{
 
 const index = ref<number>(0);
 const maxIndex = computed(
-  () => getStartedStore.getStarted.headlines.length - 1
+  () => getStartedStore.getStarted.headlines.length - 1,
 );
 setInterval(() => {
   if (index.value < maxIndex.value) {

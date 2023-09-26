@@ -66,7 +66,7 @@ const useGetStartedStore = defineStore("getStarted", {
       error: null,
       checkout: false,
       fetching: false,
-    } as GetStartedState),
+    }) as GetStartedState,
   getters: {
     getCheckout: (state) => state.checkout,
     getFetching: (state) => state.fetching,
@@ -92,7 +92,7 @@ const useGetStartedStore = defineStore("getStarted", {
         if (data.status === 200) {
           this.getStarted.ip = data.data.ip;
           this.getStarted.locations.push(
-            `${data.data.city}, ${data.data.region}`
+            `${data.data.city}, ${data.data.region}`,
           );
         } else {
           this.error = "Error fetching locations";
@@ -116,12 +116,12 @@ const useGetStartedStore = defineStore("getStarted", {
     },
     updateLocation(oldLocation: string, newLocation: string): void {
       this.getStarted.locations = this.getStarted.locations.map((loc) =>
-        loc === oldLocation ? newLocation : loc
+        loc === oldLocation ? newLocation : loc,
       );
     },
     deleteLocation(location: string): void {
       this.getStarted.locations = this.getStarted.locations.filter(
-        (loc) => loc !== location
+        (loc) => loc !== location,
       );
     },
     addService(service: string): void {
@@ -129,12 +129,12 @@ const useGetStartedStore = defineStore("getStarted", {
     },
     updateService(oldService: string, newService: string): void {
       this.getStarted.services = this.getStarted.services.map((serv) =>
-        serv === oldService ? newService : serv
+        serv === oldService ? newService : serv,
       );
     },
     deleteService(service: string): void {
       this.getStarted.services = this.getStarted.services.filter(
-        (serv) => serv !== service
+        (serv) => serv !== service,
       );
     },
     setPrice(price: string): void {
@@ -150,12 +150,12 @@ const useGetStartedStore = defineStore("getStarted", {
       try {
         this.fetching = true;
         const data = await API.post(
-          `/v1/get-started/location-service/${this.getStarted.domain}`
+          `/v1/get-started/location-service/${this.getStarted.domain}`,
         );
 
         if (data.status === 200) {
           this.getStarted.locations = this.getStarted.locations.concat(
-            data.data.locations
+            data.data.locations,
           );
           this.getStarted.services = data.data.services;
         } else {
@@ -200,7 +200,7 @@ const useGetStartedStore = defineStore("getStarted", {
       firstName: string,
       lastName: string,
       email: string,
-      companyName: string
+      companyName: string,
     ): void {
       this.getStarted.firstName = firstName;
       this.getStarted.lastName = lastName;
