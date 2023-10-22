@@ -26,7 +26,7 @@
       <transition name="fade" mode="out-in">
         <SearchAdDemo
           :key="index"
-          :favicon-url="`https://${getStartedStore.getStarted.domain}/favicon.ico`"
+          :favicon-url="`https://t2.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=https://${getStartedStore.getStarted.domain}/&size=256`"
           :company-name="getStartedStore.getStarted.domain"
           :company-url="`https://${getStartedStore.getStarted.domain}`"
           :headline="getStartedStore.getStarted.headlines[index]"
